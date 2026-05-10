@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Dashboard | MediRoute</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="patient-dashboard.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="patient-dashboard.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="patient-dashboard.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="patient-dashboard.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="patient-dashboard.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="patient-dashboard.html?lang=en"/>
+  <meta name="description" content="Track your quotes, appointments and treatment journey on MediRoute."/>
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F1F5FB;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .sidebar{width:230px;min-height:100vh;background:linear-gradient(180deg,#0A1F6B 0%,#060E3A 100%);flex-shrink:0;}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;font-size:.84rem;font-weight:500;color:rgba(255,255,255,.6);cursor:pointer;transition:all .18s;text-decoration:none;}
+    .nav-item:hover,.nav-item.active{background:rgba(255,255,255,.12);color:#fff;}
+    .nav-item.active{border-left:3px solid #FBBF24;}
+    .card{background:#fff;border-radius:18px;border:1px solid #E8EEF9;box-shadow:0 4px 20px rgba(10,31,107,.06);}
+    .quote-card{border-radius:16px;border:1px solid #E8EEF9;background:#fff;box-shadow:0 2px 12px rgba(10,31,107,.05);transition:transform .2s,box-shadow .2s;}
+    .quote-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(10,31,107,.12);}
+    .step-node{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;}
+    .step-done{background:#D1FAE5;color:#065F46;}
+    .step-active{background:linear-gradient(135deg,#0F2D96,#3B5FDD);color:#fff;box-shadow:0 4px 12px rgba(15,45,150,.35);}
+    .step-pending{background:#F1F5F9;color:#94A3B8;}
+    .step-line{width:2px;height:28px;margin-left:17px;}
+    .step-line-done{background:linear-gradient(180deg,#10B981,#34D399);}
+    .step-line-pending{background:#E2E8F0;}
+    .status-badge{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;}
+    .status-new{background:#EFF6FF;color:#1E40AF;}
+    .status-pending{background:#FEF3C7;color:#B45309;}
+    .status-confirmed{background:#E0E7FF;color:#3730A3;}
+    .status-completed{background:#D1FAE5;color:#065F46;}
+    .metric-card{background:#fff;border-radius:16px;padding:1.2rem;border:1px solid #E8EEF9;box-shadow:0 2px 12px rgba(10,31,107,.05);}
+    .saved-card{border-radius:14px;border:1px solid #F1F5F9;background:#fff;overflow:hidden;transition:transform .18s;cursor:pointer;}
+    .saved-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(10,31,107,.1);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .4s ease both;}
+  </style>
+</head>
+<body class="flex min-h-screen">
+
+<!-- SIDEBAR -->
+<aside class="sidebar hidden lg:flex flex-col py-6 px-3 gap-1">
+  <div class="flex items-center gap-2 px-3 mb-6">
+    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-heart-pulse text-navy-800"></i></div>
+    <div><p class="text-white font-bold text-base leading-none">Medi<span class="text-blue-300">Route</span></p><p class="text-blue-400 text-[10px]" data-i18n="dash_portal">Patient Portal</p></div>
+  </div>
+  <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-3 mb-1" data-i18n="dash_journey">My Journey</p>
+  <a href="#" class="nav-item active"><i class="fa-solid fa-gauge-high w-4 text-center"></i> <span data-i18n="dash_dashboard">Dashboard</span></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-file-invoice w-4 text-center"></i> <span data-i18n="dash_my_quotes">My Quotes</span></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-calendar-check w-4 text-center"></i> <span data-i18n="dash_appointments">Appointments</span></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-heart w-4 text-center"></i> <span data-i18n="dash_saved">Saved Clinics</span></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-images w-4 text-center"></i> <span data-i18n="dash_photos">My Photos</span></a>
+  <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-3 mt-4 mb-1" data-i18n="footer_support">Support</p>
+  <a href="#" class="nav-item"><i class="fa-solid fa-headset w-4 text-center"></i> <span data-i18n="dash_uk_support">UK Support</span></a>
+  <a href="#" class="nav-item"><i class="fa-brands fa-whatsapp w-4 text-center"></i> <span data-i18n="dash_whatsapp">WhatsApp Us</span></a>
+  <div class="mt-auto px-3 pt-4 border-t border-white/10">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold" id="sidebar-avatar">?</div>
+      <div><p class="text-white text-xs font-semibold" id="sidebar-name">Loading...</p><p class="text-blue-400 text-[10px]" id="sidebar-email"></p></div>
+    </div>
+    <a href="javascript:void(0)" onclick="patientLogout()" class="nav-item mt-2 text-red-300 hover:text-red-200 hover:bg-red-900/20"><i class="fa-solid fa-right-from-bracket w-4 text-center"></i> <span data-i18n="dash_signout">Sign Out</span></a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="flex-1 flex flex-col min-w-0">
+
+  <!-- Header -->
+  <header class="hero-bg px-6 py-4 flex items-center justify-between">
+    <div>
+      <p class="text-blue-200 text-xs font-medium">Monday, 30 March 2025</p>
+      <h1 class="text-white font-bold text-lg" id="greeting">Welcome 👋</h1>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <button class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-white transition border border-white/10">
+          <i class="fa-solid fa-bell text-sm"></i>
+        </button>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] text-white font-bold flex items-center justify-center">2</span>
+      </div>
+      <a href="index.html" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-2 rounded-xl border border-white/10 transition">
+        <i class="fa-solid fa-magnifying-glass text-xs"></i> <span data-i18n="dash_find_more">Find More Clinics</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 p-5 overflow-x-auto">
+
+    <!-- METRIC CARDS -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+      <div class="metric-card fade-up">
+        <div class="flex items-center justify-between mb-2">
+          <div class="w-9 h-9 bg-navy-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-file-invoice text-navy-800 text-sm"></i></div>
+          <span class="text-[11px] font-bold text-navy-300 bg-navy-50 px-2 py-0.5 rounded-full" data-i18n="dash_active">Active</span>
+        </div>
+        <p class="text-2xl font-extrabold text-navy-900">3</p>
+        <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_quotes_received">Quotes Received</p>
+      </div>
+      <div class="metric-card fade-up" style="animation-delay:.07s">
+        <div class="flex items-center justify-between mb-2">
+          <div class="w-9 h-9 bg-emerald-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-calendar-check text-emerald-600 text-sm"></i></div>
+          <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full" data-i18n="dash_upcoming">Upcoming</span>
+        </div>
+        <p class="text-2xl font-extrabold text-navy-900">1</p>
+        <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_appointment">Appointment</p>
+      </div>
+      <div class="metric-card fade-up" style="animation-delay:.14s">
+        <div class="flex items-center justify-between mb-2">
+          <div class="w-9 h-9 bg-amber-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-heart text-amber-500 text-sm"></i></div>
+        </div>
+        <p class="text-2xl font-extrabold text-navy-900">5</p>
+        <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_saved">Saved Clinics</p>
+      </div>
+      <div class="metric-card fade-up" style="animation-delay:.21s">
+        <div class="flex items-center justify-between mb-2">
+          <div class="w-9 h-9 bg-purple-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-star text-purple-500 text-sm"></i></div>
+        </div>
+        <p class="text-2xl font-extrabold text-navy-900">2</p>
+        <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_clinics_reviewed">Clinics Reviewed</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-5">
+
+      <!-- LEFT: Quotes + Journey -->
+      <div class="xl:col-span-2 flex flex-col gap-5">
+
+        <!-- ACTIVE QUOTES -->
+        <div class="card p-5 fade-up">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-bold text-navy-900 text-base flex items-center gap-2"><i class="fa-solid fa-file-invoice text-navy-700"></i> <span data-i18n="dash_my_quotes">My Quotes</span></h2>
+            <a href="index.html" class="text-xs text-navy-700 font-semibold hover:underline flex items-center gap-1"><i class="fa-solid fa-plus text-[10px]"></i> <span data-i18n="dash_request_more">Request More</span></a>
+          </div>
+          <div class="flex flex-col gap-3">
+
+            <!-- Quote 1 - Best match -->
+            <div class="quote-card p-4 border-l-4 border-emerald-400">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 bg-gradient-to-br from-navy-900 to-navy-700 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-hospital text-white text-base"></i>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <p class="font-bold text-navy-900 text-sm">Estepera Medical Centre</p>
+                      <span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full" data-i18n="dash_best_match">Best Match</span>
+                    </div>
+                    <p class="text-xs text-gray-400 flex items-center gap-1 mt-0.5"><i class="fa-solid fa-location-dot text-[10px]"></i> Istanbul, Turkey · FUE Hair Transplant</p>
+                    <div class="flex items-center gap-2 mt-1.5">
+                      <span class="status-badge status-confirmed"><i class="fa-solid fa-circle-check text-[10px]"></i> <span data-i18n="dash_appt_confirmed">Appointment Confirmed</span></span>
+                      <span class="text-xs text-gray-400">15 May 2025</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <p class="text-lg font-extrabold text-navy-900">£1,799</p>
+                  <p class="text-[11px] text-gray-400" data-i18n="dash_all_inclusive">All-inclusive</p>
+                  <div class="flex gap-0.5 justify-end mt-1">
+                    <i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                    <span class="text-[11px] text-gray-400 ml-1">4.9</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mt-3 pt-3 border-t border-gray-50">
+                <a href="clinic-detail.html" class="text-xs font-semibold text-navy-700 hover:underline flex items-center gap-1"><i class="fa-solid fa-eye text-[10px]"></i> <span data-i18n="dash_view_profile">View Profile</span></a>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1"><i class="fa-brands fa-whatsapp text-[10px]"></i> <span data-i18n="dash_message_clinic">Message Clinic</span></button>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-gray-400 hover:underline" data-i18n="dash_decline">Decline</button>
+              </div>
+            </div>
+
+            <!-- Quote 2 -->
+            <div class="quote-card p-4">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 bg-gradient-to-br from-teal-800 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-hospital text-white text-base"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-navy-900 text-sm">Dent Élite Budapest</p>
+                    <p class="text-xs text-gray-400 flex items-center gap-1 mt-0.5"><i class="fa-solid fa-location-dot text-[10px]"></i> Budapest, Hungary · DHI Hair Transplant</p>
+                    <div class="flex items-center gap-2 mt-1.5">
+                      <span class="status-badge status-pending"><i class="fa-solid fa-clock text-[10px]"></i> <span data-i18n="dash_awaiting">Awaiting Your Reply</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <p class="text-lg font-extrabold text-navy-900">£2,200</p>
+                  <p class="text-[11px] text-gray-400" data-i18n="dash_all_inclusive">All-inclusive</p>
+                  <div class="flex gap-0.5 justify-end mt-1">
+                    <i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star-half-stroke text-amber-400 text-xs"></i>
+                    <span class="text-[11px] text-gray-400 ml-1">4.7</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mt-3 pt-3 border-t border-gray-50">
+                <a href="clinic-detail.html" class="text-xs font-semibold text-navy-700 hover:underline flex items-center gap-1"><i class="fa-solid fa-eye text-[10px]"></i> <span data-i18n="dash_view_profile">View Profile</span></a>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1" onclick="acceptQuote(this)"><i class="fa-solid fa-check text-[10px]"></i> <span data-i18n="dash_accept_quote">Accept Quote</span></button>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-gray-400 hover:underline" data-i18n="dash_decline">Decline</button>
+              </div>
+            </div>
+
+            <!-- Quote 3 -->
+            <div class="quote-card p-4">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 bg-gradient-to-br from-purple-800 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-hospital text-white text-base"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-navy-900 text-sm">Aura Clinic Istanbul</p>
+                    <p class="text-xs text-gray-400 flex items-center gap-1 mt-0.5"><i class="fa-solid fa-location-dot text-[10px]"></i> Istanbul, Turkey · FUE Hair Transplant</p>
+                    <div class="flex items-center gap-2 mt-1.5">
+                      <span class="status-badge status-new"><i class="fa-solid fa-bell text-[10px]"></i> <span data-i18n="dash_new_quote">New Quote</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <p class="text-lg font-extrabold text-navy-900">£1,599</p>
+                  <p class="text-[11px] text-gray-400" data-i18n="dash_all_inclusive">All-inclusive</p>
+                  <div class="flex gap-0.5 justify-end mt-1">
+                    <i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star text-amber-400 text-xs"></i><i class="fa-solid fa-star-half-stroke text-amber-400 text-xs"></i>
+                    <span class="text-[11px] text-gray-400 ml-1">4.6</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mt-3 pt-3 border-t border-gray-50">
+                <a href="clinic-detail.html" class="text-xs font-semibold text-navy-700 hover:underline flex items-center gap-1"><i class="fa-solid fa-eye text-[10px]"></i> <span data-i18n="dash_view_profile">View Profile</span></a>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-emerald-600 hover:underline flex items-center gap-1" onclick="acceptQuote(this)"><i class="fa-solid fa-check text-[10px]"></i> <span data-i18n="dash_accept_quote">Accept Quote</span></button>
+                <span class="text-gray-200">·</span>
+                <button class="text-xs font-semibold text-gray-400 hover:underline" data-i18n="dash_decline">Decline</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TREATMENT JOURNEY TIMELINE -->
+        <div class="card p-5 fade-up">
+          <h2 class="font-bold text-navy-900 text-base mb-4 flex items-center gap-2"><i class="fa-solid fa-route text-navy-700"></i> <span data-i18n="dash_your_journey">Your Treatment Journey</span></h2>
+          <div class="flex flex-col">
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-done"><i class="fa-solid fa-check"></i></div>
+                <div class="step-line step-line-done"></div>
+              </div>
+              <div class="pb-7">
+                <p class="font-semibold text-gray-800 text-sm" data-i18n="dash_step_requested">Quote Requested</p>
+                <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_step_requested_sub">Sent to 3 verified clinics · 12 Mar 2025</p>
+                <div class="mt-2 inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[11px] font-semibold px-2.5 py-1 rounded-lg"><i class="fa-solid fa-circle-check text-[10px]"></i> <span data-i18n="dash_completed">Completed</span></div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-done"><i class="fa-solid fa-check"></i></div>
+                <div class="step-line step-line-done"></div>
+              </div>
+              <div class="pb-7">
+                <p class="font-semibold text-gray-800 text-sm" data-i18n="dash_step_received">Quotes Received</p>
+                <p class="text-xs text-gray-400 mt-0.5" data-i18n="dash_step_received_sub">3 personalised offers from verified clinics</p>
+                <div class="mt-2 inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[11px] font-semibold px-2.5 py-1 rounded-lg"><i class="fa-solid fa-circle-check text-[10px]"></i> <span data-i18n="dash_offers_received">3 offers received</span></div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-active"><i class="fa-solid fa-calendar-check text-xs"></i></div>
+                <div class="step-line step-line-pending"></div>
+              </div>
+              <div class="pb-7">
+                <p class="font-semibold text-navy-800 text-sm" data-i18n="dash_step_confirmed">Appointment Confirmed ✅</p>
+                <p class="text-xs text-gray-400 mt-0.5">Estepera Medical Centre · Istanbul</p>
+                <div class="mt-2 p-2.5 bg-navy-50 rounded-xl border border-navy-100 flex items-center gap-3">
+                  <i class="fa-solid fa-calendar text-navy-700 text-sm"></i>
+                  <div>
+                    <p class="text-xs font-bold text-navy-800">15 May 2025 at 09:00</p>
+                    <p class="text-[11px] text-gray-400">Add to <a href="#" class="text-navy-700 font-semibold underline">Google Calendar</a> · <a href="#" class="text-navy-700 font-semibold underline">Apple Calendar</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-pending"><i class="fa-solid fa-plane text-xs"></i></div>
+                <div class="step-line step-line-pending"></div>
+              </div>
+              <div class="pb-7">
+                <p class="font-semibold text-gray-400 text-sm" data-i18n="dash_step_travel">Travel & Check-in</p>
+                <p class="text-xs text-gray-300 mt-0.5" data-i18n="dash_step_travel_sub">VIP transfer will be arranged 48h before</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-pending"><i class="fa-solid fa-syringe text-xs"></i></div>
+                <div class="step-line step-line-pending"></div>
+              </div>
+              <div class="pb-7">
+                <p class="font-semibold text-gray-400 text-sm" data-i18n="dash_step_treatment">Treatment Day</p>
+                <p class="text-xs text-gray-300 mt-0.5" data-i18n="dash_step_treatment_sub">FUE Hair Transplant · Est. 6–8 hours</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="step-node step-pending"><i class="fa-solid fa-star text-xs"></i></div>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-400 text-sm" data-i18n="dash_step_postop">Post-Op Care & Review</p>
+                <p class="text-xs text-gray-300 mt-0.5" data-i18n="dash_step_postop_sub">12-month aftercare programme begins</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /left -->
+
+      <!-- RIGHT: Upcoming + Saved -->
+      <div class="flex flex-col gap-5">
+
+        <!-- NEXT APPOINTMENT -->
+        <div class="card overflow-hidden fade-up">
+          <div class="hero-bg px-4 py-3">
+            <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest" data-i18n="dash_next_appt">Next Appointment</p>
+            <p class="text-white font-extrabold text-lg">15 May 2025</p>
+            <p class="text-blue-200 text-xs">Thursday · 09:00 local time</p>
+          </div>
+          <div class="p-4 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-hospital text-navy-700 text-xs w-4"></i> Estepera Medical Centre</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-location-dot text-navy-700 text-xs w-4"></i> Şişli, Istanbul, Turkey</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-stethoscope text-navy-700 text-xs w-4"></i> FUE Hair Transplant</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-car text-navy-700 text-xs w-4"></i> <span data-i18n="dash_vip_arranged">VIP transfer arranged</span></div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-hotel text-navy-700 text-xs w-4"></i> Hilton Bomonti (3 nights)</div>
+            <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 flex items-start gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm mt-0.5"></i>
+              <div>
+                <p class="text-xs font-semibold text-amber-700" data-i18n="dash_days_to_go">46 days to go</p>
+                <p class="text-[11px] text-amber-600" data-i18n="dash_avoid_thinners">Avoid blood thinners 2 weeks before</p>
+              </div>
+            </div>
+            <button class="w-full text-sm font-semibold text-navy-700 hover:text-navy-900 border border-navy-100 hover:border-navy-200 py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-message text-xs"></i> <span data-i18n="dash_message_clinic">Message Clinic</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SAVED CLINICS -->
+        <div class="card p-4 fade-up">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-bold text-navy-900 text-sm flex items-center gap-2"><i class="fa-solid fa-heart text-red-400 text-sm"></i> <span data-i18n="dash_saved">Saved Clinics</span></h2>
+            <a href="index.html" class="text-xs text-navy-700 font-semibold hover:underline" data-i18n="dash_browse_all">Browse All</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="saved-card p-3 flex items-center gap-3 border border-gray-50">
+              <div class="w-10 h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold text-gray-800 truncate">Estepera Medical</p>
+                <p class="text-xs text-gray-400">Istanbul · 4.9 ⭐</p>
+              </div>
+              <button class="text-red-400 hover:text-red-500 transition"><i class="fa-solid fa-heart text-sm"></i></button>
+            </div>
+            <div class="saved-card p-3 flex items-center gap-3 border border-gray-50">
+              <div class="w-10 h-10 bg-gradient-to-br from-teal-800 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold text-gray-800 truncate">Dent Élite Budapest</p>
+                <p class="text-xs text-gray-400">Budapest · 4.7 ⭐</p>
+              </div>
+              <button class="text-red-400 hover:text-red-500 transition"><i class="fa-solid fa-heart text-sm"></i></button>
+            </div>
+            <div class="saved-card p-3 flex items-center gap-3 border border-gray-50">
+              <div class="w-10 h-10 bg-gradient-to-br from-indigo-800 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold text-gray-800 truncate">VisionCare Praha</p>
+                <p class="text-xs text-gray-400">Prague · 4.8 ⭐</p>
+              </div>
+              <button class="text-red-400 hover:text-red-500 transition"><i class="fa-solid fa-heart text-sm"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- UK SUPPORT -->
+        <div class="card p-4 fade-up" style="background:linear-gradient(135deg,#0A1F6B,#0F2D96);">
+          <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1" data-i18n="dash_need_help">Need Help?</p>
+          <p class="text-white font-bold text-sm mb-1" data-i18n="dash_support_team">UK Support Team</p>
+          <p class="text-blue-200 text-xs mb-3" data-i18n="dash_support_hours">Available Mon–Fri, 9am–6pm GMT</p>
+          <div class="flex flex-col gap-2">
+            <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-2.5 rounded-xl border border-white/10 transition w-full">
+              <i class="fa-solid fa-phone text-xs"></i> Call: 0800 123 4567
+            </button>
+            <button class="flex items-center gap-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 text-xs font-semibold px-3 py-2.5 rounded-xl border border-emerald-400/20 transition w-full">
+              <i class="fa-brands fa-whatsapp text-sm"></i> <span data-i18n="dash_whatsapp">WhatsApp Us</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /right -->
+    </div><!-- /grid -->
+  </main>
+</div>
+
+<script src="i18n.js"></script>
+<script>
+  // ── Session check ──
+  document.addEventListener('DOMContentLoaded', async () => {
+    let session = null;
+    if (window.MR && MR.supabase) {
+      session = await MR.supabase.getSimpleSession();
+    }
+    if (!session) {
+      session = JSON.parse(localStorage.getItem('mr_session') || 'null');
+    }
+    
+    if (!session || !session.loggedIn) {
+      window.location.href = 'auth.html';
+      return;
+    }
+    
+    const name = session.name || 'User';
+    const email = session.email || '';
+    const initial = name[0] || '?';
+    const el = id => document.getElementById(id);
+    
+    if(el('sidebar-avatar')) el('sidebar-avatar').textContent = initial;
+    if(el('sidebar-name')) el('sidebar-name').textContent = name;
+    if(el('sidebar-email')) el('sidebar-email').textContent = email;
+    
+    // Greeting - use i18n if available
+    const hour = new Date().getHours();
+    const lang = localStorage.getItem('mediroute-lang') || 'en';
+    const dict = (window.MEDIROUTE_I18N && window.MEDIROUTE_I18N[lang]) || {};
+    const greetKey = hour < 12 ? 'dash_good_morning' : hour < 18 ? 'dash_good_afternoon' : 'dash_good_evening';
+    const greet = dict[greetKey] || (hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening');
+    
+    if(el('greeting')) el('greeting').textContent = greet + ', ' + name.split(' ')[0] + ' 👋';
+  });
+
+  async function patientLogout(){
+    if (window.MR && MR.supabase) await MR.supabase.signOut();
+    localStorage.removeItem('mr_session');
+    window.location.href = 'auth.html';
+  }
+  function acceptQuote(btn) {
+    const card = btn.closest('.quote-card');
+    const badge = card.querySelector('.status-badge');
+    badge.className = 'status-badge status-confirmed';
+    badge.innerHTML = '<i class="fa-solid fa-circle-check text-[10px]"></i> Accepted';
+    btn.textContent = '✓ Accepted';
+    btn.disabled = true;
+    btn.className = 'text-xs font-semibold text-emerald-600 cursor-default';
+  }
+</script>
+<script src="seo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

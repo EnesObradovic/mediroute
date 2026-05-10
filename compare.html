@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Compare Clinics | MediRoute</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="compare.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="compare.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="compare.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="compare.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="compare.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="compare.html?lang=en"/>
+  <meta name="description" content="Compare top hair transplant and aesthetic clinics side by side. Prices, reviews, inclusions and accreditations — all in one table."/>
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F1F5FB;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .compare-table{width:100%;border-collapse:separate;border-spacing:0;}
+    .col-label{width:200px;min-width:180px;}
+    .col-clinic{width:calc((100% - 200px)/3);}
+    .th-clinic{vertical-align:top;position:sticky;top:64px;z-index:20;}
+    .clinic-col-best{background:linear-gradient(180deg,#EEF3FF,#F8FAFF);}
+    .best-tag{background:linear-gradient(135deg,#FBBF24,#F59E0B);color:#fff;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:4px;}
+    .row-label{background:#fff;font-size:.8rem;font-weight:600;color:#64748B;padding:14px 16px;border-bottom:1px solid #F1F5F9;vertical-align:middle;}
+    .row-label.section-header{background:#F8FAFF;font-size:.7rem;font-weight:800;color:#0F2D96;text-transform:uppercase;letter-spacing:.06em;padding:10px 16px;border-bottom:1px solid #E1E8FF;}
+    .cell{padding:14px 12px;border-bottom:1px solid #F1F5F9;vertical-align:middle;text-align:center;font-size:.82rem;background:#fff;}
+    .cell-best{background:#F0F4FF;}
+    .cell-section{background:#F8FAFF;border-bottom:1px solid #E1E8FF;}
+    .cell-best.cell-section{background:#EEF3FF;}
+    .tick{color:#059669;font-size:.95rem;}
+    .cross{color:#CBD5E1;font-size:.95rem;}
+    .star-row{color:#FBBF24;font-size:.75rem;letter-spacing:1px;}
+    .price-main{font-size:1.3rem;font-weight:800;color:#0A1F6B;}
+    .price-sub{font-size:.7rem;color:#94A3B8;}
+    .badge-sm{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;display:inline-block;}
+    .score-bar{height:6px;border-radius:3px;background:#E2E8F0;margin-top:4px;}
+    .score-fill{height:100%;border-radius:3px;}
+    .btn-cta{background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;color:#fff;font-weight:700;padding:.65rem 1rem;font-size:.8rem;transition:all .2s;border:none;cursor:pointer;white-space:nowrap;}
+    .btn-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(5,150,105,.35);}
+    .btn-outline{border:1.5px solid #E2E8F0;border-radius:12px;background:#fff;font-weight:600;padding:.6rem .9rem;font-size:.78rem;color:#374151;transition:all .2s;cursor:pointer;}
+    .btn-outline:hover{border-color:#0F2D96;color:#0F2D96;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .4s ease both;}
+    .clinic-header-card{border-radius:16px 16px 0 0;overflow:hidden;}
+    .remove-btn{background:rgba(255,255,255,.15);border:none;color:rgba(255,255,255,.7);border-radius:8px;padding:3px 8px;font-size:.7rem;cursor:pointer;transition:.15s;}
+    .remove-btn:hover{background:rgba(255,255,255,.25);color:#fff;}
+    .tooltip{position:relative;cursor:help;}
+    .tooltip:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1E293B;color:#fff;font-size:.68rem;padding:4px 8px;border-radius:6px;white-space:nowrap;z-index:99;}
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" class="hover:text-white transition flex items-center gap-1" data-i18n="nav_back"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
+      <a href="about.html" class="hover:text-white transition" data-i18n="nav_about">About Us</a>
+      <a href="blog.html" class="hover:text-white transition" data-i18n="nav_blog">Guides</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="auth.html" class="hidden sm:block text-blue-200 text-sm font-medium hover:text-white transition" data-i18n="cta_signin">Sign In</a>
+      <button onclick="openModal()" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</button>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="hero-bg py-8 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-end justify-between flex-wrap gap-4">
+      <div>
+        <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1">Comparing 3 clinics</p>
+        <h1 class="text-white font-extrabold text-2xl md:text-3xl">FUE Hair Transplant — Istanbul</h1>
+        <p class="text-blue-200 text-sm mt-1">All-inclusive packages · Sorted by MediRoute Score</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-3 py-2 rounded-xl border border-white/15 transition">
+          <i class="fa-solid fa-sliders text-xs"></i> <span data-i18n="cmp_edit">Edit Comparison</span>
+        </button>
+        <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-3 py-2 rounded-xl border border-white/15 transition">
+          <i class="fa-solid fa-share-nodes text-xs"></i> <span data-i18n="cd_share">Share</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+  <!-- Quick info cards above table -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 fade-up">
+    <!-- Clinic 1 quick card -->
+    <div class="bg-navy-50 border-2 border-navy-200 rounded-2xl p-4 relative">
+      <div class="absolute -top-3 left-4"><span class="best-tag"><i class="fa-solid fa-trophy text-[10px]"></i> Best Match</span></div>
+      <div class="flex items-start justify-between mt-1">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-hospital text-white text-sm"></i>
+          </div>
+          <div>
+            <p class="font-bold text-navy-900 text-sm">Estepera Medical</p>
+            <p class="text-xs text-gray-400">Istanbul, Turkey</p>
+          </div>
+        </div>
+        <button onclick="removeClinic(1)" class="text-gray-300 hover:text-red-400 transition text-xs"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="flex items-center justify-between mt-3">
+        <div><p class="text-xl font-extrabold text-navy-900">£1,799</p><p class="text-[11px] text-gray-400">all-inclusive</p></div>
+        <div class="text-right"><div class="text-amber-400 text-sm">★★★★★</div><p class="text-xs text-gray-500">4.9 (2,481)</p></div>
+      </div>
+    </div>
+    <!-- Clinic 2 -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-4">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-teal-800 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-hospital text-white text-sm"></i>
+          </div>
+          <div>
+            <p class="font-bold text-navy-900 text-sm">Dent Élite Budapest</p>
+            <p class="text-xs text-gray-400">Budapest, Hungary</p>
+          </div>
+        </div>
+        <button onclick="removeClinic(2)" class="text-gray-300 hover:text-red-400 transition text-xs"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="flex items-center justify-between mt-3">
+        <div><p class="text-xl font-extrabold text-navy-900">£2,200</p><p class="text-[11px] text-gray-400">all-inclusive</p></div>
+        <div class="text-right"><div class="text-amber-400 text-sm">★★★★½</div><p class="text-xs text-gray-500">4.7 (1,203)</p></div>
+      </div>
+    </div>
+    <!-- Clinic 3 -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-4">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-purple-800 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-hospital text-white text-sm"></i>
+          </div>
+          <div>
+            <p class="font-bold text-navy-900 text-sm">Aura Clinic Istanbul</p>
+            <p class="text-xs text-gray-400">Istanbul, Turkey</p>
+          </div>
+        </div>
+        <button onclick="removeClinic(3)" class="text-gray-300 hover:text-red-400 transition text-xs"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="flex items-center justify-between mt-3">
+        <div><p class="text-xl font-extrabold text-navy-900">£1,599</p><p class="text-[11px] text-gray-400">all-inclusive</p></div>
+        <div class="text-right"><div class="text-amber-400 text-sm">★★★★½</div><p class="text-xs text-gray-500">4.6 (887)</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="bg-white rounded-2xl border border-gray-100 shadow-md overflow-hidden fade-up">
+    <div class="overflow-x-auto">
+      <table class="compare-table">
+        <colgroup>
+          <col class="col-label"/>
+          <col class="col-clinic"/>
+          <col class="col-clinic"/>
+          <col class="col-clinic"/>
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="row-label bg-white border-b border-gray-100 text-left text-xs uppercase tracking-widest text-gray-300 py-3 px-4 font-semibold sticky top-16 z-20">Feature</th>
+            <!-- Clinic 1 - Best -->
+            <th class="th-clinic bg-navy-50 border-b-2 border-navy-200 px-4 py-4 text-center">
+              <div class="flex flex-col items-center gap-1">
+                <span class="best-tag mb-1"><i class="fa-solid fa-trophy text-[10px]"></i> Best Match</span>
+                <div class="w-10 h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-xl flex items-center justify-center"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+                <p class="font-bold text-navy-900 text-sm mt-1">Estepera Medical</p>
+                <p class="text-xs text-gray-400">Istanbul</p>
+              </div>
+            </th>
+            <!-- Clinic 2 -->
+            <th class="th-clinic bg-white border-b border-gray-100 px-4 py-4 text-center">
+              <div class="flex flex-col items-center gap-1">
+                <div class="w-10 h-10 bg-gradient-to-br from-teal-800 to-teal-600 rounded-xl flex items-center justify-center mt-7"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+                <p class="font-bold text-navy-900 text-sm mt-1">Dent Élite Budapest</p>
+                <p class="text-xs text-gray-400">Budapest</p>
+              </div>
+            </th>
+            <!-- Clinic 3 -->
+            <th class="th-clinic bg-white border-b border-gray-100 px-4 py-4 text-center">
+              <div class="flex flex-col items-center gap-1">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-800 to-purple-600 rounded-xl flex items-center justify-center mt-7"><i class="fa-solid fa-hospital text-white text-sm"></i></div>
+                <p class="font-bold text-navy-900 text-sm mt-1">Aura Clinic Istanbul</p>
+                <p class="text-xs text-gray-400">Istanbul</p>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- PRICING -->
+          <tr><td class="row-label section-header" colspan="4" data-i18n="cmp_pricing">💰 Pricing</td></tr>
+          <tr>
+            <td class="row-label" data-i18n="cmp_all_in">All-in Price</td>
+            <td class="cell cell-best"><p class="price-main">£1,799</p><p class="price-sub">avg. per procedure</p></td>
+            <td class="cell"><p class="price-main">£2,200</p><p class="price-sub">avg. per procedure</p></td>
+            <td class="cell"><p class="price-main">£1,599</p><p class="price-sub">avg. per procedure</p></td>
+          </tr>
+          <tr>
+            <td class="row-label" data-i18n="cmp_price_range">Price Range</td>
+            <td class="cell cell-best"><span class="badge-sm bg-navy-50 text-navy-700">£1,499 – £2,499</span></td>
+            <td class="cell"><span class="badge-sm bg-gray-50 text-gray-600">£1,800 – £2,800</span></td>
+            <td class="cell"><span class="badge-sm bg-gray-50 text-gray-600">£1,399 – £2,100</span></td>
+          </tr>
+          <tr>
+            <td class="row-label tooltip" data-tip="Price/1000 grafts ratio">Price per Graft <i class="fa-solid fa-circle-info text-gray-300 text-[10px]"></i></td>
+            <td class="cell cell-best"><span class="font-bold text-emerald-600">£0.56</span></td>
+            <td class="cell"><span class="font-bold text-gray-700">£0.73</span></td>
+            <td class="cell"><span class="font-bold text-emerald-600">£0.52</span></td>
+          </tr>
+
+          <!-- RATINGS -->
+          <tr><td class="row-label section-header" colspan="4" data-i18n="cmp_ratings">⭐ Ratings & Reputation</td></tr>
+          <tr>
+            <td class="row-label">MediRoute Score</td>
+            <td class="cell cell-best">
+              <p class="font-extrabold text-navy-800 text-lg">9.6<span class="text-xs text-gray-400 font-normal">/10</span></p>
+              <div class="score-bar w-24 mx-auto"><div class="score-fill bg-navy-700" style="width:96%"></div></div>
+            </td>
+            <td class="cell">
+              <p class="font-extrabold text-navy-800 text-lg">8.9<span class="text-xs text-gray-400 font-normal">/10</span></p>
+              <div class="score-bar w-24 mx-auto"><div class="score-fill bg-navy-500" style="width:89%"></div></div>
+            </td>
+            <td class="cell">
+              <p class="font-extrabold text-navy-800 text-lg">8.4<span class="text-xs text-gray-400 font-normal">/10</span></p>
+              <div class="score-bar w-24 mx-auto"><div class="score-fill bg-navy-400" style="width:84%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="row-label">Patient Rating</td>
+            <td class="cell cell-best">
+              <div class="text-amber-400 text-sm">★★★★★</div>
+              <p class="text-xs text-gray-500 mt-0.5">4.9 · 2,481 reviews</p>
+            </td>
+            <td class="cell">
+              <div class="text-amber-400 text-sm">★★★★<span class="text-gray-200">★</span></div>
+              <p class="text-xs text-gray-500 mt-0.5">4.7 · 1,203 reviews</p>
+            </td>
+            <td class="cell">
+              <div class="text-amber-400 text-sm">★★★★<span class="text-gray-200">★</span></div>
+              <p class="text-xs text-gray-500 mt-0.5">4.6 · 887 reviews</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="row-label" data-i18n="cd_procedures">Total Procedures</td>
+            <td class="cell cell-best"><span class="font-bold text-navy-800">30,000+</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">18,500+</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">12,000+</span></td>
+          </tr>
+          <tr>
+            <td class="row-label" data-i18n="cmp_years">Years Operating</td>
+            <td class="cell cell-best"><span class="font-bold text-navy-800">15 years</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">11 years</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">8 years</span></td>
+          </tr>
+
+          <!-- ACCREDITATION -->
+          <tr><td class="row-label section-header" colspan="4" data-i18n="cmp_accred_safety">🏅 Accreditation & Safety</td></tr>
+          <tr>
+            <td class="row-label">JCI Accreditation</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-xmark cross text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">Ministry of Health Cert.</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">ISO 9001 Certified</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-xmark cross text-xl"></i></td>
+          </tr>
+
+          <!-- INCLUSIONS -->
+          <tr><td class="row-label section-header" colspan="4" data-i18n="cd_whats_included">🎁 What's Included</td></tr>
+          <tr>
+            <td class="row-label">Hotel (nights)</td>
+            <td class="cell cell-best"><span class="font-bold text-navy-800">3 nights ⭐⭐⭐⭐⭐</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">2 nights ⭐⭐⭐⭐</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">3 nights ⭐⭐⭐⭐</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">VIP Airport Transfer</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">English Coordinator</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-xmark cross text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">PRP Therapy</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-xmark cross text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">Aftercare Kit</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">Post-Op Care</td>
+            <td class="cell cell-best"><span class="badge-sm bg-emerald-50 text-emerald-700">12 months</span></td>
+            <td class="cell"><span class="badge-sm bg-blue-50 text-blue-700">6 months</span></td>
+            <td class="cell"><span class="badge-sm bg-blue-50 text-blue-700">6 months</span></td>
+          </tr>
+
+          <!-- TECHNIQUE -->
+          <tr><td class="row-label section-header" colspan="4" data-i18n="cmp_treatment">🔬 Treatment & Technique</td></tr>
+          <tr>
+            <td class="row-label">FUE Technique</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">DHI / Sapphire</td>
+            <td class="cell cell-best"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-xmark cross text-xl"></i></td>
+            <td class="cell"><i class="fa-solid fa-circle-check tick text-xl"></i></td>
+          </tr>
+          <tr>
+            <td class="row-label">Max Graft Count</td>
+            <td class="cell cell-best"><span class="font-bold text-navy-800">5,000 grafts</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">4,000 grafts</span></td>
+            <td class="cell"><span class="font-bold text-navy-800">4,500 grafts</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Success Rate</td>
+            <td class="cell cell-best">
+              <span class="font-bold text-emerald-600">98%</span>
+              <div class="score-bar w-20 mx-auto mt-1"><div class="score-fill bg-emerald-400" style="width:98%"></div></div>
+            </td>
+            <td class="cell">
+              <span class="font-bold text-navy-700">94%</span>
+              <div class="score-bar w-20 mx-auto mt-1"><div class="score-fill bg-navy-400" style="width:94%"></div></div>
+            </td>
+            <td class="cell">
+              <span class="font-bold text-navy-700">95%</span>
+              <div class="score-bar w-20 mx-auto mt-1"><div class="score-fill bg-navy-400" style="width:95%"></div></div>
+            </td>
+          </tr>
+
+          <!-- CTA ROW -->
+          <tr>
+            <td class="row-label font-bold text-navy-900 border-t-2 border-gray-100">Ready to book?</td>
+            <td class="cell cell-best border-t-2 border-navy-200 py-5">
+              <div class="flex flex-col items-center gap-2">
+                <button class="btn-cta w-full" onclick="openModal()"><i class="fa-solid fa-paper-plane text-xs"></i> Get Free Quote</button>
+                <a href="clinic-detail.html" class="btn-outline w-full text-center">View Full Profile</a>
+              </div>
+            </td>
+            <td class="cell border-t-2 border-gray-100 py-5">
+              <div class="flex flex-col items-center gap-2">
+                <button class="btn-cta w-full" onclick="openModal()"><i class="fa-solid fa-paper-plane text-xs"></i> Get Free Quote</button>
+                <a href="clinic-detail.html" class="btn-outline w-full text-center">View Full Profile</a>
+              </div>
+            </td>
+            <td class="cell border-t-2 border-gray-100 py-5">
+              <div class="flex flex-col items-center gap-2">
+                <button class="btn-cta w-full" onclick="openModal()"><i class="fa-solid fa-paper-plane text-xs"></i> Get Free Quote</button>
+                <a href="clinic-detail.html" class="btn-outline w-full text-center">View Full Profile</a>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VERDICT CARD -->
+  <div class="mt-6 bg-gradient-to-r from-navy-900 to-navy-700 rounded-2xl p-6 flex flex-col md:flex-row gap-5 items-start fade-up">
+    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+      <i class="fa-solid fa-robot text-white text-xl"></i>
+    </div>
+    <div class="flex-1">
+      <p class="text-blue-300 text-xs font-bold uppercase tracking-widest mb-1">MediRoute Verdict</p>
+      <p class="text-white font-bold text-base mb-2">Estepera Medical Centre is our top pick</p>
+      <p class="text-blue-200 text-sm leading-relaxed">Based on JCI accreditation, the highest patient rating (4.9/5), 15+ years of experience, and the most comprehensive package (12-month aftercare, 5-star hotel, PRP included), <strong class="text-white">Estepera offers the best overall value for UK patients</strong> seeking FUE Hair Transplant in Istanbul. Aura Clinic Istanbul is a strong budget alternative.</p>
+    </div>
+    <button onclick="openModal()" class="flex-shrink-0 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white font-bold px-6 py-3 rounded-xl text-sm shadow transition whitespace-nowrap">
+      <i class="fa-solid fa-paper-plane mr-1"></i> Get My Quote
+    </button>
+  </div>
+
+</main>
+
+<!-- LIGHT QUOTE MODAL (re-used from clinic-detail) -->
+<div id="quote-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4" style="background:rgba(6,14,58,.55);backdrop-filter:blur(6px);">
+  <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl p-6 relative" style="animation:modalIn .3s ease;">
+    <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h2 class="font-extrabold text-navy-900 text-lg mb-1">Get Your Free Quotes</h2>
+    <p class="text-gray-400 text-xs mb-4">We'll send your request to all 3 clinics at once</p>
+    <div class="flex flex-col gap-3">
+      <input type="text" placeholder="Full Name" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-navy-700"/>
+      <input type="email" placeholder="Email Address" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-navy-700"/>
+      <input type="tel" placeholder="+44 WhatsApp Number" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-navy-700"/>
+    </div>
+    <button id="cmp-submit" onclick="submitCompare()" class="mt-4 w-full bg-gradient-to-r from-emerald-500 to-emerald-400 text-white font-bold py-3 rounded-xl text-sm transition hover:from-emerald-600 hover:to-emerald-500 flex items-center justify-center gap-2">
+      <i class="fa-solid fa-paper-plane"></i> Send to All 3 Clinics
+    </button>
+    <p class="text-center text-xs text-gray-400 mt-2"><i class="fa-solid fa-shield-halved"></i> All clinics are Ministry of Health approved</p>
+  </div>
+</div>
+
+<footer class="hero-bg mt-12 py-8 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs">© 2024 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="index.html" class="hover:text-white">Back to Search</a>
+      <a href="blog.html" class="hover:text-white">Guides</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+</style>
+<script>
+  function openModal(){document.getElementById('quote-modal').classList.remove('hidden');}
+  function closeModal(){document.getElementById('quote-modal').classList.add('hidden');}
+  document.getElementById('quote-modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  function submitCompare(){
+    const btn=document.getElementById('cmp-submit');
+    btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.disabled=true;
+    setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-circle-check"></i> Sent to 3 Clinics!';btn.className='mt-4 w-full bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2';},1600);
+  }
+  function removeClinic(n){
+    // In a real app this would remove columns; here we show a toast
+    const msg=document.createElement('div');
+    msg.className='fixed bottom-6 left-1/2 -translate-x-1/2 bg-navy-900 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-xl z-50 flex items-center gap-2';
+    msg.innerHTML='<i class="fa-solid fa-circle-info text-blue-300"></i> In the full app, this would remove the clinic from the comparison.';
+    document.body.appendChild(msg);
+    setTimeout(()=>msg.remove(),2800);
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="clinic-data.js"></script>
+<script>
+  // ── Dynamically update compare quick-cards with current clinic data ──
+  (async function() {
+    if (typeof getActiveClinics !== 'function') return;
+    var clinics = await getActiveClinics();
+    if (clinics.length < 3) return;
+    // Sort by rating desc to pick top 3
+    clinics.sort(function(a,b){ return b.rating - a.rating; });
+    var top3 = clinics.slice(0,3);
+    var cards = document.querySelectorAll('.grid.grid-cols-1.md\\:grid-cols-3 > div');
+    top3.forEach(function(c,i){
+      if (!cards[i]) return;
+      var nameEl = cards[i].querySelector('.font-bold.text-navy-900.text-sm');
+      if (nameEl) nameEl.textContent = c.name;
+      var cityEl = cards[i].querySelector('.text-xs.text-gray-400');
+      if (cityEl) cityEl.textContent = c.city + ', ' + c.country;
+      var priceEl = cards[i].querySelector('.text-xl.font-extrabold');
+      if (priceEl) priceEl.textContent = '£' + ((c.price_min!==undefined)?c.price_min:(c.priceMin||0)).toLocaleString();
+      var ratingEl = cards[i].querySelector('.text-xs.text-gray-500');
+      if (ratingEl) ratingEl.textContent = c.rating + ' (' + (c.reviews||0).toLocaleString() + ')';
+    });
+  })();
+</script>
+<script src="i18n.js"></script>
+<script src="seo.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

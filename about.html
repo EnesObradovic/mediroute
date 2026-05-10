@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About MediRoute — Your Trusted Health Travel Partner</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="about.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="about.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="about.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="about.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="about.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="about.html?lang=en"/>
+  <meta name="description" content="MediRoute is an independent UK-registered marketplace connecting patients with verified, JCI-accredited clinics across Europe and Turkey."/>
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .step-card{background:#fff;border-radius:20px;border:1px solid #E8EEF9;padding:2rem;text-align:center;transition:transform .25s,box-shadow .25s;}
+    .step-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(10,31,107,.12);}
+    .value-card{background:#fff;border-radius:18px;border:1px solid #E8EEF9;padding:1.5rem;transition:transform .2s;}
+    .value-card:hover{transform:translateY(-4px);}
+    .stat-block{text-align:center;padding:1.5rem;}
+    .team-card{background:#fff;border-radius:20px;border:1px solid #E8EEF9;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+    .team-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(10,31,107,.1);}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i></div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" data-i18n="nav_home" class="hover:text-white transition">Home</a>
+      <a href="compare.html" data-i18n="nav_compare" class="hover:text-white transition">Compare Clinics</a>
+      <a href="about.html" class="text-white font-semibold border-b-2 border-blue-300 pb-0.5" data-i18n="nav_about">About Us</a>
+      <a href="blog.html" data-i18n="nav_blog" class="hover:text-white transition">Guides / Blog</a>
+      <a href="faq.html" data-i18n="nav_faq" class="hover:text-white transition">FAQ</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <!-- Language -->
+      <div class="lang-dropdown-wrapper">
+        <button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button>
+        <div id="lang-dropdown" class="lang-dropdown-menu"></div>
+      </div>
+      <!-- Settings -->
+      <div class="settings-dropdown-wrapper">
+        <button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button>
+        <div id="settings-dropdown" class="settings-dropdown">
+          <div class="settings-item" onclick="toggleDarkMode()">
+            <span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span>
+            <div class="dark-toggle"></div>
+          </div>
+        </div>
+      </div>
+      <a href="auth.html" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg pt-16 pb-20 px-4 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10 animate-on-scroll">
+    <div class="inline-flex items-center gap-2 bg-blue-800/60 text-blue-200 text-xs font-semibold px-4 py-2 rounded-full mb-5 border border-blue-700">
+      <i class="fa-solid fa-building"></i> <span data-i18n="about_title">About MediRoute</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight" data-i18n="about_hero">Your Trusted Bridge to<br/>World-Class Healthcare</h1>
+    <p class="text-blue-200 text-base md:text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="about_hero_sub">We connect UK patients with verified, JCI-accredited clinics across Europe and Turkey — safely, transparently, and affordably.</p>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="max-w-5xl mx-auto -mt-10 relative z-20 px-4">
+  <div class="bg-white rounded-2xl shadow-lg border border-gray-100 grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 animate-on-scroll">
+    <div class="stat-block">
+      <p class="text-3xl font-extrabold text-navy-900" data-i18n="about_stats_clinics">500+</p>
+      <p class="text-sm text-gray-400" data-i18n="about_stats_clinics_label">Partner Clinics</p>
+    </div>
+    <div class="stat-block">
+      <p class="text-3xl font-extrabold text-navy-900" data-i18n="about_stats_patients">12,000+</p>
+      <p class="text-sm text-gray-400" data-i18n="about_stats_patients_label">UK Patients</p>
+    </div>
+    <div class="stat-block">
+      <p class="text-3xl font-extrabold text-emerald-600" data-i18n="about_stats_satisfaction">98%</p>
+      <p class="text-sm text-gray-400" data-i18n="about_stats_satisfaction_label">Satisfaction Rate</p>
+    </div>
+    <div class="stat-block">
+      <p class="text-3xl font-extrabold text-navy-900" data-i18n="about_stats_countries">8</p>
+      <p class="text-sm text-gray-400" data-i18n="about_stats_countries_label">Countries</p>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section class="max-w-5xl mx-auto px-4 py-16">
+  <div class="text-center mb-12 animate-on-scroll">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-4" data-i18n="about_mission_title">Our Mission</h2>
+    <p class="text-gray-500 text-base leading-relaxed max-w-2xl mx-auto" data-i18n="about_mission">To make high-quality medical care accessible to everyone by removing the barriers of cost, language, and uncertainty from international health travel.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-navy-50/50 py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10 animate-on-scroll">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-3" data-i18n="about_how_title">How It Works</h2>
+      <p class="text-gray-400 text-sm">Three simple steps to your treatment abroad</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="step-card animate-on-scroll delay-1">
+        <div class="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
+        </div>
+        <div class="inline-block bg-navy-100 text-navy-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Step 1</div>
+        <h3 class="font-bold text-navy-900 text-lg mb-2" data-i18n="about_step1_title">Search & Compare</h3>
+        <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_step1">Browse verified clinics, compare prices and read real patient reviews.</p>
+      </div>
+      <div class="step-card animate-on-scroll delay-2">
+        <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <i class="fa-solid fa-file-invoice text-white text-xl"></i>
+        </div>
+        <div class="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Step 2</div>
+        <h3 class="font-bold text-navy-900 text-lg mb-2" data-i18n="about_step2_title">Get Free Quotes</h3>
+        <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_step2">Receive personalised, no-obligation quotes from up to 3 clinics within 2 hours.</p>
+      </div>
+      <div class="step-card animate-on-scroll delay-3">
+        <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <i class="fa-solid fa-plane text-white text-xl"></i>
+        </div>
+        <div class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Step 3</div>
+        <h3 class="font-bold text-navy-900 text-lg mb-2" data-i18n="about_step3_title">Travel with Confidence</h3>
+        <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_step3">Your dedicated UK coordinator handles everything — from booking to aftercare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="max-w-5xl mx-auto px-4 py-16">
+  <div class="text-center mb-10 animate-on-scroll">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-3" data-i18n="about_values_title">Our Values</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="value-card animate-on-scroll delay-1">
+      <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-eye text-navy-700 text-xl"></i></div>
+      <h3 class="font-bold text-navy-900 text-base mb-2" data-i18n="about_val1_title">Transparency</h3>
+      <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_val1">No hidden fees. Every quote is fully itemised.</p>
+    </div>
+    <div class="value-card animate-on-scroll delay-2">
+      <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-shield-halved text-emerald-600 text-xl"></i></div>
+      <h3 class="font-bold text-navy-900 text-base mb-2" data-i18n="about_val2_title">Safety First</h3>
+      <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_val2">Only JCI-accredited and Ministry-verified clinics.</p>
+    </div>
+    <div class="value-card animate-on-scroll delay-3">
+      <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-heart text-amber-500 text-xl"></i></div>
+      <h3 class="font-bold text-navy-900 text-base mb-2" data-i18n="about_val3_title">Patient-Centric</h3>
+      <p class="text-sm text-gray-500 leading-relaxed" data-i18n="about_val3">24/7 UK support throughout your journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="bg-navy-50/50 py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10 animate-on-scroll">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-3" data-i18n="about_team_title">Leadership Team</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="team-card animate-on-scroll delay-1">
+        <div class="h-40 bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-user text-white text-3xl"></i></div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-navy-900">Dr. Emily Carter</h4>
+          <p class="text-xs text-emerald-600 font-semibold mb-2">CEO & Co-Founder</p>
+          <p class="text-xs text-gray-500 leading-relaxed">Former NHS consultant with 15 years in healthcare management. MBA from London Business School.</p>
+        </div>
+      </div>
+      <div class="team-card animate-on-scroll delay-2">
+        <div class="h-40 bg-gradient-to-br from-teal-700 to-teal-500 flex items-center justify-center">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-user text-white text-3xl"></i></div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-navy-900">Ahmet Yılmaz</h4>
+          <p class="text-xs text-emerald-600 font-semibold mb-2">CTO & Co-Founder</p>
+          <p class="text-xs text-gray-500 leading-relaxed">Ex-Booking.com engineer. 10+ years building marketplace platforms at scale.</p>
+        </div>
+      </div>
+      <div class="team-card animate-on-scroll delay-3">
+        <div class="h-40 bg-gradient-to-br from-purple-700 to-purple-500 flex items-center justify-center">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-user text-white text-3xl"></i></div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-navy-900">Dr. Sarah Ahmed</h4>
+          <p class="text-xs text-emerald-600 font-semibold mb-2">Chief Medical Officer</p>
+          <p class="text-xs text-gray-500 leading-relaxed">Board-certified surgeon and JCI quality assessor. Oversees clinic verification process.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-4xl mx-auto px-4 py-16">
+  <div class="bg-gradient-to-r from-navy-900 to-navy-700 rounded-3xl p-8 md:p-12 text-center animate-on-scroll">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Ready to Start Your Journey?</h2>
+    <p class="text-blue-200 text-sm mb-6 max-w-xl mx-auto">Browse our verified partner clinics and get free, personalised quotes in under 2 hours. No obligation, no spam.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 text-white font-bold px-6 py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-500 transition shadow-lg" data-i18n="cta_browse"><i class="fa-solid fa-magnifying-glass"></i> Browse Clinics</a>
+      <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/15 transition" data-i18n="nav_contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="hero-bg py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+        <p class="text-blue-300 text-sm leading-relaxed" data-i18n="footer_desc">Your trusted partner for safe and affordable medical travel from the UK.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_treatments">Treatments</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_hair">Hair Transplant</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_dental">Dental</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_aesthetics">Aesthetics</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3">Pages</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="about.html" class="hover:text-white transition" data-i18n="nav_about">About Us</a></li><li><a href="faq.html" class="hover:text-white transition" data-i18n="nav_faq">FAQ</a></li><li><a href="contact.html" class="hover:text-white transition" data-i18n="nav_contact">Contact</a></li><li><a href="blog.html" class="hover:text-white transition" data-i18n="nav_blog">Guides</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_support">Support</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="contact.html" class="hover:text-white transition">+44 (0) 800 123 4567</a></li><li><a href="contact.html" class="hover:text-white transition">hello@mediroute.co.uk</a></li></ul>
+      </div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-blue-400 text-xs" data-i18n="footer_copy">© 2025 MediRoute Ltd. Registered in England & Wales.</p>
+      <div class="flex items-center gap-4 text-blue-400 text-xs">
+        <a href="blog.html" class="hover:text-white transition" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="blog.html" class="hover:text-white transition" data-i18n="footer_terms">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="seo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

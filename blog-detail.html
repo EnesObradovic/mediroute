@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blog | MediRoute</title>
+  <meta name="description" content="MediRoute blog article — expert health tourism advice."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .tag-pill{display:inline-block;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-right:4px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .5s ease both;}
+    .progress-read{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,#0F2D96,#3B5FDD);z-index:999;transition:width .1s;}
+
+    /* Article body styling — renders Quill HTML beautifully */
+    .article-body{
+      background:#fff;border-radius:20px;border:1px solid #E8EEF9;
+      box-shadow:0 4px 20px rgba(10,31,107,.06);
+      padding:2rem 2.5rem;
+    }
+    .article-body h2{font-size:1.35rem;font-weight:800;color:#0A1F6B;margin-top:2.2rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;padding-bottom:.4rem;border-bottom:2px solid #E1E8FF;}
+    .article-body h3{font-size:1.05rem;font-weight:700;color:#1E3A8A;margin-top:1.6rem;margin-bottom:.5rem;}
+    .article-body p{color:#374151;line-height:1.85;margin-bottom:1rem;font-size:.925rem;}
+    .article-body ul,.article-body ol{margin-bottom:1rem;padding-left:1.4rem;}
+    .article-body ul li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;list-style:none;padding-left:1.3rem;position:relative;}
+    .article-body ul li::before{content:'✓';position:absolute;left:0;color:#059669;font-weight:700;}
+    .article-body ol li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;}
+    .article-body strong{color:#0A1F6B;font-weight:700;}
+    .article-body em{color:#475569;font-style:italic;}
+    .article-body a{color:#0F2D96;font-weight:600;text-decoration:underline;text-decoration-color:rgba(15,45,150,.3);text-underline-offset:2px;transition:color .15s;}
+    .article-body a:hover{color:#1A3AAF;text-decoration-color:#1A3AAF;}
+    .article-body img{max-width:100%;border-radius:14px;margin:1.2rem 0;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+    .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
+    .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
+
+    /* Related card */
+    .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
+
+    /* Author card */
+    .author-card{
+      background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
+      border:1px solid #E1E8FF;border-radius:20px;
+      padding:1.5rem 2rem;margin-top:2rem;
+      display:flex;align-items:center;gap:1.2rem;
+    }
+    .author-avatar{
+      width:72px;height:72px;border-radius:50%;
+      background:linear-gradient(135deg,#0F2D96,#3B5FDD);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;overflow:hidden;
+      border:3px solid #fff;box-shadow:0 4px 14px rgba(15,45,150,.2);
+    }
+    .author-avatar img{width:100%;height:100%;object-fit:cover;}
+    .author-avatar i{color:#fff;font-size:1.6rem;}
+    .author-badge{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;
+      background:#D1FAE5;color:#065F46;
+    }
+
+    /* Skeleton */
+    @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+    .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:800px 100%;animation:shimmer 1.5s infinite;border-radius:12px;}
+
+    @media(max-width:768px){
+      .article-body{padding:1.2rem 1rem;}
+      .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div id="progress-read" class="progress-read" style="width:0%"></div>
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
+      <a href="compare.html" class="hover:text-white transition">Compare Clinics</a>
+      <a href="blog.html" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5">Guides</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO (dynamic) -->
+<section class="hero-bg pt-10 pb-14 px-4 relative overflow-hidden" id="hero-section">
+  <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;"></div>
+  <div class="max-w-4xl mx-auto relative fade-up">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-blue-300 text-xs mb-4">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <a href="blog.html" class="hover:text-white">Guides</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <span class="text-blue-200" id="breadcrumb-title">Loading…</span>
+    </div>
+    <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"></div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">
+      <div class="skeleton" style="height:38px;width:80%;margin-bottom:8px;"></div>
+      <div class="skeleton" style="height:38px;width:55%;"></div>
+    </h1>
+    <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta"></div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+  <!-- Cover image -->
+  <div id="cover-image-wrapper" class="mb-8 rounded-2xl overflow-hidden shadow-lg" style="display:none;">
+    <img id="cover-image" src="" alt="" class="w-full" style="max-height:420px;object-fit:cover;">
+  </div>
+
+  <!-- Article body -->
+  <article class="article-body fade-up" id="article-body">
+    <!-- Skeleton -->
+    <div class="skeleton" style="height:18px;width:100%;margin-bottom:12px"></div>
+    <div class="skeleton" style="height:18px;width:92%;margin-bottom:12px"></div>
+    <div class="skeleton" style="height:18px;width:85%;margin-bottom:20px"></div>
+    <div class="skeleton" style="height:24px;width:60%;margin-bottom:14px"></div>
+    <div class="skeleton" style="height:18px;width:100%;margin-bottom:12px"></div>
+    <div class="skeleton" style="height:18px;width:95%;margin-bottom:12px"></div>
+    <div class="skeleton" style="height:18px;width:78%;margin-bottom:20px"></div>
+    <div class="skeleton" style="height:18px;width:88%;margin-bottom:12px"></div>
+    <div class="skeleton" style="height:18px;width:100%;margin-bottom:12px"></div>
+  </article>
+
+  <!-- Author Profile Card -->
+  <div id="author-card" class="author-card fade-up" style="display:none;">
+    <div class="author-avatar" id="author-avatar">
+      <i class="fa-solid fa-user-doctor"></i>
+    </div>
+    <div>
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        <h3 class="font-extrabold text-navy-900 text-base" id="author-name"></h3>
+        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+      </div>
+      <p class="text-sm font-semibold text-navy-700" id="author-title-text"></p>
+      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty"></p>
+    </div>
+  </div>
+
+  <!-- Share buttons -->
+  <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
+    <span class="text-sm font-bold text-gray-600"><i class="fa-solid fa-share-nodes mr-2 text-navy-700"></i>Bu yazıyı paylaş</span>
+    <div class="flex items-center gap-2">
+      <button onclick="shareTwitter()" class="w-9 h-9 rounded-xl bg-sky-50 hover:bg-sky-100 flex items-center justify-center text-sky-500 transition"><i class="fa-brands fa-x-twitter text-sm"></i></button>
+      <button onclick="shareFacebook()" class="w-9 h-9 rounded-xl bg-blue-50 hover:bg-blue-100 flex items-center justify-center text-blue-600 transition"><i class="fa-brands fa-facebook-f text-sm"></i></button>
+      <button onclick="shareWhatsApp()" class="w-9 h-9 rounded-xl bg-emerald-50 hover:bg-emerald-100 flex items-center justify-center text-emerald-500 transition"><i class="fa-brands fa-whatsapp text-sm"></i></button>
+      <button onclick="copyLink()" class="w-9 h-9 rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-500 transition" title="Linki kopyala"><i class="fa-solid fa-link text-sm"></i></button>
+    </div>
+  </div>
+
+  <!-- Related posts -->
+  <div class="mt-12" id="related-section" style="display:none;">
+    <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid"></div>
+  </div>
+</div>
+
+<!-- Back to Blog CTA -->
+<div class="text-center mb-12">
+  <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-bold text-navy-700 hover:text-navy-900 transition">
+    <i class="fa-solid fa-arrow-left"></i> Tüm Yazılara Dön
+  </a>
+</div>
+
+<footer class="hero-bg py-8 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs">© 2025 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="index.html" class="hover:text-white">Search</a>
+      <a href="compare.html" class="hover:text-white">Compare</a>
+      <a href="auth.html" class="hover:text-white">Sign In</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script>
+  // Get slug from URL
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+
+  function getCatClass(cat) {
+    const c = (cat || '').toLowerCase();
+    if (c === 'guide' || c === 'rehber') return 'bg-blue-900/60 border border-blue-400/30 text-blue-200';
+    if (c === 'tips' || c === 'ipuçları') return 'bg-emerald-900/50 border border-emerald-400/30 text-emerald-200';
+    if (c === 'news' || c === 'haber') return 'bg-amber-900/50 border border-amber-400/30 text-amber-200';
+    return 'bg-white/10 border border-white/20 text-blue-200';
+  }
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
+  async function loadArticle() {
+    if (!slug) {
+      window.location.href = 'blog.html';
+      return;
+    }
+
+    try {
+      const blog = await MR.supabase.getBlogBySlug(slug);
+
+      if (!blog) {
+        document.getElementById('article-body').innerHTML = `
+          <div style="text-align:center;padding:3rem;">
+            <i class="fa-solid fa-ghost" style="font-size:3rem;color:#CBD5E1;margin-bottom:1rem;display:block;"></i>
+            <h2 style="color:#0A1F6B;margin-bottom:.5rem;">Yazı bulunamadı</h2>
+            <p style="color:#6B7280;">Bu slug ile eşleşen bir blog yazısı yok.</p>
+            <a href="blog.html" style="color:#0F2D96;font-weight:700;display:inline-block;margin-top:1rem;">← Tüm yazılara dön</a>
+          </div>
+        `;
+        return;
+      }
+
+      // Set page title
+      document.title = blog.title + ' | MediRoute';
+      document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
+
+      // Hero
+      document.getElementById('breadcrumb-title').textContent = blog.title;
+      document.getElementById('hero-title').innerHTML = blog.title;
+      document.getElementById('hero-tags').innerHTML = `
+        <span class="tag-pill ${getCatClass(blog.category)}">${blog.category}</span>
+      `;
+
+      const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+      const wordCount = stripHtml(blog.content).split(/\s+/).length;
+      const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      document.getElementById('hero-meta').innerHTML = `
+        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
+      `;
+
+      // Cover image
+      if (blog.image_url) {
+        document.getElementById('cover-image').src = blog.image_url;
+        document.getElementById('cover-image').alt = blog.title;
+        document.getElementById('cover-image-wrapper').style.display = 'block';
+      }
+
+      // Article content
+      document.getElementById('article-body').innerHTML = blog.content;
+
+      // Author card
+      const authorName = blog.author || blog.author_title;
+      if (authorName) {
+        const card = document.getElementById('author-card');
+        card.style.display = 'flex';
+        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
+        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        document.getElementById('author-title-text').textContent = blog.author_specialty || '';
+        document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
+        if (blog.author_image) {
+          document.getElementById('author-avatar').innerHTML = `<img src="${blog.author_image}" alt="${fullName}">`;
+        }
+      }
+
+      // Load related posts
+      loadRelated(blog.id);
+
+    } catch (err) {
+      console.error('Blog yükleme hatası:', err);
+      document.getElementById('article-body').innerHTML = '<p style="color:#DC2626;text-align:center;padding:2rem;">Yazı yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p>';
+    }
+  }
+
+  async function loadRelated(currentId) {
+    try {
+      const all = await MR.supabase.getBlogs();
+      const related = all.filter(b => b.id !== currentId && b.status === 'published').slice(0, 3);
+      if (related.length === 0) return;
+
+      document.getElementById('related-section').style.display = 'block';
+      document.getElementById('related-grid').innerHTML = related.map(b => {
+        const date = new Date(b.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
+        const excerpt = stripHtml(b.content).substring(0, 80) + '…';
+        return `
+          <a href="blog-detail.html?slug=${b.slug}" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              ${b.image_url ? `<img src="${b.image_url}" alt="${b.title}" style="width:100%;height:100%;object-fit:cover;">` : '<i class="fa-solid fa-image text-3xl text-blue-200"></i>'}
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">${b.category}</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">${b.title}</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">${excerpt}</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">${date}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+    } catch (e) {
+      console.error('Related posts error:', e);
+    }
+  }
+
+  // Share functions
+  function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(location.href) + '&text=' + encodeURIComponent(document.title), '_blank');
+  }
+  function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank');
+  }
+  function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + location.href), '_blank');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(location.href);
+    const btn = event.currentTarget;
+    btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
+    setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+    document.getElementById('progress-read').style.width = pct + '%';
+  });
+
+  // Init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(loadArticle, 300));
+  } else {
+    setTimeout(loadArticle, 300);
+  }
+</script>
+<script src="i18n.js"></script>
+<script src="seo.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FAQ — Frequently Asked Questions | MediRoute</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="faq.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="faq.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="faq.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="faq.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="faq.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="faq.html?lang=en"/>
+  <meta name="description" content="Answers to the most common questions about medical travel, clinic safety, pricing, and what to expect with MediRoute."/>
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .faq-item{background:#fff;border:1px solid #E8EEF9;border-radius:16px;overflow:hidden;transition:box-shadow .2s;}
+    .faq-item:hover{box-shadow:0 4px 20px rgba(10,31,107,.08);}
+    .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem;cursor:pointer;background:none;border:none;text-align:left;gap:12px;}
+    .faq-btn h3{font-weight:700;font-size:.92rem;color:#0A1F6B;flex:1;}
+    .faq-btn .faq-icon{width:28px;height:28px;border-radius:8px;background:#F0F4FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s,background .25s;color:#0F2D96;font-size:.7rem;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:#0F2D96;color:#fff;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;}
+    .faq-item.open .faq-answer{max-height:400px;padding:0 1.3rem 1.2rem;}
+    .faq-answer p{font-size:.88rem;color:#64748B;line-height:1.75;}
+    .cat-btn{padding:8px 16px;border-radius:12px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .15s;border:1.5px solid #E8EEF9;background:#fff;color:#64748B;}
+    .cat-btn:hover,.cat-btn.active{background:#0A1F6B;color:#fff;border-color:#0A1F6B;}
+  </style>
+  <!-- Schema.org FAQ structured data -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is MediRoute?","acceptedAnswer":{"@type":"Answer","text":"MediRoute is an independent UK-registered marketplace that connects patients with verified international clinics. We are not a clinic — we are your trusted intermediary."}},
+    {"@type":"Question","name":"Is it safe to have surgery abroad?","acceptedAnswer":{"@type":"Answer","text":"Yes, when you choose the right clinic. All clinics on MediRoute are JCI-accredited or Ministry of Health certified."}},
+    {"@type":"Question","name":"How much can I save?","acceptedAnswer":{"@type":"Answer","text":"UK patients typically save 60-80% compared to private UK prices."}},
+    {"@type":"Question","name":"What is included in the package?","acceptedAnswer":{"@type":"Answer","text":"Most all-inclusive packages include the procedure, hotel, VIP transfers, blood tests, aftercare kit, and English-speaking coordinator."}},
+    {"@type":"Question","name":"Do I need travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, we strongly recommend travel insurance that covers medical travel."}},
+    {"@type":"Question","name":"What happens if something goes wrong?","acceptedAnswer":{"@type":"Answer","text":"All our partner clinics offer post-procedure care and revision surgery guarantees."}},
+    {"@type":"Question","name":"How do I choose the right clinic?","acceptedAnswer":{"@type":"Answer","text":"Use our comparison tool. Look for JCI accreditation, verified reviews, and transparent pricing."}},
+    {"@type":"Question","name":"How long do I need to stay?","acceptedAnswer":{"@type":"Answer","text":"Most procedures require 2-4 nights."}}
+  ]}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i></div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" data-i18n="nav_home" class="hover:text-white transition">Home</a>
+      <a href="compare.html" data-i18n="nav_compare" class="hover:text-white transition">Compare Clinics</a>
+      <a href="about.html" data-i18n="nav_about" class="hover:text-white transition">About Us</a>
+      <a href="blog.html" data-i18n="nav_blog" class="hover:text-white transition">Guides / Blog</a>
+      <a href="faq.html" class="text-white font-semibold border-b-2 border-blue-300 pb-0.5" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="auth.html" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg pt-14 pb-16 px-4">
+  <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+    <div class="inline-flex items-center gap-2 bg-blue-800/60 text-blue-200 text-xs font-semibold px-4 py-2 rounded-full mb-5 border border-blue-700">
+      <i class="fa-solid fa-circle-question"></i> FAQ
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4" data-i18n="faq_title">Frequently Asked Questions</h1>
+    <p class="text-blue-200 text-base max-w-xl mx-auto" data-i18n="faq_sub">Everything you need to know about medical travel with MediRoute.</p>
+  </div>
+</section>
+
+<!-- FAQ CONTENT -->
+<div class="max-w-3xl mx-auto px-4 py-12">
+
+  <!-- Category filter -->
+  <div class="flex flex-wrap gap-2 mb-8 animate-on-scroll">
+    <button class="cat-btn active" onclick="filterFAQ('all',this)" data-i18n="common_clear_all">All</button>
+    <button class="cat-btn" onclick="filterFAQ('general',this)" data-i18n="faq_cat_general">General</button>
+    <button class="cat-btn" onclick="filterFAQ('safety',this)" data-i18n="faq_cat_safety">Safety</button>
+    <button class="cat-btn" onclick="filterFAQ('pricing',this)" data-i18n="faq_cat_pricing">Pricing</button>
+    <button class="cat-btn" onclick="filterFAQ('travel',this)" data-i18n="faq_cat_travel">Travel</button>
+    <button class="cat-btn" onclick="filterFAQ('after',this)" data-i18n="faq_cat_after">After Treatment</button>
+  </div>
+
+  <!-- FAQ Items -->
+  <div id="faq-list" class="flex flex-col gap-3">
+    <div class="faq-item animate-on-scroll" data-cat="general">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q1">What is MediRoute?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a1">MediRoute is an independent UK-registered marketplace that connects patients with verified international clinics. We are not a clinic — we are your trusted intermediary.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="safety">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q2">Is it safe to have surgery abroad?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a2">Yes, when you choose the right clinic. All clinics on MediRoute are JCI-accredited or Ministry of Health certified, meeting the same standards as top UK private hospitals.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="pricing">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q3">How much can I save?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a3">UK patients typically save 60-80% compared to private UK prices. A hair transplant averaging £8,000+ in London costs £1,499-£2,499 all-inclusive through our partner clinics.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="pricing">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q4">What is included in the package?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a4">Most all-inclusive packages include: the procedure, 3-5 star hotel (3 nights), VIP airport transfers, pre-op blood tests, aftercare kit, and English-speaking coordinator.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="travel">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q5">Do I need travel insurance?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a5">Yes, we strongly recommend travel insurance that covers medical travel. We can recommend specialist policies for health tourism patients.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="after">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q6">What happens if something goes wrong?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a6">All our partner clinics offer post-procedure care and revision surgery guarantees. Your UK coordinator remains available for 12 months after treatment.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="general">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q7">How do I choose the right clinic?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a7">Use our comparison tool to evaluate clinics side-by-side. Look for JCI accreditation, verified reviews, surgeon credentials, and transparent pricing.</p></div>
+    </div>
+    <div class="faq-item animate-on-scroll" data-cat="travel">
+      <button class="faq-btn" onclick="toggleFAQ(this)"><h3 data-i18n="faq_q8">How long do I need to stay?</h3><span class="faq-icon"><i class="fa-solid fa-plus"></i></span></button>
+      <div class="faq-answer"><p data-i18n="faq_a8">Most procedures require 2-4 nights. Hair transplants typically need 3 nights, dental work 3-5 nights, and aesthetic procedures 4-7 nights.</p></div>
+    </div>
+  </div>
+
+  <!-- Still have questions -->
+  <div class="mt-12 bg-gradient-to-r from-navy-900 to-navy-700 rounded-2xl p-8 text-center animate-on-scroll">
+    <i class="fa-solid fa-headset text-3xl text-blue-300 mb-3"></i>
+    <h3 class="text-xl font-bold text-white mb-2" data-i18n="faq_still">Still have questions?</h3>
+    <p class="text-blue-200 text-sm mb-5" data-i18n="faq_still_sub">Our team is here to help.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 text-white font-bold px-5 py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-500 transition" data-i18n="nav_contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3 rounded-xl border border-white/15 transition" data-i18n="cta_browse"><i class="fa-solid fa-magnifying-glass"></i> Browse Clinics</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="hero-bg py-10 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs" data-i18n="footer_copy">© 2025 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="index.html" class="hover:text-white" data-i18n="nav_home">Home</a>
+      <a href="about.html" class="hover:text-white" data-i18n="nav_about">About</a>
+      <a href="contact.html" class="hover:text-white" data-i18n="nav_contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="seo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+<script>
+function toggleFAQ(btn){
+  const item=btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+function filterFAQ(cat,btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    if(cat==='all'||item.dataset.cat===cat){item.style.display='';}
+    else{item.style.display='none';}
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Clinic Dashboard | MediRoute</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="clinic-dashboard.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="clinic-dashboard.html?lang=tr"/>
+  <meta name="description" content="Manage your incoming patient requests and clinic performance on MediRoute."/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F1F5FB;}
+    .hero-bg{background:linear-gradient(135deg,#064E3B 0%,#065F46 45%,#064E3B 100%);} /* Emerald theme for clinics */
+    .sidebar{width:230px;min-height:100vh;background:linear-gradient(180deg,#064E3B 0%,#022C22 100%);flex-shrink:0;}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;font-size:.84rem;font-weight:500;color:rgba(255,255,255,.6);cursor:pointer;transition:all .18s;text-decoration:none;}
+    .nav-item:hover,.nav-item.active{background:rgba(255,255,255,.12);color:#fff;}
+    .nav-item.active{border-left:3px solid #10B981;}
+    .card{background:#fff;border-radius:18px;border:1px solid #E8EEF9;box-shadow:0 4px 20px rgba(10,31,107,.06);}
+    .metric-card{background:#fff;border-radius:16px;padding:1.2rem;border:1px solid #E8EEF9;box-shadow:0 2px 12px rgba(10,31,107,.05);}
+    .table-row{transition:background .15s;}
+    .table-row:hover{background:#F8FAFC;}
+    .status-badge{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;}
+    .status-new{background:#EFF6FF;color:#1E40AF;}
+    .status-pending{background:#FEF3C7;color:#B45309;}
+    .status-confirmed{background:#E0E7FF;color:#3730A3;}
+    .status-completed{background:#D1FAE5;color:#065F46;}
+  </style>
+</head>
+<body class="flex min-h-screen">
+
+<!-- SIDEBAR -->
+<aside class="sidebar hidden lg:flex flex-col py-6 px-3 gap-1">
+  <div class="flex items-center gap-2 px-3 mb-6">
+    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-stethoscope text-emerald-800"></i></div>
+    <div><p class="text-white font-bold text-base leading-none">Medi<span class="text-emerald-300">Route</span></p><p class="text-emerald-400 text-[10px]">Clinic Portal</p></div>
+  </div>
+  <p class="text-emerald-500 text-[10px] font-bold uppercase tracking-widest px-3 mb-1">Menu</p>
+  <a href="javascript:void(0)" onclick="switchTab('dashboard')" class="nav-item active" id="nav-dashboard"><i class="fa-solid fa-gauge-high w-4 text-center"></i> <span>Dashboard</span></a>
+  <a href="javascript:void(0)" onclick="switchTab('profile')" class="nav-item" id="nav-profile"><i class="fa-solid fa-building w-4 text-center"></i> <span>Clinic Profile</span></a>
+  <a href="javascript:void(0)" class="nav-item"><i class="fa-solid fa-star w-4 text-center"></i> <span>Reviews</span></a>
+  <div class="mt-auto px-3 pt-4 border-t border-white/10">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-xs font-bold" id="sidebar-avatar">C</div>
+      <div><p class="text-white text-xs font-semibold" id="sidebar-name">Demo Clinic</p><p class="text-emerald-400 text-[10px]" id="sidebar-email">clinic@mediroute.com</p></div>
+    </div>
+    <a href="javascript:void(0)" onclick="patientLogout()" class="nav-item mt-2 text-red-300 hover:text-red-200 hover:bg-red-900/20"><i class="fa-solid fa-right-from-bracket w-4 text-center"></i> <span>Sign Out</span></a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
+
+  <!-- Header -->
+  <header class="hero-bg px-6 py-4 flex items-center justify-between sticky top-0 z-10 shadow-md">
+    <div>
+      <p class="text-emerald-200 text-xs font-medium" id="header-date">Today</p>
+      <h1 class="text-white font-bold text-lg" id="greeting">Welcome to Provider Dashboard 👋</h1>
+    </div>
+    <div class="flex items-center gap-3">
+      <!-- Clinic Selector (Demo) -->
+      <div class="bg-white/10 rounded-xl px-3 py-2 border border-white/10 flex items-center gap-2" title="Demo purpose: Switch clinic context">
+        <i class="fa-solid fa-building text-emerald-200 text-xs"></i>
+        <select id="clinic-selector" class="bg-transparent text-white text-xs font-semibold focus:outline-none appearance-none cursor-pointer" onchange="loadClinicData()">
+          <option value="SmileLine Antalya" class="text-gray-800">SmileLine Antalya</option>
+          <option value="Estepera Medical" class="text-gray-800">Estepera Medical</option>
+          <option value="Dent Élite Budapest" class="text-gray-800">Dent Élite Budapest</option>
+          <option value="VisionCare Praha" class="text-gray-800">VisionCare Praha</option>
+          <option value="Slim & Health Antalya" class="text-gray-800">Slim & Health Antalya</option>
+        </select>
+        <i class="fa-solid fa-chevron-down text-[10px] text-emerald-300"></i>
+      </div>
+
+      <div class="relative">
+        <button class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-white transition border border-white/10">
+          <i class="fa-solid fa-bell text-sm"></i>
+        </button>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] text-white font-bold flex items-center justify-center" id="notification-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="p-6 max-w-7xl mx-auto w-full">
+    
+    <!-- DASHBOARD TAB -->
+    <div id="tab-dashboard" class="tab-content active">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div class="metric-card">
+        <div class="flex justify-between items-start mb-2">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600"><i class="fa-solid fa-users text-lg"></i></div>
+          <span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded-lg">+12%</span>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Total Leads</p>
+        <h3 class="text-2xl font-black text-navy-900" id="m-total">0</h3>
+      </div>
+      <div class="metric-card">
+        <div class="flex justify-between items-start mb-2">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600"><i class="fa-solid fa-hourglass-half text-lg"></i></div>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Pending Approval</p>
+        <h3 class="text-2xl font-black text-navy-900" id="m-pending">0</h3>
+      </div>
+      <div class="metric-card">
+        <div class="flex justify-between items-start mb-2">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i></div>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Completed</p>
+        <h3 class="text-2xl font-black text-navy-900" id="m-completed">0</h3>
+      </div>
+      <div class="metric-card">
+        <div class="flex justify-between items-start mb-2">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600"><i class="fa-solid fa-chart-line text-lg"></i></div>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Est. Revenue</p>
+        <h3 class="text-2xl font-black text-navy-900" id="m-revenue">£0</h3>
+      </div>
+    </div>
+
+    <!-- Leads Table -->
+    <div class="card p-0 overflow-hidden fade-up" style="animation-delay: 0.1s;">
+      <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-white">
+        <div>
+          <h2 class="text-lg font-bold text-navy-900">Patient Requests</h2>
+          <p class="text-xs text-gray-500 mt-1">Manage incoming leads for your clinic</p>
+        </div>
+        <button class="bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2" onclick="loadClinicData()">
+          <i class="fa-solid fa-rotate-right"></i> Refresh
+        </button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-100">
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider">Patient</th>
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider">Contact</th>
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider">Treatment</th>
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider">Date</th>
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider">Status</th>
+              <th class="px-5 py-3 text-xs font-bold text-gray-400 uppercase tracking-wider text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody id="clinic-leads-table" class="bg-white">
+            <tr><td colspan="6" class="p-10 text-center text-gray-400 text-sm"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading leads...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    <!-- END DASHBOARD TAB -->
+
+    <!-- PROFILE TAB -->
+    <div id="tab-profile" class="tab-content hidden">
+      <div class="card p-6 fade-up">
+        <h2 class="text-xl font-bold text-navy-900 mb-1">Clinic Profile</h2>
+        <p class="text-xs text-gray-500 mb-6">Update your clinic's public information. Changes will be reflected instantly on the marketplace.</p>
+        
+        <form id="profile-form" onsubmit="saveProfile(event)">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Clinic Name</label>
+              <input type="text" id="cp-name" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm bg-gray-50 text-gray-500 outline-none cursor-not-allowed" disabled/>
+              <p class="text-[10px] text-gray-400 mt-1">Contact support to change your verified clinic name.</p>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">City & Country</label>
+              <input type="text" id="cp-location" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="e.g. Antalya, Turkey" required/>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Minimum Price (£)</label>
+              <input type="number" id="cp-min" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition"/>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Maximum Price (£)</label>
+              <input type="number" id="cp-max" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition"/>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Offered Treatments (comma separated)</label>
+              <input type="text" id="cp-treatments" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="e.g. Hair Transplant, Dental Implants, Rhinoplasty"/>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">About the Clinic</label>
+              <textarea id="cp-desc" rows="4" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Write a brief description..."></textarea>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">JCI Accreditation</label>
+              <select id="cp-jci" class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition">
+                <option value="yes">Yes, Accredited</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-end pt-4 border-t border-gray-100">
+            <button type="submit" id="cp-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-xl transition flex items-center gap-2">
+              <i class="fa-solid fa-save"></i> Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END PROFILE TAB -->
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script>
+  const STATUS_LABELS = {
+    'new': { label: 'New Request', cls: 'status-new' },
+    'pending': { label: 'Contacted', cls: 'status-pending' },
+    'confirmed': { label: 'Booked', cls: 'status-confirmed' },
+    'completed': { label: 'Completed', cls: 'status-completed' }
+  };
+
+  // ── Session & UI Init ──
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Set date
+    document.getElementById('header-date').textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+    // Ensure session exists
+    let session = null;
+    if (window.MR && MR.supabase) {
+      session = await MR.supabase.getSimpleSession();
+    }
+    if (!session) session = JSON.parse(localStorage.getItem('mr_session') || 'null');
+    
+    if (session && session.loggedIn) {
+      const name = session.name || 'Provider';
+      document.getElementById('sidebar-name').textContent = name;
+      document.getElementById('sidebar-email').textContent = session.email || '';
+      document.getElementById('sidebar-avatar').textContent = name[0];
+    } else {
+      window.location.href = 'auth.html';
+      return;
+    }
+
+    loadClinicData();
+  });
+
+  // ── Load Leads for Clinic ──
+  async function loadClinicData() {
+    const tbody = document.getElementById('clinic-leads-table');
+    tbody.innerHTML = '<tr><td colspan="6" class="p-10 text-center text-gray-400 text-sm"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading leads...</td></tr>';
+
+    const selectedClinic = document.getElementById('clinic-selector').value;
+
+    let leads = [];
+    if (window.MR && MR.supabase) {
+      leads = await MR.supabase.getLeads(); // For MVP demo, fetch all and filter client-side. In production, pass { clinic: selectedClinic } to query.
+    }
+    
+    // Filter by selected clinic
+    const myLeads = leads.filter(l => l.clinic === selectedClinic);
+
+    // Sort newest first
+    myLeads.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+
+    // Update metrics
+    document.getElementById('m-total').textContent = myLeads.length;
+    document.getElementById('m-pending').textContent = myLeads.filter(l => l.status === 'pending' || l.status === 'new').length;
+    const completed = myLeads.filter(l => l.status === 'completed' || l.status === 'confirmed').length;
+    document.getElementById('m-completed').textContent = completed;
+    document.getElementById('m-revenue').textContent = '£' + (completed * 2500).toLocaleString(); // Estimated £2500 per completed lead
+
+    document.getElementById('notification-count').textContent = myLeads.filter(l => l.status === 'new').length;
+
+    // Render table
+    if (myLeads.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="p-10 text-center text-gray-400 text-sm"><i class="fa-solid fa-inbox text-3xl text-gray-200 mb-3 block"></i> No patient requests yet.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = myLeads.map(l => {
+      const st = STATUS_LABELS[l.status] || STATUS_LABELS['new'];
+      const date = new Date(l.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      return `
+        <tr class="table-row">
+          <td class="px-5 py-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 text-xs font-bold flex-shrink-0">${l.name[0]}</div>
+              <div>
+                <p class="font-bold text-navy-900 text-sm">${l.name}</p>
+                <p class="text-xs text-gray-500">${l.city || 'Unknown'}</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-5 py-4">
+            <p class="text-sm text-gray-700"><i class="fa-solid fa-envelope text-gray-400 text-[10px] w-3"></i> ${l.email}</p>
+            <p class="text-xs text-gray-500 mt-0.5"><i class="fa-solid fa-phone text-gray-400 text-[10px] w-3"></i> ${l.phone}</p>
+          </td>
+          <td class="px-5 py-4 text-sm font-semibold text-gray-700">${l.treatment}</td>
+          <td class="px-5 py-4 text-xs text-gray-500">${date}</td>
+          <td class="px-5 py-4"><span class="status-badge ${st.cls}">${st.label}</span></td>
+          <td class="px-5 py-4 text-center">
+            ${l.status === 'new' ? `<button onclick="updateLeadStatus(${l.id}, 'pending')" class="text-xs bg-emerald-50 hover:bg-emerald-100 text-emerald-600 font-bold px-3 py-1.5 rounded-lg transition border border-emerald-200">Mark Contacted</button>` : 
+              l.status === 'pending' ? `<button onclick="updateLeadStatus(${l.id}, 'confirmed')" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold px-3 py-1.5 rounded-lg transition border border-blue-200">Mark Booked</button>` :
+              l.status === 'confirmed' ? `<button onclick="updateLeadStatus(${l.id}, 'completed')" class="text-xs bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold px-3 py-1.5 rounded-lg transition border border-gray-200">Complete</button>` :
+              `<span class="text-xs text-emerald-500 font-bold"><i class="fa-solid fa-check"></i> Done</span>`
+            }
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  // ── Update Lead Status ──
+  async function updateLeadStatus(id, newStatus) {
+    if (window.MR && MR.supabase) {
+      try {
+        await MR.supabase.updateLeadStatus(id, newStatus);
+        loadClinicData(); // refresh table
+      } catch (err) {
+        alert('Hata: ' + err.message);
+      }
+    }
+  }
+
+  // ── Clinic Profile Logic ──
+  let currentClinicId = null;
+
+  async function loadClinicProfile() {
+    const selectedClinic = document.getElementById('clinic-selector').value;
+    document.getElementById('cp-name').value = selectedClinic;
+    document.getElementById('cp-location').value = '';
+    document.getElementById('cp-min').value = '';
+    document.getElementById('cp-max').value = '';
+    document.getElementById('cp-treatments').value = '';
+    document.getElementById('cp-desc').value = '';
+    document.getElementById('cp-jci').value = 'no';
+    currentClinicId = null;
+
+    if (window.MR && MR.supabase) {
+      const clinics = await MR.supabase.getClinics();
+      const clinic = clinics.find(c => c.name === selectedClinic);
+      if (clinic) {
+        currentClinicId = clinic.id;
+        if(clinic.city && clinic.country) document.getElementById('cp-location').value = clinic.city + ', ' + clinic.country;
+        else if(clinic.city) document.getElementById('cp-location').value = clinic.city;
+        
+        document.getElementById('cp-min').value = clinic.price_min || clinic.priceMin || '';
+        document.getElementById('cp-max').value = clinic.price_max || clinic.priceMax || '';
+        document.getElementById('cp-treatments').value = clinic.treatment || clinic.treatments || '';
+        document.getElementById('cp-desc').value = clinic.description || clinic.desc || '';
+        document.getElementById('cp-jci').value = clinic.jci === 'yes' ? 'yes' : 'no';
+      }
+    }
+  }
+
+  async function saveProfile(e) {
+    e.preventDefault();
+    if (!currentClinicId || !window.MR || !MR.supabase) {
+      alert("Bu kliniğin profilini kaydedebilmek için kliniğin veritabanında olması gerekir.");
+      return;
+    }
+
+    const btn = document.getElementById('cp-btn');
+    const ogHtml = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+    btn.disabled = true;
+
+    const locParts = document.getElementById('cp-location').value.split(',');
+    const city = locParts[0] ? locParts[0].trim() : '';
+    const country = locParts[1] ? locParts[1].trim() : '';
+
+    const updates = {
+      city: city,
+      country: country,
+      price_min: parseInt(document.getElementById('cp-min').value) || 0,
+      price_max: parseInt(document.getElementById('cp-max').value) || 0,
+      treatments: document.getElementById('cp-treatments').value,
+      description: document.getElementById('cp-desc').value,
+      jci: document.getElementById('cp-jci').value
+    };
+
+    try {
+      await MR.supabase.updateClinic(currentClinicId, updates);
+      
+      // Toast notification
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 right-6 bg-emerald-600 text-white font-bold px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 z-50 fade-up';
+      toast.innerHTML = '<i class="fa-solid fa-circle-check"></i> Profile updated successfully!';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    } catch (err) {
+      alert("Kayıt hatası: " + err.message);
+    }
+
+    btn.innerHTML = ogHtml;
+    btn.disabled = false;
+  }
+
+  // ── Tab Switching Logic ──
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.remove('hidden');
+    document.getElementById('tab-' + tabId).classList.add('active');
+
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('nav-' + tabId).classList.add('active');
+
+    if (tabId === 'profile') {
+      loadClinicProfile();
+    }
+  }
+
+  // Override loadClinicData to also reload profile if needed
+  const ogLoadClinicData = loadClinicData;
+  loadClinicData = async function() {
+    await ogLoadClinicData();
+    if(document.getElementById('tab-profile').classList.contains('active')){
+      loadClinicProfile();
+    }
+  };
+
+  async function patientLogout(){
+    if (window.MR && MR.supabase) await MR.supabase.signOut();
+    localStorage.removeItem('mr_session');
+    window.location.href = 'auth.html';
+  }
+</script>
+</body>
+</html>

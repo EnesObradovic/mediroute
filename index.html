@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediRoute – Find Your Perfect Clinic Abroad</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="index.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="index.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="index.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="index.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="index.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="index.html?lang=en"/>
+  <meta name="description" content="Search and compare top-rated clinics for hair transplant, dental, and aesthetic treatments. Trusted by thousands of UK patients." />
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="shared.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50:'#F0F4FF', 100:'#E1E8FF', 200:'#C3D1FF', 300:'#91ACFF', 400:'#5C7EFF', 500:'#3B5FDD', 600:'#2548C8', 700:'#1A3AAF', 800:'#0F2D96', 900:'#0A1F6B', 950:'#060E3A' },
+          },
+          fontFamily: { inter: ['Inter','sans-serif'] },
+          boxShadow: { card:'0 4px 24px rgba(30,58,138,0.08)', 'card-hover':'0 8px 40px rgba(30,58,138,0.18)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    /* ── Stars: larger + vivid gold ── */
+    .star-filled { color: #FBBF24; filter: drop-shadow(0 0 2px rgba(251,191,36,0.5)); }
+    .star-empty  { color: #CBD5E1; }
+    /* ── Badges ── */
+    .badge-transfer { background: linear-gradient(135deg,#DBEAFE,#EFF6FF); color:#0A1F6B; }
+    .badge-hotel    { background: linear-gradient(135deg,#D1FAE5,#ECFDF5); color:#065F46; }
+    .badge-jci      { background: linear-gradient(135deg,#FEF3C7,#FFFBEB); color:#92400E; }
+    /* ── Hero / navbar: deep slate-navy ── */
+    .hero-bg { background: linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%); }
+    .search-card { backdrop-filter: blur(10px); }
+    /* ── Card hover: stronger lift + dramatic shadow ── */
+    .clinic-card { transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s ease; }
+    .clinic-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(10,31,107,0.22), 0 4px 16px rgba(10,31,107,0.12); }
+    .filter-checkbox { accent-color: #0F2D96; }
+    /* ── Primary CTA button (navbar search etc.) ── */
+    .btn-primary { background: linear-gradient(135deg,#0F2D96,#1A3AAF); transition: all .2s; }
+    .btn-primary:hover { background: linear-gradient(135deg,#0A1F6B,#0F2D96); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(10,31,107,0.45); }
+    /* ── View Details CTA: emerald green for contrast ── */
+    .btn-cta { background: linear-gradient(135deg,#059669,#10B981); transition: all .22s ease; border-radius: 14px; }
+    .btn-cta:hover { background: linear-gradient(135deg,#047857,#059669); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,150,105,0.45); }
+    .tag { display:inline-flex; align-items:center; gap:4px; font-size:.72rem; font-weight:600; padding:2px 8px; border-radius:20px; }
+    .range-track { appearance:none; height:4px; border-radius:4px; background: linear-gradient(to right,#0F2D96 0%,#0F2D96 60%,#E5E7EB 60%,#E5E7EB 100%); }
+    .range-track::-webkit-slider-thumb { appearance:none; width:16px; height:16px; border-radius:50%; background:#0F2D96; cursor:pointer; }
+    .sticky-filter { position: sticky; top: 20px; }
+    @media (max-width:768px) { .sticky-filter { position:static; } }
+    .hero-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .clinic-img-pattern { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='30' r='15' fill='white' opacity='.3'/%3E%3Crect x='30' y='50' width='40' height='45' rx='4' fill='white' opacity='.2'/%3E%3C/svg%3E"); background-size: 80px; background-repeat: no-repeat; background-position: center; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" class="text-white font-semibold" data-i18n="nav_home">Home</a>
+      <a href="compare.html" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
+      <a href="about.html" class="hover:text-white transition" data-i18n="nav_about">About Us</a>
+      <a href="blog.html" class="hover:text-white transition" data-i18n="nav_blog">Guides / Blog</a>
+      <a href="faq.html" class="hover:text-white transition" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="auth.html" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO / SEARCH SECTION -->
+<section class="hero-bg pt-12 pb-20 px-4 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 hero-pattern"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <div class="inline-flex items-center gap-2 bg-blue-800 bg-opacity-60 text-blue-200 text-xs font-semibold px-4 py-2 rounded-full mb-5 border border-blue-700">
+      <i class="fa-solid fa-shield-halved"></i> <span data-i18n="trust_patients">Trusted by 12,000+ UK Patients</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight" data-i18n="hero_title">Find Your Perfect Clinic <br/><span class="text-blue-300">Abroad – Safely & Affordably</span></h1>
+    <p class="text-blue-200 text-lg mb-10 max-w-2xl mx-auto" data-i18n="hero_sub">Compare verified clinics for hair transplant, dental care and aesthetics. All-inclusive packages with VIP transfer & hotel.</p>
+
+    <!-- SEARCH BAR CARD -->
+    <div class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 search-card">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- Treatment Type -->
+        <div class="flex flex-col gap-1 text-left">
+          <label class="text-xs font-semibold text-navy-800 uppercase tracking-wide px-1" data-i18n="idx_treatment_type">Treatment Type</label>
+          <div class="relative">
+            <i class="fa-solid fa-stethoscope absolute left-3 top-1/2 -translate-y-1/2 text-navy-800 text-sm"></i>
+            <select id="treatment-select" class="w-full pl-9 pr-4 py-3 border border-gray-200 rounded-xl text-gray-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-navy-800 focus:border-transparent bg-gray-50 appearance-none">
+              <option value="" data-i18n="idx_all_treatments">All Treatments</option>
+              <option value="hair" data-i18n="treat_hair">Hair Transplant</option>
+              <option value="dental" data-i18n="treat_dental">Dental</option>
+              <option value="aesthetics" data-i18n="treat_aesthetics">Aesthetics</option>
+              <option value="bariatric" data-i18n="treat_bariatric">Bariatric Surgery</option>
+              <option value="eye" data-i18n="treat_eye">Eye Laser</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+          </div>
+        </div>
+        <!-- City -->
+        <div class="flex flex-col gap-1 text-left">
+          <label class="text-xs font-semibold text-navy-800 uppercase tracking-wide px-1" data-i18n="idx_city">City</label>
+          <div class="relative">
+            <i class="fa-solid fa-location-dot absolute left-3 top-1/2 -translate-y-1/2 text-navy-800 text-sm"></i>
+            <select id="city-select" class="w-full pl-9 pr-4 py-3 border border-gray-200 rounded-xl text-gray-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-navy-800 focus:border-transparent bg-gray-50 appearance-none">
+              <option value="" data-i18n="idx_all_cities">All Cities</option>
+              <option value="istanbul">Istanbul, Turkey</option>
+              <option value="antalya">Antalya, Turkey</option>
+              <option value="budapest">Budapest, Hungary</option>
+              <option value="prague">Prague, Czech Republic</option>
+              <option value="warsaw">Warsaw, Poland</option>
+              <option value="cancun">Cancún, Mexico</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+          </div>
+        </div>
+        <!-- Search Button -->
+        <div class="flex flex-col justify-end">
+          <button id="search-btn" class="btn-primary text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md w-full">
+            <i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="idx_search_clinics">Search Clinics</span>
+          </button>
+        </div>
+      </div>
+      <!-- Popular tags -->
+      <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
+        <span class="text-xs text-gray-400 font-medium self-center" data-i18n="idx_popular">Popular:</span>
+        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_hair">💇 Hair Transplant Istanbul</button>
+        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_dental">🦷 Dental Veneers Budapest</button>
+        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_rhino">🌸 Rhinoplasty Turkey</button>
+        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_eye">👁 LASIK Eye Laser</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="bg-white border-b border-gray-100 py-4">
+  <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm text-gray-500">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i><span data-i18n="trust_verified"><strong class="text-gray-700">500+</strong> Verified Clinics</span></div>
+    <div class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i><span data-i18n="trust_rating"><strong class="text-gray-700">4.8/5</strong> Average Rating</span></div>
+    <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-navy-800"></i><span data-i18n="trust_jci"><strong class="text-gray-700">JCI</strong> Accredited Options</span></div>
+    <div class="flex items-center gap-2"><i class="fa-solid fa-plane text-navy-800"></i><span data-i18n="trust_transfer"><strong class="text-gray-700">Free</strong> VIP Transfers</span></div>
+    <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-navy-800"></i><span data-i18n="trust_support"><strong class="text-gray-700">24/7</strong> UK Support</span></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex gap-7">
+
+    <!-- ===== LEFT FILTER SIDEBAR ===== -->
+    <aside class="hidden lg:block w-72 flex-shrink-0">
+      <div class="sticky-filter bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+        <div class="flex items-center justify-between mb-5">
+          <h2 class="font-bold text-navy-800 text-base flex items-center gap-2"><i class="fa-solid fa-sliders"></i> <span data-i18n="common_filter">Filters</span></h2>
+          <button id="clear-filters" class="text-xs text-navy-800 font-semibold hover:underline" data-i18n="common_clear_all">Clear all</button>
+        </div>
+
+        <!-- Inclusions -->
+        <div class="mb-6 pb-6 border-b border-gray-100">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="idx_inclusions">Inclusions</h3>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-transfer" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="badge_transfer">VIP Transfer Included</span><br/><span class="text-xs text-gray-400" data-i18n="idx_transfer_sub">Airport & hotel transfers</span></div>
+            <span class="text-xs bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-full">342</span>
+          </label>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-hotel" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="idx_hotel_incl">Hotel Included</span><br/><span class="text-xs text-gray-400" data-i18n="idx_hotel_sub">4★ or 5★ accommodation</span></div>
+            <span class="text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">218</span>
+          </label>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-translator" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="badge_translator">English Translator</span><br/><span class="text-xs text-gray-400" data-i18n="idx_translator_sub">Dedicated English speaker</span></div>
+            <span class="text-xs bg-purple-100 text-purple-700 font-bold px-2 py-0.5 rounded-full">410</span>
+          </label>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-followup" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="idx_followup">Free Follow-ups</span><br/><span class="text-xs text-gray-400" data-i18n="idx_followup_sub">Post-treatment check-ins</span></div>
+            <span class="text-xs bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">187</span>
+          </label>
+        </div>
+
+        <!-- Accreditation -->
+        <div class="mb-6 pb-6 border-b border-gray-100">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="idx_accreditation">Accreditation</h3>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-jci" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="badge_jci">JCI Accredited</span><br/><span class="text-xs text-gray-400" data-i18n="idx_jci_sub">International safety standard</span></div>
+            <span class="text-xs bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">89</span>
+          </label>
+          <label class="flex items-center gap-3 py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-1 transition">
+            <input type="checkbox" id="f-iso" class="filter-checkbox w-4 h-4 rounded" />
+            <div class="flex-1"><span class="text-sm font-medium text-gray-700" data-i18n="idx_iso">ISO Certified</span><br/><span class="text-xs text-gray-400" data-i18n="idx_iso_sub">Quality management</span></div>
+            <span class="text-xs bg-gray-100 text-gray-600 font-bold px-2 py-0.5 rounded-full">156</span>
+          </label>
+        </div>
+
+        <!-- Rating -->
+        <div class="mb-6 pb-6 border-b border-gray-100">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="idx_min_rating">Minimum Rating</h3>
+          <div class="flex flex-col gap-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="rating" value="4.5" class="filter-checkbox" />
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star-half-stroke star-filled text-sm"></i>
+                <span class="text-sm font-medium text-gray-700 ml-1">4.5+</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="rating" value="4.0" class="filter-checkbox" />
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-empty text-sm"></i>
+                <span class="text-sm font-medium text-gray-700 ml-1">4.0+</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="rating" value="3.5" class="filter-checkbox" />
+              <div class="flex items-center gap-1">
+                <i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star star-filled text-sm"></i><i class="fa-solid fa-star-half-stroke star-filled text-sm"></i><i class="fa-solid fa-star star-empty text-sm"></i>
+                <span class="text-sm font-medium text-gray-700 ml-1">3.5+</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Price Range -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="idx_price_range">Price Range (£)</h3>
+          <input id="price-range" type="range" min="500" max="15000" value="9000" class="range-track w-full cursor-pointer" oninput="document.getElementById('price-val').textContent='£'+this.value.toLocaleString()" />
+          <div class="flex justify-between text-xs text-gray-400 mt-2">
+            <span>£500</span>
+            <span id="price-val" class="text-navy-800 font-bold">£9,000</span>
+            <span>£15,000</span>
+          </div>
+        </div>
+
+        <button class="btn-primary w-full text-white font-semibold py-3 rounded-xl text-sm" data-i18n="idx_apply_filters">Apply Filters</button>
+      </div>
+    </aside>
+
+    <!-- ===== RESULTS AREA ===== -->
+    <div class="flex-1 min-w-0">
+
+      <!-- Results header -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+        <div>
+          <p class="text-gray-500 text-sm"><strong class="text-navy-800 font-bold text-base" id="result-count">0</strong> <span data-i18n="idx_results_text">clinics found matching your criteria</span></p>
+          <div class="flex gap-2 mt-1 flex-wrap" id="active-filter-tags"></div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-sm text-gray-500" data-i18n="common_sort_by">Sort by:</span>
+          <select id="sort-select" class="border border-gray-200 rounded-lg text-sm text-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-navy-800">
+            <option value="" data-i18n="common_best_match">Best Match</option>
+            <option value="rating" data-i18n="idx_highest_rated">Highest Rated</option>
+            <option value="price-asc" data-i18n="common_price_low">Price: Low to High</option>
+            <option value="price-desc" data-i18n="common_price_high">Price: High to Low</option>
+            <option value="reviews" data-i18n="idx_most_reviews">Most Reviews</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ===== CLINIC CARDS ===== -->
+      <div class="flex flex-col gap-5" id="clinic-list">
+        <!-- Dynamically rendered by clinic-data.js -->
+      </div><!-- /cards -->
+      <!-- Pagination -->
+      <div class="flex items-center justify-center gap-2 mt-8">
+        <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg hover:border-navy-800 hover:text-navy-800 transition text-gray-400"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+        <button class="w-10 h-10 flex items-center justify-center bg-navy-800 text-white font-bold rounded-lg shadow">1</button>
+        <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg hover:border-navy-800 hover:text-navy-800 transition text-gray-500 font-medium">2</button>
+        <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg hover:border-navy-800 hover:text-navy-800 transition text-gray-500 font-medium">3</button>
+        <span class="text-gray-400 px-1">…</span>
+        <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg hover:border-navy-800 hover:text-navy-800 transition text-gray-500 font-medium">13</button>
+        <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg hover:border-navy-800 hover:text-navy-800 transition text-gray-400"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+      </div>
+
+    </div><!-- /results -->
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="hero-bg mt-16 py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fa-solid fa-heart-pulse text-white"></i>
+          <span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span>
+        </div>
+        <p class="text-blue-300 text-sm leading-relaxed" data-i18n="footer_desc">Your trusted partner for safe and affordable medical travel from the UK.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_treatments">Treatments</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_hair">Hair Transplant</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_dental">Dental</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_aesthetics">Aesthetics</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_bariatric">Bariatric</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_destinations">Destinations</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="index.html" class="hover:text-white transition">Istanbul</a></li><li><a href="index.html" class="hover:text-white transition">Budapest</a></li><li><a href="index.html" class="hover:text-white transition">Prague</a></li><li><a href="index.html" class="hover:text-white transition">Antalya</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_support">Support</h4>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="blog.html" class="hover:text-white transition" data-i18n="contact_phone_title">UK Helpline</a></li><li><a href="blog.html" class="hover:text-white transition">Patient Guide</a></li><li><a href="blog.html" class="hover:text-white transition">Safety Standards</a></li><li><a href="contact.html" class="hover:text-white transition" data-i18n="nav_contact">Contact Us</a></li></ul>
+      </div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-blue-400 text-xs" data-i18n="footer_copy">© 2024 MediRoute Ltd. Registered in England & Wales. All rights reserved.</p>
+      <div class="flex items-center gap-4 text-blue-400 text-xs">
+        <a href="#" class="hover:text-white transition" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#" class="hover:text-white transition" data-i18n="footer_cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="clinic-data.js"></script>
+<script>
+  // ── Gather current filter state ──
+  function getFilters() {
+    return {
+      treatment: document.getElementById('treatment-select').value,
+      city: document.getElementById('city-select').value,
+      minRating: document.querySelector('input[name="rating"]:checked')?.value || '',
+      maxPrice: document.getElementById('price-range').value,
+      jciOnly: document.getElementById('f-jci')?.checked || false,
+      sortBy: document.getElementById('sort-select').value
+    };
+  }
+
+  // ── Render clinics with current filters ──
+  async function applyFilters() {
+    await renderAllClinics('clinic-list', getFilters());
+    updateFilterTags();
+  }
+
+  // ── Show active filter pills ──
+  function updateFilterTags() {
+    const f = getFilters();
+    const tags = [];
+    if (f.treatment) tags.push({label: document.getElementById('treatment-select').selectedOptions[0].text, icon: 'fa-stethoscope'});
+    if (f.city) tags.push({label: document.getElementById('city-select').selectedOptions[0].text, icon: 'fa-location-dot'});
+    if (f.jciOnly) tags.push({label: 'JCI Accredited', icon: 'fa-certificate'});
+    if (f.minRating) tags.push({label: f.minRating + '+ Stars', icon: 'fa-star'});
+    const el = document.getElementById('active-filter-tags');
+    el.innerHTML = tags.map(t => `<span class="tag badge-transfer"><i class="fa-solid ${t.icon} text-xs"></i> ${t.label}</span>`).join('');
+  }
+
+  // ── Search button ──
+  document.getElementById('search-btn').addEventListener('click', applyFilters);
+
+  // ── Sort change ──
+  document.getElementById('sort-select').addEventListener('change', applyFilters);
+
+  // ── Apply Filters button (sidebar) ──
+  document.querySelector('.btn-primary.w-full')?.addEventListener('click', applyFilters);
+
+  // ── Quick tag click -> populate selects and search ──
+  document.querySelectorAll('.quick-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.textContent.trim().toLowerCase();
+      if(text.includes('hair')) { document.getElementById('treatment-select').value='hair'; document.getElementById('city-select').value='istanbul'; }
+      else if(text.includes('dental')) { document.getElementById('treatment-select').value='dental'; document.getElementById('city-select').value='budapest'; }
+      else if(text.includes('rhinoplasty')) { document.getElementById('treatment-select').value='aesthetics'; document.getElementById('city-select').value='istanbul'; }
+      else if(text.includes('lasik')) { document.getElementById('treatment-select').value='eye'; document.getElementById('city-select').value=''; }
+      applyFilters();
+      document.getElementById('clinic-list').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // ── Clear filters ──
+  document.getElementById('clear-filters').addEventListener('click', () => {
+    document.querySelectorAll('input[type=checkbox]').forEach(c => c.checked=false);
+    document.querySelectorAll('input[type=radio]').forEach(r => r.checked=false);
+    document.getElementById('price-range').value = 15000;
+    document.getElementById('price-val').textContent = '£15,000';
+    document.getElementById('treatment-select').value = '';
+    document.getElementById('city-select').value = '';
+    document.getElementById('sort-select').value = '';
+    applyFilters();
+  });
+
+  // ── Initial render ──
+  document.addEventListener('DOMContentLoaded', () => {
+    applyFilters();
+  });
+</script>
+<script src="quote-modal.js"></script>
+<script src="seo.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

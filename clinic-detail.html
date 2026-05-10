@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Estepera Medical Centre – Hair Transplant Istanbul | MediRoute</title>
+  <!-- hreflang SEO tags -->
+  <link rel="alternate" hreflang="en" href="clinic-detail.html?lang=en"/>
+  <link rel="alternate" hreflang="tr" href="clinic-detail.html?lang=tr"/>
+  <link rel="alternate" hreflang="ar" href="clinic-detail.html?lang=ar"/>
+  <link rel="alternate" hreflang="de" href="clinic-detail.html?lang=de"/>
+  <link rel="alternate" hreflang="fr" href="clinic-detail.html?lang=fr"/>
+  <link rel="alternate" hreflang="x-default" href="clinic-detail.html?lang=en"/>
+  <meta name="description" content="Detailed profile of Estepera Medical Centre. JCI Accredited hair transplant clinic in Istanbul. View doctors, reviews, before & after results and get a free quote."/>
+  <!-- Performance: preconnect to CDN origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { navy: { 50:'#F0F4FF',100:'#E1E8FF',200:'#C3D1FF',300:'#91ACFF',400:'#5C7EFF',500:'#3B5FDD',600:'#2548C8',700:'#1A3AAF',800:'#0F2D96',900:'#0A1F6B',950:'#060E3A' } },
+        fontFamily: { inter: ['Inter','sans-serif'] }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family:'Inter',sans-serif; }
+    .hero-bg { background: linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%); }
+    .star-filled { color:#FBBF24; filter:drop-shadow(0 0 2px rgba(251,191,36,.4)); }
+    .star-empty  { color:#CBD5E1; }
+    .badge { display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px; }
+    .badge-jci   { background:linear-gradient(135deg,#FEF3C7,#FFFBEB);color:#92400E; }
+    .badge-blue  { background:linear-gradient(135deg,#DBEAFE,#EFF6FF);color:#0A1F6B; }
+    .badge-green { background:linear-gradient(135deg,#D1FAE5,#ECFDF5);color:#065F46; }
+    .btn-cta { background:linear-gradient(135deg,#059669,#10B981);border-radius:14px;transition:all .22s; }
+    .btn-cta:hover { background:linear-gradient(135deg,#047857,#059669);transform:translateY(-2px);box-shadow:0 6px 24px rgba(5,150,105,.4); }
+    .btn-navy { background:linear-gradient(135deg,#0F2D96,#1A3AAF);border-radius:12px;transition:all .2s; }
+    .btn-navy:hover { background:linear-gradient(135deg,#0A1F6B,#0F2D96);transform:translateY(-1px); }
+    .sticky-sidebar { position:sticky;top:88px; }
+    .section-card { background:#fff;border-radius:20px;border:1px solid #F1F5F9;box-shadow:0 4px 24px rgba(10,31,107,.06);padding:2rem; }
+    .doctor-card { border-radius:16px;border:1px solid #F1F5F9;overflow:hidden;transition:transform .25s,box-shadow .25s; }
+    .doctor-card:hover { transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,31,107,.13); }
+    .ba-card { border-radius:16px;overflow:hidden;border:1px solid #F1F5F9; }
+    .review-card { background:#F8FAFF;border-radius:16px;border:1px solid #E1E8FF;padding:1.25rem; }
+    .input-field { width:100%;border:1.5px solid #E2E8F0;border-radius:10px;padding:.6rem .875rem;font-size:.85rem;color:#1E293B;outline:none;transition:border .2s; }
+    .input-field:focus { border-color:#0F2D96;box-shadow:0 0 0 3px rgba(15,45,150,.1); }
+    .tab-btn { padding:.5rem 1.25rem;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;color:#64748B;border:1.5px solid transparent; }
+    .tab-btn.active { background:#0A1F6B;color:#fff; }
+    .tab-btn:not(.active):hover { border-color:#0A1F6B;color:#0A1F6B; }
+    .progress-bar { height:6px;border-radius:4px;background:#E2E8F0; }
+    .progress-fill { height:100%;border-radius:4px;background:linear-gradient(90deg,#0F2D96,#3B5FDD); }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { animation:fadeUp .5s ease both; }
+    /* ── MODAL ── */
+    #quote-modal { display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:1rem; }
+    #quote-modal.open { display:flex; }
+    .modal-backdrop { position:absolute;inset:0;background:rgba(6,14,58,.55);backdrop-filter:blur(6px); }
+    .modal-card { position:relative;background:#fff;border-radius:24px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(10,31,107,.35);animation:modalIn .3s cubic-bezier(.22,.68,0,1.2); }
+    @keyframes modalIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+    .modal-step { display:none; }
+    .modal-step.active { display:block; }
+    .step-dot { width:8px;height:8px;border-radius:50%;background:#E2E8F0;transition:all .25s; }
+    .step-dot.done { background:#0F2D96; }
+    .step-dot.active { background:#0F2D96;width:24px;border-radius:4px; }
+    .m-input { width:100%;border:1.5px solid #E2E8F0;border-radius:10px;padding:.6rem .875rem;font-size:.85rem;color:#1E293B;outline:none;transition:border .2s;background:#fff; }
+    .m-input:focus { border-color:#0F2D96;box-shadow:0 0 0 3px rgba(15,45,150,.1); }
+    .drop-zone { border:2.5px dashed #C3D1FF;border-radius:16px;padding:2rem 1rem;text-align:center;cursor:pointer;transition:all .2s;background:#F8FAFF; }
+    .drop-zone.drag-over { border-color:#0F2D96;background:#EEF3FF; }
+    .btn-modal-cta { background:linear-gradient(135deg,#059669,#10B981);border-radius:14px;color:#fff;font-weight:700;padding:.85rem 1.5rem;width:100%;font-size:.95rem;transition:all .22s;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem; }
+    .btn-modal-cta:hover { background:linear-gradient(135deg,#047857,#059669);transform:translateY(-2px);box-shadow:0 8px 24px rgba(5,150,105,.4); }
+    .btn-modal-back { border:1.5px solid #E2E8F0;border-radius:12px;color:#64748B;font-weight:600;padding:.7rem 1.25rem;font-size:.85rem;transition:all .2s;background:#fff;cursor:pointer; }
+    .btn-modal-back:hover { border-color:#0F2D96;color:#0F2D96; }
+    .btn-modal-next { background:linear-gradient(135deg,#0F2D96,#1A3AAF);border-radius:12px;color:#fff;font-weight:700;padding:.7rem 1.5rem;font-size:.85rem;transition:all .2s;border:none;cursor:pointer;display:flex;align-items:center;gap:.4rem; }
+    .btn-modal-next:hover { background:linear-gradient(135deg,#0A1F6B,#0F2D96);transform:translateY(-1px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" class="hover:text-white transition flex items-center gap-1" data-i18n="nav_back"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
+      <a href="compare.html" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
+      <a href="about.html" class="hover:text-white transition" data-i18n="nav_about">About Us</a>
+      <a href="blog.html" class="hover:text-white transition" data-i18n="nav_blog">Guides</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="auth.html" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <button onclick="openModal()" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</button>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="bg-white border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-gray-400">
+    <a href="index.html" class="hover:text-navy-800 transition" data-i18n="cd_home">Home</a>
+    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+    <a href="index.html" class="hover:text-navy-800 transition">Istanbul</a>
+    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+    <a href="index.html" class="hover:text-navy-800 transition">Hair Transplant</a>
+    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+    <span class="text-navy-800 font-semibold" id="bc-clinic-name">Estepera Medical Centre</span>
+  </div>
+</div>
+
+<!-- HERO GALLERY -->
+<section class="relative bg-navy-950 overflow-hidden">
+  <div class="relative h-80 md:h-[420px] w-full flex items-end">
+    <!-- Clinic interior illustration -->
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,#0A1F6B 0%,#1A3AAF 40%,#0A1F6B 100%);">
+      <!-- Decorative interior pattern -->
+      <div class="absolute inset-0 opacity-10" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:30px 30px;"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="grid grid-cols-3 gap-4 px-8 w-full max-w-4xl opacity-30">
+          <div class="h-48 bg-white rounded-2xl flex items-center justify-center"><i class="fa-solid fa-hospital text-8xl text-navy-800"></i></div>
+          <div class="h-48 bg-white rounded-2xl flex items-center justify-center"><i class="fa-solid fa-microscope text-8xl text-navy-800"></i></div>
+          <div class="h-48 bg-white rounded-2xl flex items-center justify-center"><i class="fa-solid fa-bed-pulse text-8xl text-navy-800"></i></div>
+        </div>
+      </div>
+    </div>
+    <!-- Thumbnail tabs placeholder -->
+    <div class="absolute bottom-4 left-4 flex gap-2 z-10">
+      <div class="w-16 h-12 bg-navy-800 bg-opacity-80 rounded-lg border-2 border-white flex items-center justify-center cursor-pointer"><i class="fa-solid fa-hospital text-white text-lg"></i></div>
+      <div class="w-16 h-12 bg-navy-800 bg-opacity-60 rounded-lg border border-white/30 flex items-center justify-center cursor-pointer"><i class="fa-solid fa-microscope text-white/70 text-lg"></i></div>
+      <div class="w-16 h-12 bg-navy-800 bg-opacity-60 rounded-lg border border-white/30 flex items-center justify-center cursor-pointer"><i class="fa-solid fa-bed-pulse text-white/70 text-lg"></i></div>
+      <div class="w-16 h-12 bg-black/40 rounded-lg border border-white/30 flex items-center justify-center cursor-pointer text-white text-xs font-bold">+12</div>
+    </div>
+    <!-- Overlay gradient -->
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent"></div>
+    <!-- Clinic info overlay -->
+    <div class="relative z-10 w-full px-6 md:px-10 pb-7 fade-up">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="badge badge-jci"><i class="fa-solid fa-certificate text-xs"></i> <span data-i18n="cd_jci">JCI Accredited</span></span>
+            <span class="badge badge-green"><i class="fa-solid fa-circle-check text-xs"></i> <span data-i18n="cd_verified">Verified Clinic</span></span>
+            <span class="badge badge-blue"><i class="fa-solid fa-award text-xs"></i> <span data-i18n="cd_top_rated">Top Rated 2024</span></span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-1" id="cd-clinic-name">Estepera Medical Centre</h1>
+          <div class="flex items-center gap-3 text-sm text-blue-200">
+            <span class="flex items-center gap-1" id="cd-location"><i class="fa-solid fa-location-dot text-xs"></i> Şişli, Istanbul, Turkey</span>
+            <span>·</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-building-columns text-xs"></i> Est. 2009</span>
+            <span>·</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-users text-xs"></i> 30,000+ procedures</span>
+          </div>
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex gap-0.5" id="cd-stars">
+              <i class="fa-solid fa-star star-filled"></i><i class="fa-solid fa-star star-filled"></i><i class="fa-solid fa-star star-filled"></i><i class="fa-solid fa-star star-filled"></i><i class="fa-solid fa-star star-filled"></i>
+            </div>
+            <span class="text-white font-bold text-lg" id="cd-rating">4.9</span>
+            <span class="text-blue-300 text-sm" id="cd-reviews">(2,481 verified reviews)</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-2">
+          <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-xl border border-white/20 transition backdrop-blur-sm">
+            <i class="fa-regular fa-heart"></i> <span data-i18n="cd_save">Save</span>
+          </button>
+          <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-xl border border-white/20 transition backdrop-blur-sm">
+            <i class="fa-solid fa-share-nodes"></i> <span data-i18n="cd_share">Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex flex-col lg:flex-row gap-7">
+
+    <!-- ===== LEFT COLUMN (70%) ===== -->
+    <div class="flex-1 min-w-0 flex flex-col gap-6">
+
+      <!-- ABOUT -->
+      <div class="section-card fade-up">
+        <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-navy-800"></i> <span data-i18n="cd_about">About the Clinic</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-3">Established in 2009, <strong class="text-navy-800">Estepera Medical Centre</strong> is one of Istanbul's most trusted hair restoration and aesthetic surgery clinics. Accredited by the Joint Commission International (JCI) — the gold standard in global healthcare — the centre has performed over 30,000 successful procedures for patients from the UK, Europe and beyond.</p>
+        <p class="text-gray-600 leading-relaxed">Our state-of-the-art facility spans 2,400 m², equipped with 6 advanced operating theatres, a private recovery suite, and a dedicated UK patient services team available 7 days a week. Every patient receives a personalised treatment plan and a native English-speaking coordinator from first enquiry through to their 12-month post-operative check-up.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 pt-5 border-t border-gray-100">
+          <div class="text-center"><p class="text-2xl font-extrabold text-navy-800">15+</p><p class="text-xs text-gray-500 mt-1" data-i18n="cd_years_exp">Years Experience</p></div>
+          <div class="text-center"><p class="text-2xl font-extrabold text-navy-800">30k+</p><p class="text-xs text-gray-500 mt-1" data-i18n="cd_procedures">Procedures Done</p></div>
+          <div class="text-center"><p class="text-2xl font-extrabold text-navy-800">98%</p><p class="text-xs text-gray-500 mt-1" data-i18n="cd_satisfaction">Satisfaction Rate</p></div>
+          <div class="text-center"><p class="text-2xl font-extrabold text-navy-800">JCI</p><p class="text-xs text-gray-500 mt-1" data-i18n="cd_accredited">Accredited</p></div>
+        </div>
+      </div>
+
+      <!-- MEDICAL TEAM -->
+      <div class="section-card fade-up">
+        <h2 class="text-xl font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-user-doctor text-navy-800"></i> <span data-i18n="cd_team">Medical Team</span></h2>
+        <p class="text-sm text-gray-400 mb-4">Board-certified specialists performing your procedure</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Doctor 1 -->
+          <div class="doctor-card bg-white">
+            <div class="h-36 bg-gradient-to-br from-navy-900 to-navy-700 flex items-center justify-center relative">
+              <i class="fa-solid fa-user-doctor text-6xl text-white opacity-70"></i>
+              <div class="absolute bottom-2 right-2 bg-amber-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Lead Surgeon</div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-navy-900 text-sm">Dr. Mehmet Aydın</h3>
+              <p class="text-xs text-navy-600 font-medium mt-0.5">Hair Restoration Specialist</p>
+              <div class="flex flex-wrap gap-1 mt-2">
+                <span class="text-[10px] bg-navy-50 text-navy-700 px-2 py-0.5 rounded-full font-medium">FUE</span>
+                <span class="text-[10px] bg-navy-50 text-navy-700 px-2 py-0.5 rounded-full font-medium">DHI</span>
+                <span class="text-[10px] bg-navy-50 text-navy-700 px-2 py-0.5 rounded-full font-medium">PRP</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-briefcase text-[10px]"></i> 18 years experience</p>
+              <p class="text-xs text-gray-400 flex items-center gap-1 mt-1"><i class="fa-solid fa-graduation-cap text-[10px]"></i> Istanbul Univ. School of Medicine</p>
+            </div>
+          </div>
+          <!-- Doctor 2 -->
+          <div class="doctor-card bg-white">
+            <div class="h-36 bg-gradient-to-br from-teal-800 to-teal-600 flex items-center justify-center">
+              <i class="fa-solid fa-user-doctor text-6xl text-white opacity-70"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-navy-900 text-sm">Dr. Elif Şahin</h3>
+              <p class="text-xs text-navy-600 font-medium mt-0.5">Aesthetic & Plastic Surgery</p>
+              <div class="flex flex-wrap gap-1 mt-2">
+                <span class="text-[10px] bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full font-medium">Eyebrow</span>
+                <span class="text-[10px] bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full font-medium">Beard</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-briefcase text-[10px]"></i> 11 years experience</p>
+              <p class="text-xs text-gray-400 flex items-center gap-1 mt-1"><i class="fa-solid fa-graduation-cap text-[10px]"></i> Hacettepe University</p>
+            </div>
+          </div>
+          <!-- Doctor 3 -->
+          <div class="doctor-card bg-white">
+            <div class="h-36 bg-gradient-to-br from-indigo-800 to-indigo-600 flex items-center justify-center">
+              <i class="fa-solid fa-user-doctor text-6xl text-white opacity-70"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-navy-900 text-sm">Dr. Kemal Yılmaz</h3>
+              <p class="text-xs text-navy-600 font-medium mt-0.5">Dermatology & Scalp Analysis</p>
+              <div class="flex flex-wrap gap-1 mt-2">
+                <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-medium">Trichology</span>
+                <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-medium">Laser</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-briefcase text-[10px]"></i> 9 years experience</p>
+              <p class="text-xs text-gray-400 flex items-center gap-1 mt-1"><i class="fa-solid fa-graduation-cap text-[10px]"></i> Ankara University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEFORE & AFTER -->
+      <div class="section-card fade-up">
+        <h2 class="text-xl font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-images text-navy-800"></i> <span data-i18n="cd_ba">Before &amp; After Results</span></h2>
+        <p class="text-sm text-gray-400 mb-4">Real patient results — 12 months post-procedure. Individual results may vary.</p>
+        <div class="flex gap-2 mb-5">
+          <button class="tab-btn active" onclick="setTab(this,'all')" data-i18n="cd_all_cases">All Cases</button>
+          <button class="tab-btn" onclick="setTab(this,'fue')">FUE</button>
+          <button class="tab-btn" onclick="setTab(this,'dhi')">DHI</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- BA Card 1 -->
+          <div class="ba-card bg-white shadow-sm">
+            <div class="grid grid-cols-2 gap-0">
+              <div class="relative h-52 bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center">
+                <div class="absolute inset-0 opacity-20" style="background:repeating-linear-gradient(0deg,#000 0,#000 1px,transparent 0,transparent 8px);"></div>
+                <div class="text-center text-white z-10 p-3">
+                  <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
+                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded">BEFORE</p>
+                </div>
+              </div>
+              <div class="relative h-52 bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center">
+                <div class="text-center text-white z-10 p-3">
+                  <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
+                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded">AFTER</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-gray-50 border-t border-gray-100">
+              <div class="flex items-center justify-between">
+                <div><p class="text-xs font-semibold text-gray-700">Patient: James T., London</p><p class="text-[11px] text-gray-400">FUE · 3,200 grafts · 12 months</p></div>
+                <div class="flex gap-0.5"><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- BA Card 2 -->
+          <div class="ba-card bg-white shadow-sm">
+            <div class="grid grid-cols-2 gap-0">
+              <div class="relative h-52 bg-gradient-to-br from-gray-600 to-gray-400 flex items-center justify-center">
+                <div class="text-center text-white z-10 p-3">
+                  <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
+                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded">BEFORE</p>
+                </div>
+              </div>
+              <div class="relative h-52 bg-gradient-to-br from-teal-800 to-teal-600 flex items-center justify-center">
+                <div class="text-center text-white z-10 p-3">
+                  <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
+                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded">AFTER</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-gray-50 border-t border-gray-100">
+              <div class="flex items-center justify-between">
+                <div><p class="text-xs font-semibold text-gray-700">Patient: Mark R., Manchester</p><p class="text-[11px] text-gray-400">DHI · 2,800 grafts · 10 months</p></div>
+                <div class="flex gap-0.5"><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="w-full mt-4 border-2 border-dashed border-navy-200 text-navy-700 font-semibold text-sm py-3 rounded-xl hover:bg-navy-50 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-images"></i> <span data-i18n="cd_view_all_results">View All 48 Results</span>
+        </button>
+      </div>
+
+      <!-- VERIFIED REVIEWS -->
+      <div class="section-card fade-up">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i> <span data-i18n="cd_reviews">Verified Reviews</span></h2>
+          <div class="text-right">
+            <p class="text-3xl font-extrabold text-navy-800">4.9<span class="text-base font-medium text-gray-400">/5</span></p>
+            <p class="text-xs text-gray-400">2,481 reviews</p>
+          </div>
+        </div>
+        <!-- Rating breakdown -->
+        <div class="flex flex-col gap-1.5 mb-5 pb-5 border-b border-gray-100">
+          <div class="flex items-center gap-3"><span class="text-xs w-10 text-gray-500">5 ★</span><div class="progress-bar flex-1"><div class="progress-fill" style="width:87%"></div></div><span class="text-xs text-gray-500 w-8">87%</span></div>
+          <div class="flex items-center gap-3"><span class="text-xs w-10 text-gray-500">4 ★</span><div class="progress-bar flex-1"><div class="progress-fill" style="width:9%;background:linear-gradient(90deg,#3B5FDD,#818CF8)"></div></div><span class="text-xs text-gray-500 w-8">9%</span></div>
+          <div class="flex items-center gap-3"><span class="text-xs w-10 text-gray-500">3 ★</span><div class="progress-bar flex-1"><div class="progress-fill" style="width:3%;background:linear-gradient(90deg,#6B7280,#9CA3AF)"></div></div><span class="text-xs text-gray-500 w-8">3%</span></div>
+          <div class="flex items-center gap-3"><span class="text-xs w-10 text-gray-500">1-2 ★</span><div class="progress-bar flex-1"><div class="progress-fill" style="width:1%;background:linear-gradient(90deg,#9CA3AF,#D1D5DB)"></div></div><span class="text-xs text-gray-500 w-8">1%</span></div>
+        </div>
+        <!-- Review cards -->
+        <div class="flex flex-col gap-4">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-navy-800 to-navy-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow">J</div>
+                <div>
+                  <p class="font-semibold text-gray-800 text-sm">James T.</p>
+                  <p class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-location-dot text-[10px]"></i> London, UK &nbsp;·&nbsp; <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i> Verified Patient</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-0.5"><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i></div>
+                <span class="text-[11px] text-gray-400 mt-0.5">March 2024</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">"Absolutely life-changing experience. From the moment I landed in Istanbul, Estepera's team handled everything flawlessly. The 5-star hotel was stunning, the transfer was punctual, and Dr. Aydın's results are beyond what I imagined. At 12 months my hair is completely transformed. <strong class="text-navy-700">Worth every penny and more.</strong>"</p>
+            <p class="text-xs text-gray-400 mt-2">Procedure: FUE Hair Transplant · 3,200 grafts</p>
+          </div>
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-teal-700 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow">S</div>
+                <div>
+                  <p class="font-semibold text-gray-800 text-sm">Sarah M.</p>
+                  <p class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-location-dot text-[10px]"></i> Birmingham, UK &nbsp;·&nbsp; <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i> Verified Patient</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-0.5"><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i></div>
+                <span class="text-[11px] text-gray-400 mt-0.5">January 2024</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">"The whole process was seamless — I was so nervous about travelling abroad for a procedure but the MediRoute team and Estepera made me feel completely safe and supported. The English coordinator was fantastic. Results at 8 months are amazing. <strong class="text-navy-700">Already recommended to 4 friends!</strong>"</p>
+            <p class="text-xs text-gray-400 mt-2">Procedure: DHI Hair Transplant · Eyebrow Restoration</p>
+          </div>
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-700 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow">R</div>
+                <div>
+                  <p class="font-semibold text-gray-800 text-sm">Robert K.</p>
+                  <p class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-location-dot text-[10px]"></i> Edinburgh, UK &nbsp;·&nbsp; <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i> Verified Patient</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-0.5"><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star star-filled text-xs"></i><i class="fa-solid fa-star-half-stroke star-filled text-xs"></i></div>
+                <span class="text-[11px] text-gray-400 mt-0.5">November 2023</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">"Top-tier clinic. The facility looked like a luxury private hospital, not what you'd expect from the price point. All-inclusive package meant zero stress — hotel, transfers, meals, everything sorted. Post-op care has been brilliant with regular check-in calls."</p>
+            <p class="text-xs text-gray-400 mt-2">Procedure: FUE Hair Transplant · 2,500 grafts</p>
+          </div>
+        </div>
+        <button class="w-full mt-4 border border-navy-200 text-navy-700 font-semibold text-sm py-3 rounded-xl hover:bg-navy-50 transition" data-i18n="cd_load_more">Load More Reviews (2,478)</button>
+      </div>
+
+    </div><!-- /left column -->
+
+    <!-- ===== RIGHT SIDEBAR (30%) ===== -->
+    <aside class="lg:w-80 xl:w-96 flex-shrink-0">
+      <div class="sticky-sidebar flex flex-col gap-4">
+
+        <!-- Price + Package Card -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden">
+          <!-- Price header -->
+          <div class="hero-bg p-5 text-white">
+            <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1">All-Inclusive Package</p>
+            <div class="flex items-end gap-2">
+              <span class="text-4xl font-extrabold" id="cd-price-min">£1,499</span>
+              <span class="text-blue-300 text-base mb-1" id="cd-price-max">– £2,499</span>
+            </div>
+            <p class="text-blue-200 text-xs mt-1">Price varies by graft count · No hidden fees</p>
+          </div>
+          <!-- Package inclusions -->
+          <div class="p-5">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="cd_whats_included">What's Included</p>
+            <ul class="flex flex-col gap-2.5">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">3 Nights 5-Star Hotel</p><p class="text-xs text-gray-400">Hilton Bomonti or equivalent</p></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">VIP Airport Transfer</p><p class="text-xs text-gray-400">Private Mercedes-class vehicle</p></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">Native English Translator</p><p class="text-xs text-gray-400">Dedicated coordinator throughout</p></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">1 Year Post-Op Care</p><p class="text-xs text-gray-400">Monthly progress check-ins</p></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">PRP Therapy Included</p><p class="text-xs text-gray-400">For faster graft recovery</p></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
+                <div><p class="text-sm font-semibold text-gray-700">Aftercare Kit</p><p class="text-xs text-gray-400">Shampoo, lotion & medications</p></div>
+              </li>
+            </ul>
+            <div class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i>
+              <p class="text-xs text-amber-700 font-medium">Only 3 slots left for May 2025 — book early!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUOTE FORM -->
+        <div id="quote-form" class="bg-white rounded-2xl border border-navy-100 shadow-lg p-5"">
+          <h3 class="text-base font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-paper-plane text-navy-700"></i> <span data-i18n="cd_get_quote">Get a Free Quote</span></h3>
+          <p class="text-xs text-gray-400 mb-4">No obligation · Response within 2 hours</p>
+          <form class="flex flex-col gap-3" onsubmit="handleSubmit(event)">
+            <div>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block">Full Name</label>
+              <input id="q-name" type="text" placeholder="Your full name" class="input-field" required />
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block">Email Address</label>
+              <input id="q-email" type="email" placeholder="your@email.com" class="input-field" required />
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block">Phone (optional)</label>
+              <input id="q-phone" type="tel" placeholder="+44 7xxx xxxxxx" class="input-field" />
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block">Treatment Interested In</label>
+              <select class="input-field appearance-none bg-white">
+                <option>Hair Transplant (FUE)</option>
+                <option>Hair Transplant (DHI)</option>
+                <option>Beard Transplant</option>
+                <option>Eyebrow Restoration</option>
+                <option>PRP Therapy</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block">Message (optional)</label>
+              <textarea rows="2" placeholder="Any questions or requirements..." class="input-field resize-none"></textarea>
+            </div>
+            <button id="q-submit" type="button" onclick="openModal()" class="btn-cta text-white font-bold py-3 px-4 text-sm w-full flex items-center justify-center gap-2 shadow-md">
+              <i class="fa-solid fa-paper-plane"></i> Get a Free Quote
+            </button>
+            <p id="q-success" class="hidden text-center text-emerald-600 font-semibold text-sm py-2 bg-emerald-50 rounded-xl"><i class="fa-solid fa-circle-check mr-1"></i> Sent! We'll reply within 2 hours.</p>
+          </form>
+          <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-100">
+            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-lock text-gray-300"></i> 100% Confidential</div>
+            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-shield-halved text-gray-300"></i> No spam, ever</div>
+          </div>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Why Book via MediRoute?</p>
+          <ul class="flex flex-col gap-2">
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-shield-halved text-navy-700"></i> Price match guarantee</li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-headset text-navy-700"></i> 24/7 UK support line</li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-rotate-left text-navy-700"></i> Free cancellation (7 days)</li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-certificate text-navy-700"></i> Only JCI/accredited clinics</li>
+          </ul>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="hero-bg mt-16 py-10 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-heart-pulse text-white"></i>
+      <span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span>
+    </div>
+    <p class="text-blue-400 text-xs">© 2024 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex items-center gap-4 text-blue-400 text-xs">
+      <a href="blog.html" class="hover:text-white transition">Privacy</a>
+      <a href="blog.html" class="hover:text-white transition">Terms</a>
+      <a href="index.html" class="hover:text-white transition">Back to Search</a>
+      <a href="compare.html" class="hover:text-white transition">Compare</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setTab(el, tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('q-submit');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.classList.add('hidden');
+      document.getElementById('q-success').classList.remove('hidden');
+    }, 1400);
+  }
+</script>
+
+<!-- ============================================================ -->
+<!-- MULTI-STEP QUOTE MODAL                                       -->
+<!-- ============================================================ -->
+<div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-card">
+
+    <!-- Header -->
+    <div class="hero-bg px-6 pt-6 pb-5 rounded-t-3xl">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1">Estepera Medical Centre</p>
+          <h2 id="modal-title" class="text-white font-extrabold text-xl leading-tight">Get Your Free,<br/>No-Obligation Quote</h2>
+          <p class="text-blue-200 text-xs mt-1">Response within 2 hours · No spam, ever</p>
+        </div>
+        <button onclick="closeModal()" class="w-9 h-9 bg-white/15 hover:bg-white/30 rounded-xl flex items-center justify-center text-white transition flex-shrink-0 ml-4" aria-label="Close">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <!-- Step dots -->
+      <div class="flex items-center gap-2 mt-5">
+        <div class="step-dot active" id="dot-1"></div>
+        <div class="step-dot" id="dot-2"></div>
+        <div class="step-dot" id="dot-3"></div>
+        <span class="text-blue-300 text-xs ml-2 font-medium" id="step-label">Step 1 of 3 — Treatment Details</span>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="px-6 py-6">
+
+      <!-- STEP 1: Treatment + Date -->
+      <div class="modal-step active" id="modal-step-1">
+        <div class="flex flex-col gap-4">
+          <div>
+            <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">Which treatment are you interested in?</label>
+            <div class="relative">
+              <i class="fa-solid fa-stethoscope absolute left-3 top-1/2 -translate-y-1/2 text-navy-700 text-sm"></i>
+              <select id="m-treatment" class="m-input pl-9 appearance-none">
+                <option value="">Select a treatment…</option>
+                <option>Hair Transplant (FUE)</option>
+                <option>Hair Transplant (DHI)</option>
+                <option>Beard Transplant</option>
+                <option>Eyebrow Restoration</option>
+                <option>PRP Therapy</option>
+                <option>Aesthetic Surgery</option>
+              </select>
+              <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 text-xs pointer-events-none"></i>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">Estimated travel date</label>
+            <div class="relative">
+              <i class="fa-solid fa-calendar-days absolute left-3 top-1/2 -translate-y-1/2 text-navy-700 text-sm"></i>
+              <input id="m-date" type="month" class="m-input pl-9" min="2025-04" />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Not sure yet? Leave blank — we'll help you choose.</p>
+          </div>
+          <div class="grid grid-cols-3 gap-2 mt-1">
+            <button type="button" onclick="setFlexDate(this,'1-3 months')" class="flex-date-btn border border-gray-200 rounded-xl py-2.5 text-xs font-semibold text-gray-600 hover:border-navy-700 hover:text-navy-700 transition">1–3 months</button>
+            <button type="button" onclick="setFlexDate(this,'3-6 months')" class="flex-date-btn border border-gray-200 rounded-xl py-2.5 text-xs font-semibold text-gray-600 hover:border-navy-700 hover:text-navy-700 transition">3–6 months</button>
+            <button type="button" onclick="setFlexDate(this,'Flexible')" class="flex-date-btn border border-gray-200 rounded-xl py-2.5 text-xs font-semibold text-gray-600 hover:border-navy-700 hover:text-navy-700 transition">Flexible</button>
+          </div>
+        </div>
+        <div class="flex justify-end mt-6">
+          <button class="btn-modal-next" onclick="goToStep(2)">Next <i class="fa-solid fa-arrow-right text-xs"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Photo Upload -->
+      <div class="modal-step" id="modal-step-2">
+        <p class="text-sm font-semibold text-gray-700 mb-1">Upload a photo <span class="text-gray-400 font-normal">(optional)</span></p>
+        <p class="text-xs text-gray-400 mb-4">For a more accurate quote, upload a clear photo of the area you'd like treated. This stays completely private and is only seen by our medical team.</p>
+        <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+          <div id="drop-default">
+            <i class="fa-solid fa-cloud-arrow-up text-navy-300 text-3xl mb-3"></i>
+            <p class="text-sm font-semibold text-navy-800 mb-1">Drag & drop your photo here</p>
+            <p class="text-xs text-gray-400 mb-3">or click to browse · JPG, PNG, HEIC up to 10 MB</p>
+            <span class="inline-flex items-center gap-1 text-xs text-navy-700 font-semibold bg-navy-50 border border-navy-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-paperclip text-[10px]"></i> Choose File</span>
+          </div>
+          <div id="drop-preview" class="hidden">
+            <i class="fa-solid fa-circle-check text-emerald-500 text-3xl mb-2"></i>
+            <p class="text-sm font-semibold text-emerald-700" id="file-name">photo.jpg uploaded</p>
+            <p class="text-xs text-gray-400 mt-1">Click to change</p>
+          </div>
+        </div>
+        <input type="file" id="file-input" accept="image/*" class="hidden" onchange="handleFile(this)"/>
+        <div class="mt-3 p-3 bg-blue-50 rounded-xl flex items-start gap-2 border border-blue-100">
+          <i class="fa-solid fa-lock text-navy-700 text-sm mt-0.5"></i>
+          <p class="text-xs text-navy-700">Your photo is encrypted and shared only with the clinic's lead medical officer. It is never used for marketing.</p>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <button class="btn-modal-back" onclick="goToStep(1)"><i class="fa-solid fa-arrow-left text-xs"></i> Back</button>
+          <button class="btn-modal-next" onclick="goToStep(3)">Next <i class="fa-solid fa-arrow-right text-xs"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Contact Info -->
+      <div class="modal-step" id="modal-step-3">
+        <div class="flex flex-col gap-3">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">First Name</label>
+              <input id="m-fname" type="text" placeholder="James" class="m-input" required />
+            </div>
+            <div>
+              <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">Last Name</label>
+              <input id="m-lname" type="text" placeholder="Taylor" class="m-input" required />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">Email Address</label>
+            <div class="relative">
+              <i class="fa-solid fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-navy-700 text-sm"></i>
+              <input id="m-email" type="email" placeholder="your@email.com" class="m-input pl-9" required />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 block">WhatsApp Number</label>
+            <div class="flex gap-2">
+              <div class="relative flex-shrink-0">
+                <select id="m-country" class="m-input pr-8 pl-3 w-28 appearance-none text-sm">
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+31">🇳🇱 +31</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+39">🇮🇹 +39</option>
+                  <option value="+353">🇮🇪 +353</option>
+                  <option value="+61">🇦🇺 +61</option>
+                  <option value="+90">🇹🇷 +90</option>
+                </select>
+                <i class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-gray-300 text-[10px] pointer-events-none"></i>
+              </div>
+              <div class="relative flex-1">
+                <i class="fa-brands fa-whatsapp absolute left-3 top-1/2 -translate-y-1/2 text-emerald-500 text-base"></i>
+                <input id="m-phone" type="tel" placeholder="7911 123456" class="m-input pl-9" />
+              </div>
+            </div>
+            <p class="text-xs text-gray-400 mt-1">We'll send your quote summary via WhatsApp</p>
+          </div>
+        </div>
+
+        <!-- Trust badge -->
+        <div class="mt-5 p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+          <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow flex-shrink-0 border border-slate-100">
+            <i class="fa-solid fa-shield-halved text-navy-800 text-base"></i>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">All partner clinics on MediRoute are <strong class="text-gray-700">Ministry of Health approved</strong> and JCI audited. Your data is encrypted and never sold.</p>
+        </div>
+
+        <div class="flex items-center justify-between mt-5">
+          <button class="btn-modal-back" onclick="goToStep(2)"><i class="fa-solid fa-arrow-left text-xs"></i> Back</button>
+          <button id="modal-submit" class="btn-modal-cta" style="width:auto;padding:.75rem 1.75rem;" onclick="submitModal()">
+            <i class="fa-solid fa-paper-plane"></i> Get My Free Quote
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="modal-step" id="modal-step-success">
+        <div class="text-center py-6">
+          <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-emerald-100">
+            <i class="fa-solid fa-circle-check text-emerald-500 text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-navy-900 mb-2" data-i18n="cd_quote_sent">Quote Request Sent!</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-1">Our UK team will review your details and respond via email and WhatsApp within <strong class="text-navy-700">2 hours</strong>.</p>
+          <p class="text-gray-400 text-xs mb-6">Check your spam folder if you don't hear from us.</p>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 justify-center bg-emerald-50 rounded-xl p-3 border border-emerald-100">
+              <i class="fa-solid fa-star text-amber-400"></i>
+              <p class="text-xs text-gray-600">While you wait — <a href="#reviews" onclick="closeModal()" class="text-navy-700 font-semibold underline">read what UK patients say</a> about this clinic.</p>
+            </div>
+            <button onclick="closeModal()" class="text-sm font-semibold text-navy-700 hover:underline mt-2">Close & continue browsing</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+  </div><!-- /modal-card -->
+</div><!-- /modal -->
+
+<script>
+  // ── Tab helper ──
+  function setTab(el, tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  // ── Modal state ──
+  let currentStep = 1;
+  const STEP_LABELS = ['','Step 1 of 3 — Treatment Details','Step 2 of 3 — Photo Upload (Optional)','Step 3 of 3 — Your Contact Details'];
+
+  function openModal() {
+    currentStep = 1;
+    applyStep(1);
+    document.getElementById('quote-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('quote-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function goToStep(n) {
+    currentStep = n;
+    applyStep(n);
+    document.querySelector('.modal-card').scrollTop = 0;
+  }
+  function applyStep(n) {
+    document.querySelectorAll('.modal-step').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById('modal-step-'+(n==='success'?'success':n));
+    if(el) el.classList.add('active');
+    [1,2,3].forEach(i => {
+      const d = document.getElementById('dot-'+i);
+      if(!d) return;
+      d.className = 'step-dot' + (i < n ? ' done' : '') + (i === n ? ' active' : '');
+    });
+    const lbl = document.getElementById('step-label');
+    if(lbl && STEP_LABELS[n]) lbl.textContent = STEP_LABELS[n];
+  }
+
+  // ── Flex date buttons ──
+  function setFlexDate(btn, val) {
+    document.querySelectorAll('.flex-date-btn').forEach(b => {
+      b.classList.remove('bg-navy-50','border-navy-700','text-navy-700');
+    });
+    btn.classList.add('bg-navy-50','border-navy-700','text-navy-700');
+  }
+
+  // ── File upload ──
+  function handleFile(input) {
+    if(input.files && input.files[0]) {
+      document.getElementById('file-name').textContent = input.files[0].name + ' uploaded';
+      document.getElementById('drop-default').classList.add('hidden');
+      document.getElementById('drop-preview').classList.remove('hidden');
+    }
+  }
+  const dz = document.getElementById('drop-zone');
+  if(dz) {
+    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+    dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+    dz.addEventListener('drop', e => {
+      e.preventDefault(); dz.classList.remove('drag-over');
+      const f = e.dataTransfer.files[0];
+      if(f) { document.getElementById('file-name').textContent = f.name+' uploaded'; document.getElementById('drop-default').classList.add('hidden'); document.getElementById('drop-preview').classList.remove('hidden'); }
+    });
+  }
+
+  // ── Submit ──
+  function submitModal() {
+    const btn = document.getElementById('modal-submit');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      currentStep = 'success';
+      applyStep('success');
+    }, 1600);
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="clinic-data.js"></script>
+<script>
+  // ── Dynamic Clinic Detail ──
+  (async function() {
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get('id');
+    if (!id) return; // Keep static Estepera content as default
+    if (typeof getClinicById !== 'function') return;
+    var clinic = await getClinicById(id);
+    if (!clinic) return;
+
+    // Update page title
+    document.title = clinic.name + ' | MediRoute';
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.content = clinic.desc || (clinic.name + ' - ' + clinic.city + ', ' + clinic.country);
+
+    // Breadcrumb
+    var bcName = document.getElementById('bc-clinic-name');
+    if (bcName) bcName.textContent = clinic.name;
+
+    // Hero
+    var cdName = document.getElementById('cd-clinic-name');
+    if (cdName) cdName.textContent = clinic.name;
+    var cdLoc = document.getElementById('cd-location');
+    if (cdLoc) cdLoc.innerHTML = '<i class="fa-solid fa-location-dot text-xs"></i> ' + clinic.city + ', ' + clinic.country;
+    var cdRating = document.getElementById('cd-rating');
+    if (cdRating) cdRating.textContent = clinic.rating;
+    var cdReviews = document.getElementById('cd-reviews');
+    if (cdReviews) cdReviews.textContent = '(' + (clinic.reviews||0).toLocaleString() + ' verified reviews)';
+
+    // Stars
+    var cdStars = document.getElementById('cd-stars');
+    if (cdStars && typeof starsHTML === 'function') {
+      cdStars.innerHTML = starsHTML(clinic.rating, 'text-base');
+    }
+
+    // JCI badges
+    var badges = document.querySelectorAll('.badge-jci');
+    if (clinic.jci !== 'yes') {
+      badges.forEach(function(b) { b.style.display = 'none'; });
+    }
+
+    // Price
+    var cdPriceMin = document.getElementById('cd-price-min');
+    if (cdPriceMin) cdPriceMin.textContent = '£' + ((clinic.price_min!==undefined)?clinic.price_min:clinic.priceMin||0).toLocaleString();
+    var cdPriceMax = document.getElementById('cd-price-max');
+    if (cdPriceMax) cdPriceMax.textContent = '– £' + ((clinic.price_max!==undefined)?clinic.price_max:clinic.priceMax||0).toLocaleString();
+  })();
+</script>
+<script src="i18n.js"></script>
+<script src="seo.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

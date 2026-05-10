@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Panel | MediRoute</title>
+  <meta name="robots" content="noindex,nofollow"/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css"/>
+  
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F1F5FB;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .sidebar{width:240px;min-height:100vh;background:linear-gradient(180deg,#0A1F6B 0%,#060E3A 100%);flex-shrink:0;}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;font-size:.84rem;font-weight:500;color:rgba(255,255,255,.6);cursor:pointer;transition:all .18s;text-decoration:none;}
+    .nav-item:hover,.nav-item.active{background:rgba(255,255,255,.12);color:#fff;}
+    .nav-item.active{background:rgba(255,255,255,.18);border-left:3px solid #FBBF24;}
+    .metric-card{background:#fff;border-radius:18px;padding:1.4rem;box-shadow:0 4px 20px rgba(10,31,107,.07);border:1px solid #E8EEF9;}
+    .card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#94A3B8;margin-bottom:.4rem;}
+    .pill{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;}
+    .trend-up{color:#059669;background:#D1FAE5;} .trend-down{color:#DC2626;background:#FEE2E2;}
+    .status-badge{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;}
+    .status-new{background:#EFF6FF;color:#1E40AF;} .status-contacted{background:#FEF3C7;color:#92400E;}
+    .status-confirmed{background:#E0E7FF;color:#3730A3;} .status-completed{background:#D1FAE5;color:#065F46;}
+    .status-cancelled{background:#FEE2E2;color:#991B1B;}
+    .status-active{background:#D1FAE5;color:#065F46;} .status-pending{background:#FEF3C7;color:#92400E;} .status-draft{background:#F1F5F9;color:#64748B;}
+    .source-organic{background:#F0FDF4;color:#166534;border:1px solid #BBF7D0;}
+    .source-paid{background:#FFF7ED;color:#9A3412;border:1px solid #FED7AA;}
+    .source-referral{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE;}
+    .source-direct{background:#FAF5FF;color:#6B21A8;border:1px solid #E9D5FF;}
+    .invoice-tag{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px;background:linear-gradient(135deg,#D1FAE5,#A7F3D0);color:#065F46;border:1px solid #6EE7B7;}
+    .table-row{transition:background .15s;} .table-row:hover{background:#F8FAFF;}
+    select.status-select{border:1.5px solid #E2E8F0;border-radius:8px;padding:4px 28px 4px 8px;font-size:.75rem;font-weight:600;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B7280'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-color:#fff;}
+    .btn-primary{background:linear-gradient(135deg,#0F2D96,#1A3AAF);color:#fff;border-radius:10px;transition:all .2s;border:none;cursor:pointer;}
+    .btn-primary:hover{background:linear-gradient(135deg,#0A1F6B,#0F2D96);transform:translateY(-1px);box-shadow:0 4px 16px rgba(10,31,107,.35);}
+    .input-field{width:100%;border:1.5px solid #E2E8F0;border-radius:12px;padding:.65rem 1rem;font-size:.875rem;outline:none;transition:border .2s;background:#fff;}
+    .input-field:focus{border-color:#0F2D96;box-shadow:0 0 0 3px rgba(15,45,150,.1);}
+    .tab-content{display:none;} .tab-content.active{display:block;}
+    .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(6,14,58,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1rem;}
+    .modal-overlay.show{display:flex;}
+    @keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+    .modal-box{animation:modalIn .3s ease;}
+  </style>
+</head>
+<body class="flex min-h-screen">
+
+<!-- ===== LOGIN GATE ===== -->
+<div id="login-gate" class="fixed inset-0 z-[200] flex items-center justify-center" style="background:linear-gradient(135deg,#060E3A,#0A1F6B);">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-sm">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-navy-800 rounded-xl flex items-center justify-center shadow"><i class="fa-solid fa-shield-halved text-white"></i></div>
+      <div><p class="font-bold text-navy-900 text-lg" data-i18n="adm_login_title">Admin Girişi</p><p class="text-xs text-gray-400" data-i18n="adm_login_sub">MediRoute Yönetim Paneli</p></div>
+    </div>
+    <form onsubmit="adminLogin(event)">
+      <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block" data-i18n="adm_password">Şifre</label>
+      <input id="admin-pw" type="password" placeholder="Admin şifresini girin" class="input-field mb-3" required autofocus/>
+      <p id="login-error" class="text-red-500 text-xs mb-2 hidden"><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="adm_wrong_pw">Yanlış şifre</span></p>
+      <button type="submit" class="btn-primary w-full py-3 font-bold text-sm flex items-center justify-center gap-2"><i class="fa-solid fa-right-to-bracket"></i> <span data-i18n="adm_login_btn">Giriş Yap</span></button>
+    </form>
+    <p class="text-center text-xs text-gray-300 mt-4">Demo şifre: <code class="bg-gray-100 px-2 py-0.5 rounded text-gray-600 font-mono">admin123</code></p>
+  </div>
+</div>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar hidden lg:flex flex-col py-6 px-3 gap-1">
+  <div class="flex items-center gap-2 px-3 mb-6">
+    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-heart-pulse text-navy-800 text-base"></i></div>
+    <div><p class="text-white font-bold text-base leading-none">Medi<span class="text-blue-300">Route</span></p><p class="text-amber-400 text-[10px] font-bold">ADMIN PANEL</p></div>
+  </div>
+  <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-3 mb-1" data-i18n="adm_management">Yönetim</p>
+  <a onclick="switchTab('dashboard')" class="nav-item active" id="nav-dashboard"><i class="fa-solid fa-gauge-high w-4 text-center"></i> Dashboard</a>
+  <a onclick="switchTab('clinics')" class="nav-item" id="nav-clinics"><i class="fa-solid fa-hospital w-4 text-center"></i> <span data-i18n="adm_clinics">Klinikler</span></a>
+  <a onclick="switchTab('leads')" class="nav-item" id="nav-leads"><i class="fa-solid fa-user-group w-4 text-center"></i> <span data-i18n="adm_leads">Hasta Talepleri</span></a>
+  <a onclick="switchTab('blogs')" class="nav-item" id="nav-blogs"><i class="fa-solid fa-newspaper w-4 text-center"></i> <span>Blog Yönetimi</span></a>
+  <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-3 mt-4 mb-1" data-i18n="adm_quick_access">Hızlı Erişim</p>
+  <a href="index.html" class="nav-item"><i class="fa-solid fa-globe w-4 text-center"></i> <span data-i18n="adm_view_site">Siteyi Görüntüle</span></a>
+  <a href="blog.html" class="nav-item"><i class="fa-solid fa-book-open w-4 text-center"></i> <span data-i18n="adm_blog">Blog / Rehberler</span></a>
+  <div class="mt-auto px-3 pt-6 border-t border-white/10">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-navy-950 text-xs font-bold">A</div>
+      <div><p class="text-white text-xs font-semibold leading-none">Admin</p><p class="text-blue-400 text-[10px]">Super Admin</p></div>
+    </div>
+    <a onclick="adminLogout()" class="nav-item mt-2 text-red-300 hover:text-red-200 hover:bg-red-900/20" style="cursor:pointer;"><i class="fa-solid fa-right-from-bracket w-4 text-center"></i> <span data-i18n="adm_logout">Çıkış</span></a>
+  </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<div class="flex-1 flex flex-col min-w-0">
+  <header class="hero-bg px-6 py-4 flex items-center justify-between">
+    <div><p class="text-blue-200 text-xs font-medium" data-i18n="adm_panel_title">MediRoute Yönetim Paneli</p><h1 class="text-white font-bold text-lg" id="page-title">Dashboard</h1></div>
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <button class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-white transition border border-white/10"><i class="fa-solid fa-bell text-sm"></i></button>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[9px] text-white font-bold flex items-center justify-center">5</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 p-6 overflow-x-auto">
+
+    <!-- ===== TAB: DASHBOARD ===== -->
+    <div id="tab-dashboard" class="tab-content active">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card"><div class="flex items-start justify-between mb-3"><div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-hospital text-navy-800"></i></div><span class="pill trend-up"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +3</span></div><p class="card-title" data-i18n="adm_total_clinics">Toplam Klinik</p><p class="text-3xl font-extrabold text-navy-900" id="m-clinics">5</p><p class="text-xs text-gray-400 mt-1">3 aktif · 2 taslak</p></div>
+        <div class="metric-card"><div class="flex items-start justify-between mb-3"><div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-user-plus text-emerald-600"></i></div><span class="pill trend-up"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +18%</span></div><p class="card-title" data-i18n="adm_monthly_leads">Aylık Talepler</p><p class="text-3xl font-extrabold text-navy-900" id="m-leads">47</p><p class="text-xs text-gray-400 mt-1">vs 40 geçen ay</p></div>
+        <div class="metric-card"><div class="flex items-start justify-between mb-3"><div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-chart-pie text-amber-600"></i></div><span class="pill trend-up"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +4.2%</span></div><p class="card-title" data-i18n="adm_conversion">Dönüşüm Oranı</p><p class="text-3xl font-extrabold text-navy-900">34<span class="text-base font-medium text-gray-400">%</span></p><p class="text-xs text-gray-400 mt-1">16/47 talep dönüştürüldü</p></div>
+        <div class="metric-card"><div class="flex items-start justify-between mb-3"><div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-sterling-sign text-purple-600"></i></div><span class="pill trend-up"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +12%</span></div><p class="card-title" data-i18n="adm_est_revenue">Tahmini Gelir</p><p class="text-3xl font-extrabold text-navy-900">£<span id="m-revenue">2,880</span></p><p class="text-xs text-gray-400 mt-1">16 tamamlanan tedavi</p></div>
+      </div>
+      <!-- Recent activity -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+        <h3 class="font-bold text-navy-900 text-base mb-4"><i class="fa-solid fa-clock-rotate-left text-navy-700 mr-2"></i><span data-i18n="adm_recent_activity">Son Aktiviteler</span></h3>
+        <div class="space-y-3" id="activity-list"></div>
+      </div>
+    </div>
+
+    <!-- ===== TAB: CLINICS ===== -->
+    <div id="tab-clinics" class="tab-content">
+      <div class="flex items-center justify-between mb-5">
+        <div><h2 class="text-navy-900 font-bold text-xl" data-i18n="adm_clinic_mgmt">Klinik Yönetimi</h2><p class="text-gray-400 text-sm" data-i18n="adm_clinic_mgmt_sub">Tüm klinikleri buradan ekleyin ve yönetin</p></div>
+        <button onclick="openClinicModal()" class="btn-primary px-4 py-2.5 text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-plus"></i> <span data-i18n="adm_add_clinic">Yeni Klinik Ekle</span></button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[800px]">
+            <thead><tr class="bg-slate-50 text-gray-400 text-xs font-bold uppercase tracking-wide">
+              <th class="px-4 py-3 text-left" data-i18n="adm_th_clinic">Klinik</th><th class="px-4 py-3 text-left" data-i18n="adm_th_location">Konum</th><th class="px-4 py-3 text-left" data-i18n="adm_th_treatments">Tedavi Türleri</th><th class="px-4 py-3 text-left" data-i18n="adm_th_price">Fiyat Aralığı</th><th class="px-4 py-3 text-left" data-i18n="adm_th_rating">Puan</th><th class="px-4 py-3 text-left" data-i18n="adm_th_status">Durum</th><th class="px-4 py-3 text-left" data-i18n="adm_th_actions">İşlemler</th>
+            </tr></thead>
+            <tbody id="clinics-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TAB: LEADS ===== -->
+    <div id="tab-leads" class="tab-content">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+        <div><h2 class="text-navy-900 font-bold text-xl" data-i18n="adm_leads">Hasta Talepleri</h2><p class="text-gray-400 text-sm" data-i18n="adm_leads_sub">Gelen talepleri yönetin ve durumlarını güncelleyin</p></div>
+        <div class="flex items-center gap-2">
+          <select class="border border-gray-200 rounded-xl text-sm text-gray-700 px-3 py-2 bg-white"><option>Nisan 2025</option><option>Mart 2025</option><option>Şubat 2025</option></select>
+          <button class="btn-primary px-4 py-2 text-sm font-semibold flex items-center gap-2"><i class="fa-solid fa-arrow-down-to-bracket text-xs"></i> <span data-i18n="adm_export">Dışa Aktar</span></button>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[950px]">
+            <thead><tr class="bg-slate-50 text-gray-400 text-xs font-bold uppercase tracking-wide">
+              <th class="px-4 py-3 text-left" data-i18n="adm_th_patient">Hasta</th><th class="px-4 py-3 text-left" data-i18n="adm_th_treatment">Tedavi</th><th class="px-4 py-3 text-left" data-i18n="adm_th_referred">Yönlendirilen Klinik</th><th class="px-4 py-3 text-left" data-i18n="adm_th_source">Kaynak</th><th class="px-4 py-3 text-left" data-i18n="adm_th_date">Tarih</th><th class="px-4 py-3 text-left" data-i18n="adm_th_status">Durum</th><th class="px-4 py-3 text-left" data-i18n="adm_th_invoice">Fatura</th>
+            </tr></thead>
+            <tbody id="leads-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TAB: BLOGS ===== -->
+    <div id="tab-blogs" class="tab-content">
+      <div class="flex items-center justify-between mb-5">
+        <div><h2 class="text-navy-900 font-bold text-xl">Blog Yönetimi</h2><p class="text-gray-400 text-sm">Blog yazılarını ve rehberleri yönetin</p></div>
+        <button onclick="openBlogModal()" class="btn-primary px-4 py-2.5 text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-plus"></i> <span>Yeni Yazı Ekle</span></button>
+      </div>
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[800px]">
+            <thead><tr class="bg-slate-50 text-gray-400 text-xs font-bold uppercase tracking-wide">
+              <th class="px-4 py-3 text-left">Başlık</th><th class="px-4 py-3 text-left">Kategori</th><th class="px-4 py-3 text-left">Tarih</th><th class="px-4 py-3 text-left">Durum</th><th class="px-4 py-3 text-left">İşlemler</th>
+            </tr></thead>
+            <tbody id="blogs-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===== CLINIC MODAL ===== -->
+<div id="clinic-modal" class="modal-overlay">
+  <div class="modal-box bg-white rounded-2xl w-full max-w-lg shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeClinicModal()" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500 hover:bg-gray-200 transition"><i class="fa-solid fa-xmark"></i></button>
+    <h2 class="font-extrabold text-navy-900 text-lg mb-1" id="modal-title" data-i18n="adm_add_clinic">Yeni Klinik Ekle</h2>
+    <p class="text-gray-400 text-xs mb-5" data-i18n="adm_fill_info">Klinik bilgilerini doldurun</p>
+    <form onsubmit="saveClinic(event)" class="flex flex-col gap-3">
+      <input type="hidden" id="clinic-edit-id" value=""/>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Klinik Adı</label><input id="c-name" class="input-field" placeholder="Estepera Medical" required/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Şehir</label><input id="c-city" class="input-field" placeholder="Istanbul" required/></div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Ülke</label><input id="c-country" class="input-field" placeholder="Turkey" required/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Puan (1-5)</label><input id="c-rating" type="number" step="0.1" min="1" max="5" class="input-field" placeholder="4.9"/></div>
+      </div>
+      <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Tedavi Türleri</label><input id="c-treatments" class="input-field" placeholder="FUE, DHI, PRP, Beard" required/></div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Min Fiyat (£)</label><input id="c-price-min" type="number" class="input-field" placeholder="1499"/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Max Fiyat (£)</label><input id="c-price-max" type="number" class="input-field" placeholder="2499"/></div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">JCI Akreditasyon</label><select id="c-jci" class="input-field"><option value="yes">✅ Evet</option><option value="no">❌ Hayır</option></select></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Durum</label><select id="c-status" class="input-field"><option value="active">Aktif</option><option value="pending">Onay Bekliyor</option><option value="draft">Taslak</option></select></div>
+      </div>
+      <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Açıklama</label><textarea id="c-desc" class="input-field" rows="2" placeholder="Klinik hakkında kısa açıklama..."></textarea></div>
+      <button type="submit" class="btn-primary w-full py-3 font-bold text-sm mt-2 flex items-center justify-center gap-2"><i class="fa-solid fa-check"></i> <span id="modal-btn-text">Kaydet</span></button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== BLOG MODAL ===== -->
+<div id="blog-modal" class="modal-overlay">
+  <div class="modal-box bg-white rounded-2xl w-full max-w-2xl shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeBlogModal()" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500 hover:bg-gray-200 transition"><i class="fa-solid fa-xmark"></i></button>
+    <h2 class="font-extrabold text-navy-900 text-lg mb-1" id="blog-modal-title">Yeni Yazı Ekle</h2>
+    <p class="text-gray-400 text-xs mb-5">Blog içeriğini oluşturun</p>
+    <form onsubmit="saveBlog(event)" class="flex flex-col gap-3">
+      <input type="hidden" id="blog-edit-id" value=""/>
+      <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Başlık</label><input id="b-title" class="input-field" placeholder="Saç Ekimi Rehberi" required/></div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Slug (URL)</label><input id="b-slug" class="input-field" placeholder="sac-ekimi-rehberi" required/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Kategori</label><input id="b-category" class="input-field" placeholder="Guide" required/></div>
+      </div>
+      <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Resim URL</label><input id="b-image" class="input-field" placeholder="https://example.com/image.jpg"/></div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Yazar Adı</label><input id="b-author" class="input-field" placeholder="Dr. Ahmet Kaya" value=""/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Ünvan</label><input id="b-author-title" class="input-field" placeholder="Prof. Dr. / Uzm. Dr." value=""/></div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Uzmanlık Alanı</label><input id="b-author-specialty" class="input-field" placeholder="Plastik Cerrahi Uzmanı"/></div>
+        <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Durum</label><select id="b-status" class="input-field"><option value="published">Yayınlandı</option><option value="draft">Taslak</option></select></div>
+      </div>
+      <div><label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">Yazar Fotoğrafı URL</label><input id="b-author-image" class="input-field" placeholder="https://example.com/doctor.jpg"/></div>
+      <div>
+        <label class="text-xs font-semibold text-gray-500 uppercase mb-1 block">İçerik (Zengin Metin Editörü)</label>
+        <div id="editor-container" class="bg-white rounded-b-xl" style="height: 250px;"></div>
+        <textarea id="b-content" class="hidden"></textarea>
+      </div>
+      <button type="submit" class="btn-primary w-full py-3 font-bold text-sm mt-2 flex items-center justify-center gap-2"><i class="fa-solid fa-check"></i> <span id="blog-btn-text">Yayınla</span></button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== DELETE CONFIRM ===== -->
+<div id="delete-modal" class="modal-overlay">
+  <div class="modal-box bg-white rounded-2xl w-full max-w-sm shadow-2xl p-6 text-center">
+    <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-trash text-red-500 text-xl"></i></div>
+    <h3 class="font-bold text-navy-900 text-lg mb-1" data-i18n="adm_delete_clinic">Kliniği Sil</h3>
+    <p class="text-gray-400 text-sm mb-5" data-i18n="adm_delete_confirm">Bu işlem geri alınamaz. Devam etmek istiyor musunuz?</p>
+    <div class="flex gap-3">
+      <button onclick="closeDeleteModal()" class="flex-1 border border-gray-200 rounded-xl py-2.5 font-semibold text-sm text-gray-600 hover:bg-gray-50 transition" data-i18n="adm_cancel">İptal</button>
+      <button onclick="confirmDelete()" class="flex-1 bg-red-500 hover:bg-red-600 text-white rounded-xl py-2.5 font-bold text-sm transition" data-i18n="adm_yes_delete">Evet, Sil</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="supabase-client.js"></script>
+<script src="admin-logic.js"></script>
+<script src="i18n.js"></script>
+<script src="performance.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>
