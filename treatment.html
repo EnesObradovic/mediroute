@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Treatment | MediRoute</title>
+  <meta name="description" content="Explore world-class medical treatments in Turkey with MediRoute."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .5s ease both;}
+    .tech-card{background:#fff;border-radius:20px;border:1px solid #E8EEF9;padding:1.5rem;transition:all .25s;}
+    .tech-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,31,107,.12);}
+    .faq-item{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;}
+    .faq-item.open .faq-answer{max-height:200px;padding:.75rem 1.25rem 1.25rem;}
+    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq-answer{max-height:0;overflow:hidden;transition:all .3s;padding:0 1.25rem;}
+    .stat-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:1.25rem;text-align:center;backdrop-filter:blur(8px);}
+    .cta-glow{box-shadow:0 8px 32px rgba(5,150,105,.35);}
+    .clinic-link{background:#fff;border-radius:16px;border:1px solid #E8EEF9;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;transition:all .2s;cursor:pointer;}
+    .clinic-link:hover{border-color:#0F2D96;box-shadow:0 4px 16px rgba(10,31,107,.1);}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="index.html" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
+      <a href="compare.html" class="hover:text-white transition">Compare Clinics</a>
+      <a href="blog.html" class="hover:text-white transition">Guides</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition">Get Free Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg pt-12 pb-16 px-4 relative overflow-hidden" id="hero">
+  <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;"></div>
+  <div class="max-w-5xl mx-auto relative text-center fade-up">
+    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-5">
+      <i id="hero-icon" class="fa-solid fa-scissors text-blue-300"></i>
+      <span class="text-blue-200 text-xs font-semibold uppercase tracking-wider">MediRoute Treatment Guide</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4" id="hero-title">Treatment</h1>
+    <p class="text-blue-200 text-base md:text-lg max-w-2xl mx-auto mb-8" id="hero-sub">Loading...</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto" id="stats-grid"></div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+  <!-- Techniques -->
+  <section class="mb-12 fade-up">
+    <h2 class="text-2xl font-extrabold text-navy-900 mb-2 flex items-center gap-2">
+      <i class="fa-solid fa-microscope text-navy-700"></i>
+      <span id="tech-title">Techniques & Methods</span>
+    </h2>
+    <p class="text-gray-500 text-sm mb-6" id="tech-sub">Advanced procedures performed by certified specialists</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="tech-grid"></div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="mb-12 fade-up">
+    <div class="hero-bg rounded-2xl p-8 text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;"></div>
+      <div class="relative">
+        <h3 class="text-2xl font-extrabold text-white mb-2" id="cta-title">Ready to Start?</h3>
+        <p class="text-blue-200 text-sm mb-5" id="cta-sub">Get free quotes from 3 verified clinics within 2 hours</p>
+        <a href="auth.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white font-bold px-8 py-3 rounded-xl shadow-lg cta-glow transition">
+          <i class="fa-solid fa-paper-plane"></i> <span id="cta-btn">Get Free Quote</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mb-12 fade-up">
+    <h2 class="text-2xl font-extrabold text-navy-900 mb-6 flex items-center gap-2">
+      <i class="fa-solid fa-circle-question text-navy-700"></i>
+      <span id="faq-title">Frequently Asked Questions</span>
+    </h2>
+    <div class="flex flex-col gap-3" id="faq-list"></div>
+  </section>
+
+  <!-- Browse Clinics -->
+  <section class="mb-12 fade-up">
+    <h2 class="text-2xl font-extrabold text-navy-900 mb-4 flex items-center gap-2">
+      <i class="fa-solid fa-hospital text-navy-700"></i>
+      <span id="browse-title">Browse Clinics</span>
+    </h2>
+    <a id="browse-link" href="index.html" class="clinic-link">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center"><i class="fa-solid fa-search text-navy-700"></i></div>
+        <div>
+          <p class="font-bold text-navy-900 text-sm" id="browse-text">View all clinics</p>
+          <p class="text-xs text-gray-400" id="browse-sub">Compare prices, reviews and packages</p>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-right text-navy-700"></i>
+    </a>
+  </section>
+
+  <!-- Other Treatments -->
+  <section class="fade-up">
+    <h2 class="text-xl font-extrabold text-navy-900 mb-4" id="other-title">Other Treatments</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="other-grid"></div>
+  </section>
+</div>
+
+<footer class="hero-bg py-8 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs">© 2025 MediRoute Ltd.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="index.html" class="hover:text-white">Search</a>
+      <a href="compare.html" class="hover:text-white">Compare</a>
+      <a href="blog.html" class="hover:text-white">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script src="treatment-data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const type = params.get('type') || 'hair-transplant';
+const langParam = params.get('lang') || localStorage.getItem('mediroute_lang') || 'en';
+const lang = ['en','tr'].includes(langParam) ? langParam : 'en';
+
+const t = window.TREATMENTS[type];
+if (!t) { window.location.href = 'index.html'; }
+
+function L(obj) { return obj[lang] || obj['en']; }
+
+// Page title & meta
+document.title = L(t.title) + ' | MediRoute';
+document.querySelector('meta[name="description"]').content = L(t.metaDesc);
+
+// Hero
+document.getElementById('hero-icon').className = t.icon + ' text-blue-300';
+document.getElementById('hero-title').textContent = L(t.title);
+document.getElementById('hero-sub').textContent = L(t.heroSub);
+
+// Stats
+document.getElementById('stats-grid').innerHTML = t.stats.map(s => `
+  <div class="stat-card">
+    <p class="text-2xl font-extrabold text-white">${s.val}</p>
+    <p class="text-blue-300 text-xs mt-1">${L(s)}</p>
+  </div>
+`).join('');
+
+// Section titles
+if (lang === 'tr') {
+  document.getElementById('tech-title').textContent = 'Teknikler & Yöntemler';
+  document.getElementById('tech-sub').textContent = 'Sertifikalı uzmanlar tarafından uygulanan ileri düzey prosedürler';
+  document.getElementById('cta-title').textContent = 'Başlamaya Hazır mısınız?';
+  document.getElementById('cta-sub').textContent = '2 saat içinde 3 doğrulanmış klinikten ücretsiz teklif alın';
+  document.getElementById('cta-btn').textContent = 'Ücretsiz Teklif Al';
+  document.getElementById('faq-title').textContent = 'Sıkça Sorulan Sorular';
+  document.getElementById('browse-title').textContent = 'Kliniklere Göz At';
+  document.getElementById('browse-text').textContent = 'Tüm klinikleri görüntüle';
+  document.getElementById('browse-sub').textContent = 'Fiyatları, yorumları ve paketleri karşılaştırın';
+  document.getElementById('other-title').textContent = 'Diğer Tedaviler';
+}
+
+// Techniques
+document.getElementById('tech-grid').innerHTML = t.techniques.map((tc, i) => `
+  <div class="tech-card" style="animation-delay:${i*0.1}s">
+    <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center mb-3">
+      <i class="${t.icon} text-navy-700"></i>
+    </div>
+    <h3 class="font-bold text-navy-900 mb-2">${tc.name}</h3>
+    <p class="text-sm text-gray-600 leading-relaxed">${L(tc)}</p>
+  </div>
+`).join('');
+
+// FAQ
+document.getElementById('faq-list').innerHTML = t.faq.map((f, i) => `
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="flex items-center justify-between p-4 cursor-pointer">
+      <p class="font-semibold text-navy-900 text-sm pr-4">${L(f.q)}</p>
+      <i class="fa-solid fa-chevron-down text-navy-700 text-xs faq-chevron transition-transform"></i>
+    </div>
+    <div class="faq-answer">
+      <p class="text-sm text-gray-600 leading-relaxed">${L(f.a)}</p>
+    </div>
+  </div>
+`).join('');
+
+// Browse link
+document.getElementById('browse-link').href = `index.html?treatment=${t.filterValue}`;
+
+// Other treatments
+const others = Object.values(window.TREATMENTS).filter(x => x.slug !== type);
+document.getElementById('other-grid').innerHTML = others.map(o => `
+  <a href="treatment.html?type=${o.slug}&lang=${lang}" class="clinic-link flex-col !items-center !text-center !gap-2 !p-4">
+    <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center"><i class="${o.icon} text-navy-700"></i></div>
+    <p class="font-bold text-navy-900 text-xs">${L(o.title)}</p>
+  </a>
+`).join('');
+</script>
+<script src="i18n.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>
