@@ -197,13 +197,13 @@
       <!-- MEDICAL TEAM -->
       <div class="section-card fade-up">
         <h2 class="text-xl font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-user-doctor text-navy-800"></i> <span data-i18n="cd_team">Medical Team</span></h2>
-        <p class="text-sm text-gray-400 mb-4">Board-certified specialists performing your procedure</p>
+        <p class="text-sm text-gray-400 mb-4" data-i18n="cd_team_sub">Board-certified specialists performing your procedure</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <!-- Doctor 1 -->
           <div class="doctor-card bg-white">
             <div class="h-36 bg-gradient-to-br from-navy-900 to-navy-700 flex items-center justify-center relative">
               <i class="fa-solid fa-user-doctor text-6xl text-white opacity-70"></i>
-              <div class="absolute bottom-2 right-2 bg-amber-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Lead Surgeon</div>
+              <div class="absolute bottom-2 right-2 bg-amber-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full" data-i18n="cd_lead_surgeon">Lead Surgeon</div>
             </div>
             <div class="p-4">
               <h3 class="font-bold text-navy-900 text-sm">Dr. Mehmet Aydın</h3>
@@ -255,7 +255,7 @@
       <!-- BEFORE & AFTER -->
       <div class="section-card fade-up">
         <h2 class="text-xl font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-images text-navy-800"></i> <span data-i18n="cd_ba">Before &amp; After Results</span></h2>
-        <p class="text-sm text-gray-400 mb-4">Real patient results — 12 months post-procedure. Individual results may vary.</p>
+        <p class="text-sm text-gray-400 mb-4" data-i18n="cd_ba_sub">Real patient results — 12 months post-procedure. Individual results may vary.</p>
         <div class="flex gap-2 mb-5">
           <button class="tab-btn active" onclick="setTab(this,'all')" data-i18n="cd_all_cases">All Cases</button>
           <button class="tab-btn" onclick="setTab(this,'fue')">FUE</button>
@@ -269,13 +269,13 @@
                 <div class="absolute inset-0 opacity-20" style="background:repeating-linear-gradient(0deg,#000 0,#000 1px,transparent 0,transparent 8px);"></div>
                 <div class="text-center text-white z-10 p-3">
                   <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
-                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded">BEFORE</p>
+                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded" data-i18n="cd_before">BEFORE</p>
                 </div>
               </div>
               <div class="relative h-52 bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center">
                 <div class="text-center text-white z-10 p-3">
                   <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
-                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded">AFTER</p>
+                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded" data-i18n="cd_after">AFTER</p>
                 </div>
               </div>
             </div>
@@ -292,13 +292,13 @@
               <div class="relative h-52 bg-gradient-to-br from-gray-600 to-gray-400 flex items-center justify-center">
                 <div class="text-center text-white z-10 p-3">
                   <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
-                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded">BEFORE</p>
+                  <p class="text-xs font-bold bg-black/50 px-2 py-0.5 rounded" data-i18n="cd_before">BEFORE</p>
                 </div>
               </div>
               <div class="relative h-52 bg-gradient-to-br from-teal-800 to-teal-600 flex items-center justify-center">
                 <div class="text-center text-white z-10 p-3">
                   <i class="fa-solid fa-user-large text-5xl opacity-60 mb-1"></i>
-                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded">AFTER</p>
+                  <p class="text-xs font-bold bg-emerald-600/80 px-2 py-0.5 rounded" data-i18n="cd_after">AFTER</p>
                 </div>
               </div>
             </div>
@@ -401,12 +401,12 @@
         <div class="bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden">
           <!-- Price header -->
           <div class="hero-bg p-5 text-white">
-            <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1">All-Inclusive Package</p>
+            <p class="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-1" data-i18n="cd_package">All-Inclusive Package</p>
             <div class="flex items-end gap-2">
               <span class="text-4xl font-extrabold" id="cd-price-min">£1,499</span>
               <span class="text-blue-300 text-base mb-1" id="cd-price-max">– £2,499</span>
             </div>
-            <p class="text-blue-200 text-xs mt-1">Price varies by graft count · No hidden fees</p>
+            <p class="text-blue-200 text-xs mt-1" data-i18n="cd_price_note">Price varies by graft count · No hidden fees</p>
           </div>
           <!-- Package inclusions -->
           <div class="p-5">
@@ -414,32 +414,32 @@
             <ul class="flex flex-col gap-2.5">
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">3 Nights 5-Star Hotel</p><p class="text-xs text-gray-400">Hilton Bomonti or equivalent</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_hotel_5star">3 Nights 5-Star Hotel</p><p class="text-xs text-gray-400" data-i18n="cd_hotel_sub2">Hilton Bomonti or equivalent</p></div>
               </li>
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">VIP Airport Transfer</p><p class="text-xs text-gray-400">Private Mercedes-class vehicle</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_vip_transfer">VIP Airport Transfer</p><p class="text-xs text-gray-400" data-i18n="cd_vip_sub">Private Mercedes-class vehicle</p></div>
               </li>
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">Native English Translator</p><p class="text-xs text-gray-400">Dedicated coordinator throughout</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_translator_title">Native English Translator</p><p class="text-xs text-gray-400" data-i18n="cd_translator_sub2">Dedicated coordinator throughout</p></div>
               </li>
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">1 Year Post-Op Care</p><p class="text-xs text-gray-400">Monthly progress check-ins</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_postop_title">1 Year Post-Op Care</p><p class="text-xs text-gray-400" data-i18n="cd_postop_sub">Monthly progress check-ins</p></div>
               </li>
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">PRP Therapy Included</p><p class="text-xs text-gray-400">For faster graft recovery</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_prp_title">PRP Therapy Included</p><p class="text-xs text-gray-400" data-i18n="cd_prp_sub">For faster graft recovery</p></div>
               </li>
               <li class="flex items-start gap-3">
                 <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i></div>
-                <div><p class="text-sm font-semibold text-gray-700">Aftercare Kit</p><p class="text-xs text-gray-400">Shampoo, lotion & medications</p></div>
+                <div><p class="text-sm font-semibold text-gray-700" data-i18n="cd_aftercare_title">Aftercare Kit</p><p class="text-xs text-gray-400" data-i18n="cd_aftercare_sub2">Shampoo, lotion & medications</p></div>
               </li>
             </ul>
             <div class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100 flex items-center gap-2">
               <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i>
-              <p class="text-xs text-amber-700 font-medium">Only 3 slots left for May 2025 — book early!</p>
+              <p class="text-xs text-amber-700 font-medium" data-i18n="cd_slots_warning">Only 3 slots left for May 2025 — book early!</p>
             </div>
           </div>
         </div>
@@ -447,22 +447,22 @@
         <!-- QUOTE FORM -->
         <div id="quote-form" class="bg-white rounded-2xl border border-navy-100 shadow-lg p-5"">
           <h3 class="text-base font-bold text-navy-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-paper-plane text-navy-700"></i> <span data-i18n="cd_get_quote">Get a Free Quote</span></h3>
-          <p class="text-xs text-gray-400 mb-4">No obligation · Response within 2 hours</p>
+          <p class="text-xs text-gray-400 mb-4" data-i18n="cd_quote_sub">No obligation · Response within 2 hours</p>
           <form class="flex flex-col gap-3" onsubmit="handleSubmit(event)">
             <div>
-              <label class="text-xs font-semibold text-gray-600 mb-1 block">Full Name</label>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block" data-i18n="cd_form_name">Full Name</label>
               <input id="q-name" type="text" placeholder="Your full name" class="input-field" required />
             </div>
             <div>
-              <label class="text-xs font-semibold text-gray-600 mb-1 block">Email Address</label>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block" data-i18n="cd_form_email">Email Address</label>
               <input id="q-email" type="email" placeholder="your@email.com" class="input-field" required />
             </div>
             <div>
-              <label class="text-xs font-semibold text-gray-600 mb-1 block">Phone (optional)</label>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block" data-i18n="cd_form_phone">Phone (optional)</label>
               <input id="q-phone" type="tel" placeholder="+44 7xxx xxxxxx" class="input-field" />
             </div>
             <div>
-              <label class="text-xs font-semibold text-gray-600 mb-1 block">Treatment Interested In</label>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block" data-i18n="cd_form_treatment">Treatment Interested In</label>
               <select class="input-field appearance-none bg-white">
                 <option>Hair Transplant (FUE)</option>
                 <option>Hair Transplant (DHI)</option>
@@ -472,7 +472,7 @@
               </select>
             </div>
             <div>
-              <label class="text-xs font-semibold text-gray-600 mb-1 block">Message (optional)</label>
+              <label class="text-xs font-semibold text-gray-600 mb-1 block" data-i18n="cd_form_message">Message (optional)</label>
               <textarea rows="2" placeholder="Any questions or requirements..." class="input-field resize-none"></textarea>
             </div>
             <button id="q-submit" type="button" onclick="openModal()" class="btn-cta text-white font-bold py-3 px-4 text-sm w-full flex items-center justify-center gap-2 shadow-md">
@@ -481,19 +481,19 @@
             <p id="q-success" class="hidden text-center text-emerald-600 font-semibold text-sm py-2 bg-emerald-50 rounded-xl"><i class="fa-solid fa-circle-check mr-1"></i> Sent! We'll reply within 2 hours.</p>
           </form>
           <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-100">
-            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-lock text-gray-300"></i> 100% Confidential</div>
-            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-shield-halved text-gray-300"></i> No spam, ever</div>
+            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-lock text-gray-300"></i> <span data-i18n="cd_confidential">100% Confidential</span></div>
+            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-shield-halved text-gray-300"></i> <span data-i18n="cd_no_spam">No spam, ever</span></div>
           </div>
         </div>
 
         <!-- Trust signals -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Why Book via MediRoute?</p>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3" data-i18n="cd_why_book">Why Book via MediRoute?</p>
           <ul class="flex flex-col gap-2">
-            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-shield-halved text-navy-700"></i> Price match guarantee</li>
-            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-headset text-navy-700"></i> 24/7 UK support line</li>
-            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-rotate-left text-navy-700"></i> Free cancellation (7 days)</li>
-            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-certificate text-navy-700"></i> Only JCI/accredited clinics</li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-shield-halved text-navy-700"></i> <span data-i18n="cd_price_match">Price match guarantee</span></li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-headset text-navy-700"></i> <span data-i18n="cd_support_line">24/7 UK support line</span></li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-rotate-left text-navy-700"></i> <span data-i18n="cd_free_cancel">Free cancellation (7 days)</span></li>
+            <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-certificate text-navy-700"></i> <span data-i18n="cd_only_jci">Only JCI/accredited clinics</span></li>
           </ul>
         </div>
 
