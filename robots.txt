@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mediroute.co.uk/sitemap.xml
+Sitemap: https://medirouteturkey.com/sitemap.xml
 
-# Block admin pages from indexing
-Disallow: /admin.html
+# Block private pages from indexing
+Disallow: /admin
 Disallow: /admin-logic.js
-Disallow: /clinic-dashboard.html
+Disallow: /clinic-dashboard
+Disallow: /patient-dashboard
+Disallow: /auth

@@ -81,16 +81,15 @@
       if (!link) return;
       var href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('javascript') ||
-          href.startsWith('http') || prefetched[href]) return;
+          href.startsWith('tel:') || href.startsWith('mailto:') ||
+          href.includes('://') || prefetched[href]) return;
 
-      // Only prefetch local .html files
-      if (href.endsWith('.html')) {
-        prefetched[href] = true;
-        var el = document.createElement('link');
-        el.rel = 'prefetch';
-        el.href = href;
-        document.head.appendChild(el);
-      }
+      // Prefetch local links
+      prefetched[href] = true;
+      var el = document.createElement('link');
+      el.rel = 'prefetch';
+      el.href = href;
+      document.head.appendChild(el);
     });
   }
 
