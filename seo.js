@@ -246,7 +246,7 @@
     document.head.appendChild(gscMeta);
 
     // 2. Google Analytics (GA4) Tag
-    const gaId = 'G-XXXXXXXXXX'; // TODO: Replace with actual GA4 Measurement ID
+    const gaId = 'G-J9P0B3QJEB'; // Actual GA4 Measurement ID
     
     const gaScript = document.createElement('script');
     gaScript.async = true;
