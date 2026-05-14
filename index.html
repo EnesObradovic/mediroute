@@ -77,6 +77,16 @@
     </a>
     <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
       <a href="index.html" class="text-white font-semibold" data-i18n="nav_home">Home</a>
+      <div class="relative group cursor-pointer">
+        <span class="hover:text-white transition flex items-center gap-1" data-i18n="footer_treatments">Treatments <i class="fa-solid fa-chevron-down text-[10px]"></i></span>
+        <div class="absolute left-0 mt-4 w-48 bg-white rounded-xl shadow-xl py-2 hidden group-hover:block z-50 border border-gray-100">
+          <a href="treatment.html?type=hair-transplant" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_hair">Hair Transplant</a>
+          <a href="treatment.html?type=dental" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_dental">Dental</a>
+          <a href="treatment.html?type=aesthetics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_aesthetics">Aesthetics</a>
+          <a href="treatment.html?type=bariatric" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_bariatric">Bariatric Surgery</a>
+          <a href="treatment.html?type=eye-surgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_eye">Eye Laser</a>
+        </div>
+      </div>
       <a href="compare.html" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
       <a href="about.html" class="hover:text-white transition" data-i18n="nav_about">About Us</a>
       <a href="blog.html" class="hover:text-white transition" data-i18n="nav_blog">Guides / Blog</a>
@@ -148,10 +158,10 @@
       <!-- Popular tags -->
       <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
         <span class="text-xs text-gray-400 font-medium self-center" data-i18n="idx_popular">Popular:</span>
-        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_hair">💇 Hair Transplant Istanbul</button>
-        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_dental">🦷 Dental Veneers Budapest</button>
-        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_rhino">🌸 Rhinoplasty Turkey</button>
-        <button class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_eye">👁 LASIK Eye Laser</button>
+        <a href="treatment.html?type=hair-transplant" class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_hair">💇 Hair Transplant Istanbul</a>
+        <a href="treatment.html?type=dental" class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_dental">🦷 Dental Veneers Budapest</a>
+        <a href="treatment.html?type=aesthetics" class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_rhino">🌸 Rhinoplasty Turkey</a>
+        <a href="treatment.html?type=eye-surgery" class="quick-tag text-xs font-semibold bg-navy-50 text-navy-800 px-3 py-1.5 rounded-full hover:bg-navy-100 transition border border-navy-100" data-i18n="idx_tag_eye">👁 LASIK Eye Laser</a>
       </div>
     </div>
   </div>
@@ -316,7 +326,7 @@
       </div>
       <div>
         <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_treatments">Treatments</h4>
-        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_hair">Hair Transplant</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_dental">Dental</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_aesthetics">Aesthetics</a></li><li><a href="index.html" class="hover:text-white transition" data-i18n="treat_bariatric">Bariatric</a></li></ul>
+        <ul class="space-y-2 text-blue-300 text-sm"><li><a href="treatment.html?type=hair-transplant" class="hover:text-white transition" data-i18n="treat_hair">Hair Transplant</a></li><li><a href="treatment.html?type=dental" class="hover:text-white transition" data-i18n="treat_dental">Dental</a></li><li><a href="treatment.html?type=aesthetics" class="hover:text-white transition" data-i18n="treat_aesthetics">Aesthetics</a></li><li><a href="treatment.html?type=bariatric" class="hover:text-white transition" data-i18n="treat_bariatric">Bariatric</a></li><li><a href="treatment.html?type=eye-surgery" class="hover:text-white transition" data-i18n="treat_eye">Eye Laser</a></li></ul>
       </div>
       <div>
         <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_destinations">Destinations</h4>
@@ -381,19 +391,6 @@
 
   // ── Apply Filters button (sidebar) ──
   document.querySelector('.btn-primary.w-full')?.addEventListener('click', applyFilters);
-
-  // ── Quick tag click -> populate selects and search ──
-  document.querySelectorAll('.quick-tag').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const text = btn.textContent.trim().toLowerCase();
-      if(text.includes('hair')) { document.getElementById('treatment-select').value='hair'; document.getElementById('city-select').value='istanbul'; }
-      else if(text.includes('dental')) { document.getElementById('treatment-select').value='dental'; document.getElementById('city-select').value='budapest'; }
-      else if(text.includes('rhinoplasty')) { document.getElementById('treatment-select').value='aesthetics'; document.getElementById('city-select').value='istanbul'; }
-      else if(text.includes('lasik')) { document.getElementById('treatment-select').value='eye'; document.getElementById('city-select').value=''; }
-      applyFilters();
-      document.getElementById('clinic-list').scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
 
   // ── Clear filters ──
   document.getElementById('clear-filters').addEventListener('click', () => {
