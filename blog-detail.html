@@ -85,21 +85,21 @@
 <!-- NAVBAR -->
 <nav class="hero-bg shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="index.html" class="flex items-center gap-3">
+    <a href=\"/\" class="flex items-center gap-3">
       <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
         <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
       </div>
       <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
     </a>
     <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
-      <a href="index.html" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
-      <a href="compare.html" class="hover:text-white transition">Compare Clinics</a>
-      <a href="blog.html" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5">Guides</a>
+      <a href=\"/\" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
+      <a href=\"/compare\" class="hover:text-white transition">Compare Clinics</a>
+      <a href=\"/blog\" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5">Guides</a>
     </div>
     <div class="flex items-center gap-2">
       <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
       <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
-      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition">Get Free Quote</a>
+      <a href=\"/auth\" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition">Get Free Quote</a>
       <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
@@ -111,9 +111,9 @@
   <div class="max-w-4xl mx-auto relative fade-up">
     <!-- Breadcrumb -->
     <div class="flex items-center gap-2 text-blue-300 text-xs mb-4">
-      <a href="index.html" class="hover:text-white">Home</a>
+      <a href=\"/\" class="hover:text-white">Home</a>
       <i class="fa-solid fa-chevron-right text-[9px]"></i>
-      <a href="blog.html" class="hover:text-white">Guides</a>
+      <a href=\"/blog\" class="hover:text-white">Guides</a>
       <i class="fa-solid fa-chevron-right text-[9px]"></i>
       <span class="text-blue-200" id="breadcrumb-title">Loading…</span>
     </div>
@@ -183,7 +183,7 @@
 
 <!-- Back to Blog CTA -->
 <div class="text-center mb-12">
-  <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-bold text-navy-700 hover:text-navy-900 transition">
+  <a href=\"/blog\" class="inline-flex items-center gap-2 text-sm font-bold text-navy-700 hover:text-navy-900 transition">
     <i class="fa-solid fa-arrow-left"></i> Tüm Yazılara Dön
   </a>
 </div>
@@ -193,9 +193,9 @@
     <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
     <p class="text-blue-400 text-xs">© 2025 MediRoute Ltd. Registered in England & Wales.</p>
     <div class="flex gap-4 text-blue-400 text-xs">
-      <a href="index.html" class="hover:text-white">Search</a>
-      <a href="compare.html" class="hover:text-white">Compare</a>
-      <a href="auth.html" class="hover:text-white">Sign In</a>
+      <a href=\"/\" class="hover:text-white">Search</a>
+      <a href=\"/compare\" class="hover:text-white">Compare</a>
+      <a href=\"/auth\" class="hover:text-white">Sign In</a>
     </div>
   </div>
 </footer>
@@ -205,7 +205,9 @@
 <script>
   // Get slug from URL
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get('slug');
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const pathSlug = pathParts.length > 0 && pathParts[0] === 'blog' ? pathParts[1] : null;
+  const slug = pathSlug || params.get('slug');
 
   function getCatClass(cat) {
     const c = (cat || '').toLowerCase();
@@ -236,7 +238,7 @@
             <i class="fa-solid fa-ghost" style="font-size:3rem;color:#CBD5E1;margin-bottom:1rem;display:block;"></i>
             <h2 style="color:#0A1F6B;margin-bottom:.5rem;">Yazı bulunamadı</h2>
             <p style="color:#6B7280;">Bu slug ile eşleşen bir blog yazısı yok.</p>
-            <a href="blog.html" style="color:#0F2D96;font-weight:700;display:inline-block;margin-top:1rem;">← Tüm yazılara dön</a>
+            <a href=\"/blog\" style="color:#0F2D96;font-weight:700;display:inline-block;margin-top:1rem;">← Tüm yazılara dön</a>
           </div>
         `;
         return;
@@ -306,7 +308,7 @@
         const date = new Date(b.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
         const excerpt = stripHtml(b.content).substring(0, 80) + '…';
         return `
-          <a href="blog-detail.html?slug=${b.slug}" class="related-card">
+          <a href="/blog/${b.slug}" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
               ${b.image_url ? `<img src="${b.image_url}" alt="${b.title}" style="width:100%;height:100%;object-fit:cover;">` : '<i class="fa-solid fa-image text-3xl text-blue-200"></i>'}
             </div>

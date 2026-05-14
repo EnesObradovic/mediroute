@@ -215,7 +215,7 @@ function renderClinicCard(clinic, index) {
               <button class="border border-navy-800 text-navy-800 text-sm font-semibold px-4 py-2.5 rounded-xl hover:bg-blue-50 transition flex items-center gap-1">
                 <i class="fa-regular fa-heart"></i>
               </button>
-              <a href="clinic-detail.html?id=${clinic.id}" class="btn-cta text-white text-sm font-bold px-6 py-2.5 flex items-center justify-center gap-2 shadow-md hover:text-white transition">
+              <a href=\"/clinic-detail?id=${clinic.id}\" class="btn-cta text-white text-sm font-bold px-6 py-2.5 flex items-center justify-center gap-2 shadow-md hover:text-white transition">
                 ${t('cta_view_details','View Details')} <i class="fa-solid fa-arrow-right text-xs"></i>
               </a>
             </div>

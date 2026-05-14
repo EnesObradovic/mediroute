@@ -32,17 +32,17 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-      <a href="index.html" data-i18n="nav_home"><i class="fa-solid fa-magnifying-glass w-5 text-center text-sm"></i> Home</a>
-      <a href="compare.html" data-i18n="nav_compare"><i class="fa-solid fa-table-columns w-5 text-center text-sm"></i> Compare Clinics</a>
-      <a href="about.html" data-i18n="nav_about"><i class="fa-solid fa-building w-5 text-center text-sm"></i> About Us</a>
-      <a href="blog.html" data-i18n="nav_blog"><i class="fa-solid fa-book-open w-5 text-center text-sm"></i> Guides / Blog</a>
-      <a href="faq.html" data-i18n="nav_faq"><i class="fa-solid fa-circle-question w-5 text-center text-sm"></i> FAQ</a>
-      <a href="contact.html" data-i18n="nav_contact"><i class="fa-solid fa-envelope w-5 text-center text-sm"></i> Contact</a>
+      <a href=\"/\" data-i18n="nav_home"><i class="fa-solid fa-magnifying-glass w-5 text-center text-sm"></i> Home</a>
+      <a href=\"/compare\" data-i18n="nav_compare"><i class="fa-solid fa-table-columns w-5 text-center text-sm"></i> Compare Clinics</a>
+      <a href=\"/about\" data-i18n="nav_about"><i class="fa-solid fa-building w-5 text-center text-sm"></i> About Us</a>
+      <a href=\"/blog\" data-i18n="nav_blog"><i class="fa-solid fa-book-open w-5 text-center text-sm"></i> Guides / Blog</a>
+      <a href=\"/faq\" data-i18n="nav_faq"><i class="fa-solid fa-circle-question w-5 text-center text-sm"></i> FAQ</a>
+      <a href=\"/contact\" data-i18n="nav_contact"><i class="fa-solid fa-envelope w-5 text-center text-sm"></i> Contact</a>
       <div class="menu-divider"></div>
-      <a href="clinic-dashboard.html" data-i18n="nav_clinics"><i class="fa-solid fa-hospital w-5 text-center text-sm"></i> For Clinics</a>
-      <a href="patient-dashboard.html" data-i18n="nav_dashboard"><i class="fa-solid fa-gauge-high w-5 text-center text-sm"></i> My Dashboard</a>
+      <a href=\"/clinic-dashboard\" data-i18n="nav_clinics"><i class="fa-solid fa-hospital w-5 text-center text-sm"></i> For Clinics</a>
+      <a href=\"/patient-dashboard\" data-i18n="nav_dashboard"><i class="fa-solid fa-gauge-high w-5 text-center text-sm"></i> My Dashboard</a>
       <div class="menu-divider"></div>
-      <a href="auth.html" class="!bg-emerald-600 !text-white !font-bold mt-2 justify-center" data-i18n="nav_signin"><i class="fa-solid fa-right-to-bracket w-5 text-center text-sm"></i> Sign In / Register</a>
+      <a href=\"/auth\" class="!bg-emerald-600 !text-white !font-bold mt-2 justify-center" data-i18n="nav_signin"><i class="fa-solid fa-right-to-bracket w-5 text-center text-sm"></i> Sign In / Register</a>
       
       <!-- Mobile Language Selector -->
       <div class="menu-divider"></div>
@@ -339,7 +339,7 @@
       logoutLink.onclick = async function() {
         if (window.MR && MR.supabase) await MR.supabase.signOut();
         localStorage.removeItem('mr_session');
-        window.location.href = 'auth.html';
+        window.location.href = '/auth';
       };
       logoutLink.className = mobileSignin.className.replace('!bg-emerald-600', '!bg-red-600');
       logoutLink.innerHTML = '<i class="fa-solid fa-right-from-bracket w-5 text-center text-sm"></i> Sign Out';

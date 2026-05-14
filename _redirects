@@ -1,0 +1,2 @@
+/treatment/*    /treatment.html?type=:splat  200
+/blog/*         /blog-detail.html?slug=:splat  200

@@ -309,7 +309,7 @@
   // ── Auto-bind quote buttons ──
   function bindQuoteButtons() {
     // All "Get Free Quote" links/buttons
-    document.querySelectorAll('a[href="auth.html"][data-i18n="cta_free_quote"], a[data-quote-trigger]').forEach(el => {
+    document.querySelectorAll('a[href=\"/auth\"][data-i18n="cta_free_quote"], a[data-quote-trigger]').forEach(el => {
       el.addEventListener('click', function(e) {
         e.preventDefault();
         openQuoteModal();

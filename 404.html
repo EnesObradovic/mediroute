@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Page Not Found — MediRoute</title>
   <!-- hreflang SEO tags -->
-  <link rel="alternate" hreflang="en" href="404.html?lang=en"/>
-  <link rel="alternate" hreflang="tr" href="404.html?lang=tr"/>
-  <link rel="alternate" hreflang="ar" href="404.html?lang=ar"/>
-  <link rel="alternate" hreflang="de" href="404.html?lang=de"/>
-  <link rel="alternate" hreflang="fr" href="404.html?lang=fr"/>
-  <link rel="alternate" hreflang="x-default" href="404.html?lang=en"/>
+  <link rel="alternate" hreflang="en" href=\"/404?lang=en\"/>
+  <link rel="alternate" hreflang="tr" href=\"/404?lang=tr\"/>
+  <link rel="alternate" hreflang="ar" href=\"/404?lang=ar\"/>
+  <link rel="alternate" hreflang="de" href=\"/404?lang=de\"/>
+  <link rel="alternate" hreflang="fr" href=\"/404?lang=fr\"/>
+  <link rel="alternate" hreflang="x-default" href=\"/404?lang=en\"/>
   <meta name="description" content="The page you are looking for could not be found."/>
   <!-- Performance: preconnect to CDN origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -33,30 +33,30 @@
 <!-- NAVBAR -->
 <nav class="hero-bg shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="index.html" class="flex items-center gap-3">
+    <a href=\"/\" class="flex items-center gap-3">
       <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow"><i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i></div>
       <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
     </a>
     <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
-      <a href="index.html" data-i18n="nav_home" class="hover:text-white transition">Home</a>
+      <a href=\"/\" data-i18n="nav_home" class="hover:text-white transition">Home</a>
       <div class="relative group cursor-pointer">
         <span class="hover:text-white transition flex items-center gap-1" data-i18n="footer_treatments">Treatments <i class="fa-solid fa-chevron-down text-[10px]"></i></span>
         <div class="absolute left-0 mt-4 w-48 bg-white rounded-xl shadow-xl py-2 hidden group-hover:block z-50 border border-gray-100">
-          <a href="treatment.html?type=hair-transplant" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_hair">Hair Transplant</a>
-          <a href="treatment.html?type=dental" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_dental">Dental</a>
-          <a href="treatment.html?type=aesthetics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_aesthetics">Aesthetics</a>
-          <a href="treatment.html?type=bariatric" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_bariatric">Bariatric Surgery</a>
-          <a href="treatment.html?type=eye-surgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_eye">Eye Laser</a>
+          <a href="/treatment/hair-transplant" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_hair">Hair Transplant</a>
+          <a href="/treatment/dental" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_dental">Dental</a>
+          <a href="/treatment/aesthetics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_aesthetics">Aesthetics</a>
+          <a href="/treatment/bariatric" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_bariatric">Bariatric Surgery</a>
+          <a href="/treatment/eye-surgery" class="block px-4 py-2 text-sm text-gray-700 hover:bg-navy-50 hover:text-navy-900" data-i18n="treat_eye">Eye Laser</a>
         </div>
       </div>
-      <a href="compare.html" data-i18n="nav_compare" class="hover:text-white transition">Compare Clinics</a>
-      <a href="about.html" data-i18n="nav_about" class="hover:text-white transition">About Us</a>
-      <a href="faq.html" data-i18n="nav_faq" class="hover:text-white transition">FAQ</a>
+      <a href=\"/compare\" data-i18n="nav_compare" class="hover:text-white transition">Compare Clinics</a>
+      <a href=\"/about\" data-i18n="nav_about" class="hover:text-white transition">About Us</a>
+      <a href=\"/faq\" data-i18n="nav_faq" class="hover:text-white transition">FAQ</a>
     </div>
     <div class="flex items-center gap-2">
       <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
       <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
-      <a href="auth.html" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <a href=\"/auth\" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
       <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
@@ -77,13 +77,13 @@
 
     <!-- Quick links -->
     <div class="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-      <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-navy-800 to-navy-700 hover:from-navy-900 hover:to-navy-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition" data-i18n="e404_back">
+      <a href=\"/\" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-navy-800 to-navy-700 hover:from-navy-900 hover:to-navy-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition" data-i18n="e404_back">
         <i class="fa-solid fa-house"></i> Back to Home
       </a>
-      <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow transition" data-i18n="e404_search">
+      <a href=\"/\" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow transition" data-i18n="e404_search">
         <i class="fa-solid fa-magnifying-glass"></i> Search Clinics
       </a>
-      <a href="contact.html" class="inline-flex items-center justify-center gap-2 border-2 border-navy-200 text-navy-800 font-semibold px-6 py-3 rounded-xl hover:bg-navy-50 transition" data-i18n="e404_contact">
+      <a href=\"/contact\" class="inline-flex items-center justify-center gap-2 border-2 border-navy-200 text-navy-800 font-semibold px-6 py-3 rounded-xl hover:bg-navy-50 transition" data-i18n="e404_contact">
         <i class="fa-solid fa-headset"></i> Contact Support
       </a>
     </div>
@@ -92,12 +92,12 @@
     <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-left">
       <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Popular Pages</p>
       <div class="grid grid-cols-2 gap-2">
-        <a href="index.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-magnifying-glass text-navy-300 w-4"></i> Clinic Search</a>
-        <a href="compare.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-table-columns text-navy-300 w-4"></i> Compare</a>
-        <a href="blog.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-book-open text-navy-300 w-4"></i> Guides</a>
-        <a href="faq.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-circle-question text-navy-300 w-4"></i> FAQ</a>
-        <a href="about.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-building text-navy-300 w-4"></i> About Us</a>
-        <a href="auth.html" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-right-to-bracket text-navy-300 w-4"></i> Sign In</a>
+        <a href=\"/\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-magnifying-glass text-navy-300 w-4"></i> Clinic Search</a>
+        <a href=\"/compare\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-table-columns text-navy-300 w-4"></i> Compare</a>
+        <a href=\"/blog\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-book-open text-navy-300 w-4"></i> Guides</a>
+        <a href=\"/faq\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-circle-question text-navy-300 w-4"></i> FAQ</a>
+        <a href=\"/about\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-building text-navy-300 w-4"></i> About Us</a>
+        <a href=\"/auth\" class="flex items-center gap-2 p-2.5 rounded-xl text-sm text-gray-600 hover:bg-navy-50 hover:text-navy-800 transition"><i class="fa-solid fa-right-to-bracket text-navy-300 w-4"></i> Sign In</a>
       </div>
     </div>
   </div>

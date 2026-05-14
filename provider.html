@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Clinic Dashboard | MediRoute</title>
   <!-- hreflang SEO tags -->
-  <link rel="alternate" hreflang="en" href="clinic-dashboard.html?lang=en"/>
-  <link rel="alternate" hreflang="tr" href="clinic-dashboard.html?lang=tr"/>
+  <link rel="alternate" hreflang="en" href=\"/clinic-dashboard?lang=en\"/>
+  <link rel="alternate" hreflang="tr" href=\"/clinic-dashboard?lang=tr\"/>
   <meta name="description" content="Manage your incoming patient requests and clinic performance on MediRoute."/>
   <link rel="stylesheet" href="output.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -234,7 +234,7 @@
       document.getElementById('sidebar-email').textContent = session.email || '';
       document.getElementById('sidebar-avatar').textContent = name[0];
     } else {
-      window.location.href = 'auth.html';
+      window.location.href = '/auth';
       return;
     }
 
@@ -420,7 +420,7 @@
   async function patientLogout(){
     if (window.MR && MR.supabase) await MR.supabase.signOut();
     localStorage.removeItem('mr_session');
-    window.location.href = 'auth.html';
+    window.location.href = '/auth';
   }
 </script>
 </body>
