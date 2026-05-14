@@ -237,10 +237,37 @@
     };
   }
 
+  /* ── 5. Inject Google Analytics & Search Console ── */
+  function injectTracking() {
+    // 1. Google Search Console Verification Meta Tag
+    const gscMeta = document.createElement('meta');
+    gscMeta.name = 'google-site-verification';
+    gscMeta.content = 'YOUR_GSC_VERIFICATION_CODE_HERE'; // TODO: Replace with actual Search Console code
+    document.head.appendChild(gscMeta);
+
+    // 2. Google Analytics (GA4) Tag
+    const gaId = 'G-XXXXXXXXXX'; // TODO: Replace with actual GA4 Measurement ID
+    
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(gaScript);
+
+    const gaInline = document.createElement('script');
+    gaInline.textContent = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gaId}');
+    `;
+    document.head.appendChild(gaInline);
+  }
+
   /* ── Init ── */
   updateMeta(lang);
   injectOG();
   injectJSONLD();
+  injectTracking();
   onLangChange();
 
   // Expose hook for shared.js language switcher
