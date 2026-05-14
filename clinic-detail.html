@@ -513,6 +513,15 @@
   </div>
 </main>
 
+<!-- Mobile Sticky CTA -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] flex items-center justify-between">
+  <div>
+    <p class="text-[10px] text-gray-500 uppercase tracking-wide font-bold" data-i18n="cd_starting_at">Starting at</p>
+    <p class="text-xl font-extrabold text-navy-900" id="mobile-cta-price">£1,499</p>
+  </div>
+  <button onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'})" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg" data-i18n="cd_get_quote">Get Free Quote</button>
+</div>
+
 <!-- FOOTER -->
 <footer class="hero-bg mt-16 py-10 px-4">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -859,9 +868,12 @@
 
     // Price
     var cdPriceMin = document.getElementById('cd-price-min');
-    if (cdPriceMin) cdPriceMin.textContent = '£' + ((clinic.price_min!==undefined)?clinic.price_min:clinic.priceMin||0).toLocaleString();
+    if (cdPriceMin) cdPriceMin.textContent = clinic.priceMin || clinic.price;
     var cdPriceMax = document.getElementById('cd-price-max');
-    if (cdPriceMax) cdPriceMax.textContent = '– £' + ((clinic.price_max!==undefined)?clinic.price_max:clinic.priceMax||0).toLocaleString();
+    if (cdPriceMax) cdPriceMax.textContent = clinic.priceMax ? ('– ' + clinic.priceMax) : '';
+    
+    var mobileCtaPrice = document.getElementById('mobile-cta-price');
+    if (mobileCtaPrice) mobileCtaPrice.textContent = clinic.priceMin || clinic.price;
   })();
 </script>
 <script src="i18n.js"></script>

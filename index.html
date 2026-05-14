@@ -180,10 +180,10 @@
 
 <!-- MAIN CONTENT -->
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  <div class="flex gap-7">
+  <div class="flex flex-col lg:flex-row gap-7">
 
     <!-- ===== LEFT FILTER SIDEBAR ===== -->
-    <aside class="hidden lg:block w-72 flex-shrink-0">
+    <aside id="filter-sidebar" class="hidden lg:block w-full lg:w-72 flex-shrink-0">
       <div class="sticky-filter bg-white rounded-2xl shadow-card p-6 border border-gray-100">
         <div class="flex items-center justify-between mb-5">
           <h2 class="font-bold text-navy-800 text-base flex items-center gap-2"><i class="fa-solid fa-sliders"></i> <span data-i18n="common_filter">Filters</span></h2>
@@ -282,15 +282,20 @@
           <p class="text-gray-500 text-sm"><strong class="text-navy-800 font-bold text-base" id="result-count">0</strong> <span data-i18n="idx_results_text">clinics found matching your criteria</span></p>
           <div class="flex gap-2 mt-1 flex-wrap" id="active-filter-tags"></div>
         </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-sm text-gray-500" data-i18n="common_sort_by">Sort by:</span>
-          <select id="sort-select" class="border border-gray-200 rounded-lg text-sm text-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-navy-800">
-            <option value="" data-i18n="common_best_match">Best Match</option>
-            <option value="rating" data-i18n="idx_highest_rated">Highest Rated</option>
-            <option value="price-asc" data-i18n="common_price_low">Price: Low to High</option>
-            <option value="price-desc" data-i18n="common_price_high">Price: High to Low</option>
-            <option value="reviews" data-i18n="idx_most_reviews">Most Reviews</option>
-          </select>
+        <div class="flex items-center justify-between w-full sm:w-auto mt-3 sm:mt-0 gap-2 flex-shrink-0">
+          <button onclick="document.getElementById('filter-sidebar').classList.toggle('hidden')" class="lg:hidden flex items-center gap-2 border border-gray-200 rounded-lg text-sm text-gray-700 px-3 py-2 bg-white shadow-sm hover:bg-gray-50 transition">
+            <i class="fa-solid fa-sliders"></i> <span data-i18n="common_filter">Filter</span>
+          </button>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-500 hidden sm:inline" data-i18n="common_sort_by">Sort by:</span>
+            <select id="sort-select" class="border border-gray-200 rounded-lg text-sm text-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-navy-800 shadow-sm">
+              <option value="" data-i18n="common_best_match">Best Match</option>
+              <option value="rating" data-i18n="idx_highest_rated">Highest Rated</option>
+              <option value="price-asc" data-i18n="common_price_low">Price: Low to High</option>
+              <option value="price-desc" data-i18n="common_price_high">Price: High to Low</option>
+              <option value="reviews" data-i18n="idx_most_reviews">Most Reviews</option>
+            </select>
+          </div>
         </div>
       </div>
 

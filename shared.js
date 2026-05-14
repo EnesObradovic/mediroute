@@ -33,6 +33,16 @@
         </button>
       </div>
       <a href=\"/\" data-i18n="nav_home"><i class="fa-solid fa-magnifying-glass w-5 text-center text-sm"></i> Home</a>
+      
+      <div class="menu-divider"></div>
+      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-4 mb-2 mt-2" data-i18n="footer_treatments">Treatments</p>
+      <a href=\"/treatment/hair-transplant\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_hair"><i class="fa-solid fa-scissors w-5 text-center text-xs opacity-70"></i> Hair Transplant</a>
+      <a href=\"/treatment/dental\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_dental"><i class="fa-solid fa-tooth w-5 text-center text-xs opacity-70"></i> Dental</a>
+      <a href=\"/treatment/aesthetics\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_aesthetics"><i class="fa-solid fa-face-smile w-5 text-center text-xs opacity-70"></i> Aesthetics</a>
+      <a href=\"/treatment/bariatric\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_bariatric"><i class="fa-solid fa-weight-scale w-5 text-center text-xs opacity-70"></i> Bariatric</a>
+      <a href=\"/treatment/eye-surgery\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_eye"><i class="fa-solid fa-eye w-5 text-center text-xs opacity-70"></i> Eye Laser</a>
+      <div class="menu-divider"></div>
+
       <a href=\"/compare\" data-i18n="nav_compare"><i class="fa-solid fa-table-columns w-5 text-center text-sm"></i> Compare Clinics</a>
       <a href=\"/about\" data-i18n="nav_about"><i class="fa-solid fa-building w-5 text-center text-sm"></i> About Us</a>
       <a href=\"/blog\" data-i18n="nav_blog"><i class="fa-solid fa-book-open w-5 text-center text-sm"></i> Guides / Blog</a>
