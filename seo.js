@@ -242,7 +242,7 @@
     // 1. Google Search Console Verification Meta Tag
     const gscMeta = document.createElement('meta');
     gscMeta.name = 'google-site-verification';
-    gscMeta.content = 'YOUR_GSC_VERIFICATION_CODE_HERE'; // TODO: Replace with actual Search Console code
+    gscMeta.content = 'aB4OzDZmHejT3aqM4DVg7M9UCI_kZvDTqnK1DHE8vFM';
     document.head.appendChild(gscMeta);
 
     // 2. Google Analytics (GA4) Tag
