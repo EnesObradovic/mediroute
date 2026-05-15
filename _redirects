@@ -2,6 +2,7 @@
 /blog/*              /blog-detail.html?slug=:splat  200
 
 /about               /about.html 200
+/treatments          /treatments.html 200
 /contact             /contact.html 200
 /compare             /compare.html 200
 /blog                /blog.html 200
