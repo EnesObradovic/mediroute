@@ -1,2 +1,16 @@
-/treatment/*    /treatment.html?type=:splat  200
-/blog/*         /blog-detail.html?slug=:splat  200
+/treatment/*         /treatment.html?type=:splat  200
+/blog/*              /blog-detail.html?slug=:splat  200
+
+/about               /about.html 200
+/contact             /contact.html 200
+/compare             /compare.html 200
+/blog                /blog.html 200
+/faq                 /faq.html 200
+/auth                /auth.html 200
+/admin               /admin.html 200
+/patient-dashboard   /patient-dashboard.html 200
+/provider            /provider.html 200
+/clinic-detail       /clinic-detail.html 200
+/index               /index.html 200
+
+/*                   /404.html 404
