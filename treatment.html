@@ -26,6 +26,14 @@
     .cta-glow{box-shadow:0 8px 32px rgba(5,150,105,.35);}
     .clinic-link{background:#fff;border-radius:16px;border:1px solid #E8EEF9;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;transition:all .2s;cursor:pointer;}
     .clinic-link:hover{border-color:#0F2D96;box-shadow:0 4px 16px rgba(10,31,107,.1);}
+    
+    /* Basic prose styling fallback */
+    .prose h2 { font-size: 1.5rem; font-weight: 800; color: #0f2d96; margin-bottom: 1rem; margin-top: 1.5rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #1a3aaf; margin-bottom: 0.75rem; margin-top: 1.25rem; }
+    .prose p { margin-bottom: 1rem; line-height: 1.7; color: #4b5563; }
+    .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; }
+    .prose li { margin-bottom: 0.5rem; }
+    .prose strong { color: #1e3a8a; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -67,6 +75,11 @@
 
 <!-- CONTENT -->
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+  <!-- SEO / GEO Content Guide -->
+  <section class="mb-12 fade-up bg-white p-6 md:p-10 rounded-3xl border border-blue-50 shadow-sm" id="seo-content-section" style="display:none;">
+    <div class="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed" id="seo-content"></div>
+  </section>
 
   <!-- Techniques -->
   <section class="mb-12 fade-up">
@@ -168,6 +181,12 @@ document.getElementById('stats-grid').innerHTML = t.stats.map(s => `
     <p class="text-blue-300 text-xs mt-1">${L(s)}</p>
   </div>
 `).join('');
+
+// SEO Content Injection
+if (t.seoContent && t.seoContent[lang]) {
+  document.getElementById('seo-content-section').style.display = 'block';
+  document.getElementById('seo-content').innerHTML = t.seoContent[lang];
+}
 
 // Section titles
 if (lang === 'tr') {
