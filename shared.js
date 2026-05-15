@@ -214,6 +214,7 @@
 
     // Update hreflang meta tags
     updateHreflangTags(lang);
+    if (typeof window.onLanguageChanged === "function") window.onLanguageChanged(lang);
 
     // Rebuild dropdown to show new active state
     buildLangDropdown();
@@ -385,6 +386,7 @@
     if (lang === 'ar') document.documentElement.dir = 'rtl';
     applyTranslations(lang);
     updateHreflangTags(lang);
+    if (typeof window.onLanguageChanged === "function") window.onLanguageChanged(lang);
 
     // Session awareness AFTER i18n (so translations don't overwrite avatar)
     updateNavbarSession();

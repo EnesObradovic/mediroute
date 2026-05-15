@@ -67,6 +67,22 @@
       <i id="hero-icon" class="fa-solid fa-scissors text-blue-300"></i>
       <span class="text-blue-200 text-xs font-semibold uppercase tracking-wider">MediRoute Treatment Guide</span>
     </div>
+    
+    <nav class="text-sm font-medium mb-5 text-blue-200 flex justify-center w-full">
+      <ol class="list-none p-0 inline-flex">
+        <li class="flex items-center">
+          <a href="/" class="hover:text-white transition" data-i18n="nav_home">Home</a>
+          <i class="fa-solid fa-chevron-right text-[10px] mx-2 opacity-50"></i>
+        </li>
+        <li class="flex items-center">
+          <a href="/treatments" class="hover:text-white transition" data-i18n="footer_treatments">Treatments</a>
+          <i class="fa-solid fa-chevron-right text-[10px] mx-2 opacity-50"></i>
+        </li>
+        <li class="flex items-center text-white" id="bc-title">
+          Treatment
+        </li>
+      </ol>
+    </nav>
     <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4" id="hero-title">Treatment</h1>
     <p class="text-blue-200 text-base md:text-lg max-w-2xl mx-auto mb-8" id="hero-sub">Loading...</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto" id="stats-grid"></div>
@@ -163,80 +179,138 @@ const lang = ['en','tr'].includes(langParam) ? langParam : 'en';
 const t = window.TREATMENTS[type];
 if (!t) { window.location.href = '/'; }
 
-function L(obj) { return obj[lang] || obj['en']; }
+function L(obj, l) { return obj[l] || obj['en']; }
 
-// Page title & meta
-document.title = L(t.title) + ' | MediRoute';
-document.querySelector('meta[name="description"]').content = L(t.metaDesc);
+function renderContent(l) {
+  // Page title & meta
+  document.title = L(t.title, l) + ' | MediRoute';
+  document.querySelector('meta[name="description"]').content = L(t.metaDesc, l);
 
-// Hero
-document.getElementById('hero-icon').className = t.icon + ' text-blue-300';
-document.getElementById('hero-title').textContent = L(t.title);
-document.getElementById('hero-sub').textContent = L(t.heroSub);
+  // Hero
+  document.getElementById('hero-icon').className = t.icon + ' text-blue-300';
+  document.getElementById('hero-title').textContent = L(t.title, l);
+  document.getElementById('bc-title').textContent = L(t.title, l);
+  document.getElementById('hero-sub').textContent = L(t.heroSub, l);
 
-// Stats
-document.getElementById('stats-grid').innerHTML = t.stats.map(s => `
-  <div class="stat-card">
-    <p class="text-2xl font-extrabold text-white">${s.val}</p>
-    <p class="text-blue-300 text-xs mt-1">${L(s)}</p>
-  </div>
-`).join('');
+  // Stats
+  document.getElementById('stats-grid').innerHTML = t.stats.map(s => `
+    <div class="stat-card">
+      <p class="text-2xl font-extrabold text-white">${s.val}</p>
+      <p class="text-blue-300 text-xs mt-1">${L(s, l)}</p>
+    </div>
+  `).join('');
 
-// SEO Content Injection
-if (t.seoContent && t.seoContent[lang]) {
-  document.getElementById('seo-content-section').style.display = 'block';
-  document.getElementById('seo-content').innerHTML = t.seoContent[lang];
+  // SEO Content Injection
+  if (t.seoContent && t.seoContent[l]) {
+    document.getElementById('seo-content-section').style.display = 'block';
+    document.getElementById('seo-content').innerHTML = t.seoContent[l];
+  } else {
+    document.getElementById('seo-content-section').style.display = 'none';
+  }
+
+  // Section titles
+  if (l === 'tr') {
+    document.getElementById('tech-title').textContent = 'Teknikler & Yöntemler';
+    document.getElementById('tech-sub').textContent = 'Sertifikalı uzmanlar tarafından uygulanan ileri düzey prosedürler';
+    document.getElementById('cta-title').textContent = 'Başlamaya Hazır mısınız?';
+    document.getElementById('cta-sub').textContent = '2 saat içinde 3 doğrulanmış klinikten ücretsiz teklif alın';
+    document.getElementById('cta-btn').textContent = 'Ücretsiz Teklif Al';
+    document.getElementById('faq-title').textContent = 'Sıkça Sorulan Sorular';
+    document.getElementById('browse-title').textContent = 'Kliniklere Göz At';
+    document.getElementById('browse-text').textContent = 'Tüm klinikleri görüntüle';
+    document.getElementById('browse-sub').textContent = 'Fiyatları, yorumları ve paketleri karşılaştırın';
+    document.getElementById('other-title').textContent = 'Diğer Tedaviler';
+  } else if (l === 'fr') {
+    document.getElementById('tech-title').textContent = 'Techniques et Méthodes';
+    document.getElementById('tech-sub').textContent = 'Procédures avancées réalisées par des spécialistes certifiés';
+    document.getElementById('cta-title').textContent = 'Prêt à commencer?';
+    document.getElementById('cta-sub').textContent = 'Recevez des devis gratuits de 3 cliniques vérifiées';
+    document.getElementById('cta-btn').textContent = 'Obtenir un devis gratuit';
+    document.getElementById('faq-title').textContent = 'Questions Fréquemment Posées';
+    document.getElementById('browse-title').textContent = 'Parcourir les Cliniques';
+    document.getElementById('browse-text').textContent = 'Voir toutes les cliniques';
+    document.getElementById('browse-sub').textContent = 'Comparez les prix, les avis et les forfaits';
+    document.getElementById('other-title').textContent = 'Autres Traitements';
+  } else if (l === 'de') {
+    document.getElementById('tech-title').textContent = 'Techniken & Methoden';
+    document.getElementById('tech-sub').textContent = 'Fortschrittliche Verfahren von zertifizierten Spezialisten';
+    document.getElementById('cta-title').textContent = 'Bereit anzufangen?';
+    document.getElementById('cta-sub').textContent = 'Holen Sie sich in 2 Stunden Angebote von 3 geprüften Kliniken';
+    document.getElementById('cta-btn').textContent = 'Kostenloses Angebot einholen';
+    document.getElementById('faq-title').textContent = 'Häufig gestellte Fragen';
+    document.getElementById('browse-title').textContent = 'Kliniken durchsuchen';
+    document.getElementById('browse-text').textContent = 'Alle Kliniken anzeigen';
+    document.getElementById('browse-sub').textContent = 'Preise, Bewertungen und Pakete vergleichen';
+    document.getElementById('other-title').textContent = 'Andere Behandlungen';
+  } else if (l === 'ar') {
+    document.getElementById('tech-title').textContent = 'التقنيات والأساليب';
+    document.getElementById('tech-sub').textContent = 'إجراءات متقدمة يقوم بها متخصصون معتمدون';
+    document.getElementById('cta-title').textContent = 'هل أنت مستعد للبدء؟';
+    document.getElementById('cta-sub').textContent = 'احصل على عروض أسعار مجانية من 3 عيادات معتمدة';
+    document.getElementById('cta-btn').textContent = 'احصل على عرض سعر مجاني';
+    document.getElementById('faq-title').textContent = 'أسئلة مكررة';
+    document.getElementById('browse-title').textContent = 'تصفح العيادات';
+    document.getElementById('browse-text').textContent = 'عرض جميع العيادات';
+    document.getElementById('browse-sub').textContent = 'قارن الأسعار والتقييمات والباقات';
+    document.getElementById('other-title').textContent = 'علاجات أخرى';
+  } else {
+    document.getElementById('tech-title').textContent = 'Techniques & Methods';
+    document.getElementById('tech-sub').textContent = 'Advanced procedures performed by certified specialists';
+    document.getElementById('cta-title').textContent = 'Ready to Start?';
+    document.getElementById('cta-sub').textContent = 'Get free quotes from 3 verified clinics within 2 hours';
+    document.getElementById('cta-btn').textContent = 'Get Free Quote';
+    document.getElementById('faq-title').textContent = 'Frequently Asked Questions';
+    document.getElementById('browse-title').textContent = 'Browse Clinics';
+    document.getElementById('browse-text').textContent = 'View all clinics';
+    document.getElementById('browse-sub').textContent = 'Compare prices, reviews and packages';
+    document.getElementById('other-title').textContent = 'Other Treatments';
+  }
+
+  // Techniques
+  document.getElementById('tech-grid').innerHTML = t.techniques.map((tc, i) => `
+    <div class="tech-card" style="animation-delay:${i*0.1}s">
+      <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center mb-3">
+        <i class="${t.icon} text-navy-700"></i>
+      </div>
+      <h3 class="font-bold text-navy-900 mb-2">${L(tc, l) || tc.name}</h3>
+      <p class="text-sm text-gray-600 leading-relaxed">${L(tc, l) || tc.name}</p>
+    </div>
+  `).join('');
+
+  // FAQ
+  document.getElementById('faq-list').innerHTML = t.faq.map((f, i) => `
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="flex items-center justify-between p-4 cursor-pointer">
+        <p class="font-semibold text-navy-900 text-sm pr-4">${L(f.q, l)}</p>
+        <i class="fa-solid fa-chevron-down text-navy-700 text-xs faq-chevron transition-transform"></i>
+      </div>
+      <div class="faq-answer">
+        <p class="text-sm text-gray-600 leading-relaxed">${L(f.a, l)}</p>
+      </div>
+    </div>
+  `).join('');
+
+  // Browse link
+  document.getElementById('browse-link').href = `/?treatment=${t.filterValue}&lang=${l}`;
+
+  // Other treatments
+  const others = Object.values(window.TREATMENTS).filter(x => x.slug !== type);
+  document.getElementById('other-grid').innerHTML = others.map(o => `
+    <a href="/treatment/${o.slug}?lang=${l}" class="clinic-link flex-col !items-center !text-center !gap-2 !p-4">
+      <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center"><i class="${o.icon} text-navy-700"></i></div>
+      <p class="font-bold text-navy-900 text-xs">${L(o.title, l)}</p>
+    </a>
+  `).join('');
 }
 
-// Section titles
-if (lang === 'tr') {
-  document.getElementById('tech-title').textContent = 'Teknikler & Yöntemler';
-  document.getElementById('tech-sub').textContent = 'Sertifikalı uzmanlar tarafından uygulanan ileri düzey prosedürler';
-  document.getElementById('cta-title').textContent = 'Başlamaya Hazır mısınız?';
-  document.getElementById('cta-sub').textContent = '2 saat içinde 3 doğrulanmış klinikten ücretsiz teklif alın';
-  document.getElementById('cta-btn').textContent = 'Ücretsiz Teklif Al';
-  document.getElementById('faq-title').textContent = 'Sıkça Sorulan Sorular';
-  document.getElementById('browse-title').textContent = 'Kliniklere Göz At';
-  document.getElementById('browse-text').textContent = 'Tüm klinikleri görüntüle';
-  document.getElementById('browse-sub').textContent = 'Fiyatları, yorumları ve paketleri karşılaştırın';
-  document.getElementById('other-title').textContent = 'Diğer Tedaviler';
-}
+// Initial render
+renderContent(lang);
 
-// Techniques
-document.getElementById('tech-grid').innerHTML = t.techniques.map((tc, i) => `
-  <div class="tech-card" style="animation-delay:${i*0.1}s">
-    <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center mb-3">
-      <i class="${t.icon} text-navy-700"></i>
-    </div>
-    <h3 class="font-bold text-navy-900 mb-2">${tc.name}</h3>
-    <p class="text-sm text-gray-600 leading-relaxed">${L(tc)}</p>
-  </div>
-`).join('');
+// Hook into language switcher
+window.onLanguageChanged = function(newLang) {
+  renderContent(newLang);
+};
 
-// FAQ
-document.getElementById('faq-list').innerHTML = t.faq.map((f, i) => `
-  <div class="faq-item" onclick="this.classList.toggle('open')">
-    <div class="flex items-center justify-between p-4 cursor-pointer">
-      <p class="font-semibold text-navy-900 text-sm pr-4">${L(f.q)}</p>
-      <i class="fa-solid fa-chevron-down text-navy-700 text-xs faq-chevron transition-transform"></i>
-    </div>
-    <div class="faq-answer">
-      <p class="text-sm text-gray-600 leading-relaxed">${L(f.a)}</p>
-    </div>
-  </div>
-`).join('');
-
-// Browse link
-document.getElementById('browse-link').href = `index.html?treatment=${t.filterValue}`;
-
-// Other treatments
-const others = Object.values(window.TREATMENTS).filter(x => x.slug !== type);
-document.getElementById('other-grid').innerHTML = others.map(o => `
-  <a href="/treatment/${o.slug}?lang=${lang}" class="clinic-link flex-col !items-center !text-center !gap-2 !p-4">
-    <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center"><i class="${o.icon} text-navy-700"></i></div>
-    <p class="font-bold text-navy-900 text-xs">${L(o.title)}</p>
-  </a>
-`).join('');
 </script>
 <script src="/i18n.js"></script>
 <script src="/shared.js"></script>
