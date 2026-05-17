@@ -306,7 +306,7 @@ function renderContent(l) {
 // Initial render
 renderContent(lang);
 
-// Hook into language switcher
+// Hook for shared.js (if it supports onLanguageChanged)
 window.onLanguageChanged = function(newLang) {
   renderContent(newLang);
 };
@@ -314,5 +314,33 @@ window.onLanguageChanged = function(newLang) {
 </script>
 <script src="/i18n.js"></script>
 <script src="/shared.js"></script>
+<script>
+// Patch: detect language changes via html[lang] attribute mutation
+// This works even if shared.js doesn't call onLanguageChanged
+(function() {
+  var lastLang = document.documentElement.lang || 'en';
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName === 'lang') {
+        var newLang = document.documentElement.lang;
+        if (newLang && newLang !== lastLang) {
+          lastLang = newLang;
+          if (typeof renderContent === 'function') renderContent(newLang);
+        }
+      }
+    });
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+  // Also patch switchLanguage directly if it exists
+  var origSwitch = window.switchLanguage;
+  if (typeof origSwitch === 'function') {
+    window.switchLanguage = async function(lang) {
+      await origSwitch(lang);
+      if (typeof renderContent === 'function') renderContent(lang);
+    };
+  }
+})();
+</script>
 </body>
 </html>
