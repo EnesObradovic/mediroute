@@ -193,16 +193,13 @@
   window.switchLanguage = async function(lang) {
     localStorage.setItem('mediroute-lang', lang);
     
-    // Update URL param without reload for SPA feel, then apply translations
+    // Update URL param without reload for SPA feel
     const url = new URL(window.location);
     url.searchParams.set('lang', lang);
     window.history.replaceState({}, '', url);
 
-    // Apply translations
+    // Apply translations to data-i18n elements
     applyTranslations(lang);
-
-    // Re-apply session state (so translations don't overwrite avatar)
-    await updateNavbarSession();
 
     // Update HTML lang attribute & direction
     document.documentElement.lang = lang;
@@ -214,31 +211,42 @@
 
     // Update hreflang meta tags
     updateHreflangTags(lang);
-    if (typeof window.onLanguageChanged === "function") window.onLanguageChanged(lang);
+
+    // Fire page-specific language hook IMMEDIATELY (before any async ops)
+    if (typeof window.onLanguageChanged === "function") {
+      try { window.onLanguageChanged(lang); } catch(e) { console.warn('onLanguageChanged error:', e); }
+    }
 
     // Rebuild dropdown to show new active state
     buildLangDropdown();
-
-    // Re-render clinic cards if on index page (so dynamic text updates)
-    if (typeof renderAllClinics === 'function' && document.getElementById('clinic-list')) {
-      var treatSel = document.getElementById('treatment-select');
-      var citySel = document.getElementById('city-select');
-      var ratingEl = document.querySelector('input[name="rating"]:checked');
-      var priceEl = document.getElementById('price-range');
-      var jciEl = document.getElementById('f-jci');
-      await renderAllClinics('clinic-list', {
-        treatment: treatSel ? treatSel.value : '',
-        city: citySel ? citySel.value : '',
-        minRating: ratingEl ? parseFloat(ratingEl.value) : 0,
-        maxPrice: priceEl ? parseInt(priceEl.value) : 15000,
-        jci: jciEl && jciEl.checked
-      });
-    }
 
     // Close dropdowns
     const dd = document.getElementById('lang-dropdown');
     if (dd) dd.classList.remove('open');
     closeMobileMenu();
+
+    // Async operations that should not block UI
+    try {
+      await updateNavbarSession();
+    } catch(e) { console.warn('Session update error:', e); }
+
+    // Re-render clinic cards if on index page
+    try {
+      if (typeof renderAllClinics === 'function' && document.getElementById('clinic-list')) {
+        var treatSel = document.getElementById('treatment-select');
+        var citySel = document.getElementById('city-select');
+        var ratingEl = document.querySelector('input[name="rating"]:checked');
+        var priceEl = document.getElementById('price-range');
+        var jciEl = document.getElementById('f-jci');
+        await renderAllClinics('clinic-list', {
+          treatment: treatSel ? treatSel.value : '',
+          city: citySel ? citySel.value : '',
+          minRating: ratingEl ? parseFloat(ratingEl.value) : 0,
+          maxPrice: priceEl ? parseInt(priceEl.value) : 15000,
+          jci: jciEl && jciEl.checked
+        });
+      }
+    } catch(e) { console.warn('Clinic render error:', e); }
   };
 
   function applyTranslations(lang) {
