@@ -32,27 +32,27 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-      <a href="/\" data-i18n="nav_home"><i class="fa-solid fa-magnifying-glass w-5 text-center text-sm"></i> Home</a>
+      <a href="/" data-i18n="nav_home"><i class="fa-solid fa-magnifying-glass w-5 text-center text-sm"></i> Home</a>
       
       <div class="menu-divider"></div>
       <a href="/treatments" class="block text-blue-500 text-[10px] font-bold uppercase tracking-widest px-4 mb-2 mt-2" data-i18n="footer_treatments">Treatments</a>
-      <a href="/treatment/hair-transplant\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_hair"><i class="fa-solid fa-scissors w-5 text-center text-xs opacity-70"></i> Hair Transplant</a>
-      <a href="/treatment/dental\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_dental"><i class="fa-solid fa-tooth w-5 text-center text-xs opacity-70"></i> Dental</a>
-      <a href="/treatment/aesthetics\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_aesthetics"><i class="fa-solid fa-face-smile w-5 text-center text-xs opacity-70"></i> Aesthetics</a>
-      <a href="/treatment/bariatric\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_bariatric"><i class="fa-solid fa-weight-scale w-5 text-center text-xs opacity-70"></i> Bariatric</a>
-      <a href="/treatment/eye-surgery\" style="padding-left:2rem;font-size:13px;" data-i18n="treat_eye"><i class="fa-solid fa-eye w-5 text-center text-xs opacity-70"></i> Eye Laser</a>
+      <a href="/treatment/hair-transplant" style="padding-left:2rem;font-size:13px;" data-i18n="treat_hair"><i class="fa-solid fa-scissors w-5 text-center text-xs opacity-70"></i> Hair Transplant</a>
+      <a href="/treatment/dental" style="padding-left:2rem;font-size:13px;" data-i18n="treat_dental"><i class="fa-solid fa-tooth w-5 text-center text-xs opacity-70"></i> Dental</a>
+      <a href="/treatment/aesthetics" style="padding-left:2rem;font-size:13px;" data-i18n="treat_aesthetics"><i class="fa-solid fa-face-smile w-5 text-center text-xs opacity-70"></i> Aesthetics</a>
+      <a href="/treatment/bariatric" style="padding-left:2rem;font-size:13px;" data-i18n="treat_bariatric"><i class="fa-solid fa-weight-scale w-5 text-center text-xs opacity-70"></i> Bariatric</a>
+      <a href="/treatment/eye-surgery" style="padding-left:2rem;font-size:13px;" data-i18n="treat_eye"><i class="fa-solid fa-eye w-5 text-center text-xs opacity-70"></i> Eye Laser</a>
       <div class="menu-divider"></div>
 
-      <a href="/compare\" data-i18n="nav_compare"><i class="fa-solid fa-table-columns w-5 text-center text-sm"></i> Compare Clinics</a>
-      <a href="/about\" data-i18n="nav_about"><i class="fa-solid fa-building w-5 text-center text-sm"></i> About Us</a>
-      <a href="/blog\" data-i18n="nav_blog"><i class="fa-solid fa-book-open w-5 text-center text-sm"></i> Guides / Blog</a>
-      <a href="/faq\" data-i18n="nav_faq"><i class="fa-solid fa-circle-question w-5 text-center text-sm"></i> FAQ</a>
-      <a href="/contact\" data-i18n="nav_contact"><i class="fa-solid fa-envelope w-5 text-center text-sm"></i> Contact</a>
+      <a href="/compare" data-i18n="nav_compare"><i class="fa-solid fa-table-columns w-5 text-center text-sm"></i> Compare Clinics</a>
+      <a href="/about" data-i18n="nav_about"><i class="fa-solid fa-building w-5 text-center text-sm"></i> About Us</a>
+      <a href="/blog" data-i18n="nav_blog"><i class="fa-solid fa-book-open w-5 text-center text-sm"></i> Guides / Blog</a>
+      <a href="/faq" data-i18n="nav_faq"><i class="fa-solid fa-circle-question w-5 text-center text-sm"></i> FAQ</a>
+      <a href="/contact" data-i18n="nav_contact"><i class="fa-solid fa-envelope w-5 text-center text-sm"></i> Contact</a>
       <div class="menu-divider"></div>
-      <a href="/clinic-dashboard\" data-i18n="nav_clinics"><i class="fa-solid fa-hospital w-5 text-center text-sm"></i> For Clinics</a>
-      <a href="/patient-dashboard\" data-i18n="nav_dashboard"><i class="fa-solid fa-gauge-high w-5 text-center text-sm"></i> My Dashboard</a>
+      <a href="/clinic-dashboard" data-i18n="nav_clinics"><i class="fa-solid fa-hospital w-5 text-center text-sm"></i> For Clinics</a>
+      <a href="/patient-dashboard" data-i18n="nav_dashboard"><i class="fa-solid fa-gauge-high w-5 text-center text-sm"></i> My Dashboard</a>
       <div class="menu-divider"></div>
-      <a href="/auth\" class="!bg-emerald-600 !text-white !font-bold mt-2 justify-center" data-i18n="nav_signin"><i class="fa-solid fa-right-to-bracket w-5 text-center text-sm"></i> Sign In / Register</a>
+      <a href="/auth" class="!bg-emerald-600 !text-white !font-bold mt-2 justify-center" data-i18n="nav_signin"><i class="fa-solid fa-right-to-bracket w-5 text-center text-sm"></i> Sign In / Register</a>
       
       <!-- Mobile Language Selector -->
       <div class="menu-divider"></div>

@@ -173,8 +173,8 @@ const params = new URLSearchParams(window.location.search);
 const pathParts = window.location.pathname.split('/').filter(Boolean);
 const pathType = pathParts.length > 0 && pathParts[0] === 'treatment' ? pathParts[1] : null;
 const type = pathType || params.get('type') || 'hair-transplant';
-const langParam = params.get('lang') || localStorage.getItem('mediroute_lang') || 'en';
-const lang = ['en','tr'].includes(langParam) ? langParam : 'en';
+const langParam = params.get('lang') || localStorage.getItem('mediroute-lang') || 'en';
+const lang = ['en','tr','de','fr','ar'].includes(langParam) ? langParam : 'en';
 
 const t = window.TREATMENTS[type];
 if (!t) { window.location.href = '/'; }
@@ -272,8 +272,8 @@ function renderContent(l) {
       <div class="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center mb-3">
         <i class="${t.icon} text-navy-700"></i>
       </div>
-      <h3 class="font-bold text-navy-900 mb-2">${L(tc, l) || tc.name}</h3>
-      <p class="text-sm text-gray-600 leading-relaxed">${L(tc, l) || tc.name}</p>
+      <h3 class="font-bold text-navy-900 mb-2">${tc.name}</h3>
+      <p class="text-sm text-gray-600 leading-relaxed">${L(tc, l)}</p>
     </div>
   `).join('');
 
