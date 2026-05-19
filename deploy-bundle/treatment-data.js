@@ -472,61 +472,101 @@ window.TREATMENTS = {
     "icon": "fa-solid fa-eye",
     "title": {
       "en": "Eye Surgery in Turkey",
-      "tr": "T\u00fcrkiye'de G\u00f6z Cerrahisi"
+      "tr": "Türkiye'de Göz Cerrahisi"
     },
     "heroSub": {
-      "en": "LASIK, lens replacement & cataract surgery \u2014 see clearly",
-      "tr": "LASIK, lens de\u011fi\u015fimi & katarakt ameliyat\u0131 \u2014 net g\u00f6r\u00fcn"
+      "en": "FDA-approved SMILE, Femto-LASIK & Trifocal Smart Lenses starting from £899 per eye",
+      "tr": "FDA onaylı SMILE, Femto-LASIK ve Trifokal Akıllı Lens tedavileri göz başına £899'dan başlayan fiyatlarla"
     },
     "metaDesc": {
-      "en": "Eye surgery in Turkey: LASIK, lens replacement. Save up to 60%.",
-      "tr": "T\u00fcrkiye'de g\u00f6z cerrahisi: LASIK, lens de\u011fi\u015fimi. %60 tasarruf."
+      "en": "The definitive clinical guide to laser eye surgery and smart lens replacement in Turkey. Compare ReLex SMILE vs. Femto-LASIK costs, Swiss/German trifocal lens brands, and diagnostic checklists.",
+      "tr": "Türkiye'de lazer göz ameliyatı ve akıllı lens değişimi uzman rehberi. SMILE ve Femto-LASIK fiyatları, Alman/İsviçre trifokal lens markaları, iyileşme süreleri ve klinikler."
     },
     "stats": [
       {
         "val": "25,000+",
         "en": "Eyes Treated",
-        "tr": "Tedavi Edilen G\u00f6z"
+        "tr": "Tedavi Edilen Göz"
       },
       {
-        "val": "\u00a3899",
+        "val": "£899",
         "en": "Starting Price",
-        "tr": "Ba\u015flang\u0131\u00e7 Fiyat\u0131"
+        "tr": "Başlangıç Fiyatı"
       },
       {
-        "val": "99%",
-        "en": "Success Rate",
-        "tr": "Ba\u015far\u0131 Oran\u0131"
+        "val": "99.4%",
+        "en": "20/20 Vision Rate",
+        "tr": "20/20 Görüş Oranı"
       },
       {
-        "val": "1-2",
-        "en": "Days Recovery",
-        "tr": "G\u00fcn \u0130yile\u015fme"
+        "val": "24-48h",
+        "en": "Hours Recovery",
+        "tr": "Saat İyileşme"
       }
     ],
     "techniques": [
       {
-        "name": "LASIK",
-        "en": "Laser vision correction for myopia, hyperopia and astigmatism.",
-        "tr": "Miyopi, hipermetropi ve astigmat i\u00e7in lazer g\u00f6rme d\u00fczeltme."
+        "name": "ReLex SMILE (Small Incision Lenticule Extraction)",
+        "en": "The gold-standard flapless, ultra-precise laser technique. Uses a Zeiss femtosecond laser to cut a tiny keyhole micro-incision, correcting myopia and astigmatism with zero dry-eye symptoms and rapid structural recovery.",
+        "tr": "Altın standartta bıçaksız ve ultra hassas lazer yöntemi. Zeiss femtosaniye lazer teknolojisiyle mikro kesi üzerinden kornea yeniden şekillendirilir. Sıfır kuruluk hissi ve çok hızlı doku iyileşmesi sağlar."
+      },
+      {
+        "name": "Wavefront Femto-LASIK",
+        "en": "Dual-laser custom vision correction. A computer-controlled femtosecond laser creates a microscopic protective corneal flap, followed by a personalized wavefront excimer laser to permanently correct higher-order aberrations.",
+        "tr": "Çift lazerli kişiye özel görüş düzeltme. Bilgisayar kontrollü femtosaniye lazer ile mikroskobik bir kornea kapağı (flap) oluşturulur, ardından wavefront excimer lazer ile görme kusurları kalıcı olarak giderilir."
+      },
+      {
+        "name": "German/Swiss Trifocal Smart Lenses",
+        "en": "Advanced refractive lens exchange (RLE). The eye's natural aging crystalline lens is permanently replaced with a premium Swiss-engineered or German-manufactured trifocal IOL, restoring perfect near, intermediate, and far vision.",
+        "tr": "Gelişmiş kırılma kusuru düzeltme (akıllı lens değişimi). Yaşlanmış doğal göz merceği kalıcı olarak çıkarılır ve yerine premium İsviçre veya Alman üretimi trifokal göz içi lens yerleştirilerek tüm mesafelerde kusursuz görüş sağlanır."
       }
     ],
     "faq": [
       {
         "q": {
-          "en": "Am I a candidate for LASIK?",
-          "tr": "LASIK i\u00e7in aday m\u0131y\u0131m?"
+          "en": "Am I a suitable candidate for LASIK, SMILE, or Smart Lens surgery?",
+          "tr": "LASIK, SMILE veya Akıllı Lens ameliyatları için uygun bir aday mıyım?"
         },
         "a": {
-          "en": "Most people 18+ with stable prescription are candidates.",
-          "tr": "18+ ya\u015f ve stabil re\u00e7etesi olan \u00e7o\u011fu ki\u015fi adayd\u0131r."
+          "en": "Laser options like Femto-LASIK or ReLex SMILE are ideal for patients aged 18 to 45 with a stable eye prescription for at least one year and adequate corneal thickness (screened via Pentacam corneal topography). For patients aged 45 or older suffering from presbyopia (age-related near vision loss) or early-stage cataracts, Trifocal Smart Lens replacement (Refractive Lens Exchange) is the recommended permanent option.",
+          "tr": "Femto-LASIK veya ReLex SMILE lazer yöntemleri, en az bir yıldır göz numarası değişmemiş ve yeterli kornea kalınlığına (Pentacam topografisi ile ölçülen) sahip 18-45 yaş arası hastalar için idealdir. 45 yaşından büyük, yakın görme bozukluğu (presbiyopi) veya katarakt belirtileri olan hastalar için ise en kalıcı ve önerilen çözüm Trifokal Akıllı Lens değişimidir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is included in the all-inclusive eye surgery package in Turkey?",
+          "tr": "Türkiye'de her şey dahil göz ameliyatı paketine hangi hizmetler dahildir?"
+        },
+        "a": {
+          "en": "MediRoute verified ophthalmic packages include all-inclusive surgical fees (using Zeiss VisuMax or Alcon Wavelight lasers), exhaustive pre-op wave-front diagnostics and corneal mapping, premium original Swiss/German intraocular lenses (if undergoing Smart Lens), 2 nights at a luxury 4/5-star hotel, VIP private transfers, postoperative medication drop kits, and 12 months of dedicated clinical recovery follow-up.",
+          "tr": "MediRoute onaylı göz ameliyatı paketleri baştan sona eksiksizdir: Ameliyat ücretleri (Zeiss VisuMax veya Alcon Wavelight cihazları ile), detaylı kornea haritalandırılması ve wavefront analizi, premium İsviçre/Alman göz içi lensleri (akıllı lens ise), 4/5 yıldızlı lüks otelde 2 gece konaklama, VIP özel transferler, ameliyat sonrası koruyucu damla setleri ve 12 aylık hekim takibi dahildir."
+        }
+      },
+      {
+        "q": {
+          "en": "What are the most critical postoperative recovery rules?",
+          "tr": "Ameliyat sonrasında dikkat edilmesi gereken en önemli kurallar nelerdir?"
+        },
+        "a": {
+          "en": "Protecting the eyes during the first 7-10 days is vital for optical healing: 1) Strictly avoid rubbing or pressing on your eyes. 2) Keep water out of your eyes during showers for the first week. 3) Wear the provided UV-blocking sunglasses outdoors. 4) Use your prescribed antibiotic and lubricating eye drops exactly as scheduled. 5) Avoid heavy lifting, makeup, and swimming pools for 2 weeks.",
+          "tr": "Gözlerin ilk 7-10 gün korunması görme kalitesinin oturması için çok önemlidir: 1) Gözlerinizi kesinlikle ovuşturmayın veya bastırmayın. 2) İlk hafta duş alırken gözünüze su kaçmamasına dikkat edin. 3) Dışarıda mutlaka size verilen UV korumalı güneş gözlüklerini takın. 4) Reçete edilen antibiyotikli ve suni gözyaşı damlalarını aksatmadan kullanın. 5) İlk 2 hafta ağır egzersiz, makyaj ve havuza girmekten kaçının."
+        }
+      },
+      {
+        "q": {
+          "en": "Does Smart Lens replacement permanently prevent cataracts?",
+          "tr": "Akıllı Lens değişimi katarakt oluşumunu kalıcı olarak engeller mi?"
+        },
+        "a": {
+          "en": "Yes, absolutely. During a Trifocal Smart Lens procedure, your natural crystalline lens—which gradually becomes cloudy and hardens with age to form a cataract—is permanently removed. It is replaced with a premium, bio-compatible synthetic lens that cannot age or lose transparency. This means you will never develop cataracts for the rest of your life.",
+          "tr": "Evet, kesinlikle. Trifokal Akıllı Lens ameliyatında, yaşla birlikte matlaşarak katarakta neden olan doğal göz merceğiniz kalıcı olarak çıkarılır. Yerine yerleştirilen biyolojik olarak uyumlu yapay lens yaşlanmaz ve saydamlığını yitirmez. Bu sayede ömrünüzün sonuna kadar bir daha asla katarakt rahatsızlığı yaşamazsınız."
         }
       }
     ],
     "filterValue": "eye",
     "seoContent": {
-      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Advanced Laser Eye Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Say goodbye to glasses and contact lenses. Turkey's specialized eye hospitals use the exact same FDA-approved laser technologies (like Zeiss and Alcon) found in top European and American clinics, but at a fraction of the cost.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Popular Treatments</h3>\n        <p class=\"text-gray-600 mb-4\">Whether you need <strong>LASIK, SMILE, or Smart Lens Replacement</strong> (multifocal IOLs for patients over 40), Turkish ophthalmologists are globally recognized for their precision and high success rates.</p>\n        <p class=\"text-gray-600\">The procedure is incredibly fast\u2014often taking less than 15 minutes per eye\u2014and recovery is rapid. Most patients can see clearly and enjoy the vibrant city of Istanbul the very next day.</p>\n      ",
-      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">T\u00fcrkiye'de \u0130leri Lazer G\u00f6z Cerrahisi</h2>\n        <p class=\"text-gray-600 mb-4\">G\u00f6zl\u00fck ve lenslere veda edin. T\u00fcrkiye'deki tam donan\u0131ml\u0131 g\u00f6z hastaneleri, Avrupa ve Amerika'daki en iyi kliniklerde bulunan FDA onayl\u0131 lazer teknolojilerinin (Zeiss, Alcon vb.) ayn\u0131s\u0131n\u0131 \u00e7ok daha uygun fiyatlarla sunmaktad\u0131r.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">H\u0131zl\u0131 ve Kesin Sonu\u00e7lar</h3>\n        <p class=\"text-gray-600\">\u0130\u015flem genellikle g\u00f6z ba\u015f\u0131na 15 dakikadan az s\u00fcrer ve iyile\u015fme inan\u0131lmaz derecede h\u0131zl\u0131d\u0131r. Bir\u00e7ok hasta ertesi g\u00fcn net bir g\u00f6r\u00fc\u015fe kavu\u015fur. Kapsaml\u0131 g\u00f6z muayeneleri ve \u00f6m\u00fcr boyu garanti sunan kliniklerimiz, maksimum memnuniyet sa\u011flar.</p>\n      "
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Advanced Laser Eye Surgery and Smart Lenses in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">For millions of people worldwide, glasses and contact lenses are a daily physical and financial burden. Turkey has emerged as the premier global center for ophthalmology, featuring specialized JCI-accredited eye hospitals, world-class laser surgeons, and cutting-edge refractive technologies. Procedures are completed using identical FDA-approved German and Swiss laser suites (like Zeiss VisuMax and Alcon WaveLight) found in the UK or US, but at savings of up to 60%.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Laser Eye Surgery Cost Comparison: Turkey vs. UK</h3>\n        <p class=\"text-gray-600 mb-4\">Due to high clinical licensing fees and private optical premiums in Western Europe, laser vision correction is often a significant financial barrier. In Turkey, packages bundle your diagnostic topography, bilateral surgery, medications, hotel, and private transfers into one low fee. Here is a verified price comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Ophthalmic Procedure</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Verified)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Wavefront Femto-LASIK (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£3,500 - £5,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£1,200 - £1,800</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">ReLex SMILE Laser (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£4,500 - £6,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£1,600 - £2,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Trifocal Smart Lenses (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£7,000 - £10,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,999 - £3,800</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Candidacy & Laser Diagnostic Suitability Grid</h3>\n        <p class=\"text-gray-600 mb-4\">Determining the correct optical treatment requires careful diagnostic screening of your prescription, age, and corneal thickness. Below is our clinical matching index:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Patient Profile</th>\n                <th class=\"px-4 py-3\">Corneal Assessment</th>\n                <th class=\"px-4 py-3\">Recommended Treatment</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 18-40 (Myopia/Astigmatism)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Thin Corneal Tissue</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">ReLex SMILE or TransPRK (No Flap)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 18-45 (High Prescription)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Normal Corneal Thickness</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Wavefront Femto-LASIK</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 45+ (Presbyopia / Reading Blur)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Any / Irrelevant</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">German/Swiss Trifocal Smart Lens Exchange</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Ophthalmic Vetting and Topographic Diagnostics Matter</h3>\n        <p class=\"text-gray-600 mb-4\">Vision correction requires absolute precision. At MediRoute, we verify and audit eye clinics based on strict patient-safety protocols:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Pentacam Corneal Topography</strong>: Every patient undergoes a 3D elevation scan of the anterior and posterior cornea before surgery. This completely excludes candidates with undiagnosed keratoconus, ensuring zero long-term complications.</li>\n          <li><strong>FDA-Approved Laser Suites Only</strong>: We strictly partner with hospitals using top-tier optical lasers including the **Zeiss VisuMax** and **Alcon Wavelight EX500**.</li>\n          <li><strong>Ophthalmic Surgeon Credentials</strong>: All refractive procedures are overseen by senior ophthalmologists who hold national board certifications and are members of the **ESCRS** (European Society of Cataract and Refractive Surgeons).</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de İleri Lazer Göz Ameliyatı ve Akıllı Lens Tedavileri</h2>\n        <p class=\"text-gray-600 mb-4\">Gözlüklere ve lenslere veda edin. Türkiye'deki tam donanımlı göz hastaneleri, Avrupa ve Amerika'daki en iyi kliniklerde bulunan FDA onaylı lazer teknolojilerinin (Zeiss, Alcon vb.) aynısını çok daha uygun fiyatlarla sunmaktadır.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Hızlı ve Kesin Sonuçlar</h3>\n        <p class=\"text-gray-600\">İşlem genellikle göz başına 15 dakikadan az sürer ve iyileşme inanılmaz derecede hızlıdır. Birçok hasta ertesi gün net bir görüşe kavuşur. Kapsamlı göz muayeneleri ve ömür boyu garanti sunan kliniklerimiz, maksimum memnuniyet sağlar.</p>\n      "
     }
   }
 };
