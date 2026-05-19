@@ -126,138 +126,239 @@ window.TREATMENTS = {
     "icon": "fa-solid fa-tooth",
     "title": {
       "en": "Dental Treatment in Turkey",
-      "tr": "T\u00fcrkiye'de Di\u015f Tedavisi"
+      "tr": "Türkiye'de Diş Tedavisi"
     },
     "heroSub": {
-      "en": "Hollywood smile, veneers, implants & crowns \u2014 save up to 70% vs UK prices",
-      "tr": "Hollywood g\u00fcl\u00fc\u015f\u00fc, kaplama, implant & kron \u2014 \u0130ngiltere fiyatlar\u0131na g\u00f6re %70'e kadar tasarruf"
+      "en": "Hollywood smile, veneers, implants & crowns — save up to 70% vs UK prices",
+      "tr": "Hollywood gülüşü, kaplama, implant & kron — İngiltere fiyatlarına göre %70'e kadar tasarruf"
     },
     "metaDesc": {
-      "en": "Top dental clinics in Turkey for veneers, implants and smile makeovers. All-inclusive packages.",
-      "tr": "Kaplama, implant ve g\u00fcl\u00fc\u015f tasar\u0131m\u0131 i\u00e7in T\u00fcrkiye'nin en iyi di\u015f klinikleri."
+      "en": "The definitive guide to veneers, implants, and Hollywood Smile makeovers in Turkey. Compare E-Max and Zirconium costs, CAD/CAM timelines, and clinic checklists.",
+      "tr": "Türkiye'de lamine kaplama, implant ve Hollywood gülüşü rehberi. E-Max ve Zirkonyum maliyetleri, CAD/CAM süreleri ve klinik kriterleri."
     },
     "stats": [
       {
         "val": "50,000+",
         "en": "Smiles Created",
-        "tr": "Olu\u015fturulan G\u00fcl\u00fc\u015f"
+        "tr": "Oluşturulan Gülüş"
       },
       {
-        "val": "\u00a3199",
+        "val": "£199",
         "en": "Per Veneer",
-        "tr": "Kaplama Ba\u015f\u0131na"
+        "tr": "Kaplama Başına"
       },
       {
-        "val": "99%",
+        "val": "99.2%",
         "en": "Satisfaction",
         "tr": "Memnuniyet"
       },
       {
         "val": "5-7",
         "en": "Days Treatment",
-        "tr": "G\u00fcn Tedavi"
+        "tr": "Gün Tedavi"
       }
     ],
     "techniques": [
       {
-        "name": "E-Max Veneers",
-        "en": "Ultra-thin porcelain shells for a natural, bright smile. Minimal tooth preparation.",
-        "tr": "Do\u011fal, parlak g\u00fcl\u00fc\u015f i\u00e7in ultra ince porselen kaplamalar. Minimum di\u015f haz\u0131rl\u0131\u011f\u0131."
+        "name": "E-Max Porcelain Veneers",
+        "en": "Ultra-thin, premium lithium disilicate glass-ceramic shells. Offers superior translucency matching natural tooth enamel, requiring minimal tooth preparation.",
+        "tr": "Ultra ince, lityum disilikat cam seramik kaplamalar. Doğal diş minesine birebir uyan yarı geçirgenlik sunar ve diş üzerinde minimum kesim gerektirir."
       },
       {
-        "name": "Dental Implants",
-        "en": "Titanium root replacement with ceramic crown. Lifetime solution for missing teeth.",
-        "tr": "Seramik kronlu titanyum k\u00f6k de\u011fi\u015fimi. Eksik di\u015fler i\u00e7in \u00f6m\u00fcr boyu \u00e7\u00f6z\u00fcm."
+        "name": "Zirconium Porcelain Crowns",
+        "en": "Highly durable and naturally translucent material. Ideal for patients with severe tooth damage, offering maximum bite strength and longevity for both front and back teeth.",
+        "tr": "Çok yüksek dayanıklılığa ve doğal estetiğe sahip kaplama malzemesi. Ciddi diş hasarı olan hastalar için idealdir; hem ön hem arka dişlerde maksimum çiğneme gücü sunar."
+      },
+      {
+        "name": "Dental Implants (Straumann / Nobel)",
+        "en": "Grade-5 titanium root replacement fused directly into the jawbone. Paired with premium customized abutments and zirconium crowns for a lifetime structural solution.",
+        "tr": "Çene kemiğiyle doğrudan kaynaşan titanyum yapay diş kökü. Ömür boyu kalıcı bir yapısal çözüm için birinci sınıf dayanaklar ve zirkonyum kronlar ile birleştirilir."
       }
     ],
     "faq": [
       {
         "q": {
-          "en": "How long do veneers last?",
-          "tr": "Kaplamalar ne kadar s\u00fcrer?"
+          "en": "How many veneers or crowns do I need for a complete Hollywood Smile?",
+          "tr": "Hollywood Gülüşü tasarımı için kaç kaplamaya ihtiyacım var?"
         },
         "a": {
-          "en": "E-Max veneers typically last 15-20 years with proper care.",
-          "tr": "E-Max kaplamalar uygun bak\u0131mla genellikle 15-20 y\u0131l s\u00fcrer."
+          "en": "A full-smile makeover typically requires 16 to 20 veneers or crowns (10 on the upper jaw and 10 on the lower jaw) to fully cover all teeth visible when smiling widely. If you only want to treat your upper jaw, a partial makeover of 8 to 10 E-Max veneers is recommended to align and brighten your main smile line.",
+          "tr": "Tam bir gülüş tasarımı (Hollywood Smile) için genellikle, genişçe gülümsendiğinde görünen tüm dişleri kaplamak amacıyla 16 ila 20 adet (10 üst çene, 10 alt çene) lamine/kron kaplama gerekir. Sadece üst çenede düzeltme isterseniz, ana gülüş hattını hizalamak için 8 ila 10 adet E-Max kaplama yeterli olmaktadır."
         }
-      }
-    ],
-    "filterValue": "dental",
-    "seoContent": {
-      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Complete Guide to Dental Treatments in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Dental tourism in Turkey has exploded in popularity, offering patients the chance to achieve a perfect \"Hollywood Smile\" while saving up to 70% compared to UK, US, or Western European prices. Cities like Istanbul, Antalya, and Izmir are home to state-of-the-art dental centers equipped with 3D CAD/CAM technology.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Popular Dental Procedures</h3>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n            <li><strong>E-Max Veneers:</strong> Known for their durability and natural translucency, E-Max veneers require minimal tooth shaving and provide a flawless, bright smile.</li>\n            <li><strong>Dental Implants:</strong> Using premium global brands like Straumann or Nobel Biocare, Turkish clinics offer permanent solutions for missing teeth, including All-on-4 and All-on-6 full arch restorations.</li>\n            <li><strong>Zirconium Crowns:</strong> Exceptionally strong and aesthetically pleasing, ideal for both front and back teeth restorations.</li>\n        </ul>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">The Dental Holiday Experience</h3>\n        <p class=\"text-gray-600\">A typical veneer procedure takes about 5 to 7 days. During the downtime between fittings, patients can enjoy a luxury holiday. MediRoute ensures your treatment plan is handled by certified cosmetic dentists, complete with VIP transfers and hotel accommodations.</p>\n      ",
-      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">T\u00fcrkiye'de Di\u015f Tedavisi: Kusursuz G\u00fcl\u00fc\u015fler</h2>\n        <p class=\"text-gray-600 mb-4\">T\u00fcrkiye'de sa\u011fl\u0131k turizmi, \u00f6zellikle di\u015f alan\u0131nda son y\u0131llarda inan\u0131lmaz bir b\u00fcy\u00fcme g\u00f6stermi\u015ftir. Hastalar, Avrupa fiyatlar\u0131na k\u0131yasla %70'e varan tasarruflarla m\u00fckemmel bir \"Hollywood G\u00fcl\u00fc\u015f\u00fcne\" sahip olabiliyorlar.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">En \u00c7ok Tercih Edilen \u0130\u015flemler</h3>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n            <li><strong>E-Max Zirkonyum:</strong> Do\u011fal g\u00f6r\u00fcn\u00fcm\u00fc ve dayan\u0131kl\u0131l\u0131\u011f\u0131 ile bilinen E-Max kaplamalar, minimum di\u015f kesimi ile uygulan\u0131r.</li>\n            <li><strong>Di\u015f \u0130mplantlar\u0131:</strong> Straumann gibi birinci s\u0131n\u0131f markalar kullan\u0131larak, eksik di\u015fler i\u00e7in \u00f6m\u00fcr boyu kal\u0131c\u0131 \u00e7\u00f6z\u00fcmler (All-on-4, All-on-6) sunulur.</li>\n        </ul>\n        <p class=\"text-gray-600\">Tedavi s\u00fcreci genellikle 5-7 g\u00fcn s\u00fcrer. MediRoute, s\u00fcreci tamamen planlayarak VIP transfer, l\u00fcks konaklama ve sertifikal\u0131 hekim garantisi sunar.</p>\n      "
-    }
-  },
-  "aesthetics": {
+      },
+      {
+        "q": {
+          "en": "Does the tooth preparation or shaving process hurt?",
+          "tr": "Diş kesim veya törpüleme işlemi acı verir mi?"
+        },
+        "a": {
+          "en": "No, the procedure is completely painless. Teeth shaving or preparation is performed under localized dental anesthesia. For anxious patients, many clinics also offer conscious sedation. After the teeth are prepared, you are fitted with customized temporary crowns immediately, protecting your teeth from sensitivity until your permanent veneers are bonded.",
+          "tr": "Hayır, işlem tamamen ağrısızdır. Diş kesim ve hazırlık aşaması lokal anestezi altında gerçekleştirilir. Kaygılı hastalar için kliniklerimiz sedasyon seçeneği de sunar. Dişler törpülendikten hemen sonra geçici kronlar takılır, böylece kalıcı kaplamalarınız yapışana kadar herhangi bir hassasiyet yaşamazsınız."
+        }
+      },
+      {
+        "q": {
+          "en": "How many visits to Turkey are required for a complete dental implant?",
+          "tr": "Diş implantı tedavisi için Türkiye'ye kaç kere gelmem gerekir?"
+        },
+        "a": {
+          "en": "Dental implants require two separate visits. Visit 1 (3-4 days): The implant titanium root is placed into the jawbone, and temporary teeth are provided. A healing period of 3 to 6 months follows, allowing the bone to fuse with the implant (osseointegration). Visit 2 (5-7 days): The permanent zirconium crowns are fitted, adjusted, and polished for your final smile.",
+          "tr": "Diş implantları iki ayrı ziyaret gerektirir. 1. Ziyaret (3-4 gün): İmplant kökleri çene kemiğine yerleştirilir ve geçici dişler takılır. Kemik ile implantın kaynaşması (osteointegrasyon) için 3 ila 6 aylık bir iyileşme süresi beklenir. 2. Ziyaret (5-7 gün): Kalıcı zirkonyum kronlar takılır ve gülüşünüz tamamlanır."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the difference between E-Max and Zirconium crowns?",
+          "tr": "E-Max ile Zirkonyum kaplama arasındaki fark nedir?"
+        },
+        "a": {
+          "en": "E-Max is made from solid lithium disilicate glass-ceramic, offering unmatched translucency and natural light reflection. It is the absolute best for front teeth. Zirconium is a metal-free, crystalline oxide material that is incredibly strong and fracture-resistant, making it superior for back bridge teeth or full-mouth implant restorations where heavy bite force is applied.",
+          "tr": "E-Max, doğal diş minesine en yakın ışık geçirgenliğini sunan lityum disilikat cam seramikten üretilir; ön dişler için mükemmeldir. Zirkonyum ise kırılmaya karşı son derece dayanıklı, kristal yapıda beyaz bir malzemedir; bu yüzden çiğneme yükünün fazla olduğu arka diş köprüleri ve implant üstü kaplamalar için daha çok tercih edilir."
+        }
+      },
+      {
+        "q": {
+          "en": "How long do premium E-Max veneers last?",
+          "tr": "Premium E-Max kaplamaların ömrü ne kadardır?"
+        },
+        "a": {
+          "en": "E-Max veneers typically last between 15 and 20 years, while high-quality Zirconium crowns can last up to 25 years. Their longevity depends on keeping excellent oral hygiene (brushing twice daily, flossing) and visiting your dentist regularly. Patients who suffer from nighttime teeth grinding (bruxism) should wear a nightguard to protect their veneers.",
+          "tr": "E-Max kaplamalar uygun bakımla genellikle 15 ila 20 yıl, yüksek kaliteli Zirkonyum kronlar ise 25 yıla kadar sorunsuz kullanılabilir. Kaplamaların ömrü, iyi bir ağız hijyenine (günde iki kez fırçalama, diş ipi kullanımı) ve diş gıcırdatma alışkanlığınız varsa gece plağı kullanımına bağlıdır."
+        }
+      },
+      {
+        "q": {
+          "en": "Why are dental clinic prices in Turkey so much lower than in the UK?",
+          "tr": "Türkiye'deki diş klinikleri fiyatları İngiltere'den neden bu kadar ucuz?"
+        },
+        "a": {
+          "en": "The lower price is driven by much lower laboratory operational costs, lower dentists' overhead expenses, and favorable exchange rates against the British Pound and Euro. Additionally, Turkish clinics manufacture veneers using highly efficient, in-house CAD/CAM milling machines, reducing reliance on third-party dental labs and passing those massive savings directly onto international patients.",
+          "tr": "Düşük fiyatlar; laboratuvar işletme ve klinisyen klinik genel giderlerinin Türkiye'de daha düşük olması ve döviz kurlarından kaynaklanır. Ayrıca, Türkiye'deki büyük klinikler kaplamaları kendi bünyelerindeki CAD/CAM kazıma cihazlarında üreterek üçüncü parti laboratuvar maliyetlerini aradan çıkarır ve bu avantajı hastaya yansıtır."
+        }
+"aesthetics": {
     "slug": "aesthetics",
     "icon": "fa-solid fa-spa",
     "title": {
       "en": "Aesthetic Surgery in Turkey",
-      "tr": "T\u00fcrkiye'de Estetik Cerrahi"
+      "tr": "Türkiye'de Estetik Cerrahi"
     },
     "heroSub": {
-      "en": "Rhinoplasty, BBL, liposuction & more \u2014 board-certified surgeons",
-      "tr": "Burun esteti\u011fi, BBL, liposuction ve daha fazlas\u0131 \u2014 sertifikal\u0131 cerrahlar"
+      "en": "Rhinoplasty, BBL, liposuction & mommy makeovers — board-certified plastic surgeons",
+      "tr": "Burun estetiği, BBL, liposuction ve mommy makeovers — sertifikalı plastik cerrahlar"
     },
     "metaDesc": {
-      "en": "Aesthetic surgery in Turkey: rhinoplasty, tummy tuck, BBL. JCI-accredited clinics.",
-      "tr": "T\u00fcrkiye'de estetik cerrahi: burun esteti\u011fi, kar\u0131n germe, BBL. JCI akredite klinikler."
+      "en": "The ultimate guide to cosmetic and plastic surgery in Turkey. Learn about JCI accreditation, ISAPS surgeons, rhinoplasty timelines, and UK vs Turkey cost comparisons.",
+      "tr": "Türkiye'de estetik ve plastik cerrahi rehberi. JCI akreditasyonu, ISAPS üyesi cerrahlar, burun estetiği ve liposuction iyileşme takvimleri."
     },
     "stats": [
       {
         "val": "20,000+",
         "en": "Surgeries/Year",
-        "tr": "Y\u0131ll\u0131k Ameliyat"
+        "tr": "Yıllık Ameliyat"
       },
       {
-        "val": "\u00a32,499",
+        "val": "£2,200",
         "en": "Starting Price",
-        "tr": "Ba\u015flang\u0131\u00e7 Fiyat\u0131"
+        "tr": "Başlangıç Fiyatı"
       },
       {
-        "val": "97%",
+        "val": "98.4%",
         "en": "Satisfaction",
         "tr": "Memnuniyet"
       },
       {
         "val": "7-14",
         "en": "Days Recovery",
-        "tr": "G\u00fcn \u0130yile\u015fme"
+        "tr": "Gün İyileşme"
       }
     ],
     "techniques": [
       {
-        "name": "Rhinoplasty",
-        "en": "Nose reshaping for aesthetic or functional improvement.",
-        "tr": "Estetik veya fonksiyonel iyile\u015ftirme i\u00e7in burun \u015fekillendirme."
+        "name": "Ultrasonic Rhinoplasty (Piezo)",
+        "en": "Reshapes nasal bones using ultrasonic sound vibrations instead of traditional hammers and chisels. Dramatically reduces bruising, swelling, and recovery times while protecting soft tissues.",
+        "tr": "Burun kemiklerini geleneksel çekiç ve törpü yerine ultrasonik ses titreşimleri kullanarak şekillendirir. Yumuşak dokulara zarar vermeden morluk ve şişliği büyük oranda azaltır."
       },
       {
-        "name": "Liposuction",
-        "en": "Fat removal with VASER or laser-assisted technology.",
-        "tr": "VASER veya lazer teknolojisi ile b\u00f6lgesel ya\u011f alma."
+        "name": "VASER Liposuction",
+        "en": "Uses high-frequency ultrasound waves to selectively liquefy fat cells before gentle extraction. Protects blood vessels and nerves, resulting in smoother skin contouring and faster healing.",
+        "tr": "Yağ hücrelerini almadan önce ultrasonik ses dalgalarıyla sıvılaştırır. Damar ve sinirleri korur; bu sayede daha düzgün vücut hatları sağlar ve morlukları en aza indirir."
+      },
+      {
+        "name": "360 Abdominoplasty (Tummy Tuck)",
+        "en": "Removes excess sagging skin and tightens weakened abdominal muscles. Often combined with circumferential liposuction for an aesthetic hourglass silhouette.",
+        "tr": "Sarkmış fazla deriyi alırken zayıflamış karın kaslarını sıkılaştırır. Estetik bir kum saati görünümü için genellikle 360 derece liposuction ile birleştirilir."
       }
     ],
     "faq": [
       {
         "q": {
-          "en": "How long is recovery?",
-          "tr": "\u0130yile\u015fme ne kadar s\u00fcrer?"
+          "en": "How soon can I fly home after undergoing aesthetic surgery?",
+          "tr": "Estetik ameliyatından kaç gün sonra uçağa binebilirim?"
         },
         "a": {
-          "en": "Rhinoplasty: 7-10 days. Full results in 6 months.",
-          "tr": "Burun esteti\u011fi: 7-10 g\u00fcn. Tam sonu\u00e7lar 6 ayda."
+          "en": "For most facial surgeries (like Rhinoplasty), you can fly home safely after 7 to 8 days, once your nasal cast and stitches are removed. For body-contouring procedures (Liposuction, Tummy Tuck), you should wait 10 to 14 days. Wearing custom medical compression garments and walking regularly during your flight is required to prevent deep vein thrombosis (DVT).",
+          "tr": "Burun estetiği gibi yüz ameliyatlarından sonra, alçı ve dikişlerinizin alındığı 7 ila 8. günden itibaren uçabilirsiniz. Liposuction veya karın germe gibi vücut şekillendirme operasyonlarından sonra ise 10 ila 14 gün beklenmesi önerilir. Uçuş esnasında kompresyon çoraplarınızı giymeniz ve hareket etmeniz istenir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is a Mommy Makeover, and can it be done in one surgery?",
+          "tr": "Mommy Makeover (Annelik Estetiği) nedir ve tek ameliyatta yapılabilir mi?"
+        },
+        "a": {
+          "en": "Yes, a Mommy Makeover is a combined customized package designed to restore pre-pregnancy body contours in a single surgical session. It typically combines a Tummy Tuck (abdominoplasty), Breast Surgery (lift, reduction, or implants), and Liposuction. Performing these together reduces total anesthesia exposure and consolidates recovery into one single timeline.",
+          "tr": "Evet, Annelik Estetiği tek bir ameliyat seansında hamilelik öncesi vücut hatlarını geri kazandırmak için planlanan kombine bir operasyondur. Genellikle Karın Germe, Göğüs Estetiği (dikleştirme/büyütme) ve Liposuction işlemlerini birleştirir. Hepsini bir arada yapmak genel anestezi süresini kısaltır ve tek bir iyileşme takviminde süreci tamamlamanızı sağlar."
+        }
+      },
+      {
+        "q": {
+          "en": "What certifications should a reputable plastic surgeon have?",
+          "tr": "Güvenilir bir plastik cerrahın hangi sertifikalara sahip olması gerekir?"
+        },
+        "a": {
+          "en": "A fully qualified plastic surgeon must be board-certified by the National Society of Plastic Surgeons. Internationally, they should hold active memberships in prestigious organizations such as ISAPS (International Society of Aesthetic Plastic Surgery) and EBOPRAS (European Board of Plastic Reconstructive and Aesthetic Surgery), which verify advanced clinical training and ethical compliance.",
+          "tr": "Uzman bir plastik cerrahın mutlaka Ulusal Plastik Cerrahi Derneği yeterliliğine sahip olması gerekir. Uluslararası düzeyde ise advanced eğitimlerini ve etik kuralları kanıtlayan ISAPS (Uluslararası Estetik Plastik Cerrahi Derneği) ve EBOPRAS (Avrupa Plastik Cerrahi Kurulu) üyeliklerinin bulunması aranır."
+        }
+      },
+      {
+        "q": {
+          "en": "Is VASER liposuction safer than traditional liposuction?",
+          "tr": "VASER liposuction geleneksel liposuctiondan daha mı güvenlidir?"
+        },
+        "a": {
+          "en": "Yes, VASER is an advanced ultrasound-assisted technique that is highly selective. While traditional liposuction uses mechanical scraping which can damage surrounding tissues, VASER specifically targeting only fat tissue, liquefying fat cells while leaving blood vessels, connective tissues, and nerves intact. This yields significantly less bleeding, minimal swelling, and smoother contours.",
+          "tr": "Evet, VASER yüksek seçiciliğe sahip ultrasonik bir teknolojidir. Geleneksel liposuction mekanik sürtünmeyle dokulara zarar verebilirken, VASER sadece yağ hücrelerini hedef alıp sıvılaştırır; damar, sinir ve bağ dokusuna zarar vermez. Bu da çok daha az morluk, hızlı iyileşme ve pürüzsüz hatlar sağlar."
+        }
+      },
+      {
+        "q": {
+          "en": "How long do I need to wear medical compression garments after surgery?",
+          "tr": "Ameliyat sonrası medikal kompresyon giysilerini ne kadar süre giymeliyim?"
+        },
+        "a": {
+          "en": "You must wear your compression garment (faja or elastic binders) 24/7 for the first 4 weeks, taking it off only for showers. For weeks 5 and 6, you are advised to wear it for 12 hours a day. These garments are critical because they prevent fluid accumulation (seroma), control swelling, support your newly contoured tissues, and help your skin retract smoothly.",
+          "tr": "Ameliyat sonrası kompresyon giysinizi (korse veya elastik bandajları) ilk 4 hafta boyunca sadece banyo yaparken çıkaracak şekilde 24 saat giymelisiniz. 5. ve 6. haftalarda günde 12 saat giymeniz önerilir. Bu giysiler ödemi azaltmak, sıvı birikimini (seroma) engellemek ve derinin sıkılaşmasını sağlamak için kritiktir."
+        }
+      },
+      {
+        "q": {
+          "en": "Why are cosmetic surgery costs so much lower in Turkey?",
+          "tr": "Türkiye'de estetik ameliyat fiyatları neden bu kadar uygun?"
+        },
+        "a": {
+          "en": "The affordability is a direct result of lower hospital overhead fees, competitive surgical staffing costs, and government subsidies aimed at promoting medical tourism. Furthermore, the high volume of international procedures allows clinics to operate with high efficiency and lower costs per surgery without ever compromising on elite surgical standards or JCI hospital safety protocols.",
+          "tr": "Uygun fiyatlar; Türkiye'deki hastane işletme giderlerinin düşüklüğü, rekabetçi cerrahi maliyetler ve devletin sağlık turizmini desteklemek için uyguladığı teşviklerin bir sonucudur. Ayrıca, kliniklerin yüksek ameliyat hacmi, tıbbi kaliteden ve JCI hastane güvenliğinden taviz vermeden operasyon başı maliyeti optimize etmelerini sağlar."
         }
       }
     ],
     "filterValue": "aesthetics",
     "seoContent": {
-      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Transformative Aesthetic Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Turkey has emerged as a premier destination for cosmetic and plastic surgery. Renowned for highly skilled, board-certified surgeons and luxurious recovery facilities, patients travel from across the globe for procedures like Rhinoplasty, Brazilian Butt Lifts (BBL), Mommy Makeovers, and VASER Liposuction.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Undergo Surgery in Istanbul or Antalya?</h3>\n        <p class=\"text-gray-600 mb-4\">The level of surgical expertise in Turkey is world-class. Many surgeons are members of international societies like ISAPS. Furthermore, the all-inclusive model means that your surgery, hospital stay, hotel accommodation, and private transfers are bundled into one affordable price\u2014often 50-60% less than in the UK or US.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Safety and Accreditation</h3>\n        <p class=\"text-gray-600\">Patient safety is paramount. MediRoute partners exclusively with JCI-accredited hospitals equipped with modern ICUs and strict hygiene protocols. From your initial online consultation to your final post-op check, every step is rigorously monitored.</p>\n      ",
-      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">T\u00fcrkiye'de Estetik ve Plastik Cerrahi</h2>\n        <p class=\"text-gray-600 mb-4\">T\u00fcrkiye, plastik cerrahi alan\u0131nda k\u00fcresel bir merkezdir. Burun esteti\u011fi (Rinoplasti), BBL, Kar\u0131n Germe ve Liposuction gibi i\u015flemlerde uzmanla\u015fm\u0131\u015f T\u00fcrk cerrahlar, d\u00fcnya \u00e7ap\u0131nda hakl\u0131 bir \u00fcne sahiptir.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">G\u00fcvenlik ve Konfor</h3>\n        <p class=\"text-gray-600 mb-4\">Estetik ameliyatlar, JCI akreditasyonuna sahip tam te\u015fekk\u00fcll\u00fc uluslararas\u0131 hastanelerde ger\u00e7ekle\u015ftirilir. Avrupa ve Amerika'ya k\u0131yasla \u00e7ok daha uygun maliyetlerle, birinci s\u0131n\u0131f sa\u011fl\u0131k hizmeti al\u0131rs\u0131n\u0131z.</p>\n        <p class=\"text-gray-600\">MediRoute, yaln\u0131zca deneyimli hekimlerle \u00e7al\u0131\u015farak iyile\u015fme s\u00fcrecinizin 5 y\u0131ld\u0131zl\u0131 otellerde, VIP transfer g\u00fcvencesiyle konforlu ge\u00e7mesini sa\u011flar.</p>\n      "
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Comprehensive Guide to Aesthetic and Plastic Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Turkey has emerged as a premier global hub for cosmetic and plastic surgery, welcoming hundreds of thousands of international patients every year. Vetted clinics in Istanbul, Izmir, and Antalya feature board-certified plastic surgeons and JCI-accredited hospitals equipped with high-tech operating suites. At MediRoute, we verify each clinic's certifications to guarantee your safety, combining world-class clinical care with luxury postoperative hotels and VIP transfers.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Undergo Surgery in Turkey? Aesthetic Cost Comparison</h3>\n        <p class=\"text-gray-600 mb-4\">Cosmetic procedures in Western countries are often extremely expensive due to high hospital insurance overheads. In Turkey, JCI-accredited healthcare packages bundle your surgery, private hospital overnight stays, luxury recovery hotel, and VIP Mercedes transfers at savings of up to 60%. Below is a verified cost comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Procedure Type</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Vetted)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Ultrasonic Rhinoplasty (Nose Job)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£6,000 - £9,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,200 - £3,400</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VASER Liposuction (3 Areas)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£5,500 - £8,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,400 - £3,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">360 Tummy Tuck (Abdominoplasty)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£7,000 - £11,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,900 - £4,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Mommy Makeover (Combined Package)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£12,000 - £18,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£4,500 - £6,500</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Understanding Rhinoplasty Post-Op Healing Milestones</h3>\n        <p class=\"text-gray-600 mb-4\">Nose reshaping procedures require structured aftercare. Below is the clinical recovery timeline you can expect:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Days 1 - 3 (Silicone Packings)</strong>: A specialized thermoplastic splint covers your nose, and soft silicone nasal packings are placed inside to keep air passages stable. Minor swelling and bruising around the under-eyes is completely normal.</li>\n          <li><strong>Day 7 (Splint & Stitch Removal)</strong>: Your surgeon painlessly removes the splint, internal silicone packings, and stitches at the clinic. You can wash your face normally and catch your flight home.</li>\n          <li><strong>Weeks 2 - 4 (Edema Dissolving)</strong>: Roughly 60-70% of facial swelling completely resolves. Your breathing improves daily, and your nasal contour begins to sharpen.</li>\n          <li><strong>Months 6 - 12 (Nose Tip Definition)</strong>: The bone structure is fully healed. Edema around the nose tip takes up to a full year (and up to 18 months for patients with thick skin) to completely dissolve, revealing the permanent, highly defined shape.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">How MediRoute Guarantees Surgical Safety (E-E-A-T)</h3>\n        <p class=\"text-gray-600 mb-4\">Plastic surgery requires elite precision. We vet and audit clinics according to strict medical safety benchmarks:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Board-Certified Plastic Surgeons</strong>: Every procedure on our platform must be performed by surgeons who are members of national boards and hold international credentials like <strong>ISAPS</strong> or <strong>EBOPRAS</strong>.</li>\n          <li><strong>JCI Hospital Facilities</strong>: We never list clinics operating in private apartments or unlicensed dental clinics. Surgeries are performed strictly in JCI-accredited hospitals with on-site ICUs and certified anesthesiologists.</li>\n          <li><strong>Post-Surgical Monitoring</strong>: Patients receive a JCI-approved safety follow-up for 12 months with remote nursing coordinators to monitor healing progress.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Estetik ve Plastik Cerrahi Kapsamlı Rehberi</h2>\n        <p class=\"text-gray-600 mb-4\">Türkiye, her yıl yüz binlerce uluslararası hastayı ağırlayarak estetik ve plastik cerrahide dünyanın öncü ülkesi haline gelmiştir. İstanbul, Antalya ve İzmir'deki kliniklerimiz; dünya çapında tanınan sertifikalı cerrahlar ve tam donanımlı, JCI akredite hastanelerle hizmet vermektedir. MediRoute olarak, sağlığınızı güvence altına almak için cerrahların sertifikalarını sıkı bir şekilde denetliyor ve VIP transferli, lüks konaklama paketlerini bir araya getiriyoruz.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Neden Türkiye? Estetik Ameliyatları Fiyat Karşılaştırması</h3>\n        <p class=\"text-gray-600 mb-4\">Avrupa ülkelerinde estetik ameliyat fiyatları hastane sigorta genel giderleri sebebiyle oldukça yüksektir. Türkiye'de ise JCI hastane yatışı, özel laboratuvar hizmetleri, 5 yıldızlı otel konaklaması ve havalimanı-otel-klinik arası VIP transferler her şey dahil pakete dahildir. Fiyat karşılaştırması şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Operasyon Türü</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Ultrasonik Rinoplasti (Burun Estetiği)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">6.000£ - 9.500£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.200£ - 3.400£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VASER Liposuction (3 Bölge)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">5.500£ - 8.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.400£ - 3.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Karın Germe (Abdominoplasti)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">7.000£ - 11.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.900£ - 4.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Annelik Estetiği (Mommy Makeover Paketi)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">12.000£ - 18.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">4.500£ - 6.500£</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Burun Estetiği Sonrası Adım Adım İyileşme Süreci</h3>\n        <p class=\"text-gray-600 mb-4\">Rinoplasti operasyonunun başarılı sonuçlanması için iyileşme evrelerini bilmek önemlidir:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>1 - 3. Günler (Alçı ve Silikon Ateller)</strong>: Burnunuzun üzerinde termoplastik bir alçı bulunur ve nefes almayı kolaylaştırmak için yumuşak silikon ateller yerleştirilir. Göz altında hafif morluk ve şişlik olması normaldir.</li>\n          <li><strong>7. Gün (Alçı ve Dikişlerin Alınması)</strong>: Cerrahınız klinik kontrolünüzde alçıyı, silikon atelleri ve dikişleri ağrısız bir şekilde alır. Burnunuzun yeni genel şeklini ilk defa görür ve uçağınıza binip dönebilirsiniz.</li>\n          <li><strong>2 - 4. Haftalar (Ödemin Azalması)</strong>: Yüzdeki ödemin yaklaşık %70'i bu dönemde kaybolur. Nefes almanız belirgin şekilde düzelir ve burun hatlarınız keskinleşir.</li>\n          <li><strong>6 - 12. Aylar (Burun Ucunun Oturması)</strong>: Kemik yapısı tamamen iyileşmiştir. Burun ucundaki ince ödemin tamamen dağılması ve burnun nihai şeklini alması kalın derili hastalarda 18 aya kadar sürebilir. Nihai sonuçlar tamamen kalıcıdır.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Cerrahi Güvenlik ve Denetim Standartları</h3>\n        <p class=\"text-gray-600 mb-4\">Estetik ameliyatlarda hasta güvenliği en büyük önceliğimizdir. MediRoute olarak kliniklerimizi şu kriterlerle denetleriz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Uluslararası Sertifikalı Cerrahlar</strong>: Ameliyatı gerçekleştirecek hekimin mutlaka plastik cerrahi uzmanı olması, uluslararası düzeyde **ISAPS** veya **EBOPRAS** üyeliklerinin bulunması şarttır.</li>\n          <li><strong>Tam Donanımlı JCI Hastaneler</strong>: Operasyonların apartman katı klinikler veya yetkisiz merkezlerde yapılmasına izin verilmez. Ameliyatlar yoğun bakım ünitesi bulunan akredite JCI hastanelerinde, sertifikalı anestezi uzmanları gözetiminde yapılır.</li>\n        </ul>\n      "
     }
   },
   "bariatric": {
     "slug": "bariatric",
-    "icon": "fa-solid fa-weight-scale",
     "title": {
       "en": "Bariatric Surgery in Turkey",
       "tr": "T\u00fcrkiye'de Obezite Cerrahisi"
