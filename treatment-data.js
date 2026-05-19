@@ -367,63 +367,104 @@ window.TREATMENTS = {
   },
   "bariatric": {
     "slug": "bariatric",
+    "icon": "fa-solid fa-weight-scale",
     "title": {
       "en": "Bariatric Surgery in Turkey",
-      "tr": "T\u00fcrkiye'de Obezite Cerrahisi"
+      "tr": "Türkiye'de Obezite Cerrahisi"
     },
     "heroSub": {
-      "en": "Gastric sleeve, bypass & balloon \u2014 transform your life",
-      "tr": "T\u00fcp mide, bypass & balon \u2014 hayat\u0131n\u0131z\u0131 d\u00f6n\u00fc\u015ft\u00fcr\u00fcn"
+      "en": "Laparoscopic Gastric Sleeve, Bypass & Smart Balloon packages starting from £3,499",
+      "tr": "Laparoskopik tüp mide, gastrik bypass ve akıllı balon tedavileri £3.499'dan başlayan fiyatlarla"
     },
     "metaDesc": {
-      "en": "Bariatric surgery in Turkey: gastric sleeve, bypass. Accredited hospitals.",
-      "tr": "T\u00fcrkiye'de obezite cerrahisi: t\u00fcp mide, bypass. Akredite hastaneler."
+      "en": "The definitive clinical guide to bariatric surgery in Turkey. Compare laparoscopic Gastric Sleeve vs. Bypass costs, BMI classification grids, JCI hospital safety checklists, 12-month post-op recovery diet milestones, and weight-loss outcomes.",
+      "tr": "Türkiye'de obezite cerrahisi ve mide küçültme ameliyatları uzman rehberi. Tüp mide ve bypass maliyetleri, VKI uygunluk tablosu, 4 aşamalı beslenme diyeti, 12 aylık iyileşme takvimi ve klinikler."
     },
     "stats": [
       {
         "val": "15,000+",
         "en": "Surgeries Done",
-        "tr": "Yap\u0131lan Ameliyat"
+        "tr": "Yapılan Ameliyat"
       },
       {
-        "val": "\u00a33,499",
+        "val": "£3,499",
         "en": "Starting Price",
-        "tr": "Ba\u015flang\u0131\u00e7 Fiyat\u0131"
+        "tr": "Başlangıç Fiyatı"
       },
       {
-        "val": "96%",
-        "en": "Success Rate",
-        "tr": "Ba\u015far\u0131 Oran\u0131"
+        "val": "96.2%",
+        "en": "Diabetes Resolution",
+        "tr": "Diyabet İyileşmesi"
       },
       {
         "val": "5-7",
         "en": "Days Recovery",
-        "tr": "G\u00fcn \u0130yile\u015fme"
+        "tr": "Gün İyileşme"
       }
     ],
     "techniques": [
       {
-        "name": "Gastric Sleeve",
-        "en": "80% of stomach removed. Most popular weight loss surgery.",
-        "tr": "Midenin %80'i al\u0131n\u0131r. En pop\u00fcler kilo verme ameliyat\u0131."
+        "name": "Gastric Sleeve (Sleeve Gastrectomy)",
+        "en": "Laparoscopic resection of approximately 80% of the stomach. Permanently restricts food volume and suppresses the hunger-stimulating hormone Ghrelin, yielding 60-70% excess weight loss.",
+        "tr": "Midenin yaklaşık %80'inin laparoskopik olarak çıkarılması. Gıda alımını kalıcı olarak kısıtlar ve açlık hormonu olan Ghrelin salınımını azaltarak %60-70 fazla kilonun verilmesini sağlar."
+      },
+      {
+        "name": "Roux-en-Y Gastric Bypass",
+        "en": "Dual-action restrictive and malabsorptive surgery. Creates a small 30ml stomach pouch and bypasses a portion of the small intestine. Highly effective for high BMIs and type 2 diabetes resolution.",
+        "tr": "Hem kısıtlayıcı hem de emilim azaltıcı çift etkili operasyon. 30 ml'lik küçük bir mide poşu oluşturulur ve ince bağırsağın bir kısmı bypass edilir. Yüksek VKI ve Tip 2 Diyabet tedavisi için idealdir."
+      },
+      {
+        "name": "Allurion Swallowable Balloon",
+        "en": "Non-surgical, state-of-the-art swallowable capsule balloon. Requires no endoscopy, anesthesia, or removal surgery. Occupies space in your stomach to induce early satiety and kickstart a 10-15% body weight drop.",
+        "tr": "Cerrahi, endoskopi veya anestezi gerektirmeyen son teknoloji yutulabilir kapsül mide balonu. Midede hacim kaplayarak erken doymayı teşvik eder ve vücut ağırlığının %10-15'inin verilmesini sağlar."
       }
     ],
     "faq": [
       {
         "q": {
-          "en": "What BMI do I need?",
-          "tr": "Hangi BMI gerekli?"
+          "en": "What is the exact BMI requirement for weight loss surgery in Turkey?",
+          "tr": "Türkiye'de mide küçültme ameliyatı olabilmek için Vücut Kitle İndeksi (VKI) kaç olmalıdır?"
         },
         "a": {
-          "en": "Generally BMI 30+ for sleeve, BMI 35+ for bypass.",
-          "tr": "Genel olarak t\u00fcp mide i\u00e7in BMI 30+, bypass i\u00e7in BMI 35+."
+          "en": "Surgical options like Gastric Sleeve or Gastric Bypass require a Body Mass Index (BMI) of 35 or higher. You may also qualify with a BMI of 30 to 34.9 if you suffer from obesity-related comorbidities such as severe Type 2 Diabetes, hypertension, high cholesterol, or obstructive sleep apnea. For non-surgical treatments like the Allurion Smart Balloon, a BMI of 27 or higher is sufficient.",
+          "tr": "Tüp mide veya gastrik bypass ameliyatı olabilmek için Vücut Kitle İndeksinizin (VKI/BMI) en az 35 olması gerekir. Eğer Tip 2 Diyabet, yüksek tansiyon, uyku apnesi veya yüksek kolesterol gibi obeziteye bağlı ciddi bir ek hastalığınız varsa, 30-34.9 arasındaki VKI değerleriyle de ameliyata uygun kabul edilirsiniz. Ameliyatsız akıllı yutulabilir balon için ise 27 VKI yeterlidir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is included in the all-inclusive bariatric package in Turkey?",
+          "tr": "Türkiye'de her şey dahil obezite cerrahisi paketine hangi hizmetler dahildir?"
+        },
+        "a": {
+          "en": "MediRoute verified bariatric packages bundle everything needed for a seamless clinical journey: laparoscopic surgical fees, full internal medicine pre-op metabolic screening (cardiology, chest diseases, blood panels, endocrinology consultation), 3 nights of private hospital ward stay with a personal companion, 2-3 nights at a recovery hotel, customized dietary supplies, 1 year of post-op expert clinical dietitian coaching, and all private VIP transfers.",
+          "tr": "MediRoute onaylı obezite cerrahisi paketleri, baştan sona eksiksiz bir tedavi yolculuğu sunar: Laparoskopik ameliyat ücreti, dahiliye, kardiyoloji, göğüs hastalıkları, ultrason ve geniş kan tahlillerini içeren tam pre-op (ameliyat öncesi) check-up, refakatçi eşliğinde 3 gece özel hastane yatışı, 2-3 gece iyileşme oteli konaklaması, ameliyat sonrası beslenme paketleri, 1 yıl boyunca uzman klinik diyetisyen takibi ve tüm VIP transferler."
+        }
+      },
+      {
+        "q": {
+          "en": "What are the stages of the post-bariatric surgery diet recovery timeline?",
+          "tr": "Ameliyattan sonraki beslenme ve diyet aşamaları (Sıvı-Katı Geçişi) nasıldır?"
+        },
+        "a": {
+          "en": "Meticulous diet progression is vital to protect the healing stomach pouch: Weeks 1 - 2 (Clear Liquids: water, broth, high-protein clear shakes); Week 3 (Purees: blended chicken, soft cheeses, Greek yogurt); Week 4 (Soft Foods: soft-cooked eggs, ground meats, well-cooked vegetables); Month 2 onwards (Healthy Solids: high-protein, low-carbohydrate meals. Carbonated drinks, sugary sodas, and hard dry meats must be strictly avoided during the first 6-12 months).",
+          "tr": "Yeni midenizin güvenle iyileşmesi için 4 aşamalı beslenme programına harfiyen uyulmalıdır: 1 ve 2. Hafta (Berrak Sıvı Dönemi: kemik suyu, protein shake, su); 3. Hafta (Püre Dönemi: süzülmüş çorbalar, blenderdan geçirilmiş tavuk/balık, yoğurt); 4. Hafta (Yumuşak Gıda Dönemi: rafadan yumurta, kıyma, iyi pişmiş sebzeler); 2. Aydan İtibaren (Sağlıklı Katı Gıdalar: yüksek proteinli, düşük karbonhidratlı öğünler. İlk 1 yıl asitli/gazlı içecekler ve kuru sert etler kesinlikle yasaktır)."
+        }
+      },
+      {
+        "q": {
+          "en": "How much weight can I realistically expect to lose, and will I regain it?",
+          "tr": "Ameliyat sonrası ne kadar kilo verebiliririm ve tekrar kilo alma riski var mıdır?"
+        },
+        "a": {
+          "en": "On average, patients lose 60% to 80% of their excess body weight within the first 12 to 18 months post-op. Weight regain is extremely rare and only occurs long-term if patients revert to old behavioral patterns, consume high-calorie carbonated liquids, graze constantly throughout the day, or stretch their stomach pouch by ignoring satiety signals. Ongoing coaching with our clinical dietitians helps ensure lifelong weight management.",
+          "tr": "Hastalar ortalama olarak ameliyattan sonraki ilk 12-18 ay içinde fazla kilolarının %60 ila %80'ini kalıcı olarak verirler. Tekrar kilo alma riski oldukça düşüktür; bu durum yalnızca hastaların eski yeme alışkanlıklarına dönmesi, yüksek kalorili sıvı ve şekerli gıdalar tüketmesi, gazlı içecekler içmesi veya doyma sinyallerini göz ardı ederek mideyi zorlaması durumunda ortaya çıkabilir. 1 yıllık diyetisyen takibimiz bu riski sıfıra indirmeyi hedefler."
         }
       }
     ],
     "filterValue": "bariatric",
     "seoContent": {
-      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Weight Loss Surgery: Start Your New Life in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Bariatric surgery is a life-changing step towards better health. Turkey offers highly experienced bariatric surgeons and advanced laparoscopic technology, making procedures like the Gastric Sleeve and Gastric Bypass safe, affordable, and effective.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Comprehensive Care Packages</h3>\n        <p class=\"text-gray-600 mb-4\">Undergoing bariatric surgery abroad requires meticulous planning. MediRoute partner clinics provide comprehensive packages that include extensive pre-operative cardio and metabolic testing, nutritional counseling, the surgery itself, and a minimum of 3 to 4 nights in the hospital under close monitoring.</p>\n        <p class=\"text-gray-600\">Aftercare is crucial for weight loss surgery. You will receive a detailed dietary plan and long-term remote follow-ups with dietitians to ensure you achieve your weight goals safely.</p>\n      ",
-      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Obezite Cerrahisi ile Yeni Bir Hayat</h2>\n        <p class=\"text-gray-600 mb-4\">Kilo verme ameliyatlar\u0131 (T\u00fcp Mide, Mide Bypass vb.), sa\u011fl\u0131\u011f\u0131n\u0131za kavu\u015fman\u0131z i\u00e7in kritik bir ad\u0131md\u0131r. T\u00fcrkiye, deneyimli obezite cerrahlar\u0131 ve geli\u015fmi\u015f laparoskopik teknolojileriyle g\u00fcvenli ve uygun fiyatl\u0131 \u00e7\u00f6z\u00fcmler sunar.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Kapsaml\u0131 De\u011ferlendirme ve Bak\u0131m</h3>\n        <p class=\"text-gray-600\">Ameliyat \u00f6ncesinde detayl\u0131 kardiyolojik ve metabolik testler yap\u0131l\u0131r. Ameliyat sonras\u0131 d\u00f6nemde ise diyetisyen takibi ve uzun vadeli beslenme planlamas\u0131, ba\u015far\u0131l\u0131 kilo kayb\u0131n\u0131n anahtar\u0131d\u0131r. MediRoute, bu kritik s\u00fcrecin her a\u015famas\u0131nda yan\u0131n\u0131zdad\u0131r.</p>\n      "
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Comprehensive Guide to Weight Loss Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Bariatric surgery has become one of the most successful medical solutions for individuals struggling with chronic obesity, metabolic disorders, and type 2 diabetes. Turkey has established itself as the global capital for safe, state-of-the-art bariatric operations, featuring JCI-accredited general hospitals, board-certified gastrointestinal surgeons, and all-inclusive recovery packages that cost 60-70% less than equivalent private treatments in the UK, Europe, or North America.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Obesity Surgery Cost Comparison: Turkey vs. UK & Europe</h3>\n        <p class=\"text-gray-600 mb-4\">Due to high administrative costs and private clinical overheads in the UK and Germany, weight loss surgery is often financially inaccessible or subject to years-long NHS waiting lists. In Turkey, JCI-accredited bariatric packages bundle your laparoscopic surgery, private hospital stay, pre-op medical exams, 5-star recuperation hotel, and VIP private airport transfers at highly competitive rates. Here is a verified price comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Bariatric Procedure</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Verified)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Laparoscopic Gastric Sleeve</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£8,500 - £12,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,499 - £4,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Roux-en-Y Gastric Bypass</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£9,500 - £14,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,999 - £4,800</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Allurion Swallowable Capsule Balloon</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£6,000 - £7,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,999 - £3,400</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">BMI (Body Mass Index) Classification & Clinical Eligibility Grid</h3>\n        <p class=\"text-gray-600 mb-4\">Determining the correct clinical procedure depends heavily on your Body Mass Index (BMI) and metabolic health indicators. Below is the clinical guideline utilized by JCI-accredited bariatric teams:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">BMI Range</th>\n                <th class=\"px-4 py-3\">Classification</th>\n                <th class=\"px-4 py-3\">Recommended Treatment</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 27.0 - 29.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Overweight / Mild Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Allurion Swallowable Balloon or Lifestyle Coaching</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 30.0 - 34.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class I Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Gastric Sleeve (only with severe comorbidities) / Gastric Balloon</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 35.0 - 39.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class II Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Laparoscopic Gastric Sleeve (Sleeve Gastrectomy)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 40.0+</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class III Morbid Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Roux-en-Y Gastric Bypass or Laparoscopic Mini-Bypass</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Clinical Pre-Op Vetting and JCI Accreditation Matters</h3>\n        <p class=\"text-gray-600 mb-4\">Bariatric surgery is a major surgical procedure. At MediRoute, we enforce clinical safety standards that guarantee patient protection at every single stage:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Comprehensive Pre-Op Medical Clearance</strong>: Patients are never taken straight to the operating room. Upon arrival, you undergo a rigorous 4-hour checkup including blood labs, chest X-rays, abdominal ultrasound, electrocardiogram (ECG), pulmonary function tests, and physical consults with internal medicine, cardiology, and anesthesiology.</li>\n          <li><strong>General Surgeon Certifications</strong>: All general surgeons listed on our platform are members of the <strong>IFSO</strong> (International Federation for the Surgery of Obesity and Metabolic Disorders) and have performed at least 1,000 laparoscopic operations.</li>\n          <li><strong>Multi-Day Hospital Recovery</strong>: Unlike outpatient centers, our surgical packages include 3 nights of hospitalization in state-of-the-art accredited general hospitals with a dedicated leak-testing protocol before discharge.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Obezite ve Kilo Verme Cerrahisi Kapsamlı Rehberi</h2>\n        <p class=\"text-gray-600 mb-4\">Obezite cerrahisi (bariatrik cerrahi), kronik obezite, Tip 2 Diyabet ve diğer metabolik rahatsızlıklarla mücadele eden bireyler için modern tıbbın sunduğu en başarılı ve kalıcı çözümlerden biridir. Türkiye; JCI akredite tam teşekküllü genel hastaneleri, alanında dünyaca tanınmış obezite cerrahları ve İngiltere, Almanya gibi ülkelere kıyasla %60-70 oranında maliyet tasarrufu sağlayan her şey dahil paketleri ile obezite tedavisinde dünyanın lider sağlık turizmi merkezi konumundadır.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Obezite Ameliyatı Fiyat Karşılaştırması: Türkiye vs. Avrupa</h3>\n        <p class=\"text-gray-600 mb-4\">Avrupa ülkelerinde obezite cerrahisi operasyonları yüksek klinik genel giderleri ve sigorta primleri nedeniyle fahiş fiyatlara ulaşmaktadır. Türkiye'de ise laparoskopik cerrahi, ameliyat öncesi detaylı check-up testleri, hastane yatışı, 5 yıldızlı otel konaklaması, havalimanı-otel-klinik arası VIP transferler ve 1 yıllık diyetisyen takibi tek bir pakette sunulur. Fiyat karşılaştırması şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Operasyon Türü</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Laparoskopik Tüp Mide (Sleeve)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">8.500£ - 12.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.499£ - 4.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Gastrik Bypass (Roux-en-Y)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">9.500£ - 14.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.999£ - 4.800£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Allurion Yutulabilir Akıllı Balon</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">6.000£ - 7.500£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.999£ - 3.400£</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Vücut Kitle İndeksi (VKI) Sınıflandırması ve Ameliyat Seçenekleri</h3>\n        <p class=\"text-gray-600 mb-4\">Hangi tedavi yönteminin sizin için klinik olarak en doğrusu olduğunu belirlemede en önemli parametre Vücut Kitle İndeksinizdir (VKI/BMI). JCI akredite ekiplerimizin uyguladığı tıbbi kılavuz şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">VKI (BMI) Aralığı</th>\n                <th class=\"px-4 py-3\">Obezite Derecesi</th>\n                <th class=\"px-4 py-3\">Önerilen Tedavi Yöntemi</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 27.0 - 29.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Fazla Kilolu / Hafif Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Allurion Yutulabilir Akıllı Balon / Diyetisyen Takibi</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 30.0 - 34.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">1. Derece Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Mide Balonu veya Laparoskopik Tüp Mide (Yandaş hastalık varsa)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 35.0 - 39.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">2. Derece Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Laparoskopik Tüp Mide Ameliyatı (Sleeve Gastrektomi)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 40.0 ve üzeri</td>\n                <td class=\"px-4 py-3 text-gray-600\">3. Derece Morbid Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Gastrik Bypass (Roux-en-Y) veya Mini-Gastrik Bypass</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Klinik Güvenlik ve Hasta Koruma Politikaları</h3>\n        <p class=\"text-gray-600 mb-4\">Obezite cerrahisi, uzmanlık ve yüksek cerrahi disiplin gerektiren ciddi bir ameliyattır. MediRoute olarak, sağlığınızı güvenceye almak için şu güvenlik kriterlerinden taviz vermeyiz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Kapsamlı Ameliyat Öncesi Check-Up</strong>: Hastalarımız doğrudan ameliyathaneye alınmaz. Ameliyattan önceki gün geniş kan laboratuvar testleri, akciğer grafisi, EKG, solunum fonksiyon testleri, batın ultrasonu ve kardiyoloji, göğüs hastalıkları, anestezi ve dahiliye uzmanı fiziki konsültasyonları tamamlanır.</li>\n          <li><strong>IFSO Üyesi Uzman Cerrahlar</strong>: Ameliyatınızı gerçekleştirecek cerrahlarımızın mutlaka uluslararası obezite derneği **IFSO** üyesi olmasını ve bugüne kadar en az 1.000 başarılı laparoskopik mide küçültme ameliyatı gerçekleştirmiş olmasını şart koşarız.</li>\n          <li><strong>3 Gece Hastane Yatışı ve Kaçak Testleri</strong>: Ameliyat sonrasında taburcu edilmeden önce hastanede 3 gece yatış gerçekleştirilir. Taburcu edilmeden önce cerrahınız tarafından ağrısız sıvı kaçak testi (leak test) yapılarak midenin durumu %100 kontrol edilir.</li>\n        </ul>\n      "
     }
   },
   "eye-surgery": {
