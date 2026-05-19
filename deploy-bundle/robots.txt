@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medirouteturkey.com/sitemap.xml
+
+# Block private pages from indexing
+Disallow: /admin
+Disallow: /admin-logic.js
+Disallow: /clinic-dashboard
+Disallow: /patient-dashboard
+Disallow: /auth
