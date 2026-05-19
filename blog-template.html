@@ -251,6 +251,60 @@
       document.title = blog.title + ' | MediRoute';
       document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
 
+      // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const blogSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "description": stripHtml(blog.content).substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "datePublished": blog.created_at,
+        "dateModified": blog.updated_at || blog.created_at,
+        "author": {
+          "@type": "Person",
+          "name": blog.author || "MediRoute Team",
+          "jobTitle": blog.author_specialty || "Medical Writer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MediRoute",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://medirouteturkey.com/favicon.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": window.location.href
+        }
+      };
+      
+      let existingSchema = document.getElementById('blog-schema-ld');
+      if (existingSchema) existingSchema.remove();
+      
+      const schemaScript = document.createElement('script');
+      schemaScript.id = 'blog-schema-ld';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = JSON.stringify(blogSchema);
+      document.head.appendChild(schemaScript);
+
+      // Update dynamic Open Graph and Twitter Card tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = blog.title;
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.content = stripHtml(blog.content).substring(0, 155);
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg && blog.image_url) ogImg.content = blog.image_url;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = window.location.href;
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.content = blog.title;
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.content = stripHtml(blog.content).substring(0, 155);
+      const twitterImg = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImg && blog.image_url) twitterImg.content = blog.image_url;
+
       // Hero
       document.getElementById('breadcrumb-title').textContent = blog.title;
       document.getElementById('hero-title').innerHTML = blog.title;
