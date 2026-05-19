@@ -13,6 +13,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com"/>
   </url>
   <url>
+    <loc>https://medirouteturkey.com/treatments</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medirouteturkey.com/treatments?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medirouteturkey.com/treatments?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medirouteturkey.com/treatments?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://medirouteturkey.com/treatments?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medirouteturkey.com/treatments?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com/treatments"/>
+  </url>
+  <url>
     <loc>https://medirouteturkey.com/about</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
