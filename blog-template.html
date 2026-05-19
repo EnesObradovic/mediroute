@@ -93,18 +93,20 @@
       <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
     </a>
     <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
-      <a href="/" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> Back to Search</a>
-      <a href="/compare" class="hover:text-white transition">Compare Clinics</a>
-      <a href="/blog" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5">Guides</a>
+      <a href="/" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="cd_back_search">Back to Search</span></a>
+      <a href="/compare" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
+      <a href="/blog" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5" data-i18n="nav_blog">Guides / Blog</a>
     </div>
     <div class="flex items-center gap-2">
       <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
       <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
-      <a href="/auth" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition">Get Free Quote</a>
+      <a href="/auth" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="/auth" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
       <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
+
 
 <!-- HERO (dynamic) -->
 <section class="hero-bg pt-10 pb-14 px-4 relative overflow-hidden" id="hero-section">
