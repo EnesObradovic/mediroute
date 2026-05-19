@@ -54,6 +54,14 @@
       <div class="menu-divider"></div>
       <a href="/auth" class="!bg-emerald-600 !text-white !font-bold mt-2 justify-center" data-i18n="nav_signin"><i class="fa-solid fa-right-to-bracket w-5 text-center text-sm"></i> Sign In / Register</a>
       
+      <!-- Mobile Settings/Dark Mode -->
+      <div class="menu-divider"></div>
+      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-4 mb-2 mt-2" data-i18n="nav_dark_mode">Settings</p>
+      <div class="flex items-center justify-between px-4 py-2 text-white/80 hover:text-white transition" onclick="toggleDarkMode()" style="cursor:pointer;margin-bottom:8px;">
+        <span class="text-sm font-medium"><i class="fa-solid fa-moon dark-mode-icon mr-2"></i> Dark Mode</span>
+        <div class="dark-toggle"></div>
+      </div>
+
       <!-- Mobile Language Selector -->
       <div class="menu-divider"></div>
       <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-4 mb-2 mt-2" data-i18n="nav_language">Language</p>

@@ -723,3 +723,27 @@ html.fonts-loaded body {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
+
+/* ── Mobile Navbar Layout Optimization ── */
+@media (max-width: 768px) {
+  /* Hide desktop language and settings buttons to prevent overflow */
+  .lang-dropdown-wrapper,
+  .settings-dropdown-wrapper {
+    display: none !important;
+  }
+  
+  /* Ensure hamburger menu is prominent and positioned correctly */
+  .hamburger-btn {
+    display: flex !important;
+    order: 3; /* Move to far right */
+  }
+
+  /* Make sure the main CTA fits elegantly on smaller mobile screens */
+  nav a.bg-gradient-to-r {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+    order: 2;
+  }
+}
+
