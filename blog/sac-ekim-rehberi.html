@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi | MediRoute</title>
+  <meta name="description" content="Türkiye, özellikle de İstanbul, her yıl 1 milyondan fazla hastanın tercih ettiği dünya saç ekimi başkenti haline gelmiştir. Batı ülkelerine kıyasla sund..."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/shared.css"/>
+
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .tag-pill{display:inline-block;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-right:4px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .5s ease both;}
+    .progress-read{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,#0F2D96,#3B5FDD);z-index:999;transition:width .1s;}
+
+    /* Article body styling — renders Quill HTML beautifully */
+    .article-body{
+      background:#fff;border-radius:20px;border:1px solid #E8EEF9;
+      box-shadow:0 4px 20px rgba(10,31,107,.06);
+      padding:2rem 2.5rem;
+    }
+    .article-body h2{font-size:1.35rem;font-weight:800;color:#0A1F6B;margin-top:2.2rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;padding-bottom:.4rem;border-bottom:2px solid #E1E8FF;}
+    .article-body h3{font-size:1.05rem;font-weight:700;color:#1E3A8A;margin-top:1.6rem;margin-bottom:.5rem;}
+    .article-body p{color:#374151;line-height:1.85;margin-bottom:1rem;font-size:.925rem;}
+    .article-body ul,.article-body ol{margin-bottom:1rem;padding-left:1.4rem;}
+    .article-body ul li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;list-style:none;padding-left:1.3rem;position:relative;}
+    .article-body ul li::before{content:'✓';position:absolute;left:0;color:#059669;font-weight:700;}
+    .article-body ol li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;}
+    .article-body strong{color:#0A1F6B;font-weight:700;}
+    .article-body em{color:#475569;font-style:italic;}
+    .article-body a{color:#0F2D96;font-weight:600;text-decoration:underline;text-decoration-color:rgba(15,45,150,.3);text-underline-offset:2px;transition:color .15s;}
+    .article-body a:hover{color:#1A3AAF;text-decoration-color:#1A3AAF;}
+    .article-body img{max-width:100%;border-radius:14px;margin:1.2rem 0;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+    .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
+    .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
+
+    /* Related card */
+    .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
+
+    /* Author card */
+    .author-card{
+      background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
+      border:1px solid #E1E8FF;border-radius:20px;
+      padding:1.5rem 2rem;margin-top:2rem;
+      display:flex;align-items:center;gap:1.2rem;
+    }
+    .author-avatar{
+      width:72px;height:72px;border-radius:50%;
+      background:linear-gradient(135deg,#0F2D96,#3B5FDD);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;overflow:hidden;
+      border:3px solid #fff;box-shadow:0 4px 14px rgba(15,45,150,.2);
+    }
+    .author-avatar img{width:100%;height:100%;object-fit:cover;}
+    .author-avatar i{color:#fff;font-size:1.6rem;}
+    .author-badge{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;
+      background:#D1FAE5;color:#065F46;
+    }
+
+    /* Skeleton */
+    @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+    .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:800px 100%;animation:shimmer 1.5s infinite;border-radius:12px;}
+
+    @media(max-width:768px){
+      .article-body{padding:1.2rem 1rem;}
+      .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
+    }
+  </style>
+
+  <meta property="og:title" content="Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi | MediRoute"/>
+  <meta property="og:description" content="Türkiye, özellikle de İstanbul, her yıl 1 milyondan fazla hastanın tercih ettiği dünya saç ekimi başkenti haline gelmiştir. Batı ülkelerine kıyasla sund..."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80"/>
+  <meta property="og:url" content="https://medirouteturkey.com/blog/sac-ekim-rehberi"/>
+  <meta property="og:type" content="article"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi | MediRoute"/>
+  <meta name="twitter:description" content="Türkiye, özellikle de İstanbul, her yıl 1 milyondan fazla hastanın tercih ettiği dünya saç ekimi başkenti haline gelmiştir. Batı ülkelerine kıyasla sund..."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80"/>
+  <!-- schema.org JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi",
+    "description": "Türkiye, özellikle de İstanbul, her yıl 1 milyondan fazla hastanın tercih ettiği dünya saç ekimi başkenti haline gelmiştir. Batı ülkelerine kıyasla sund...",
+    "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80",
+    "datePublished": "2026-05-02T10:46:28.485117+00:00",
+    "dateModified": "2026-05-02T10:46:28.485117+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Serkan Aygın",
+      "jobTitle": "Trikoloji Uzmanı & Cerrah"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MediRoute",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://medirouteturkey.com/favicon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://medirouteturkey.com/blog/sac-ekim-rehberi"
+    }
+  }
+  </script>
+        
+</head>
+<body>
+<script>window.STATIC_RENDERED = true; window.STATIC_BLOG_DATA = {"id": 1, "title": "T\u00fcrkiye'de Sa\u00e7 Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve \u0130yile\u015fme Rehberi", "slug": "sac-ekim-rehberi", "content": "\n<p class=\"text-gray-600 mb-6 font-medium leading-relaxed\">T\u00fcrkiye, \u00f6zellikle de \u0130stanbul, her y\u0131l 1 milyondan fazla hastan\u0131n tercih etti\u011fi <strong>d\u00fcnya sa\u00e7 ekimi ba\u015fkenti</strong> haline gelmi\u015ftir. Bat\u0131 \u00fclkelerine k\u0131yasla sundu\u011fu %70'e varan fiyat avantaj\u0131n\u0131n yan\u0131 s\u0131ra, en son safir FUE ve DHI teknolojilerini kullanan d\u00fcnyaca \u00fcnl\u00fc cerrahlar\u0131yla bu liderli\u011fi elinde tutmaktad\u0131r. Bu kapsaml\u0131 rehberde; en iyi teknikleri, 3 g\u00fcnl\u00fck tedavi takvimini, ger\u00e7ek maliyet kar\u015f\u0131la\u015ft\u0131rmalar\u0131n\u0131 ve iyile\u015fme s\u00fcrecine dair t\u00fcm detaylar\u0131 bulacaks\u0131n\u0131z.</p>\n\n<h2 class=\"text-2xl font-bold text-navy-900 mt-8 mb-4\">FUE mi, DHI mi? Do\u011fru Sa\u00e7 Ekimi Tekni\u011fini Se\u00e7mek</h2>\n<p class=\"text-gray-600 mb-4\">Sa\u00e7 ekiminde ba\u015far\u0131 oran\u0131n\u0131 belirleyen en \u00f6nemli unsur, sa\u00e7 d\u00f6k\u00fclme tipinize en uygun tekni\u011fin se\u00e7ilmesidir. G\u00fcn\u00fcm\u00fczde uygulanan en geli\u015fmi\u015f iki y\u00f6ntem \u015funlard\u0131r:</p>\n\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-6 my-6\">\n  <div class=\"bg-blue-50/50 p-5 rounded-2xl border border-blue-100\">\n    <h3 class=\"text-lg font-bold text-navy-950 mb-2 flex items-center gap-2\">\n      <i class=\"fa-solid fa-gem text-blue-600\"></i> Safir FUE (Folik\u00fcler \u00dcnite Ekstraksiyonu)\n    </h3>\n    <p class=\"text-sm text-gray-600 leading-relaxed\">Geleneksel metal b\u0131\u00e7aklar yerine, do\u011fal de\u011ferli safir kristalinden \u00fcretilen ultra ince b\u0131\u00e7aklar\u0131n kullan\u0131ld\u0131\u011f\u0131 y\u00f6ntemdir. Safir u\u00e7lar sayesinde a\u00e7\u0131lan kanallar \u00e7ok daha k\u00fc\u00e7\u00fck ve p\u00fcr\u00fczs\u00fcz olur. Bu da kabuklanmay\u0131 minimuma indirir, iyile\u015fme s\u00fcrecini h\u0131zland\u0131r\u0131r ve maksimum s\u0131kl\u0131kta sa\u00e7 ekilmesine olanak tan\u0131r. Geni\u015f a\u00e7\u0131kl\u0131klara sahip hastalar i\u00e7in idealdir.</p>\n  </div>\n  \n  <div class=\"bg-emerald-50/50 p-5 rounded-2xl border border-emerald-100\">\n    <h3 class=\"text-lg font-bold text-emerald-950 mb-2 flex items-center gap-2\">\n      <i class=\"fa-solid fa-pen-nib text-emerald-600\"></i> DHI (Direct Hair Implantation)\n    </h3>\n    <p class=\"text-sm text-gray-600 leading-relaxed\">Bu y\u00f6ntemde, \u00f6zel bir medikal kalem olan <strong>Choi Implanter</strong> kullan\u0131l\u0131r. Don\u00f6r b\u00f6lgeden toplanan sa\u00e7 k\u00f6kleri, kanal a\u00e7ma ve ekme i\u015flemleri ayn\u0131 anda olacak \u015fekilde tek bir ad\u0131mda kafa derisine yerle\u015ftirilir. DHI tekni\u011finin en b\u00fcy\u00fck avantaj\u0131, sa\u00e7lar\u0131n t\u0131ra\u015f edilmeden ekilebilmesi ve mevcut sa\u00e7lar\u0131n aras\u0131na zarar vermeden s\u0131kla\u015ft\u0131rma yap\u0131labilmesidir.</p>\n  </div>\n</div>\n\n<h2 class=\"text-2xl font-bold text-navy-900 mt-8 mb-4\">\u0130stanbul'da 3 G\u00fcnl\u00fck Tedavi ve Seyahat Program\u0131</h2>\n<p class=\"text-gray-600 mb-4\">T\u00fcrkiye'de sa\u00e7 ekimi operasyonlar\u0131 son derece organize ve konforlu paketler halinde sunulur. \u0130\u015fte \u0130stanbul'daki 3 g\u00fcnl\u00fck VIP plan\u0131n\u0131z:</p>\n\n<ul class=\"list-none pl-0 my-6 space-y-4\">\n  <li class=\"flex gap-4 items-start\">\n    <div class=\"w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0\">1</div>\n    <div>\n      <h4 class=\"font-bold text-navy-950 text-base\">1. G\u00fcn: VIP Kar\u015f\u0131lama & Kons\u00fcltasyon</h4>\n      <p class=\"text-sm text-gray-600\">Havaliman\u0131nda sizi kar\u015f\u0131layan VIP Mercedes transfer arac\u0131n\u0131z ile 5 y\u0131ld\u0131zl\u0131 otelinize ge\u00e7i\u015f yapars\u0131n\u0131z. Ayn\u0131 g\u00fcn klinikte kan tahlilleri, sa\u00e7 analizi ve doktorunuzla birlikte ekim yap\u0131lacak s\u0131n\u0131rlar\u0131n belirlendi\u011fi sa\u00e7 \u00e7izgisi tasar\u0131m\u0131 ger\u00e7ekle\u015ftirilir.</p>\n    </div>\n  </li>\n  <li class=\"flex gap-4 items-start\">\n    <div class=\"w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0\">2</div>\n    <div>\n      <h4 class=\"font-bold text-navy-950 text-base\">2. G\u00fcn: Operasyon G\u00fcn\u00fc (6-8 Saat)</h4>\n      <p class=\"text-sm text-gray-600\">A\u011fr\u0131s\u0131z lokal anestezi (i\u011fnesiz bas\u0131n\u00e7l\u0131 anestezi cihazlar\u0131 ile) uygulan\u0131r. Uzman ekip taraf\u0131ndan k\u00f6klerin toplanmas\u0131, kanallar\u0131n a\u00e7\u0131lmas\u0131 ve ekim a\u015famalar\u0131 titizlikle y\u00fcr\u00fct\u00fcl\u00fcr. Operasyon s\u0131ras\u0131nda veya sonras\u0131nda sa\u00e7 k\u00f6klerini beslemek i\u00e7in PRP (Trombositten Zengin Plazma) tedavisi de uygulan\u0131r.</p>\n    </div>\n  </li>\n  <li class=\"flex gap-4 items-start\">\n    <div class=\"w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0\">3</div>\n    <div>\n      <h4 class=\"font-bold text-navy-950 text-base\">3. G\u00fcn: \u0130lk Y\u0131kama & Medikal Bak\u0131m</h4>\n      <p class=\"text-sm text-gray-600\">Klinikte ilk pansuman s\u00f6k\u00fcl\u00fcr, \u00f6zel \u015fampuanlarla ilk sa\u00e7 y\u0131kamas\u0131 uzmanlar e\u015fli\u011finde yap\u0131l\u0131r. K\u00f6klerin h\u0131zl\u0131 tutunmas\u0131 i\u00e7in so\u011fuk lazer tedavisi uygulan\u0131r. Bak\u0131m \u015fampuanlar\u0131, ila\u00e7 kiti ve boyun yast\u0131\u011f\u0131n\u0131z teslim edilerek havaliman\u0131na VIP transferiniz sa\u011flan\u0131r.</p>\n    </div>\n  </li>\n</ul>\n\n<h2 class=\"text-2xl font-bold text-navy-900 mt-8 mb-4\">Sa\u00e7 Ekimi Fiyat Kar\u015f\u0131la\u015ft\u0131rmas\u0131: T\u00fcrkiye Neden Avantajl\u0131?</h2>\n<p class=\"text-gray-600 mb-4\">T\u00fcrkiye'deki sa\u00e7 ekim merkezleri, y\u00fcksek d\u00f6viz kuru avantaj\u0131 ve devletin sa\u011fl\u0131k turizmine sundu\u011fu te\u015fvikler sayesinde operasyon maliyetlerini \u00e7ok daha rekabet\u00e7i seviyelerde tutabilmektedir. \u0130\u015fte ortalama 4500 greft ekim paket fiyatlar\u0131 kar\u015f\u0131la\u015ft\u0131rmas\u0131:</p>\n\n<div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n  <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n    <thead class=\"bg-navy-950 text-white font-semibold\">\n      <tr>\n        <th class=\"px-4 py-3\">\u00dclke</th>\n        <th class=\"px-4 py-3\">Ortalama Fiyat (All-Inclusive Paket)</th>\n        <th class=\"px-4 py-3\">Klinik Standartlar\u0131</th>\n      </tr>\n    </thead>\n    <tbody class=\"divide-y divide-gray-150 bg-white\">\n      <tr>\n        <td class=\"px-4 py-3 font-semibold text-navy-900\">T\u00fcrkiye (MediRoute Onayl\u0131)</td>\n        <td class=\"px-4 py-3 text-emerald-600 font-bold\">1,800 \u20ac - 3,200 \u20ac</td>\n        <td class=\"px-4 py-3 text-navy-800\">JCI Belgeli Hastane, VIP Transfer, 5* Otel, 1 Y\u0131ll\u0131k Takip</td>\n      </tr>\n      <tr>\n        <td class=\"px-4 py-3 font-semibold text-navy-900\">\u0130ngiltere (UK)</td>\n        <td class=\"px-4 py-3 text-red-600 font-medium\">8,000 \u00a3 - 14,000 \u00a3</td>\n        <td class=\"px-4 py-3\">Sadece operasyon (Otel ve transferler dahil de\u011fil)</td>\n      </tr>\n      <tr>\n        <td class=\"px-4 py-3 font-semibold text-navy-900\">Almanya</td>\n        <td class=\"px-4 py-3 text-red-600 font-medium\">6,000 \u20ac - 10,000 \u20ac</td>\n        <td class=\"px-4 py-3\">Sadece operasyon ve s\u0131n\u0131rl\u0131 post-op destek</td>\n      </tr>\n      <tr>\n        <td class=\"px-4 py-3 font-semibold text-navy-900\">\u0130spanya</td>\n        <td class=\"px-4 py-3 text-red-600 font-medium\">5,000 \u20ac - 8,500 \u20ac</td>\n        <td class=\"px-4 py-3\">Standart klinikler (Ek hizmetler \u00fccretlidir)</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<h2 class=\"text-2xl font-bold text-navy-900 mt-8 mb-4\">Sa\u00e7 Ekimi Sonras\u0131 Alt\u0131n Kurallar (\u0130lk 10 G\u00fcn)</h2>\n<p class=\"text-gray-600 mb-4\">Ekilen sa\u00e7 k\u00f6klerinin zarar g\u00f6rmemesi ve ilk 10 g\u00fcnl\u00fck kritik tutunma s\u00fcrecinin sa\u011fl\u0131kl\u0131 tamamlanmas\u0131 i\u00e7in \u015fu kurallara kesinlikle uymal\u0131s\u0131n\u0131z:</p>\n<ul class=\"list-disc pl-5 mb-6 text-gray-600 space-y-2\">\n  <li><strong>Uyku Pozisyonu</strong>: \u0130lk 7 gece, ba\u015f\u0131n\u0131z 45 derece yukar\u0131da olacak \u015fekilde size verilen medikal seyahat yast\u0131\u011f\u0131 ile s\u0131rt \u00fcst\u00fc uyumal\u0131s\u0131n\u0131z. Kafa derinizin yast\u0131\u011fa s\u00fcrt\u00fcnmesini engelleyin.</li>\n  <li><strong>\u0130lk Y\u0131kama</strong>: \u0130lk 10 g\u00fcn boyunca kafa derisine asla tazyikli su tutmay\u0131n. Y\u0131kamay\u0131 size \u00f6\u011fretildi\u011fi \u015fekilde, hafif dokunu\u015flarla ve medikal k\u00f6p\u00fck \u015fampuan\u0131yla yap\u0131n.</li>\n  <li><strong>Fiziksel Aktiviteler</strong>: \u0130lk 1 ay boyunca a\u011f\u0131r sporlardan, fitness ve a\u011f\u0131rl\u0131k antrenmanlar\u0131ndan, sauna ve hamam gibi a\u015f\u0131r\u0131 s\u0131cak ortamlardan kesinlikle uzak durun.</li>\n  <li><strong>G\u00fcne\u015f ve Ya\u011fmur Korumas\u0131</strong>: \u0130lk 15 g\u00fcn kafa derinizi do\u011frudan g\u00fcne\u015f \u0131\u015f\u0131\u011f\u0131ndan veya sert ya\u011fmur damlalar\u0131ndan koruyun. D\u0131\u015far\u0131 \u00e7\u0131karken doktorunuzun onaylad\u0131\u011f\u0131 gev\u015fek \u015fapkalar\u0131 tercih edin.</li>\n</ul>\n", "category": "Guide", "image_url": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80", "author": "Dr. Serkan Ayg\u0131n", "created_at": "2026-05-02T10:46:28.485117+00:00", "status": "published", "author_title": "Hair Restoration Specialist", "author_specialty": "Trikoloji Uzman\u0131 & Cerrah", "author_image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&h=150&q=80"};</script>
+
+<!-- Reading progress bar -->
+<div id="progress-read" class="progress-read" style="width:0%"></div>
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="/" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="/" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="cd_back_search">Back to Search</span></a>
+      <a href="/compare" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
+      <a href="/blog" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5" data-i18n="nav_blog">Guides / Blog</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="/auth" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="/auth" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO (dynamic) -->
+<section class="hero-bg pt-10 pb-14 px-4 relative overflow-hidden" id="hero-section">
+  <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;"></div>
+  <div class="max-w-4xl mx-auto relative fade-up">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-blue-300 text-xs mb-4">
+      <a href="/" class="hover:text-white">Home</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <a href="/blog" class="hover:text-white">Guides</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <span class="text-blue-200" id="breadcrumb-title">Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi</span>
+    </div>
+    <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-blue-900/60 border border-blue-400/30 text-blue-200">Guide</span></div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi</h1>
+    <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
+        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> Dr. Serkan Aygın</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 2 Mayıs 2026</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 3 dk okuma</span>
+      </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+  <!-- Cover image -->
+  <div id="cover-image-wrapper" class="mb-8 rounded-2xl overflow-hidden shadow-lg" style="display:block;">
+    <img id="cover-image" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Türkiye'de Saç Ekimi: Fiyatlar, Teknikler (FUE & DHI) ve İyileşme Rehberi" class="w-full" style="max-height:420px;object-fit:cover;">
+  </div>
+
+  <!-- Article body -->
+  <article class="article-body fade-up" id="article-body">
+    
+<p class="text-gray-600 mb-6 font-medium leading-relaxed">Türkiye, özellikle de İstanbul, her yıl 1 milyondan fazla hastanın tercih ettiği <strong>dünya saç ekimi başkenti</strong> haline gelmiştir. Batı ülkelerine kıyasla sunduğu %70'e varan fiyat avantajının yanı sıra, en son safir FUE ve DHI teknolojilerini kullanan dünyaca ünlü cerrahlarıyla bu liderliği elinde tutmaktadır. Bu kapsamlı rehberde; en iyi teknikleri, 3 günlük tedavi takvimini, gerçek maliyet karşılaştırmalarını ve iyileşme sürecine dair tüm detayları bulacaksınız.</p>
+
+<h2 class="text-2xl font-bold text-navy-900 mt-8 mb-4">FUE mi, DHI mi? Doğru Saç Ekimi Tekniğini Seçmek</h2>
+<p class="text-gray-600 mb-4">Saç ekiminde başarı oranını belirleyen en önemli unsur, saç dökülme tipinize en uygun tekniğin seçilmesidir. Günümüzde uygulanan en gelişmiş iki yöntem şunlardır:</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+  <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+    <h3 class="text-lg font-bold text-navy-950 mb-2 flex items-center gap-2">
+      <i class="fa-solid fa-gem text-blue-600"></i> Safir FUE (Foliküler Ünite Ekstraksiyonu)
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">Geleneksel metal bıçaklar yerine, doğal değerli safir kristalinden üretilen ultra ince bıçakların kullanıldığı yöntemdir. Safir uçlar sayesinde açılan kanallar çok daha küçük ve pürüzsüz olur. Bu da kabuklanmayı minimuma indirir, iyileşme sürecini hızlandırır ve maksimum sıklıkta saç ekilmesine olanak tanır. Geniş açıklıklara sahip hastalar için idealdir.</p>
+  </div>
+  
+  <div class="bg-emerald-50/50 p-5 rounded-2xl border border-emerald-100">
+    <h3 class="text-lg font-bold text-emerald-950 mb-2 flex items-center gap-2">
+      <i class="fa-solid fa-pen-nib text-emerald-600"></i> DHI (Direct Hair Implantation)
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">Bu yöntemde, özel bir medikal kalem olan <strong>Choi Implanter</strong> kullanılır. Donör bölgeden toplanan saç kökleri, kanal açma ve ekme işlemleri aynı anda olacak şekilde tek bir adımda kafa derisine yerleştirilir. DHI tekniğinin en büyük avantajı, saçların tıraş edilmeden ekilebilmesi ve mevcut saçların arasına zarar vermeden sıklaştırma yapılabilmesidir.</p>
+  </div>
+</div>
+
+<h2 class="text-2xl font-bold text-navy-900 mt-8 mb-4">İstanbul'da 3 Günlük Tedavi ve Seyahat Programı</h2>
+<p class="text-gray-600 mb-4">Türkiye'de saç ekimi operasyonları son derece organize ve konforlu paketler halinde sunulur. İşte İstanbul'daki 3 günlük VIP planınız:</p>
+
+<ul class="list-none pl-0 my-6 space-y-4">
+  <li class="flex gap-4 items-start">
+    <div class="w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0">1</div>
+    <div>
+      <h4 class="font-bold text-navy-950 text-base">1. Gün: VIP Karşılama & Konsültasyon</h4>
+      <p class="text-sm text-gray-600">Havalimanında sizi karşılayan VIP Mercedes transfer aracınız ile 5 yıldızlı otelinize geçiş yaparsınız. Aynı gün klinikte kan tahlilleri, saç analizi ve doktorunuzla birlikte ekim yapılacak sınırların belirlendiği saç çizgisi tasarımı gerçekleştirilir.</p>
+    </div>
+  </li>
+  <li class="flex gap-4 items-start">
+    <div class="w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0">2</div>
+    <div>
+      <h4 class="font-bold text-navy-950 text-base">2. Gün: Operasyon Günü (6-8 Saat)</h4>
+      <p class="text-sm text-gray-600">Ağrısız lokal anestezi (iğnesiz basınçlı anestezi cihazları ile) uygulanır. Uzman ekip tarafından köklerin toplanması, kanalların açılması ve ekim aşamaları titizlikle yürütülür. Operasyon sırasında veya sonrasında saç köklerini beslemek için PRP (Trombositten Zengin Plazma) tedavisi de uygulanır.</p>
+    </div>
+  </li>
+  <li class="flex gap-4 items-start">
+    <div class="w-8 h-8 rounded-full bg-navy-950 text-white font-bold flex items-center justify-center shrink-0">3</div>
+    <div>
+      <h4 class="font-bold text-navy-950 text-base">3. Gün: İlk Yıkama & Medikal Bakım</h4>
+      <p class="text-sm text-gray-600">Klinikte ilk pansuman sökülür, özel şampuanlarla ilk saç yıkaması uzmanlar eşliğinde yapılır. Köklerin hızlı tutunması için soğuk lazer tedavisi uygulanır. Bakım şampuanları, ilaç kiti ve boyun yastığınız teslim edilerek havalimanına VIP transferiniz sağlanır.</p>
+    </div>
+  </li>
+</ul>
+
+<h2 class="text-2xl font-bold text-navy-900 mt-8 mb-4">Saç Ekimi Fiyat Karşılaştırması: Türkiye Neden Avantajlı?</h2>
+<p class="text-gray-600 mb-4">Türkiye'deki saç ekim merkezleri, yüksek döviz kuru avantajı ve devletin sağlık turizmine sunduğu teşvikler sayesinde operasyon maliyetlerini çok daha rekabetçi seviyelerde tutabilmektedir. İşte ortalama 4500 greft ekim paket fiyatları karşılaştırması:</p>
+
+<div class="overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm">
+  <table class="min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500">
+    <thead class="bg-navy-950 text-white font-semibold">
+      <tr>
+        <th class="px-4 py-3">Ülke</th>
+        <th class="px-4 py-3">Ortalama Fiyat (All-Inclusive Paket)</th>
+        <th class="px-4 py-3">Klinik Standartları</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-150 bg-white">
+      <tr>
+        <td class="px-4 py-3 font-semibold text-navy-900">Türkiye (MediRoute Onaylı)</td>
+        <td class="px-4 py-3 text-emerald-600 font-bold">1,800 € - 3,200 €</td>
+        <td class="px-4 py-3 text-navy-800">JCI Belgeli Hastane, VIP Transfer, 5* Otel, 1 Yıllık Takip</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-3 font-semibold text-navy-900">İngiltere (UK)</td>
+        <td class="px-4 py-3 text-red-600 font-medium">8,000 £ - 14,000 £</td>
+        <td class="px-4 py-3">Sadece operasyon (Otel ve transferler dahil değil)</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-3 font-semibold text-navy-900">Almanya</td>
+        <td class="px-4 py-3 text-red-600 font-medium">6,000 € - 10,000 €</td>
+        <td class="px-4 py-3">Sadece operasyon ve sınırlı post-op destek</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-3 font-semibold text-navy-900">İspanya</td>
+        <td class="px-4 py-3 text-red-600 font-medium">5,000 € - 8,500 €</td>
+        <td class="px-4 py-3">Standart klinikler (Ek hizmetler ücretlidir)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="text-2xl font-bold text-navy-900 mt-8 mb-4">Saç Ekimi Sonrası Altın Kurallar (İlk 10 Gün)</h2>
+<p class="text-gray-600 mb-4">Ekilen saç köklerinin zarar görmemesi ve ilk 10 günlük kritik tutunma sürecinin sağlıklı tamamlanması için şu kurallara kesinlikle uymalısınız:</p>
+<ul class="list-disc pl-5 mb-6 text-gray-600 space-y-2">
+  <li><strong>Uyku Pozisyonu</strong>: İlk 7 gece, başınız 45 derece yukarıda olacak şekilde size verilen medikal seyahat yastığı ile sırt üstü uyumalısınız. Kafa derinizin yastığa sürtünmesini engelleyin.</li>
+  <li><strong>İlk Yıkama</strong>: İlk 10 gün boyunca kafa derisine asla tazyikli su tutmayın. Yıkamayı size öğretildiği şekilde, hafif dokunuşlarla ve medikal köpük şampuanıyla yapın.</li>
+  <li><strong>Fiziksel Aktiviteler</strong>: İlk 1 ay boyunca ağır sporlardan, fitness ve ağırlık antrenmanlarından, sauna ve hamam gibi aşırı sıcak ortamlardan kesinlikle uzak durun.</li>
+  <li><strong>Güneş ve Yağmur Koruması</strong>: İlk 15 gün kafa derinizi doğrudan güneş ışığından veya sert yağmur damlalarından koruyun. Dışarı çıkarken doktorunuzun onayladığı gevşek şapkaları tercih edin.</li>
+</ul>
+
+  </article>
+
+  <!-- Author Profile Card -->
+  <div id="author-card" class="author-card fade-up" style="display:flex;">
+    <div class="author-avatar" id="author-avatar">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&h=150&q=80" alt="Hair Restoration Specialist Dr. Serkan Aygın">
+    </div>
+    <div>
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Hair Restoration Specialist Dr. Serkan Aygın</h3>
+        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+      </div>
+      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Trikoloji Uzmanı & Cerrah</p>
+      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+    </div>
+  </div>
+
+  <!-- Share buttons -->
+  <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
+    <span class="text-sm font-bold text-gray-600"><i class="fa-solid fa-share-nodes mr-2 text-navy-700"></i>Bu yazıyı paylaş</span>
+    <div class="flex items-center gap-2">
+      <button onclick="shareTwitter()" class="w-9 h-9 rounded-xl bg-sky-50 hover:bg-sky-100 flex items-center justify-center text-sky-500 transition"><i class="fa-brands fa-x-twitter text-sm"></i></button>
+      <button onclick="shareFacebook()" class="w-9 h-9 rounded-xl bg-blue-50 hover:bg-blue-100 flex items-center justify-center text-blue-600 transition"><i class="fa-brands fa-facebook-f text-sm"></i></button>
+      <button onclick="shareWhatsApp()" class="w-9 h-9 rounded-xl bg-emerald-50 hover:bg-emerald-100 flex items-center justify-center text-emerald-500 transition"><i class="fa-brands fa-whatsapp text-sm"></i></button>
+      <button onclick="copyLink()" class="w-9 h-9 rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-500 transition" title="Linki kopyala"><i class="fa-solid fa-link text-sm"></i></button>
+    </div>
+  </div>
+
+  <!-- Related posts -->
+  <div class="mt-12" id="related-section" style="display:block;">
+    <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
+      
+          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
+            </div>
+          </a>
+        
+          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
+            </div>
+          </a>
+        
+          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
+            </div>
+          </a>
+        
+    </div>
+  </div>
+</div>
+
+<!-- Back to Blog CTA -->
+<div class="text-center mb-12">
+  <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold text-navy-700 hover:text-navy-900 transition">
+    <i class="fa-solid fa-arrow-left"></i> Tüm Yazılara Dön
+  </a>
+</div>
+
+<footer class="hero-bg py-8 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs">© 2026 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="/" class="hover:text-white">Search</a>
+      <a href="/compare" class="hover:text-white">Compare</a>
+      <a href="/auth" class="hover:text-white">Sign In</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-client.js"></script>
+<script>
+  // Get slug from URL
+  const params = new URLSearchParams(window.location.search);
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const pathSlug = pathParts.length > 0 && pathParts[0] === 'blog' ? pathParts[1] : null;
+  const slug = pathSlug || params.get('slug');
+
+  function getCatClass(cat) {
+    const c = (cat || '').toLowerCase();
+    if (c === 'guide' || c === 'rehber') return 'bg-blue-900/60 border border-blue-400/30 text-blue-200';
+    if (c === 'tips' || c === 'ipuçları') return 'bg-emerald-900/50 border border-emerald-400/30 text-emerald-200';
+    if (c === 'news' || c === 'haber') return 'bg-amber-900/50 border border-amber-400/30 text-amber-200';
+    return 'bg-white/10 border border-white/20 text-blue-200';
+  }
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
+  async function loadArticle() {
+    if (window.STATIC_RENDERED) return;
+    if (!slug) {
+      window.location.href = 'blog.html';
+      return;
+    }
+
+    try {
+      const blog = await MR.supabase.getBlogBySlug(slug);
+
+      if (!blog) {
+        document.getElementById('article-body').innerHTML = `
+          <div style="text-align:center;padding:3rem;">
+            <i class="fa-solid fa-ghost" style="font-size:3rem;color:#CBD5E1;margin-bottom:1rem;display:block;"></i>
+            <h2 style="color:#0A1F6B;margin-bottom:.5rem;">Yazı bulunamadı</h2>
+            <p style="color:#6B7280;">Bu slug ile eşleşen bir blog yazısı yok.</p>
+            <a href="/blog" style="color:#0F2D96;font-weight:700;display:inline-block;margin-top:1rem;">← Tüm yazılara dön</a>
+          </div>
+        `;
+        return;
+      }
+
+      // Set page title
+      document.title = blog.title + ' | MediRoute';
+      document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
+
+      // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const blogSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "description": stripHtml(blog.content).substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "datePublished": blog.created_at,
+        "dateModified": blog.updated_at || blog.created_at,
+        "author": {
+          "@type": "Person",
+          "name": blog.author || "MediRoute Team",
+          "jobTitle": blog.author_specialty || "Medical Writer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MediRoute",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://medirouteturkey.com/favicon.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": window.location.href
+        }
+      };
+      
+      let existingSchema = document.getElementById('blog-schema-ld');
+      if (existingSchema) existingSchema.remove();
+      
+      const schemaScript = document.createElement('script');
+      schemaScript.id = 'blog-schema-ld';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = JSON.stringify(blogSchema);
+      document.head.appendChild(schemaScript);
+
+      // Update dynamic Open Graph and Twitter Card tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = blog.title;
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.content = stripHtml(blog.content).substring(0, 155);
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg && blog.image_url) ogImg.content = blog.image_url;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = window.location.href;
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.content = blog.title;
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.content = stripHtml(blog.content).substring(0, 155);
+      const twitterImg = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImg && blog.image_url) twitterImg.content = blog.image_url;
+
+      // Hero
+      document.getElementById('breadcrumb-title').textContent = blog.title;
+      document.getElementById('hero-title').innerHTML = blog.title;
+      document.getElementById('hero-tags').innerHTML = `
+        <span class="tag-pill ${getCatClass(blog.category)}">${blog.category}</span>
+      `;
+
+      const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+      const wordCount = stripHtml(blog.content).split(/\s+/).length;
+      const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      document.getElementById('hero-meta').innerHTML = `
+        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
+      `;
+
+      // Cover image
+      if (blog.image_url) {
+        document.getElementById('cover-image').src = blog.image_url;
+        document.getElementById('cover-image').alt = blog.title;
+        document.getElementById('cover-image-wrapper').style.display = 'block';
+      }
+
+      // Article content
+      document.getElementById('article-body').innerHTML = blog.content;
+
+      // Author card
+      const authorName = blog.author || blog.author_title;
+      if (authorName) {
+        const card = document.getElementById('author-card');
+        card.style.display = 'flex';
+        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
+        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        document.getElementById('author-title-text').textContent = blog.author_specialty || '';
+        document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
+        if (blog.author_image) {
+          document.getElementById('author-avatar').innerHTML = `<img loading="lazy" src="${blog.author_image}" alt="${fullName}">`;
+        }
+      }
+
+      // Load related posts
+      loadRelated(blog.id);
+
+    } catch (err) {
+      console.error('Blog yükleme hatası:', err);
+      document.getElementById('article-body').innerHTML = '<p style="color:#DC2626;text-align:center;padding:2rem;">Yazı yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p>';
+    }
+  }
+
+  async function loadRelated(currentId) {
+    if (window.STATIC_RENDERED) return;
+    try {
+      const all = await MR.supabase.getBlogs();
+      const related = all.filter(b => b.id !== currentId && b.status === 'published').slice(0, 3);
+      if (related.length === 0) return;
+
+      document.getElementById('related-section').style.display = 'block';
+      document.getElementById('related-grid').innerHTML = related.map(b => {
+        const date = new Date(b.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
+        const excerpt = stripHtml(b.content).substring(0, 80) + '…';
+        return `
+          <a href="/blog/${b.slug}" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              ${b.image_url ? `<img loading="lazy" src="${b.image_url}" alt="${b.title}" style="width:100%;height:100%;object-fit:cover;">` : '<i class="fa-solid fa-image text-3xl text-blue-200"></i>'}
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">${b.category}</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">${b.title}</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">${excerpt}</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">${date}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+    } catch (e) {
+      console.error('Related posts error:', e);
+    }
+  }
+
+  // Share functions
+  function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(location.href) + '&text=' + encodeURIComponent(document.title), '_blank');
+  }
+  function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank');
+  }
+  function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + location.href), '_blank');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(location.href);
+    const btn = event.currentTarget;
+    btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
+    setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+    document.getElementById('progress-read').style.width = pct + '%';
+  });
+
+  // Init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(loadArticle, 300));
+  } else {
+    setTimeout(loadArticle, 300);
+  }
+</script>
+<script src="/i18n.js"></script>
+<script src="/seo.js"></script>
+<script src="/performance.js"></script>
+<script src="/shared.js"></script>
+</body>
+</html>

@@ -227,6 +227,7 @@
   }
 
   async function loadArticle() {
+    if (window.STATIC_RENDERED) return;
     if (!slug) {
       window.location.href = 'blog.html';
       return;
@@ -355,6 +356,7 @@
   }
 
   async function loadRelated(currentId) {
+    if (window.STATIC_RENDERED) return;
     try {
       const all = await MR.supabase.getBlogs();
       const related = all.filter(b => b.id !== currentId && b.status === 'published').slice(0, 3);

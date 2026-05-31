@@ -80,5 +80,13 @@ for f in ['treatment.html', 'treatment-template.html']:
         write_file(os.path.join('deploy-bundle', f), read_file(f))
         print(f"📋 Copied {f} → deploy-bundle/{f}")
 
-print("\n🎉 Build complete! Treatment data is now inlined in all HTML files.")
-print("   You can now upload deploy-bundle/ to Cloudflare without worrying about treatment-data.js.")
+# Run static blog pre-rendering
+print("\n🔄 Running static blog pre-rendering...")
+try:
+    import pre_render_blogs
+    pre_render_blogs.render_all_blogs()
+except Exception as e:
+    print(f"❌ Failed to pre-render blogs: {e}")
+
+print("\n🎉 Build complete! All treatments are inlined and static blogs pre-rendered.")
+print("   You can now upload deploy-bundle/ to Cloudflare Pages.")

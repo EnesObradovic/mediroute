@@ -277,5 +277,14 @@ def add_all_blogs():
     except Exception as e:
         print("Failed to run generate_sitemap.py automatic update:", e)
 
+    # Automatically execute pre_render_blogs.py to pre-render static HTML pages
+    print("Pre-rendering static HTML pages for new articles...")
+    try:
+        import pre_render_blogs
+        pre_render_blogs.render_all_blogs()
+        print("Static HTML pages successfully pre-rendered!")
+    except Exception as e:
+        print("Failed to run pre_render_blogs.py automatic update:", e)
+
 if __name__ == '__main__':
     add_all_blogs()
