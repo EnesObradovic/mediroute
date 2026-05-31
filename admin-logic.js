@@ -344,8 +344,101 @@ document.getElementById('delete-modal').addEventListener('click',function(e){if(
 document.getElementById('blog-modal')?.addEventListener('click',function(e){if(e.target===this)closeBlogModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeClinicModal();closeDeleteModal();closeBlogModal();}});
 
+// ── Real-time Leads Notifications (Supabase Realtime) ──
+(function() {
+  const container = document.createElement('div');
+  container.id = 'realtime-notif-container';
+  container.className = 'fixed bottom-6 right-6 z-[500] flex flex-col gap-3';
+  document.body.appendChild(container);
+})();
+
+function playNotificationSound() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // Tone 1 (E5)
+    const osc1 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    osc1.connect(gain1);
+    gain1.connect(ctx.destination);
+    osc1.frequency.setValueAtTime(659.25, ctx.currentTime);
+    gain1.gain.setValueAtTime(0, ctx.currentTime);
+    gain1.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.05);
+    gain1.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+    osc1.start(ctx.currentTime);
+    osc1.stop(ctx.currentTime + 0.4);
+
+    // Tone 2 (A5) with minor delay
+    setTimeout(() => {
+      const osc2 = ctx.createOscillator();
+      const gain2 = ctx.createGain();
+      osc2.connect(gain2);
+      gain2.connect(ctx.destination);
+      osc2.frequency.setValueAtTime(880.00, ctx.currentTime);
+      gain2.gain.setValueAtTime(0, ctx.currentTime);
+      gain2.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.05);
+      gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
+      osc2.start(ctx.currentTime);
+      osc2.stop(ctx.currentTime + 0.5);
+    }, 100);
+  } catch(e) {
+    console.warn('[MR] Audio playback failed:', e);
+  }
+}
+
+function showRealtimeToast(lead) {
+  const container = document.getElementById('realtime-notif-container');
+  if (!container) return;
+  
+  const t = document.createElement('div');
+  t.className = 'fade-up border border-emerald-500/20 shadow-2xl p-4 rounded-2xl flex items-start gap-3 transition-all duration-300';
+  t.style.cssText = 'background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); min-width: 300px; max-width: 360px; box-shadow: 0 16px 36px rgba(10,31,107,0.15); border-left: 5px solid #10B981; animation: fadeUp 0.35s ease;';
+  
+  t.innerHTML = `
+    <div class="w-8 h-8 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fa-solid fa-bell text-emerald-500 text-sm"></i></div>
+    <div style="flex: 1;">
+      <p style="font-size: 10px; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 2px 0;">Yeni Teklif Talebi! 🔔</p>
+      <p style="font-size: 13px; font-weight: 800; color: #0A1F6B; line-height: 1.2; margin: 0;">${lead.name || 'Gizli Kullanıcı'}</p>
+      <p style="font-size: 11px; color: #64748B; margin: 1px 0 0 0;">${lead.treatment}</p>
+      <p style="font-size: 10px; color: #94A3B8; margin: 4px 0 0 0; display: flex; align-items: center; gap: 4px;"><i class="fa-solid fa-location-dot"></i> ${lead.city || '-'}</p>
+    </div>
+    <button onclick="this.parentElement.remove()" style="color: #94A3B8; background: none; border: none; cursor: pointer; font-size: 12px; padding: 0; margin-top: 2px;"><i class="fa-solid fa-xmark"></i></button>
+  `;
+  container.appendChild(t);
+  
+  setTimeout(() => {
+    t.style.opacity = '0';
+    t.style.transform = 'translateY(-10px)';
+    setTimeout(() => t.remove(), 300);
+  }, 6000);
+}
+
+function setupRealtimeLeads() {
+  if (!window.MR || !window.MR.supabase) return;
+  const sb = window.MR.supabase.getClient();
+  if (!sb) return;
+
+  try {
+    sb.channel('admin-leads-channel')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'leads' }, payload => {
+        const newLead = payload.new;
+        if (!newLead) return;
+        playNotificationSound();
+        showRealtimeToast(newLead);
+        renderLeads();
+        renderActivity();
+      })
+      .subscribe();
+  } catch(e) {
+    console.warn('[MR] Realtime subscription error:', e);
+  }
+}
+
 // ── Init ──
 renderClinics();
 renderLeads();
 renderActivity();
 renderBlogs();
+
+// Setup real-time listeners once Supabase is connected
+setTimeout(setupRealtimeLeads, 1000);

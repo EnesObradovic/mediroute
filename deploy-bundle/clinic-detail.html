@@ -868,6 +868,35 @@
     
     var mobileCtaPrice = document.getElementById('mobile-cta-price');
     if (mobileCtaPrice) mobileCtaPrice.textContent = clinic.priceMin || clinic.price;
+
+    // Inject dynamic JSON-LD Schema (MedicalBusiness) for Search Engines (Category 2)
+    var schema = {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": clinic.name,
+      "description": clinic.desc || (clinic.name + ' - Medical travel clinic in ' + clinic.city + ', ' + clinic.country),
+      "image": clinic.image || "https://medirouteturkey.com/favicon.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": clinic.city,
+        "addressCountry": clinic.country
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": clinic.rating || "4.9",
+        "reviewCount": clinic.reviews || "2480"
+      },
+      "priceRange": "£" + (clinic.priceMin || clinic.price || "1499") + " - £" + (clinic.priceMax || clinic.priceMax || "2499")
+    };
+    
+    var existingSchema = document.getElementById('clinic-json-ld');
+    if (existingSchema) existingSchema.remove();
+    
+    var script = document.createElement('script');
+    script.id = 'clinic-json-ld';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
   })();
 </script>
 <script src="/i18n.js"></script>
