@@ -166,8 +166,21 @@ async function renderLeads(){
   document.getElementById('m-leads').textContent=leads.length;
   tbody.innerHTML=leads.map(l=>`
     <tr class="table-row" data-id="${l.id}">
-      <td class="px-4 py-3"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">${l.name[0]}</div><div><p class="font-semibold text-gray-800 text-sm">${l.name}</p><p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-[9px]"></i> ${l.city||''}</p></div></div></td>
-      <td class="px-4 py-3 text-sm text-gray-600">${l.treatment}</td>
+      <td class="px-4 py-3">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">${l.name ? l.name[0] : 'U'}</div>
+          <div>
+            <p class="font-bold text-gray-900 text-sm leading-tight mb-1">${l.name || '-'}</p>
+            <p class="text-xs text-gray-500 flex items-center gap-1 mb-0.5"><i class="fa-solid fa-envelope text-[10px] text-gray-400 w-3 text-center"></i> ${l.email || '-'}</p>
+            <p class="text-xs text-gray-500 flex items-center gap-1 mb-0.5"><i class="fa-solid fa-phone text-[10px] text-gray-400 w-3 text-center"></i> ${l.phone || '-'}</p>
+            <p class="text-[11px] text-gray-400 flex items-center gap-1"><i class="fa-solid fa-location-dot text-[10px] text-gray-300 w-3 text-center"></i> ${l.city || '-'}</p>
+          </div>
+        </div>
+      </td>
+      <td class="px-4 py-3 text-sm text-gray-600">
+        <p class="font-semibold text-gray-800">${l.treatment || '-'}</p>
+        ${l.notes ? `<p class="text-[10px] italic text-navy-700 bg-navy-50/70 border border-navy-100/40 px-2 py-0.5 rounded-lg mt-1 max-w-[200px] truncate" title="${l.notes}"><i class="fa-solid fa-comment-dots text-navy-500 mr-1"></i>${l.notes}</p>` : ''}
+      </td>
       <td class="px-4 py-3"><span class="text-xs font-semibold text-navy-700 bg-navy-50 px-2 py-1 rounded-lg">${l.clinic||'-'}</span></td>
       <td class="px-4 py-3"><span class="status-badge ${(SOURCE_META[l.source]||SOURCE_META.direct).cls}"><i class="fa-solid ${(SOURCE_META[l.source]||SOURCE_META.direct).icon} text-[9px]"></i> ${(SOURCE_META[l.source]||SOURCE_META.direct).label}</span></td>
       <td class="px-4 py-3 text-xs text-gray-400">${new Date(l.created_at).toLocaleDateString('tr-TR')}</td>
