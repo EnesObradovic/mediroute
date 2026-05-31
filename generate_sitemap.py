@@ -3,14 +3,33 @@ import json
 import os
 from datetime import datetime
 
+import re
+
 SUPABASE_URL = 'https://phdmnzsdyjhqoqiqwmho.supabase.co'
 SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoZG1uenNkeWpocW9xaXF3bWhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NzAzMzksImV4cCI6MjA5MzE0NjMzOX0.zUoYTYjp8Shva1iSVE0oW1ukGpiEOCghPiqc__WisPg'
 
+def strip_html(html_str):
+    if not html_str:
+        return ""
+    clean = re.compile('<.*?>')
+    text = re.sub(clean, '', html_str)
+    text = text.replace('&nbsp;', ' ').replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+    return text.strip()
+
+def detect_lang(title, content):
+    turkish_words = [' ve ', ' bir ', ' için ', ' bu ', ' da ', ' de ', ' ama ', ' veya ', ' rehber', ' ameliyat', ' sonras']
+    clean_text = strip_html(content).lower()
+    
+    tr_count = sum(1 for w in turkish_words if w in clean_text or w in title.lower())
+    if tr_count >= 2:
+        return 'tr'
+    return 'en'
+
 def fetch_supabase_blogs():
     print("Fetching active blog posts from Supabase...")
-    url = f"{SUPABASE_URL}/rest/v1/blogs?select=slug,created_at&status=eq.published"
+    url = f"{SUPABASE_URL}/rest/v1/blogs?select=slug,created_at,title,content&status=eq.published"
     # Fallback to query all if no status column filter is needed
-    url_all = f"{SUPABASE_URL}/rest/v1/blogs?select=slug,created_at"
+    url_all = f"{SUPABASE_URL}/rest/v1/blogs?select=slug,created_at,title,content"
     
     headers = {
         'apikey': SUPABASE_ANON_KEY,
@@ -169,12 +188,11 @@ def generate_xml():
         xml += '    <changefreq>monthly</changefreq>\n'
         xml += '    <priority>0.7</priority>\n'
         
-        # Blog posts also support i18n shells, so we can define multi-lingual alternates
-        xml += f'    <xhtml:link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/{slug}?lang=en"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="tr" href="https://medirouteturkey.com/blog/{slug}?lang=tr"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="ar" href="https://medirouteturkey.com/blog/{slug}?lang=ar"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="de" href="https://medirouteturkey.com/blog/{slug}?lang=de"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="fr" href="https://medirouteturkey.com/blog/{slug}?lang=fr"/>\n'
+        # Detect language of the blog post
+        blog_lang = detect_lang(b.get('title', ''), b.get('content', ''))
+
+        # Only output native language and x-default to prevent search engine indexing duplicate content penalties
+        xml += f'    <xhtml:link rel="alternate" hreflang="{blog_lang}" href="https://medirouteturkey.com/blog/{slug}"/>\n'
         xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com/blog/{slug}"/>\n'
         
         xml += '  </url>\n'

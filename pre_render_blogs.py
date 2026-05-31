@@ -55,6 +55,16 @@ def get_excerpt(html_str, max_len=155):
         return text[:max_len-3] + "..."
     return text
 
+def detect_lang(title, content):
+    # Check for common Turkish words
+    turkish_words = [' ve ', ' bir ', ' için ', ' bu ', ' da ', ' de ', ' ama ', ' veya ', ' rehber', ' ameliyat', ' sonras']
+    clean_text = strip_html(content).lower()
+    
+    tr_count = sum(1 for w in turkish_words if w in clean_text or w in title.lower())
+    if tr_count >= 2:
+        return 'tr'
+    return 'en'
+
 def format_turkish_date(date_str):
     if not date_str:
         return "31 Mayıs 2026"
@@ -156,21 +166,26 @@ def render_all_blogs():
         excerpt = get_excerpt(content, 155)
         formatted_date = format_turkish_date(created_at)
         
+        # Language detection
+        blog_lang = detect_lang(title, content)
+        
         # Word count & Read time
         word_count = len(strip_html(content).split())
         read_time = max(1, int(word_count / 200) + 1)
         
-        # 1. Update Title and Meta Description
-        html = template_html
+        # 1. Force native html lang attribute, Update Title and Meta Description
+        html = template_html.replace('<html lang="en">', f'<html lang="{blog_lang}">')
         html = html.replace('<title>Blog | MediRoute</title>', f'<title>{title} | MediRoute</title>')
         html = html.replace('<meta name="description" content="MediRoute blog article — expert health tourism advice."/>', f'<meta name="description" content="{excerpt}"/>')
         
-        # 2. Add dynamic variables and pre-render marker in Script
-        static_render_js = f'<script>window.STATIC_RENDERED = true; window.STATIC_BLOG_DATA = {json.dumps(blog)};</script>'
+        # 2. Add dynamic variables and pre-render marker in Script (Lock language on client side!)
+        static_render_js = f'<script>window.STATIC_RENDERED = true; window.ARTICLE_LANG = "{blog_lang}"; window.STATIC_BLOG_DATA = {json.dumps(blog)};</script>'
         html = html.replace('<body>', f'<body>\n{static_render_js}')
         
-        # 3. Inject Open Graph and Twitter Card tags
+        # 3. Inject alternate links, Open Graph and Twitter Card tags
         og_tags = f"""
+  <link rel="alternate" hreflang="{blog_lang}" href="https://medirouteturkey.com/blog/{slug}"/>
+  <link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com/blog/{slug}"/>
   <meta property="og:title" content="{title} | MediRoute"/>
   <meta property="og:description" content="{excerpt}"/>
   <meta property="og:image" content="{image_url}"/>

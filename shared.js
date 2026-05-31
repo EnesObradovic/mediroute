@@ -159,6 +159,9 @@
   ];
 
   function getCurrentLang() {
+    // If ARTICLE_LANG is globally defined (on pre-rendered static blog posts), lock page to it!
+    if (window.ARTICLE_LANG) return window.ARTICLE_LANG;
+
     // Check URL param first, then localStorage, default to 'en'
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
@@ -293,6 +296,23 @@
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
 
     const baseUrl = window.location.origin + window.location.pathname;
+
+    // If ARTICLE_LANG is globally defined, restrict hreflang to only that language and x-default!
+    if (window.ARTICLE_LANG) {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = window.ARTICLE_LANG;
+      link.href = baseUrl;
+      document.head.appendChild(link);
+
+      const xdef = document.createElement('link');
+      xdef.rel = 'alternate';
+      xdef.hreflang = 'x-default';
+      xdef.href = baseUrl;
+      document.head.appendChild(xdef);
+      return;
+    }
+
     LANGUAGES.forEach(function(l) {
       const link = document.createElement('link');
       link.rel = 'alternate';
