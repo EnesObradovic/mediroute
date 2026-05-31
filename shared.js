@@ -202,6 +202,12 @@
   }
 
   window.switchLanguage = async function(lang) {
+    if (window.ARTICLE_LANG && lang !== window.ARTICLE_LANG) {
+      localStorage.setItem('mediroute-lang', lang);
+      window.location.href = '/blog?lang=' + lang;
+      return;
+    }
+
     localStorage.setItem('mediroute-lang', lang);
     
     // Update URL param without reload for SPA feel

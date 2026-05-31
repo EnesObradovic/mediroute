@@ -178,12 +178,29 @@ def render_all_blogs():
         html = html.replace('<title>Blog | MediRoute</title>', f'<title>{title} | MediRoute</title>')
         html = html.replace('<meta name="description" content="MediRoute blog article — expert health tourism advice."/>', f'<meta name="description" content="{excerpt}"/>')
         
-        # 2. Add dynamic variables and pre-render marker in Script (Lock language on client side!)
-        static_render_js = f'<script>window.STATIC_RENDERED = true; window.ARTICLE_LANG = "{blog_lang}"; window.STATIC_BLOG_DATA = {json.dumps(blog)};</script>'
+        # 2. Add dynamic variables, pre-render marker, and instant redirect check (Lock language and strip mismatched parameters!)
+        static_render_js = f"""<script>
+  window.STATIC_RENDERED = true;
+  window.ARTICLE_LANG = "{blog_lang}";
+  window.STATIC_BLOG_DATA = {json.dumps(blog)};
+  
+  // Instant SEO / UX redirect if a mismatched lang parameter is used
+  (function() {{
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang && urlLang !== "{blog_lang}") {{
+      urlParams.delete('lang');
+      const newSearch = urlParams.toString();
+      const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '');
+      window.location.replace(newUrl);
+    }}
+  }})();
+</script>"""
         html = html.replace('<body>', f'<body>\n{static_render_js}')
         
-        # 3. Inject alternate links, Open Graph and Twitter Card tags
+        # 3. Inject canonical, alternate links, Open Graph and Twitter Card tags
         og_tags = f"""
+  <link rel="canonical" href="https://medirouteturkey.com/blog/{slug}"/>
   <link rel="alternate" hreflang="{blog_lang}" href="https://medirouteturkey.com/blog/{slug}"/>
   <link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com/blog/{slug}"/>
   <meta property="og:title" content="{title} | MediRoute"/>
