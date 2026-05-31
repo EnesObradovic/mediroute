@@ -163,7 +163,7 @@
 <footer class="hero-bg py-8 px-4">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
     <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
-    <p class="text-blue-400 text-xs">© 2025 MediRoute Ltd.</p>
+    <p class="text-blue-400 text-xs">© 2026 MediRoute Ltd.</p>
     <div class="flex gap-4 text-blue-400 text-xs">
       <a href="/" class="hover:text-white">Search</a>
       <a href="/compare" class="hover:text-white">Compare</a>
@@ -172,7 +172,581 @@
   </div>
 </footer>
 
-<script src="/treatment-data.js"></script>
+<script>
+window.TREATMENTS = {
+  "hair-transplant": {
+    "slug": "hair-transplant",
+    "icon": "fa-solid fa-scissors",
+    "title": {
+      "en": "Hair Transplant in Turkey",
+      "tr": "Türkiye'de Saç Ekimi"
+    },
+    "heroSub": {
+      "en": "World-class FUE & DHI hair restoration starting from £1,499 all-inclusive",
+      "tr": "Dünya standartlarında FUE & DHI saç restorasyonu, her şey dahil £1.499'dan başlayan fiyatlarla"
+    },
+    "metaDesc": {
+      "en": "The definitive guide to FUE & DHI hair transplant in Turkey. Compare costs, survival rates, Norwood graft requirements, JCI safety checklists, and recovery timelines.",
+      "tr": "Türkiye'de FUE & DHI saç ekimi için kapsamlı rehber. Norwood greft ihtiyaçları, maliyet karşılaştırmaları, 12 aylık iyileşme takvimi ve klinik kriterleri."
+    },
+    "stats": [
+      {
+        "val": "30,000+",
+        "en": "Procedures/Year",
+        "tr": "Yıllık İşlem"
+      },
+      {
+        "val": "£1,499",
+        "en": "Starting Price",
+        "tr": "Başlangıç Fiyatı"
+      },
+      {
+        "val": "98.5%",
+        "en": "Graft Survival",
+        "tr": "Greft Sağkalımı"
+      },
+      {
+        "val": "3-5",
+        "en": "Days Recovery",
+        "tr": "Gün İyileşme"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "Sapphire FUE",
+        "en": "Premium FUE utilizing surgical sapphire gemstone blades. Promotes ultra-fine incisions, tighter graft density, less swelling, and 30% faster skin recovery.",
+        "tr": "Cerrahi safir bıçaklar kullanılan premium FUE tekniği. Çok daha ince kanallar açılmasını, yüksek yoğunluğu, daha az şişliği ve %30 daha hızlı iyileşmeyi destekler."
+      },
+      {
+        "name": "DHI (Direct Hair Implantation)",
+        "en": "Direct graft implantation with a specialized Choi Implanter Pen. Avoids pre-opened incisions, decreases graft out-of-body time, and enables non-shaven procedures.",
+        "tr": "Özel Choi kalemiyle doğrudan ekim. Önceden kanal açma ihtiyacını ortadan kaldırır, greftlerin dışarıda kalma süresini en aza indirir ve tıraşsız ekime olanak tanır."
+      },
+      {
+        "name": "FUE (Follicular Unit Extraction)",
+        "en": "Standard micro-punch follicular harvesting. Individual follicular units are extracted from the donor zone without linear scars or incisions, leaving minimal dot scarring.",
+        "tr": "Standart mikro punch foliküler alım. Foliküller donör bölgeden doğrusal dikiş veya kesi olmaksızın tek tek alınır ve geride neredeyse görünmez izler bırakır."
+      }
+    ],
+    "faq": [
+      {
+        "q": {
+          "en": "How many grafts will I realistically need for my hair loss?",
+          "tr": "Saç dökülmem için gerçekçi olarak kaç grefte ihtiyacım var?"
+        },
+        "a": {
+          "en": "Graft requirements depend on your level of baldness (Norwood Scale). Norwood 2-3 (receding temples) requires 1,500-2,500 grafts. Norwood 4-5 (thinning hairline and crown) requires 3,000-4,500 grafts. Norwood 6-7 (severe baldness) requires 5,000+ grafts, which usually must be split into two sessions or supplemented with body/beard hair to preserve donor density safely.",
+          "tr": "Greft ihtiyacınız saç dökülmesi seviyenize (Norwood Ölçeği) göre değişir. Norwood 2-3 (açılan şakaklar) için 1.500-2.500 greft; Norwood 4-5 (saç çizgisi ve tepe açılması) için 3.000-4.500 greft; Norwood 6-7 (şiddetli dökülme) için ise donör bölgeyi korumak adına genellikle iki seans veya sakal/vücut kılı takviyesiyle 5.000 ve üzeri greft gerekir."
+        }
+      },
+      {
+        "q": {
+          "en": "When will I see the final, mature results of my hair transplant?",
+          "tr": "Saç ekimimin nihai ve olgun sonuçlarını ne zaman göreceğim?"
+        },
+        "a": {
+          "en": "The hair transplant recovery is a 12-to-18-month journey. Between weeks 3 and 8, you will experience 'Shock Loss' (implanted hairs shed, which is a normal response). New hair sprouts around month 3-4. At month 6, about 50-60% of growth is visible. Full density, texture maturity, and natural-looking crown results are reached between month 12 and month 15.",
+          "tr": "Saç ekimi iyileşme süreci 12 ila 18 aylık bir yolculuktur. 3. ila 8. haftalar arasında 'Şok Dökülme' (ekilen saç telleri dökülür, bu tamamen normaldir) yaşanır. Yeni saçlar 3-4. ay civarında filizlenir. 6. ayda sonuçların yaklaşık %50-60'ı görünür hale gelir. Tam yoğunluk, saç tellerinin olgunlaşması ve tepe bölgesinin doğal görünümü ise 12 ila 15. aylar arasında tamamlanır."
+        }
+      },
+      {
+        "q": {
+          "en": "Why are hair transplants in Turkey so much cheaper than the UK or USA?",
+          "tr": "Türkiye'de saç ekimi neden İngiltere veya Amerika'dan çok daha ucuz?"
+        },
+        "a": {
+          "en": "The difference is not in quality, but in operational and economic factors. Turkey has lower cost of living, lower labor costs, and favorable exchange rates. Additionally, the Turkish Ministry of Health heavily subsidizes health tourism, and competition among hundreds of specialized clinics keeps package prices highly competitive while maintaining world-class medical standards.",
+          "tr": "Maliyet farkı kaliteden değil, operasyonel ve ekonomik faktörlerden kaynaklanır. Türkiye'de yaşam maliyeti, hekimlik işletme giderleri ve döviz kurları daha düşüktür. Ayrıca Sağlık Bakanlığı sağlık turizmini teşvik etmekte ve yüzlerce uzman klinik arasındaki rekabet, dünya standartlarındaki tıbbi kaliteyi korurken fiyatları makul kılmaktadır."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the difference between Sapphire FUE and DHI?",
+          "tr": "Safir FUE ile DHI arasındaki fark tam olarak nedir?"
+        },
+        "a": {
+          "en": "Sapphire FUE uses surgical blades made from sapphire gemstone to open micro-channels in the recipient area, followed by manual graft insertion. It is ideal for covering large bald areas with maximum density. DHI uses a Choi Implanter Pen to extract and implant the graft simultaneously, without opening pre-cut channels. DHI is superior for increasing density in partially thinning areas and for non-shaven procedures, though it is slightly more time-consuming.",
+          "tr": "Safir FUE tekniğinde, alıcı bölgede safir taşından üretilen bıçaklarla mikro kanallar açılır ve greftler bu kanallara yerleştirilir; geniş alanları maksimum sıklıkta kapatmak için idealdir. DHI'da ise Choi kalemi yardımıyla kanal açma ve ekim işlemi aynı anda yapılır. DHI, mevcut saçların arasına girerek sıklık artırmak ve tıraşsız ekimler için mükemmeldir."
+        }
+      },
+      {
+        "q": {
+          "en": "Will my transplanted hair fall out in the future?",
+          "tr": "Ekilen saçlarım ileride tekrar dökülür mü?"
+        },
+        "a": {
+          "en": "No, transplanted hair is permanent. Grafts are harvested from the safe donor zone (the back and sides of the scalp), where hair follicles are genetically resistant to Dihydrotestosterone (DHT) — the hormone responsible for male pattern baldness. These follicles retain their genetic resistance even after being transplanted, ensuring lifetime growth.",
+          "tr": "Hayır, ekilen saçlar kalıcıdır. Greftler, erkek tipi dökülmeden sorumlu olan Dihidrotestosteron (DHT) hormonuna karşı genetik olarak dirençli olan güvenli donör bölgeden (başın arkası ve yanları) alınır. Bu foliküller yeni yerlerinde de genetik dirençlerini korurlar, bu yüzden ömür boyu kalıcıdırlar."
+        }
+      },
+      {
+        "q": {
+          "en": "How long do I need to stay in Turkey for the procedure?",
+          "tr": "Saç ekimi işlemi için Türkiye'de kaç gün kalmam gerekir?"
+        },
+        "a": {
+          "en": "A standard hair transplant trip requires a 3-night stay. Day 1: Arrival and VIP transfer to hotel. Day 2: Pre-op tests, clinical consultation, and the 6-8 hour procedure. Day 3: First clinical wash, check-up, laser therapy, and aftercare product training. Day 4: VIP transfer back to the airport for your flight home.",
+          "tr": "Standart bir saç ekimi seyahati için 3 gece konaklama yeterlidir. 1. Gün: Havalimanına varış ve VIP otel transferi. 2. Gün: Ameliyat öncesi testler, doktor konsültasyonu ve 6-8 saatlik operasyon. 3. Gün: İlk klinik yıkama, kontrol, lazer tedavisi ve bakım eğitimi. 4. Gün: Ülkenize dönüş uçuşu için VIP havalimanı transferi."
+        }
+      }
+    ],
+    "filterValue": "hair",
+    "seoContent": {
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Comprehensive Guide to Hair Transplants in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Turkey has firmly established itself as the global epicentre for advanced hair restoration procedures. Every year, over one million patients travel to Istanbul, Antalya, and Izmir to access state-of-the-art medical clinics, world-renowned trichology surgeons, and all-inclusive packages that cost a fraction of UK or US private treatments. At MediRoute, we strictly vet hospitals to ensure JCI accreditation, board-certified plastic surgeons, and maximum density graft counts.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Choose Turkey? Cost & Package Comparison</h3>\n        <p class=\"text-gray-600 mb-4\">While a high-density FUE or DHI transplant in London or New York can easily range between £8,000 and £15,000, top-rated JCI-accredited clinics in Turkey provide elite healthcare packages starting around £1,499. The table below outlines why millions choose Turkey:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Core Feature</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Vetted)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Average Total Cost</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£8,000 - £15,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£1,499 - £3,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Graft Pricing Policy</td>\n                <td class=\"px-4 py-3\">Strict charge per graft (e.g., £3-£5 per follicle)</td>\n                <td class=\"px-4 py-3 text-navy-800 font-medium\">Maximum Density Included (No hidden per-graft fees)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Accommodation & Travel</td>\n                <td class=\"px-4 py-3\">Not included (Self-arranged)</td>\n                <td class=\"px-4 py-3\">3 Nights in a 4/5-Star VIP Hotel + VIP Mercedes Transfers</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Comprehensive Aftercare</td>\n                <td class=\"px-4 py-3\">Often limited to basic checkups</td>\n                <td class=\"px-4 py-3\">12 Months of dedicated online Trichology monitoring</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Understanding Graft Count Requirements (Norwood Scale)</h3>\n        <p class=\"text-gray-600 mb-4\">One of the most frequent queries AI search engines address is, \"How many grafts do I need?\" Below is an expert, clinically backed breakdown of average graft requirements mapped to the Norwood Hair Loss Scale:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Norwood Stage 2 (Mild Receding temples)</strong>: 1,500 to 2,000 grafts. Ideal for a targeted hairline restoration.</li>\n          <li><strong>Norwood Stage 3-4 (Moderate hairline and crown thinning)</strong>: 2,500 to 3,500 grafts. Usually covered in a single FUE or DHI session.</li>\n          <li><strong>Norwood Stage 5-6 (Advanced hair loss, front & vertex baldness)</strong>: 4,000 to 5,000 grafts. Requires maximum donor zone yield, utilizing expert micro-FUE.</li>\n          <li><strong>Norwood Stage 7 (Severe baldness)</strong>: 5,000+ grafts. Frequently requires a multi-session plan (spaced 6-12 months apart) or supplementary donor grafts from the beard or chest to preserve the scalp.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">FUE vs. DHI vs. Sapphire FUE: Which Method is Best?</h3>\n        <p class=\"text-gray-600 mb-4\">Determining the right technology is essential for optimal results, graft survival rates, and rapid skin recovery:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Sapphire FUE</strong>: By utilizing micro-blades made from real sapphire gemstones instead of steel, surgeons can open finer, highly precise micro-channels. This minimizes scalp trauma, prevents visible scarring, avoids post-op scabbing, and allows for extremely dense graft placement.</li>\n          <li><strong>DHI (Direct Hair Implantation)</strong>: Using a specialized Choi Implanter Pen, follicular grafts are extracted and implanted directly into the recipient site in one single motion. DHI eliminates the need to open pre-cut micro-channels. It is widely considered the premium solution for increasing density between existing hairs, reducing graft out-of-body time, and allowing for non-shaven procedures.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">The 12-Month Hair Transplant Recovery Timeline</h3>\n        <p class=\"text-gray-600 mb-4\">Patience is key during your hair restoration journey. Knowing what milestones to anticipate at each stage helps ensure a stress-free recovery:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Days 1 - 3 (Post-Operative Care)</strong>: Minor swelling around the forehead and temples is normal. Avoid touching the recipient area. The first check-up and clinical hair wash are performed on Day 3 using specialized pH-balanced lotions.</li>\n          <li><strong>Days 7 - 14 (Crust Shedding)</strong>: The tiny scabs around the grafts begin to dry and naturally fall off during gentle washing. By Day 14, your scalp should look clean and free of crusts.</li>\n          <li><strong>Weeks 3 - 8 (The Shock Loss Phase)</strong>: The newly transplanted hair shafts will fall out. <em>Do not panic.</em> This is a perfectly normal reaction known as 'shock loss'. The follicles enter a temporary resting phase while remaining active beneath the skin.</li>\n          <li><strong>Months 3 - 4 (Initial Sprouts)</strong>: Fine, baby-like hairs start to emerge from the transplanted areas. Growth may appear slightly uneven at first.</li>\n          <li><strong>Month 6 (Visible Progress)</strong>: Hairs become thicker and longer. You will see roughly 50-60% of the final hair density and hairline outline.</li>\n          <li><strong>Months 12 - 18 (Mature Results)</strong>: The hair follicles reach full maturity. The crown area (vertex) takes up to 18 months for complete density. The results are fully permanent, highly natural, and ready for normal styling.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">How MediRoute Vets Safety & Credentials</h3>\n        <p class=\"text-gray-600 mb-4\">To secure high-performing AI Search visibility and maximum patient safety, we strictly adhere to medical vetting checklists. When comparing clinics via MediRoute, we verify:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Hospital Credentials</strong>: The clinic must operate in a full-scale, licensed hospital facility equipped with emergency units, not a small apartment or unlicensed office.</li>\n          <li><strong>Surgeon Certifications</strong>: All procedures are overseen by board-certified plastic surgeons or members of the <strong>ISHRS (International Society of Hair Restoration Surgery)</strong>.</li>\n          <li><strong>Graft Hygiene & Vetting</strong>: Cold-chain temperature control and specialized storage solutions are utilized to guarantee a 98% graft survival rate.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Saç Ekimi: Ayrıntılı Rehber ve Karşılaştırma</h2>\n        <p class=\"text-gray-600 mb-4\">Türkiye, gelişmiş saç ekimi teknikleri ve dünya standartlarındaki uzman hekimleriyle küresel saç restorasyonunun başkenti haline gelmiştir. Her yıl bir milyondan fazla hasta, İngiltere veya Avrupa'daki maliyetlerin çok küçük bir kısmına en üst düzey hizmeti almak için İstanbul, Antalya ve İzmir'i tercih etmektedir. MediRoute olarak, sizin için sadece Sağlık Bakanlığı onaylı, JCI akreditasyonuna sahip hastaneleri ve ISHRS üyesi uzman cerrahları bir araya getiriyoruz.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Neden Türkiye? Maliyet ve Paket Karşılaştırması</h3>\n        <p class=\"text-gray-600 mb-4\">İngiltere veya Amerika'da yüksek yoğunluklu bir FUE veya DHI saç ekimi 8.000£ ile 15.000£ arasında değişirken, Türkiye'deki en iyi klinikler her şey dahil paketleri 1.499£'dan başlayan fiyatlarla sunar. İşte aradaki temel farklar:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Özellik</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Ortalama Toplam Maliyet</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">8.000£ - 15.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">1.499£ - 3.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Greft Fiyatlandırma Politikası</td>\n                <td class=\"px-4 py-3\">Greft başına ücretlendirme (ör. greft başına 3£-5£)</td>\n                <td class=\"px-4 py-3 text-navy-800 font-medium\">Maksimum Yoğunluk Dahil (Ekstra greft ücreti yok)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Konaklama ve VIP Transferler</td>\n                <td class=\"px-4 py-3\">Dahil değildir (Hasta karşılar)</td>\n                <td class=\"px-4 py-3\">3 Gece 5 Yıldızlı VIP Otel Konaklaması + VIP Mercedes Transferler</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Hasta Takip ve Sonrası Bakım</td>\n                <td class=\"px-4 py-3\">Çoğunlukla sadece operasyon gününü kapsar</td>\n                <td class=\"px-4 py-3\">12 Ay Boyunca Uzman Trikolog Desteği ve Takibi</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Dökülme Derecenize Göre Greft İhtiyacı (Norwood Ölçeği)</h3>\n        <p class=\"text-gray-600 mb-4\">Yapay zeka arama motorlarında en sık aranan \"Kaç grefte ihtiyacım var?\" sorusunun Norwood Dökülme Ölçeği bazlı klinik dağılımı şöyledir:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Norwood Evre 2 (Hafif Şakak Açılması)</strong>: 1.500 - 2.000 greft. Saç çizgisini düzeltmek için yeterlidir.</li>\n          <li><strong>Norwood Evre 3-4 (Orta Düzey Alın ve Tepe Açıklığı)</strong>: 2.500 - 3.500 greft. Genellikle tek bir Safir FUE veya DHI seansıyla mükemmel sıklıkta kapatılır.</li>\n          <li><strong>Norwood Evre 5-6 (İleri Düzey Dökülme, Geniş Ön ve Tepe Açıklığı)</strong>: 4.000 - 5.000 greft. Donör bölgeden maksimum verim alınmasını gerektirir.</li>\n          <li><strong>Norwood Evre 7 (Şiddetli Dökülme)</strong>: 5.000+ greft. Genellikle donör bölgeyi korumak adına 6-12 ay arayla iki seans veya sakal/göğüs kılı takviyesi planlanır.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Safir FUE vs. DHI: Hangi Yöntem Size Uygun?</h3>\n        <p class=\"text-gray-600 mb-4\">En iyi sonucu almak, greft sağkalımını artırmak ve hızlı iyileşmek için doğru teknolojiyi seçmek çok önemlidir:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Safir FUE</strong>: Çelik bıçaklar yerine gerçek safir değerli taşından üretilen bıçaklar kullanılarak mikro kanallar açılır. Bu sayede doku zedelenmesi en aza iner, yara izi oluşmaz, kabuklanma hızlı geçer ve saçlar maksimum sıklıkta ve doğal açıyla ekilebilir.</li>\n          <li><strong>DHI (Doğrudan Saç Ekimi)</strong>: Özel bir implanter kalem (Choi Pen) kullanılarak, greftler donör bölgeden alındıktan sonra alıcı bölgeye doğrudan ekilir. Önceden kanal açma aşaması yoktur. Mevcut saçların arasına girip sıklığı artırmak, tıraşsız ekim yapmak ve kadınlarda saç ekimi gerçekleştirmek için en üst düzey çözümdür.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">12 Aylık Adım Adım İyileşme Takvimi</h3>\n        <p class=\"text-gray-600 mb-4\">Saç ekimi sonrasında sabırlı olmak ve neyi ne zaman bekleyeceğini bilmek süreci sorunsuz atlatmanızı sağlar:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>1 - 3. Günler (Operasyon Sonrası İlk Adımlar)</strong>: Alın ve şakaklarda hafif şişlik normaldir. Ekilen greftlere kesinlikle dokunulmamalıdır. 3. gün ilk klinik yıkama ve kontrol uzman hekim tarafından özel losyonlarla yapılır.</li>\n          <li><strong>7 - 14. Günler (Kabuk Dökme)</strong>: Greftlerin etrafındaki küçük kabuklar yumuşayarak yıkamalarla birlikte dökülür. 14. günde kafa deriniz tamamen kabuksuz ve temiz hale gelir.</li>\n          <li><strong>3 - 8. Haftalar (Şok Dökülme Aşaması)</strong>: Ekilen saç telleri dökülür. <em>Kesinlikle panik yapmayın.</em> Bu süreç saç foliküllerinin dinlenme fazına geçtiği tamamen normal bir fizyolojik reaksiyondur.</li>\n          <li><strong>3 - 4. Aylar (İlk Filizlenme)</strong>: Ekilen bölgelerden tüy şeklinde ince, yeni saçlar çıkmaya başlar. İlk başlarda dökülme/büyüme hızına bağlı olarak hafif düzensiz görünebilir.</li>\n          <li><strong>6. Ay (Görünür Değişim)</strong>: Saç telleri kalınlaşır ve uzar. Nihai sonucun yaklaşık %50-60'ı bu dönemde belirginleşir.</li>\n          <li><strong>12 - 18. Aylar (Nihai Olgun Sonuçlar)</strong>: Saç folikülleri tam gücüne ulaşır. Tepe bölgesi (vertex) kan akışı daha yavaş olduğundan 18. aya kadar gelişimini sürdürebilir. Saçlarınız tamamen kalıcı, son derece doğal ve şekillendirmeye hazırdır.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Klinik Güvenlik ve Denetim Standartları</h3>\n        <p class=\"text-gray-600 mb-4\">Sağlığınız bizim için her şeyden önce gelir. MediRoute olarak platformumuzda listelenen klinikleri şu kriterlere göre sıkı bir şekilde denetliyoruz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Hastane Donanımı</strong>: Ameliyatların apartman dairesi veya yetkisiz ofislerde değil, acil müdahale ünitesi bulunan tam donanımlı, akredite hastanelerde yapılmasını şart koşuyoruz.</li>\n          <li><strong>Hekim Yetkinliği</strong>: Operasyonların mutlaka plastik cerrahlar veya dünya genelinde saç ekim birliği olan <strong>ISHRS</strong> üyesi trichologist uzman hekimlerin denetiminde yapılmasını sağlıyoruz.</li>\n          <li><strong>Greft Canlılığı</strong>: Alınan saç köklerinin %98 canlılık oranını koruması için özel soğuk zincir solüsyonlarda saklandığını doğruluyoruz.</li>\n        </ul>\n      "
+    }
+  },
+  "dental": {
+    "slug": "dental",
+    "icon": "fa-solid fa-tooth",
+    "title": {
+      "en": "Dental Treatment in Turkey",
+      "tr": "Türkiye'de Diş Tedavisi"
+    },
+    "heroSub": {
+      "en": "Hollywood smile, veneers, implants & crowns — save up to 70% vs UK prices",
+      "tr": "Hollywood gülüşü, kaplama, implant & kron — İngiltere fiyatlarına göre %70'e kadar tasarruf"
+    },
+    "metaDesc": {
+      "en": "The definitive guide to veneers, implants, and Hollywood Smile makeovers in Turkey. Compare E-Max and Zirconium costs, CAD/CAM timelines, and clinic checklists.",
+      "tr": "Türkiye'de lamine kaplama, implant ve Hollywood gülüşü rehberi. E-Max ve Zirkonyum maliyetleri, CAD/CAM süreleri ve klinik kriterleri."
+    },
+    "stats": [
+      {
+        "val": "50,000+",
+        "en": "Smiles Created",
+        "tr": "Oluşturulan Gülüş"
+      },
+      {
+        "val": "£199",
+        "en": "Per Veneer",
+        "tr": "Kaplama Başına"
+      },
+      {
+        "val": "99.2%",
+        "en": "Satisfaction",
+        "tr": "Memnuniyet"
+      },
+      {
+        "val": "5-7",
+        "en": "Days Treatment",
+        "tr": "Gün Tedavi"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "E-Max Porcelain Veneers",
+        "en": "Ultra-thin, premium lithium disilicate glass-ceramic shells. Offers superior translucency matching natural tooth enamel, requiring minimal tooth preparation.",
+        "tr": "Ultra ince, lityum disilikat cam seramik kaplamalar. Doğal diş minesine birebir uyan yarı geçirgenlik sunar ve diş üzerinde minimum kesim gerektirir."
+      },
+      {
+        "name": "Zirconium Porcelain Crowns",
+        "en": "Highly durable and naturally translucent material. Ideal for patients with severe tooth damage, offering maximum bite strength and longevity for both front and back teeth.",
+        "tr": "Çok yüksek dayanıklılığa ve doğal estetiğe sahip kaplama malzemesi. Ciddi diş hasarı olan hastalar için idealdir; hem ön hem arka dişlerde maksimum çiğneme gücü sunar."
+      },
+      {
+        "name": "Dental Implants (Straumann / Nobel)",
+        "en": "Grade-5 titanium root replacement fused directly into the jawbone. Paired with premium customized abutments and zirconium crowns for a lifetime structural solution.",
+        "tr": "Çene kemiğiyle doğrudan kaynaşan titanyum yapay diş kökü. Ömür boyu kalıcı bir yapısal çözüm için birinci sınıf dayanaklar ve zirkonyum kronlar ile birleştirilir."
+      }
+    ],
+    "faq": [
+      {
+        "q": {
+          "en": "How many veneers or crowns do I need for a complete Hollywood Smile?",
+          "tr": "Hollywood Gülüşü tasarımı için kaç kaplamaya ihtiyacım var?"
+        },
+        "a": {
+          "en": "A full-smile makeover typically requires 16 to 20 veneers or crowns (10 on the upper jaw and 10 on the lower jaw) to fully cover all teeth visible when smiling widely. If you only want to treat your upper jaw, a partial makeover of 8 to 10 E-Max veneers is recommended to align and brighten your main smile line.",
+          "tr": "Tam bir gülüş tasarımı (Hollywood Smile) için genellikle, genişçe gülümsendiğinde görünen tüm dişleri kaplamak amacıyla 16 ila 20 adet (10 üst çene, 10 alt çene) lamine/kron kaplama gerekir. Sadece üst çenede düzeltme isterseniz, ana gülüş hattını hizalamak için 8 ila 10 adet E-Max kaplama yeterli olmaktadır."
+        }
+      },
+      {
+        "q": {
+          "en": "Does the tooth preparation or shaving process hurt?",
+          "tr": "Diş kesim veya törpüleme işlemi acı verir mi?"
+        },
+        "a": {
+          "en": "No, the procedure is completely painless. Teeth shaving or preparation is performed under localized dental anesthesia. For anxious patients, many clinics also offer conscious sedation. After the teeth are prepared, you are fitted with customized temporary crowns immediately, protecting your teeth from sensitivity until your permanent veneers are bonded.",
+          "tr": "Hayır, işlem tamamen ağrısızdır. Diş kesim ve hazırlık aşaması lokal anestezi altında gerçekleştirilir. Kaygılı hastalar için kliniklerimiz sedasyon seçeneği de sunar. Dişler törpülendikten hemen sonra geçici kronlar takılır, böylece kalıcı kaplamalarınız yapışana kadar herhangi bir hassasiyet yaşamazsınız."
+        }
+      },
+      {
+        "q": {
+          "en": "How many visits to Turkey are required for a complete dental implant?",
+          "tr": "Diş implantı tedavisi için Türkiye'ye kaç kere gelmem gerekir?"
+        },
+        "a": {
+          "en": "Dental implants require two separate visits. Visit 1 (3-4 days): The implant titanium root is placed into the jawbone, and temporary teeth are provided. A healing period of 3 to 6 months follows, allowing the bone to fuse with the implant (osseointegration). Visit 2 (5-7 days): The permanent zirconium crowns are fitted, adjusted, and polished for your final smile.",
+          "tr": "Diş implantları iki ayrı ziyaret gerektirir. 1. Ziyaret (3-4 gün): İmplant kökleri çene kemiğine yerleştirilir ve geçici dişler takılır. Kemik ile implantın kaynaşması (osteointegrasyon) için 3 ila 6 aylık bir iyileşme süresi beklenir. 2. Ziyaret (5-7 gün): Kalıcı zirkonyum kronlar takılır ve gülüşünüz tamamlanır."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the difference between E-Max and Zirconium crowns?",
+          "tr": "E-Max ile Zirkonyum kaplama arasındaki fark nedir?"
+        },
+        "a": {
+          "en": "E-Max is made from solid lithium disilicate glass-ceramic, offering unmatched translucency and natural light reflection. It is the absolute best for front teeth. Zirconium is a metal-free, crystalline oxide material that is incredibly strong and fracture-resistant, making it superior for back bridge teeth or full-mouth implant restorations where heavy bite force is applied.",
+          "tr": "E-Max, doğal diş minesine en yakın ışık geçirgenliğini sunan lityum disilikat cam seramikten üretilir; ön dişler için mükemmeldir. Zirkonyum ise kırılmaya karşı son derece dayanıklı, kristal yapıda beyaz bir malzemedir; bu yüzden çiğneme yükünün fazla olduğu arka diş köprüleri ve implant üstü kaplamalar için daha çok tercih edilir."
+        }
+      },
+      {
+        "q": {
+          "en": "How long do premium E-Max veneers last?",
+          "tr": "Premium E-Max kaplamaların ömrü ne kadardır?"
+        },
+        "a": {
+          "en": "E-Max veneers typically last between 15 and 20 years, while high-quality Zirconium crowns can last up to 25 years. Their longevity depends on keeping excellent oral hygiene (brushing twice daily, flossing) and visiting your dentist regularly. Patients who suffer from nighttime teeth grinding (bruxism) should wear a nightguard to protect their veneers.",
+          "tr": "E-Max kaplamalar uygun bakımla genellikle 15 ila 20 yıl, yüksek kaliteli Zirkonyum kronlar ise 25 yıla kadar sorunsuz kullanılabilir. Kaplamaların ömrü, iyi bir ağız hijyenine (günde iki kez fırçalama, diş ipi kullanımı) ve diş gıcırdatma alışkanlığınız varsa gece plağı kullanımına bağlıdır."
+        }
+      },
+      {
+        "q": {
+          "en": "Why are dental clinic prices in Turkey so much lower than in the UK?",
+          "tr": "Türkiye'deki diş klinikleri fiyatları İngiltere'den neden bu kadar ucuz?"
+        },
+        "a": {
+          "en": "The lower price is driven by much lower laboratory operational costs, lower dentists' overhead expenses, and favorable exchange rates against the British Pound and Euro. Additionally, Turkish clinics manufacture veneers using highly efficient, in-house CAD/CAM milling machines, reducing reliance on third-party dental labs and passing those massive savings directly onto international patients.",
+          "tr": "Düşük fiyatlar; laboratuvar işletme ve klinisyen klinik genel giderlerinin Türkiye'de daha düşük olması ve döviz kurlarından kaynaklanır. Ayrıca, Türkiye'deki büyük klinikler kaplamaları kendi bünyelerindeki CAD/CAM kazıma cihazlarında üreterek üçüncü parti laboratuvar maliyetlerini aradan çıkarır ve bu avantajı hastaya yansıtır."
+        }
+      }
+    ],
+    "filterValue": "dental",
+    "seoContent": {
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Complete Guide to Dental Veneers and Implants in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Turkey has emerged as the premier global destination for high-end cosmetic dentistry, drawing patients from the UK, Europe, and North America. By choosing advanced dental centers in Istanbul, Antalya, and Izmir, patients can access elite prosthodontists, state-of-the-art 3D CAD/CAM smile design technology, and premium materials at savings of up to 70%. At MediRoute, we carefully audit clinics to ensure they employ board-certified dentists, possess JCI-accredited facilities, and use globally recognized dental implant brands.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Choose Turkey? Cost & Brand Comparison</h3>\n        <p class=\"text-gray-600 mb-4\">Cosmetic dentistry in the UK or US is priced per tooth and often excludes laboratory fees, making full smile makeovers cost-prohibitive. In Turkey, packages are all-inclusive, covering your hotel, VIP transfers, and premium restoration materials. Below is a detailed cost breakdown:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Treatment Option</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Vetted)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">E-Max Porcelain Veneer (Per Tooth)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£850 - £1,200</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£180 - £250</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Premium Titanium Implant (Straumann/Nobel)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£2,000 - £3,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£450 - £750</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Full Hollywood Smile (20 Veneers/Crowns)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£16,000 - £24,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,500 - £5,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">All-on-4 Full Arch Implant (Per Jaw)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£10,000 - £15,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,000 - £4,500</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Understanding the 5-Day Hollywood Smile Schedule</h3>\n        <p class=\"text-gray-600 mb-4\">Designing and fabricating a custom Hollywood Smile is completed in a single 5-to-7 day visit using in-house CAD/CAM laboratories. Here is what your dental holiday looks like:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Day 1 (Consultation & 3D Scanning)</strong>: Panoramic X-rays, 3D CT scans, and photography. Your cosmetic dentist discusses your aesthetic goals (color shade, shape) and prepares the teeth under local anesthesia. High-precision 3D digital impressions are taken, and temporary teeth are fitted.</li>\n          <li><strong>Day 2 (Digital Smile Design)</strong>: The in-house dental laboratory uses CAD/CAM software to craft your bespoke veneers, matching the natural translucency of your teeth. You enjoy your free day exploring Istanbul or Antalya.</li>\n          <li><strong>Day 3 (Mock-up & Trial Fitting)</strong>: The temporary veneers are removed, and the new E-Max or Zirconium structures are placed for a trial fit. You verify the shape, alignment, and bite comfort, making any fine adjustments.</li>\n          <li><strong>Day 4 (Final Customization)</strong>: The dental lab glazes, polishes, and custom-shades the restorations based on your feedback from the trial fitting.</li>\n          <li><strong>Day 5 (Bonding & Polish)</strong>: The permanent restorations are clinically bonded using specialized medical-grade light-curing adhesives. After final occlusion checks and polishing, your new smile is complete!</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">How We Verify Dental Clinic Safety & Credentials</h3>\n        <p class=\"text-gray-600 mb-4\">To protect your health and guarantee long-term restoration success, MediRoute strictly vets all dental partners:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Prosthodontist Certification</strong>: Smile makeovers and implant restorations are overseen exclusively by cosmetic dentists specializing in Prosthodontics (prosthetic dentistry) or Oral Surgery.</li>\n          <li><strong>Premium Implants Only</strong>: Partner clinics must use globally recognized titanium implants (e.g., Straumann, Nobel Biocare, Osstem) that carry lifetime international warranties.</li>\n          <li><strong>On-Site Sterilization Labs</strong>: Clinics must feature state-of-the-art sterilization autoclaves and fully digital imaging suites to prevent cross-contamination.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Diş Tedavisi ve Hollywood Gülüşü Kapsamlı Rehberi</h2>\n        <p class=\"text-gray-600 mb-4\">Türkiye; lamine kaplamalar, zirkonyum kronlar ve implant tedavilerinde en ileri teknolojileri sunarak küresel diş turizminin lider destinasyonu haline gelmiştir. İstanbul, Antalya ve İzmir'deki kliniklerimiz; dijital 3D CAD/CAM gülüş tasarımı, uzman protodontist kadroları ve en kaliteli malzemeleri Avrupa fiyatlarının %70'ine varan tasarruflarla sunar. MediRoute olarak, sizin için sadece sertifikalı diş hekimlerini, Sağlık Bakanlığı onaylı modern klinikleri ve ömür boyu garantili implant markalarını seçiyoruz.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Neden Türkiye? Diş Tedavisi Maliyet ve Marka Karşılaştırması</h3>\n        <p class=\"text-gray-600 mb-4\">Avrupa ve İngiltere'de diş tedavileri diş başına yüksek fiyatlandırılır ve laboratuvar giderleri sonradan eklenir. Türkiye'de ise her şey dahil paketlerle otel konaklamanız, VIP transferleriniz ve birinci sınıf malzemeler tek fiyatta birleştirilir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Tedavi Seçeneği</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">E-Max Porselen Lamine (Diş Başına)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">850£ - 1.200£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">180£ - 250£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Premium Titanyum İmplant (Straumann/Nobel)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">2.000£ - 3.500£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">450£ - 750£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Tam Hollywood Gülüşü (20 Diş Kaplama)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">16.000£ - 24.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.500£ - 5.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">All-on-4 Komple Çene İmplantı (Çene Başına)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">10.000£ - 15.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.000£ - 4.500£</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">5 Günlük Hollywood Smile Tedavi Takvimi</h3>\n        <p class=\"text-gray-600 mb-4\">Kusursuz bir Hollywood Gülüşü tasarımı, kliniklerimizin bünyesinde bulunan gelişmiş CAD/CAM laboratuvarları sayesinde sadece 5 günde tamamlanır:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>1. Gün (Konsültasyon ve 3D Tarama)</strong>: Panoramik röntgen ve 3D tomografi çekilir. İstediğiniz renk tonu ve diş formu belirlenir. Lokal anestezi altında dişler hazırlanarak dijital 3D ölçü alınır ve geçici dişleriniz takılır.</li>\n          <li><strong>2. Gün (Dijital Gülüş Tasarımı)</strong>: Klinik laboratuvarımız CAD/CAM yazılımları ile dişlerinizi dijital ortamda sıfırdan tasarlar. Siz bu sırada şehrin tadını çıkarırsınız.</li>\n          <li><strong>3. Gün (Prova ve Uyum Kontrolü)</strong>: Geçici kaplamalar çıkarılır ve hazırlanan E-Max veya Zirconium yapıların ilk provası yapılır. Uyum, kapanış ve estetik duruş hekiminizle birlikte incelenir.</li>\n          <li><strong>4. Gün (Bireysel Makyaj ve Glazür)</strong>: Provadaki geri bildirimlerinize göre dişlerin yüzey özellikleri, makyajı ve parlatma işlemleri laboratuvarda son haline getirilir.</li>\n          <li><strong>5. Gün (Kalıcı Yapıştırma ve Cila)</strong>: Hazırlanan kaplamalar özel medikal yapıştırıcılar ve ışınlı cihazlarla dişlerinize kalıcı olarak yapıştırılır. Kapanış kontrolleri yapılıp parlatıldıktan sonra yeni gülüşünüzle dönebilirsiniz!</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Diş Kliniği Güvenlik ve Kalite Standartları</h3>\n        <p class=\"text-gray-600 mb-4\">Tedavinizin uzun ömürlü olması ve sağlığınızın korunması için klinikleri şu kriterlere göre onaylıyoruz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Uzman Protodontist Hekimler</strong>: Gülüş tasarımı ve protez tedavileri mutlaka protez uzmanı (Protodontist) veya ağız, çene cerrahı uzman diş hekimleri denetiminde yapılır.</li>\n          <li><strong>Uluslararası Garantili İmplantlar</strong>: Kullanılan implantların tamamı dünyanın en kaliteli markalarından (Straumann, Nobel Biocare vb.) seçilir ve uluslararası ömür boyu ürün sertifikası verilir.</li>\n          <li><strong>İleri Sterilizasyon Teknolojileri</strong>: Kliniklerin tamamı Avrupa standartlarında sınıf-B otoklav cihazları ile yüksek hijyen denetiminden geçer.</li>\n        </ul>\n      "
+    }
+  },
+  "aesthetics": {
+    "slug": "aesthetics",
+    "icon": "fa-solid fa-spa",
+    "title": {
+      "en": "Aesthetic Surgery in Turkey",
+      "tr": "Türkiye'de Estetik Cerrahi"
+    },
+    "heroSub": {
+      "en": "Rhinoplasty, BBL, liposuction & mommy makeovers — board-certified plastic surgeons",
+      "tr": "Burun estetiği, BBL, liposuction ve mommy makeovers — sertifikalı plastik cerrahlar"
+    },
+    "metaDesc": {
+      "en": "The ultimate guide to cosmetic and plastic surgery in Turkey. Learn about JCI accreditation, ISAPS surgeons, rhinoplasty timelines, and UK vs Turkey cost comparisons.",
+      "tr": "Türkiye'de estetik ve plastik cerrahi rehberi. JCI akreditasyonu, ISAPS üyesi cerrahlar, burun estetiği ve liposuction iyileşme takvimleri."
+    },
+    "stats": [
+      {
+        "val": "20,000+",
+        "en": "Surgeries/Year",
+        "tr": "Yıllık Ameliyat"
+      },
+      {
+        "val": "£2,200",
+        "en": "Starting Price",
+        "tr": "Başlangıç Fiyatı"
+      },
+      {
+        "val": "98.4%",
+        "en": "Satisfaction",
+        "tr": "Memnuniyet"
+      },
+      {
+        "val": "7-14",
+        "en": "Days Recovery",
+        "tr": "Gün İyileşme"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "Ultrasonic Rhinoplasty (Piezo)",
+        "en": "Reshapes nasal bones using ultrasonic sound vibrations instead of traditional hammers and chisels. Dramatically reduces bruising, swelling, and recovery times while protecting soft tissues.",
+        "tr": "Burun kemiklerini geleneksel çekiç ve törpü yerine ultrasonik ses titreşimleri kullanarak şekillendirir. Yumuşak dokulara zarar vermeden morluk ve şişliği büyük oranda azaltır."
+      },
+      {
+        "name": "VASER Liposuction",
+        "en": "Uses high-frequency ultrasound waves to selectively liquefy fat cells before gentle extraction. Protects blood vessels and nerves, resulting in smoother skin contouring and faster healing.",
+        "tr": "Yağ hücrelerini almadan önce ultrasonik ses dalgalarıyla sıvılaştırır. Damar ve sinirleri korur; bu sayede daha düzgün vücut hatları sağlar ve morlukları en aza indirir."
+      },
+      {
+        "name": "360 Abdominoplasty (Tummy Tuck)",
+        "en": "Removes excess sagging skin and tightens weakened abdominal muscles. Often combined with circumferential liposuction for an aesthetic hourglass silhouette.",
+        "tr": "Sarkmış fazla deriyi alırken zayıflamış karın kaslarını sıkılaştırır. Estetik bir kum saati görünümü için genellikle 360 derece liposuction ile birleştirilir."
+      }
+    ],
+    "faq": [
+      {
+        "q": {
+          "en": "How soon can I fly home after undergoing aesthetic surgery?",
+          "tr": "Estetik ameliyatından kaç gün sonra uçağa binebilirim?"
+        },
+        "a": {
+          "en": "For most facial surgeries (like Rhinoplasty), you can fly home safely after 7 to 8 days, once your nasal cast and stitches are removed. For body-contouring procedures (Liposuction, Tummy Tuck), you should wait 10 to 14 days. Wearing custom medical compression garments and walking regularly during your flight is required to prevent deep vein thrombosis (DVT).",
+          "tr": "Burun estetiği gibi yüz ameliyatlarından sonra, alçı ve dikişlerinizin alındığı 7 ila 8. günden itibaren uçabilirsiniz. Liposuction veya karın germe gibi vücut şekillendirme operasyonlarından sonra ise 10 ila 14 gün beklenmesi önerilir. Uçuş esnasında kompresyon çoraplarınızı giymeniz ve hareket etmeniz istenir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is a Mommy Makeover, and can it be done in one surgery?",
+          "tr": "Mommy Makeover (Annelik Estetiği) nedir ve tek ameliyatta yapılabilir mi?"
+        },
+        "a": {
+          "en": "Yes, a Mommy Makeover is a combined customized package designed to restore pre-pregnancy body contours in a single surgical session. It typically combines a Tummy Tuck (abdominoplasty), Breast Surgery (lift, reduction, or implants), and Liposuction. Performing these together reduces total anesthesia exposure and consolidates recovery into one single timeline.",
+          "tr": "Evet, Annelik Estetiği tek bir ameliyat seansında hamilelik öncesi vücut hatlarını geri kazandırmak için planlanan kombine bir operasyondur. Genellikle Karın Germe, Göğüs Estetiği (dikleştirme/büyütme) ve Liposuction işlemlerini birleştirir. Hepsini bir arada yapmak genel anestezi süresini kısaltır ve tek bir iyileşme takviminde süreci tamamlamanızı sağlar."
+        }
+      },
+      {
+        "q": {
+          "en": "What certifications should a reputable plastic surgeon have?",
+          "tr": "Güvenilir bir plastik cerrahın hangi sertifikalara sahip olması gerekir?"
+        },
+        "a": {
+          "en": "A fully qualified plastic surgeon must be board-certified by the National Society of Plastic Surgeons. Internationally, they should hold active memberships in prestigious organizations such as ISAPS (International Society of Aesthetic Plastic Surgery) and EBOPRAS (European Board of Plastic Reconstructive and Aesthetic Surgery), which verify advanced clinical training and ethical compliance.",
+          "tr": "Uzman bir plastik cerrahın mutlaka Ulusal Plastik Cerrahi Derneği yeterliliğine sahip olması gerekir. Uluslararası düzeyde ise advanced eğitimlerini ve etik kuralları kanıtlayan ISAPS (Uluslararası Estetik Plastik Cerrahi Derneği) ve EBOPRAS (Avrupa Plastik Cerrahi Kurulu) üyeliklerinin bulunması aranır."
+        }
+      },
+      {
+        "q": {
+          "en": "Is VASER liposuction safer than traditional liposuction?",
+          "tr": "VASER liposuction geleneksel liposuctiondan daha mı güvenlidir?"
+        },
+        "a": {
+          "en": "Yes, VASER is an advanced ultrasound-assisted technique that is highly selective. While traditional liposuction uses mechanical scraping which can damage surrounding tissues, VASER specifically targeting only fat tissue, liquefying fat cells while leaving blood vessels, connective tissues, and nerves intact. This yields significantly less bleeding, minimal swelling, and smoother contours.",
+          "tr": "Evet, VASER yüksek seçiciliğe sahip ultrasonik bir teknolojidir. Geleneksel liposuction mekanik sürtünmeyle dokulara zarar verebilirken, VASER sadece yağ hücrelerini hedef alıp sıvılaştırır; damar, sinir ve bağ dokusuna zarar vermez. Bu da çok daha az morluk, hızlı iyileşme ve pürüzsüz hatlar sağlar."
+        }
+      },
+      {
+        "q": {
+          "en": "How long do I need to wear medical compression garments after surgery?",
+          "tr": "Ameliyat sonrası medikal kompresyon giysilerini ne kadar süre giymeliyim?"
+        },
+        "a": {
+          "en": "You must wear your compression garment (faja or elastic binders) 24/7 for the first 4 weeks, taking it off only for showers. For weeks 5 and 6, you are advised to wear it for 12 hours a day. These garments are critical because they prevent fluid accumulation (seroma), control swelling, support your newly contoured tissues, and help your skin retract smoothly.",
+          "tr": "Ameliyat sonrası kompresyon giysinizi (korse veya elastik bandajları) ilk 4 hafta boyunca sadece banyo yaparken çıkaracak şekilde 24 saat giymelisiniz. 5. ve 6. haftalarda günde 12 saat giymeniz önerilir. Bu giysiler ödemi azaltmak, sıvı birikimini (seroma) engellemek ve derinin sıkılaşmasını sağlamak için kritiktir."
+        }
+      },
+      {
+        "q": {
+          "en": "Why are cosmetic surgery costs so much lower in Turkey?",
+          "tr": "Türkiye'de estetik ameliyat fiyatları neden bu kadar uygun?"
+        },
+        "a": {
+          "en": "The affordability is a direct result of lower hospital overhead fees, competitive surgical staffing costs, and government subsidies aimed at promoting medical tourism. Furthermore, the high volume of international procedures allows clinics to operate with high efficiency and lower costs per surgery without ever compromising on elite surgical standards or JCI hospital safety protocols.",
+          "tr": "Uygun fiyatlar; Türkiye'deki hastane işletme giderlerinin düşüklüğü, rekabetçi cerrahi maliyetler ve devletin sağlık turizmini desteklemek için uyguladığı teşviklerin bir sonucudur. Ayrıca, kliniklerin yüksek ameliyat hacmi, tıbbi kaliteden ve JCI hastane güvenliğinden taviz vermeden operasyon başı maliyeti optimize etmelerini sağlar."
+        }
+      }
+    ],
+    "filterValue": "aesthetics",
+    "seoContent": {
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Comprehensive Guide to Aesthetic and Plastic Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Turkey has emerged as a premier global hub for cosmetic and plastic surgery, welcoming hundreds of thousands of international patients every year. Vetted clinics in Istanbul, Izmir, and Antalya feature board-certified plastic surgeons and JCI-accredited hospitals equipped with high-tech operating suites. At MediRoute, we verify each clinic's certifications to guarantee your safety, combining world-class clinical care with luxury postoperative hotels and VIP transfers.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Undergo Surgery in Turkey? Aesthetic Cost Comparison</h3>\n        <p class=\"text-gray-600 mb-4\">Cosmetic procedures in Western countries are often extremely expensive due to high hospital insurance overheads. In Turkey, JCI-accredited healthcare packages bundle your surgery, private hospital overnight stays, luxury recovery hotel, and VIP Mercedes transfers at savings of up to 60%. Below is a verified cost comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Procedure Type</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Vetted)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Ultrasonic Rhinoplasty (Nose Job)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£6,000 - £9,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,200 - £3,400</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VASER Liposuction (3 Areas)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£5,500 - £8,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,400 - £3,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">360 Tummy Tuck (Abdominoplasty)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£7,000 - £11,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,900 - £4,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Mommy Makeover (Combined Package)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£12,000 - £18,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£4,500 - £6,500</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Understanding Rhinoplasty Post-Op Healing Milestones</h3>\n        <p class=\"text-gray-600 mb-4\">Nose reshaping procedures require structured aftercare. Below is the clinical recovery timeline you can expect:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Days 1 - 3 (Silicone Packings)</strong>: A specialized thermoplastic splint covers your nose, and soft silicone nasal packings are placed inside to keep air passages stable. Minor swelling and bruising around the under-eyes is completely normal.</li>\n          <li><strong>Day 7 (Splint & Stitch Removal)</strong>: Your surgeon painlessly removes the splint, internal silicone packings, and stitches at the clinic. You can wash your face normally and catch your flight home.</li>\n          <li><strong>Weeks 2 - 4 (Edema Dissolving)</strong>: Roughly 60-70% of facial swelling completely resolves. Your breathing improves daily, and your nasal contour begins to sharpen.</li>\n          <li><strong>Months 6 - 12 (Nose Tip Definition)</strong>: The bone structure is fully healed. Edema around the nose tip takes up to a full year (and up to 18 months for patients with thick skin) to completely dissolve, revealing the permanent, highly defined shape.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">How MediRoute Guarantees Surgical Safety (E-E-A-T)</h3>\n        <p class=\"text-gray-600 mb-4\">Plastic surgery requires elite precision. We vet and audit clinics according to strict medical safety benchmarks:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Board-Certified Plastic Surgeons</strong>: Every procedure on our platform must be performed by surgeons who are members of national boards and hold international credentials like <strong>ISAPS</strong> or <strong>EBOPRAS</strong>.</li>\n          <li><strong>JCI Hospital Facilities</strong>: We never list clinics operating in private apartments or unlicensed dental clinics. Surgeries are performed strictly in JCI-accredited hospitals with on-site ICUs and certified anesthesiologists.</li>\n          <li><strong>Post-Surgical Monitoring</strong>: Patients receive a JCI-approved safety follow-up for 12 months with remote nursing coordinators to monitor healing progress.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Estetik ve Plastik Cerrahi Kapsamlı Rehberi</h2>\n        <p class=\"text-gray-600 mb-4\">Türkiye, her yıl yüz binlerce uluslararası hastayı ağırlayarak estetik ve plastik cerrahide dünyanın öncü ülkesi haline gelmiştir. İstanbul, Antalya ve İzmir'deki kliniklerimiz; dünya çapında tanınan sertifikalı cerrahlar ve tam donanımlı, JCI akredite hastanelerle hizmet vermektedir. MediRoute olarak, sağlığınızı güvence altına almak için cerrahların sertifikalarını sıkı bir şekilde denetliyor ve VIP transferli, lüks konaklama paketlerini bir araya getiriyoruz.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Neden Türkiye? Estetik Ameliyatları Fiyat Karşılaştırması</h3>\n        <p class=\"text-gray-600 mb-4\">Avrupa ülkelerinde estetik ameliyat fiyatları hastane sigorta genel giderleri sebebiyle oldukça yüksektir. Türkiye'de ise JCI hastane yatışı, özel laboratuvar hizmetleri, 5 yıldızlı otel konaklaması ve havalimanı-otel-klinik arası VIP transferler her şey dahil pakete dahildir. Fiyat karşılaştırması şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Operasyon Türü</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Ultrasonik Rinoplasti (Burun Estetiği)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">6.000£ - 9.500£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.200£ - 3.400£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VASER Liposuction (3 Bölge)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">5.500£ - 8.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.400£ - 3.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Karın Germe (Abdominoplasti)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">7.000£ - 11.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.900£ - 4.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Annelik Estetiği (Mommy Makeover Paketi)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">12.000£ - 18.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">4.500£ - 6.500£</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Burun Estetiği Sonrası Adım Adım İyileşme Süreci</h3>\n        <p class=\"text-gray-600 mb-4\">Rinoplasti operasyonunun başarılı sonuçlanması için iyileşme evrelerini bilmek önemlidir:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>1 - 3. Günler (Alçı ve Silikon Ateller)</strong>: Burnunuzun üzerinde termoplastik bir alçı bulunur ve nefes almayı kolaylaştırmak için yumuşak silikon ateller yerleştirilir. Göz altında hafif morluk ve şişlik olması normaldir.</li>\n          <li><strong>7. Gün (Alçı ve Dikişlerin Alınması)</strong>: Cerrahınız klinik kontrolünüzde alçıyı, silikon atelleri ve dikişleri ağrısız bir şekilde alır. Burnunuzun yeni genel şeklini ilk defa görür ve uçağınıza binip dönebilirsiniz.</li>\n          <li><strong>2 - 4. Haftalar (Ödemin Azalması)</strong>: Yüzdeki ödemin yaklaşık %70'i bu dönemde kaybolur. Nefes almanız belirgin şekilde düzelir ve burun hatlarınız keskinleşir.</li>\n          <li><strong>6 - 12. Aylar (Burun Ucunun Oturması)</strong>: Kemik yapısı tamamen iyileşmiştir. Burun ucundaki ince ödemin tamamen dağılması ve burnun nihai şeklini alması kalın derili hastalarda 18 aya kadar sürebilir. Nihai sonuçlar tamamen kalıcıdır.</li>\n        </ul>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Cerrahi Güvenlik ve Denetim Standartları</h3>\n        <p class=\"text-gray-600 mb-4\">Estetik ameliyatlarda hasta güvenliği en büyük önceliğimizdir. MediRoute olarak kliniklerimizi şu kriterlerle denetleriz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Uluslararası Sertifikalı Cerrahlar</strong>: Ameliyatı gerçekleştirecek hekimin mutlaka plastik cerrahi uzmanı olması, uluslararası düzeyde **ISAPS** veya **EBOPRAS** üyeliklerinin bulunması şarttır.</li>\n          <li><strong>Tam Donanımlı JCI Hastaneler</strong>: Operasyonların apartman katı klinikler veya yetkisiz merkezlerde yapılmasına izin verilmez. Ameliyatlar yoğun bakım ünitesi bulunan akredite JCI hastanelerinde, sertifikalı anestezi uzmanları gözetiminde yapılır.</li>\n        </ul>\n      "
+    }
+  },
+  "bariatric": {
+    "slug": "bariatric",
+    "icon": "fa-solid fa-weight-scale",
+    "title": {
+      "en": "Bariatric Surgery in Turkey",
+      "tr": "Türkiye'de Obezite Cerrahisi"
+    },
+    "heroSub": {
+      "en": "Laparoscopic Gastric Sleeve, Bypass & Smart Balloon packages starting from £3,499",
+      "tr": "Laparoskopik tüp mide, gastrik bypass ve akıllı balon tedavileri £3.499'dan başlayan fiyatlarla"
+    },
+    "metaDesc": {
+      "en": "The definitive clinical guide to bariatric surgery in Turkey. Compare laparoscopic Gastric Sleeve vs. Bypass costs, BMI classification grids, JCI hospital safety checklists, 12-month post-op recovery diet milestones, and weight-loss outcomes.",
+      "tr": "Türkiye'de obezite cerrahisi ve mide küçültme ameliyatları uzman rehberi. Tüp mide ve bypass maliyetleri, VKI uygunluk tablosu, 4 aşamalı beslenme diyeti, 12 aylık iyileşme takvimi ve klinikler."
+    },
+    "stats": [
+      {
+        "val": "15,000+",
+        "en": "Surgeries Done",
+        "tr": "Yapılan Ameliyat"
+      },
+      {
+        "val": "£3,499",
+        "en": "Starting Price",
+        "tr": "Başlangıç Fiyatı"
+      },
+      {
+        "val": "96.2%",
+        "en": "Diabetes Resolution",
+        "tr": "Diyabet İyileşmesi"
+      },
+      {
+        "val": "5-7",
+        "en": "Days Recovery",
+        "tr": "Gün İyileşme"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "Gastric Sleeve (Sleeve Gastrectomy)",
+        "en": "Laparoscopic resection of approximately 80% of the stomach. Permanently restricts food volume and suppresses the hunger-stimulating hormone Ghrelin, yielding 60-70% excess weight loss.",
+        "tr": "Midenin yaklaşık %80'inin laparoskopik olarak çıkarılması. Gıda alımını kalıcı olarak kısıtlar ve açlık hormonu olan Ghrelin salınımını azaltarak %60-70 fazla kilonun verilmesini sağlar."
+      },
+      {
+        "name": "Roux-en-Y Gastric Bypass",
+        "en": "Dual-action restrictive and malabsorptive surgery. Creates a small 30ml stomach pouch and bypasses a portion of the small intestine. Highly effective for high BMIs and type 2 diabetes resolution.",
+        "tr": "Hem kısıtlayıcı hem de emilim azaltıcı çift etkili operasyon. 30 ml'lik küçük bir mide poşu oluşturulur ve ince bağırsağın bir kısmı bypass edilir. Yüksek VKI ve Tip 2 Diyabet tedavisi için idealdir."
+      },
+      {
+        "name": "Allurion Swallowable Balloon",
+        "en": "Non-surgical, state-of-the-art swallowable capsule balloon. Requires no endoscopy, anesthesia, or removal surgery. Occupies space in your stomach to induce early satiety and kickstart a 10-15% body weight drop.",
+        "tr": "Cerrahi, endoskopi veya anestezi gerektirmeyen son teknoloji yutulabilir kapsül mide balonu. Midede hacim kaplayarak erken doymayı teşvik eder ve vücut ağırlığının %10-15'inin verilmesini sağlar."
+      }
+    ],
+    "faq": [
+      {
+        "q": {
+          "en": "What is the exact BMI requirement for weight loss surgery in Turkey?",
+          "tr": "Türkiye'de mide küçültme ameliyatı olabilmek için Vücut Kitle İndeksi (VKI) kaç olmalıdır?"
+        },
+        "a": {
+          "en": "Surgical options like Gastric Sleeve or Gastric Bypass require a Body Mass Index (BMI) of 35 or higher. You may also qualify with a BMI of 30 to 34.9 if you suffer from obesity-related comorbidities such as severe Type 2 Diabetes, hypertension, high cholesterol, or obstructive sleep apnea. For non-surgical treatments like the Allurion Smart Balloon, a BMI of 27 or higher is sufficient.",
+          "tr": "Tüp mide veya gastrik bypass ameliyatı olabilmek için Vücut Kitle İndeksinizin (VKI/BMI) en az 35 olması gerekir. Eğer Tip 2 Diyabet, yüksek tansiyon, uyku apnesi veya yüksek kolesterol gibi obeziteye bağlı ciddi bir ek hastalığınız varsa, 30-34.9 arasındaki VKI değerleriyle de ameliyata uygun kabul edilirsiniz. Ameliyatsız akıllı yutulabilir balon için ise 27 VKI yeterlidir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is included in the all-inclusive bariatric package in Turkey?",
+          "tr": "Türkiye'de her şey dahil obezite cerrahisi paketine hangi hizmetler dahildir?"
+        },
+        "a": {
+          "en": "MediRoute verified bariatric packages bundle everything needed for a seamless clinical journey: laparoscopic surgical fees, full internal medicine pre-op metabolic screening (cardiology, chest diseases, blood panels, endocrinology consultation), 3 nights of private hospital ward stay with a personal companion, 2-3 nights at a recovery hotel, customized dietary supplies, 1 year of post-op expert clinical dietitian coaching, and all private VIP transfers.",
+          "tr": "MediRoute onaylı obezite cerrahisi paketleri, baştan sona eksiksiz bir tedavi yolculuğu sunar: Laparoskopik ameliyat ücreti, dahiliye, kardiyoloji, göğüs hastalıkları, ultrason ve geniş kan tahlillerini içeren tam pre-op (ameliyat öncesi) check-up, refakatçi eşliğinde 3 gece özel hastane yatışı, 2-3 gece iyileşme oteli konaklaması, ameliyat sonrası beslenme paketleri, 1 yıl boyunca uzman klinik diyetisyen takibi ve tüm VIP transferler."
+        }
+      },
+      {
+        "q": {
+          "en": "What are the stages of the post-bariatric surgery diet recovery timeline?",
+          "tr": "Ameliyattan sonraki beslenme ve diyet aşamaları (Sıvı-Katı Geçişi) nasıldır?"
+        },
+        "a": {
+          "en": "Meticulous diet progression is vital to protect the healing stomach pouch: Weeks 1 - 2 (Clear Liquids: water, broth, high-protein clear shakes); Week 3 (Purees: blended chicken, soft cheeses, Greek yogurt); Week 4 (Soft Foods: soft-cooked eggs, ground meats, well-cooked vegetables); Month 2 onwards (Healthy Solids: high-protein, low-carbohydrate meals. Carbonated drinks, sugary sodas, and hard dry meats must be strictly avoided during the first 6-12 months).",
+          "tr": "Yeni midenizin güvenle iyileşmesi için 4 aşamalı beslenme programına harfiyen uyulmalıdır: 1 ve 2. Hafta (Berrak Sıvı Dönemi: kemik suyu, protein shake, su); 3. Hafta (Püre Dönemi: süzülmüş çorbalar, blenderdan geçirilmiş tavuk/balık, yoğurt); 4. Hafta (Yumuşak Gıda Dönemi: rafadan yumurta, kıyma, iyi pişmiş sebzeler); 2. Aydan İtibaren (Sağlıklı Katı Gıdalar: yüksek proteinli, düşük karbonhidratlı öğünler. İlk 1 yıl asitli/gazlı içecekler ve kuru sert etler kesinlikle yasaktır)."
+        }
+      },
+      {
+        "q": {
+          "en": "How much weight can I realistically expect to lose, and will I regain it?",
+          "tr": "Ameliyat sonrası ne kadar kilo verebiliririm ve tekrar kilo alma riski var mıdır?"
+        },
+        "a": {
+          "en": "On average, patients lose 60% to 80% of their excess body weight within the first 12 to 18 months post-op. Weight regain is extremely rare and only occurs long-term if patients revert to old behavioral patterns, consume high-calorie carbonated liquids, graze constantly throughout the day, or stretch their stomach pouch by ignoring satiety signals. Ongoing coaching with our clinical dietitians helps ensure lifelong weight management.",
+          "tr": "Hastalar ortalama olarak ameliyattan sonraki ilk 12-18 ay içinde fazla kilolarının %60 ila %80'ini kalıcı olarak verirler. Tekrar kilo alma riski oldukça düşüktür; bu durum yalnızca hastaların eski yeme alışkanlıklarına dönmesi, yüksek kalorili sıvı ve şekerli gıdalar tüketmesi, gazlı içecekler içmesi veya doyma sinyallerini göz ardı ederek mideyi zorlaması durumunda ortaya çıkabilir. 1 yıllık diyetisyen takibimiz bu riski sıfıra indirmeyi hedefler."
+        }
+      }
+    ],
+    "filterValue": "bariatric",
+    "seoContent": {
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">The Comprehensive Guide to Weight Loss Surgery in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">Bariatric surgery has become one of the most successful medical solutions for individuals struggling with chronic obesity, metabolic disorders, and type 2 diabetes. Turkey has established itself as the global capital for safe, state-of-the-art bariatric operations, featuring JCI-accredited general hospitals, board-certified gastrointestinal surgeons, and all-inclusive recovery packages that cost 60-70% less than equivalent private treatments in the UK, Europe, or North America.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Obesity Surgery Cost Comparison: Turkey vs. UK & Europe</h3>\n        <p class=\"text-gray-600 mb-4\">Due to high administrative costs and private clinical overheads in the UK and Germany, weight loss surgery is often financially inaccessible or subject to years-long NHS waiting lists. In Turkey, JCI-accredited bariatric packages bundle your laparoscopic surgery, private hospital stay, pre-op medical exams, 5-star recuperation hotel, and VIP private airport transfers at highly competitive rates. Here is a verified price comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Bariatric Procedure</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Verified)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Laparoscopic Gastric Sleeve</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£8,500 - £12,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,499 - £4,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Roux-en-Y Gastric Bypass</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£9,500 - £14,000</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£3,999 - £4,800</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Allurion Swallowable Capsule Balloon</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£6,000 - £7,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,999 - £3,400</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">BMI (Body Mass Index) Classification & Clinical Eligibility Grid</h3>\n        <p class=\"text-gray-600 mb-4\">Determining the correct clinical procedure depends heavily on your Body Mass Index (BMI) and metabolic health indicators. Below is the clinical guideline utilized by JCI-accredited bariatric teams:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">BMI Range</th>\n                <th class=\"px-4 py-3\">Classification</th>\n                <th class=\"px-4 py-3\">Recommended Treatment</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 27.0 - 29.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Overweight / Mild Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Allurion Swallowable Balloon or Lifestyle Coaching</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 30.0 - 34.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class I Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Gastric Sleeve (only with severe comorbidities) / Gastric Balloon</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 35.0 - 39.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class II Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Laparoscopic Gastric Sleeve (Sleeve Gastrectomy)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">BMI 40.0+</td>\n                <td class=\"px-4 py-3 text-gray-600\">Class III Morbid Obesity</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Roux-en-Y Gastric Bypass or Laparoscopic Mini-Bypass</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Clinical Pre-Op Vetting and JCI Accreditation Matters</h3>\n        <p class=\"text-gray-600 mb-4\">Bariatric surgery is a major surgical procedure. At MediRoute, we enforce clinical safety standards that guarantee patient protection at every single stage:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Comprehensive Pre-Op Medical Clearance</strong>: Patients are never taken straight to the operating room. Upon arrival, you undergo a rigorous 4-hour checkup including blood labs, chest X-rays, abdominal ultrasound, electrocardiogram (ECG), pulmonary function tests, and physical consults with internal medicine, cardiology, and anesthesiology.</li>\n          <li><strong>General Surgeon Certifications</strong>: All general surgeons listed on our platform are members of the <strong>IFSO</strong> (International Federation for the Surgery of Obesity and Metabolic Disorders) and have performed at least 1,000 laparoscopic operations.</li>\n          <li><strong>Multi-Day Hospital Recovery</strong>: Unlike outpatient centers, our surgical packages include 3 nights of hospitalization in state-of-the-art accredited general hospitals with a dedicated leak-testing protocol before discharge.</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de Obezite ve Kilo Verme Cerrahisi Kapsamlı Rehberi</h2>\n        <p class=\"text-gray-600 mb-4\">Obezite cerrahisi (bariatrik cerrahi), kronik obezite, Tip 2 Diyabet ve diğer metabolik rahatsızlıklarla mücadele eden bireyler için modern tıbbın sunduğu en başarılı ve kalıcı çözümlerden biridir. Türkiye; JCI akredite tam teşekküllü genel hastaneleri, alanında dünyaca tanınmış obezite cerrahları ve İngiltere, Almanya gibi ülkelere kıyasla %60-70 oranında maliyet tasarrufu sağlayan her şey dahil paketleri ile obezite tedavisinde dünyanın lider sağlık turizmi merkezi konumundadır.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Obezite Ameliyatı Fiyat Karşılaştırması: Türkiye vs. Avrupa</h3>\n        <p class=\"text-gray-600 mb-4\">Avrupa ülkelerinde obezite cerrahisi operasyonları yüksek klinik genel giderleri ve sigorta primleri nedeniyle fahiş fiyatlara ulaşmaktadır. Türkiye'de ise laparoskopik cerrahi, ameliyat öncesi detaylı check-up testleri, hastane yatışı, 5 yıldızlı otel konaklaması, havalimanı-otel-klinik arası VIP transferler ve 1 yıllık diyetisyen takibi tek bir pakette sunulur. Fiyat karşılaştırması şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Operasyon Türü</th>\n                <th class=\"px-4 py-3\">İngiltere (UK)</th>\n                <th class=\"px-4 py-3\">Türkiye (MediRoute Onaylı)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Laparoskopik Tüp Mide (Sleeve)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">8.500£ - 12.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.499£ - 4.200£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Gastrik Bypass (Roux-en-Y)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">9.500£ - 14.000£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">3.999£ - 4.800£</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Allurion Yutulabilir Akıllı Balon</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">6.000£ - 7.500£</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">2.999£ - 3.400£</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Vücut Kitle İndeksi (VKI) Sınıflandırması ve Ameliyat Seçenekleri</h3>\n        <p class=\"text-gray-600 mb-4\">Hangi tedavi yönteminin sizin için klinik olarak en doğrusu olduğunu belirlemede en önemli parametre Vücut Kitle İndeksinizdir (VKI/BMI). JCI akredite ekiplerimizin uyguladığı tıbbi kılavuz şöyledir:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">VKI (BMI) Aralığı</th>\n                <th class=\"px-4 py-3\">Obezite Derecesi</th>\n                <th class=\"px-4 py-3\">Önerilen Tedavi Yöntemi</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 27.0 - 29.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">Fazla Kilolu / Hafif Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Allurion Yutulabilir Akıllı Balon / Diyetisyen Takibi</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 30.0 - 34.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">1. Derece Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Mide Balonu veya Laparoskopik Tüp Mide (Yandaş hastalık varsa)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 35.0 - 39.9</td>\n                <td class=\"px-4 py-3 text-gray-600\">2. Derece Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Laparoskopik Tüp Mide Ameliyatı (Sleeve Gastrektomi)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">VKI 40.0 ve üzeri</td>\n                <td class=\"px-4 py-3 text-gray-600\">3. Derece Morbid Obezite</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Gastrik Bypass (Roux-en-Y) veya Mini-Gastrik Bypass</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">MediRoute Klinik Güvenlik ve Hasta Koruma Politikaları</h3>\n        <p class=\"text-gray-600 mb-4\">Obezite cerrahisi, uzmanlık ve yüksek cerrahi disiplin gerektiren ciddi bir ameliyattır. MediRoute olarak, sağlığınızı güvenceye almak için şu güvenlik kriterlerinden taviz vermeyiz:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Kapsamlı Ameliyat Öncesi Check-Up</strong>: Hastalarımız doğrudan ameliyathaneye alınmaz. Ameliyattan önceki gün geniş kan laboratuvar testleri, akciğer grafisi, EKG, solunum fonksiyon testleri, batın ultrasonu ve kardiyoloji, göğüs hastalıkları, anestezi ve dahiliye uzmanı fiziki konsültasyonları tamamlanır.</li>\n          <li><strong>IFSO Üyesi Uzman Cerrahlar</strong>: Ameliyatınızı gerçekleştirecek cerrahlarımızın mutlaka uluslararası obezite derneği **IFSO** üyesi olmasını ve bugüne kadar en az 1.000 başarılı laparoskopik mide küçültme ameliyatı gerçekleştirmiş olmasını şart koşarız.</li>\n          <li><strong>3 Gece Hastane Yatışı ve Kaçak Testleri</strong>: Ameliyat sonrasında taburcu edilmeden önce hastanede 3 gece yatış gerçekleştirilir. Taburcu edilmeden önce cerrahınız tarafından ağrısız sıvı kaçak testi (leak test) yapılarak midenin durumu %100 kontrol edilir.</li>\n        </ul>\n      "
+    }
+  },
+  "eye-surgery": {
+    "slug": "eye-surgery",
+    "icon": "fa-solid fa-eye",
+    "title": {
+      "en": "Eye Surgery in Turkey",
+      "tr": "Türkiye'de Göz Cerrahisi"
+    },
+    "heroSub": {
+      "en": "FDA-approved SMILE, Femto-LASIK & Trifocal Smart Lenses starting from £899 per eye",
+      "tr": "FDA onaylı SMILE, Femto-LASIK ve Trifokal Akıllı Lens tedavileri göz başına £899'dan başlayan fiyatlarla"
+    },
+    "metaDesc": {
+      "en": "The definitive clinical guide to laser eye surgery and smart lens replacement in Turkey. Compare ReLex SMILE vs. Femto-LASIK costs, Swiss/German trifocal lens brands, and diagnostic checklists.",
+      "tr": "Türkiye'de lazer göz ameliyatı ve akıllı lens değişimi uzman rehberi. SMILE ve Femto-LASIK fiyatları, Alman/İsviçre trifokal lens markaları, iyileşme süreleri ve klinikler."
+    },
+    "stats": [
+      {
+        "val": "25,000+",
+        "en": "Eyes Treated",
+        "tr": "Tedavi Edilen Göz"
+      },
+      {
+        "val": "£899",
+        "en": "Starting Price",
+        "tr": "Başlangıç Fiyatı"
+      },
+      {
+        "val": "99.4%",
+        "en": "20/20 Vision Rate",
+        "tr": "20/20 Görüş Oranı"
+      },
+      {
+        "val": "24-48h",
+        "en": "Hours Recovery",
+        "tr": "Saat İyileşme"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "ReLex SMILE (Small Incision Lenticule Extraction)",
+        "en": "The gold-standard flapless, ultra-precise laser technique. Uses a Zeiss femtosecond laser to cut a tiny keyhole micro-incision, correcting myopia and astigmatism with zero dry-eye symptoms and rapid structural recovery.",
+        "tr": "Altın standartta bıçaksız ve ultra hassas lazer yöntemi. Zeiss femtosaniye lazer teknolojisiyle mikro kesi üzerinden kornea yeniden şekillendirilir. Sıfır kuruluk hissi ve çok hızlı doku iyileşmesi sağlar."
+      },
+      {
+        "name": "Wavefront Femto-LASIK",
+        "en": "Dual-laser custom vision correction. A computer-controlled femtosecond laser creates a microscopic protective corneal flap, followed by a personalized wavefront excimer laser to permanently correct higher-order aberrations.",
+        "tr": "Çift lazerli kişiye özel görüş düzeltme. Bilgisayar kontrollü femtosaniye lazer ile mikroskobik bir kornea kapağı (flap) oluşturulur, ardından wavefront excimer lazer ile görme kusurları kalıcı olarak giderilir."
+      },
+      {
+        "name": "German/Swiss Trifocal Smart Lenses",
+        "en": "Advanced refractive lens exchange (RLE). The eye's natural aging crystalline lens is permanently replaced with a premium Swiss-engineered or German-manufactured trifocal IOL, restoring perfect near, intermediate, and far vision.",
+        "tr": "Gelişmiş kırılma kusuru düzeltme (akıllı lens değişimi). Yaşlanmış doğal göz merceği kalıcı olarak çıkarılır ve yerine premium İsviçre veya Alman üretimi trifokal göz içi lens yerleştirilerek tüm mesafelerde kusursuz görüş sağlanır."
+      }
+    ],
+    "faq": [
+      {
+        "q": {
+          "en": "Am I a suitable candidate for LASIK, SMILE, or Smart Lens surgery?",
+          "tr": "LASIK, SMILE veya Akıllı Lens ameliyatları için uygun bir aday mıyım?"
+        },
+        "a": {
+          "en": "Laser options like Femto-LASIK or ReLex SMILE are ideal for patients aged 18 to 45 with a stable eye prescription for at least one year and adequate corneal thickness (screened via Pentacam corneal topography). For patients aged 45 or older suffering from presbyopia (age-related near vision loss) or early-stage cataracts, Trifocal Smart Lens replacement (Refractive Lens Exchange) is the recommended permanent option.",
+          "tr": "Femto-LASIK veya ReLex SMILE lazer yöntemleri, en az bir yıldır göz numarası değişmemiş ve yeterli kornea kalınlığına (Pentacam topografisi ile ölçülen) sahip 18-45 yaş arası hastalar için idealdir. 45 yaşından büyük, yakın görme bozukluğu (presbiyopi) veya katarakt belirtileri olan hastalar için ise en kalıcı ve önerilen çözüm Trifokal Akıllı Lens değişimidir."
+        }
+      },
+      {
+        "q": {
+          "en": "What is included in the all-inclusive eye surgery package in Turkey?",
+          "tr": "Türkiye'de her şey dahil göz ameliyatı paketine hangi hizmetler dahildir?"
+        },
+        "a": {
+          "en": "MediRoute verified ophthalmic packages include all-inclusive surgical fees (using Zeiss VisuMax or Alcon Wavelight lasers), exhaustive pre-op wave-front diagnostics and corneal mapping, premium original Swiss/German intraocular lenses (if undergoing Smart Lens), 2 nights at a luxury 4/5-star hotel, VIP private transfers, postoperative medication drop kits, and 12 months of dedicated clinical recovery follow-up.",
+          "tr": "MediRoute onaylı göz ameliyatı paketleri baştan sona eksiksizdir: Ameliyat ücretleri (Zeiss VisuMax veya Alcon Wavelight cihazları ile), detaylı kornea haritalandırılması ve wavefront analizi, premium İsviçre/Alman göz içi lensleri (akıllı lens ise), 4/5 yıldızlı lüks otelde 2 gece konaklama, VIP özel transferler, ameliyat sonrası koruyucu damla setleri ve 12 aylık hekim takibi dahildir."
+        }
+      },
+      {
+        "q": {
+          "en": "What are the most critical postoperative recovery rules?",
+          "tr": "Ameliyat sonrasında dikkat edilmesi gereken en önemli kurallar nelerdir?"
+        },
+        "a": {
+          "en": "Protecting the eyes during the first 7-10 days is vital for optical healing: 1) Strictly avoid rubbing or pressing on your eyes. 2) Keep water out of your eyes during showers for the first week. 3) Wear the provided UV-blocking sunglasses outdoors. 4) Use your prescribed antibiotic and lubricating eye drops exactly as scheduled. 5) Avoid heavy lifting, makeup, and swimming pools for 2 weeks.",
+          "tr": "Gözlerin ilk 7-10 gün korunması görme kalitesinin oturması için çok önemlidir: 1) Gözlerinizi kesinlikle ovuşturmayın veya bastırmayın. 2) İlk hafta duş alırken gözünüze su kaçmamasına dikkat edin. 3) Dışarıda mutlaka size verilen UV korumalı güneş gözlüklerini takın. 4) Reçete edilen antibiyotikli ve suni gözyaşı damlalarını aksatmadan kullanın. 5) İlk 2 hafta ağır egzersiz, makyaj ve havuza girmekten kaçının."
+        }
+      },
+      {
+        "q": {
+          "en": "Does Smart Lens replacement permanently prevent cataracts?",
+          "tr": "Akıllı Lens değişimi katarakt oluşumunu kalıcı olarak engeller mi?"
+        },
+        "a": {
+          "en": "Yes, absolutely. During a Trifocal Smart Lens procedure, your natural crystalline lens—which gradually becomes cloudy and hardens with age to form a cataract—is permanently removed. It is replaced with a premium, bio-compatible synthetic lens that cannot age or lose transparency. This means you will never develop cataracts for the rest of your life.",
+          "tr": "Evet, kesinlikle. Trifokal Akıllı Lens ameliyatında, yaşla birlikte matlaşarak katarakta neden olan doğal göz merceğiniz kalıcı olarak çıkarılır. Yerine yerleştirilen biyolojik olarak uyumlu yapay lens yaşlanmaz ve saydamlığını yitirmez. Bu sayede ömrünüzün sonuna kadar bir daha asla katarakt rahatsızlığı yaşamazsınız."
+        }
+      }
+    ],
+    "filterValue": "eye",
+    "seoContent": {
+      "en": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Advanced Laser Eye Surgery and Smart Lenses in Turkey</h2>\n        <p class=\"text-gray-600 mb-4\">For millions of people worldwide, glasses and contact lenses are a daily physical and financial burden. Turkey has emerged as the premier global center for ophthalmology, featuring specialized JCI-accredited eye hospitals, world-class laser surgeons, and cutting-edge refractive technologies. Procedures are completed using identical FDA-approved German and Swiss laser suites (like Zeiss VisuMax and Alcon WaveLight) found in the UK or US, but at savings of up to 60%.</p>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Laser Eye Surgery Cost Comparison: Turkey vs. UK</h3>\n        <p class=\"text-gray-600 mb-4\">Due to high clinical licensing fees and private optical premiums in Western Europe, laser vision correction is often a significant financial barrier. In Turkey, packages bundle your diagnostic topography, bilateral surgery, medications, hotel, and private transfers into one low fee. Here is a verified price comparison:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Ophthalmic Procedure</th>\n                <th class=\"px-4 py-3\">United Kingdom (UK)</th>\n                <th class=\"px-4 py-3\">Turkey (MediRoute Verified)</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Wavefront Femto-LASIK (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£3,500 - £5,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£1,200 - £1,800</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">ReLex SMILE Laser (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£4,500 - £6,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£1,600 - £2,200</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Trifocal Smart Lenses (Both Eyes)</td>\n                <td class=\"px-4 py-3 text-red-600 font-medium\">£7,000 - £10,500</td>\n                <td class=\"px-4 py-3 text-emerald-600 font-bold\">£2,999 - £3,800</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Candidacy & Laser Diagnostic Suitability Grid</h3>\n        <p class=\"text-gray-600 mb-4\">Determining the correct optical treatment requires careful diagnostic screening of your prescription, age, and corneal thickness. Below is our clinical matching index:</p>\n        \n        <div class=\"overflow-x-auto my-6 rounded-xl border border-blue-50 shadow-sm\">\n          <table class=\"min-w-full divide-y divide-gray-200 text-sm text-left text-gray-500\">\n            <thead class=\"bg-navy-950 text-white font-semibold\">\n              <tr>\n                <th class=\"px-4 py-3\">Patient Profile</th>\n                <th class=\"px-4 py-3\">Corneal Assessment</th>\n                <th class=\"px-4 py-3\">Recommended Treatment</th>\n              </tr>\n            </thead>\n            <tbody class=\"divide-y divide-gray-150 bg-white\">\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 18-40 (Myopia/Astigmatism)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Thin Corneal Tissue</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">ReLex SMILE or TransPRK (No Flap)</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 18-45 (High Prescription)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Normal Corneal Thickness</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">Wavefront Femto-LASIK</td>\n              </tr>\n              <tr class=\"hover:bg-navy-50/50\">\n                <td class=\"px-4 py-3 font-semibold text-navy-900\">Age 45+ (Presbyopia / Reading Blur)</td>\n                <td class=\"px-4 py-3 text-gray-600\">Any / Irrelevant</td>\n                <td class=\"px-4 py-3 text-navy-800 font-semibold\">German/Swiss Trifocal Smart Lens Exchange</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Why Ophthalmic Vetting and Topographic Diagnostics Matter</h3>\n        <p class=\"text-gray-600 mb-4\">Vision correction requires absolute precision. At MediRoute, we verify and audit eye clinics based on strict patient-safety protocols:</p>\n        <ul class=\"list-disc pl-5 mb-4 text-gray-600 space-y-2\">\n          <li><strong>Pentacam Corneal Topography</strong>: Every patient undergoes a 3D elevation scan of the anterior and posterior cornea before surgery. This completely excludes candidates with undiagnosed keratoconus, ensuring zero long-term complications.</li>\n          <li><strong>FDA-Approved Laser Suites Only</strong>: We strictly partner with hospitals using top-tier optical lasers including the **Zeiss VisuMax** and **Alcon Wavelight EX500**.</li>\n          <li><strong>Ophthalmic Surgeon Credentials</strong>: All refractive procedures are overseen by senior ophthalmologists who hold national board certifications and are members of the **ESCRS** (European Society of Cataract and Refractive Surgeons).</li>\n        </ul>\n      ",
+      "tr": "\n        <h2 class=\"text-2xl font-bold text-navy-900 mb-4\">Türkiye'de İleri Lazer Göz Ameliyatı ve Akıllı Lens Tedavileri</h2>\n        <p class=\"text-gray-600 mb-4\">Gözlüklere ve lenslere veda edin. Türkiye'deki tam donanımlı göz hastaneleri, Avrupa ve Amerika'daki en iyi kliniklerde bulunan FDA onaylı lazer teknolojilerinin (Zeiss, Alcon vb.) aynısını çok daha uygun fiyatlarla sunmaktadır.</p>\n        <h3 class=\"text-xl font-semibold text-navy-800 mt-6 mb-3\">Hızlı ve Kesin Sonuçlar</h3>\n        <p class=\"text-gray-600\">İşlem genellikle göz başına 15 dakikadan az sürer ve iyileşme inanılmaz derecede hızlıdır. Birçok hasta ertesi gün net bir görüşe kavuşur. Kapsamlı göz muayeneleri ve ömür boyu garanti sunan kliniklerimiz, maksimum memnuniyet sağlar.</p>\n      "
+    }
+  }
+};
+
+</script>
 <script>
 const params = new URLSearchParams(window.location.search);
 const pathParts = window.location.pathname.split('/').filter(Boolean);
