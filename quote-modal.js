@@ -225,6 +225,31 @@
 
   window.quoteBack1 = function() { showStep(1); };
 
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+  }
+
+  async function ensureSupabaseLoaded() {
+    if (window.MR && window.MR.supabase) return;
+    
+    try {
+      if (typeof window.supabase === 'undefined') {
+        await loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2');
+      }
+      if (typeof window.MR === 'undefined' || !window.MR.supabase) {
+        await loadScript('/supabase-client.js');
+      }
+    } catch(e) {
+      console.warn('[MR] Failed to load Supabase dynamically:', e);
+    }
+  }
+
   window.submitQuote = async function(e) {
     e.preventDefault();
     const name = document.getElementById('q-name').value;
@@ -262,6 +287,9 @@
     const ogText = btn.innerHTML;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
     btn.disabled = true;
+
+    // Dynamic self-healing: Load Supabase SDK if page doesn't have it
+    await ensureSupabaseLoaded();
 
     try {
       if (window.MR && MR.supabase) {
