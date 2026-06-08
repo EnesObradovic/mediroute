@@ -82,7 +82,7 @@ for page in footer_pages:
         check(has_container, f"Footer container found in {page}", f"Footer container missing in {page}")
 
 # 7. Blog Articles Check
-print("\n--- 7. Testing 10 New Blog Articles ---")
+print("\n--- 7. Testing 15 New Blog Articles ---")
 new_slugs = [
     "rhinoplasty-turkey-vs-uk-real-cost-comparison-2026",
     "fue-hair-transplant-shock-loss-week-by-week-timeline",
@@ -93,7 +93,12 @@ new_slugs = [
     "hidden-costs-medical-tourism-turkey-real-budget",
     "gastric-sleeve-turkey-vs-nhs-waiting-list-guide",
     "lasik-eye-surgery-istanbul-vs-london-complete-guide",
-    "lifetime-guarantee-turkish-clinics-what-it-actually-means"
+    "lifetime-guarantee-turkish-clinics-what-it-actually-means",
+    "liposuction-turkey-vs-uk-clinical-facility-standards",
+    "how-to-verify-turkish-plastic-surgeon-credentials",
+    "gastric-sleeve-leak-test-protocols-turkey",
+    "veneers-prep-tolerances-zirconium-vs-emax",
+    "hbot-prp-graft-survival-hair-transplant-turkey"
 ]
 
 for slug in new_slugs:

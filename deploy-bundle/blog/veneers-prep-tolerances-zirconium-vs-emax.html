@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Biomechanical Performance of E-Max vs Zirconium Veneers | MediRoute</title>
+  <meta name="description" content="The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are..."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/shared.css"/>
+
+  <style>
+    body{font-family:'Inter',sans-serif;background:#F8FAFF;}
+    .hero-bg{background:linear-gradient(135deg,#0A1F6B 0%,#0F2D96 45%,#0A1F6B 100%);}
+    .tag-pill{display:inline-block;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-right:4px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .5s ease both;}
+    .progress-read{position:fixed;top:64px;left:0;height:3px;background:linear-gradient(90deg,#0F2D96,#3B5FDD);z-index:999;transition:width .1s;}
+
+    /* Article body styling — renders Quill HTML beautifully */
+    .article-body{
+      background:#fff;border-radius:20px;border:1px solid #E8EEF9;
+      box-shadow:0 4px 20px rgba(10,31,107,.06);
+      padding:2rem 2.5rem;
+    }
+    .article-body h2{font-size:1.35rem;font-weight:800;color:#0A1F6B;margin-top:2.2rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;padding-bottom:.4rem;border-bottom:2px solid #E1E8FF;}
+    .article-body h3{font-size:1.05rem;font-weight:700;color:#1E3A8A;margin-top:1.6rem;margin-bottom:.5rem;}
+    .article-body p{color:#374151;line-height:1.85;margin-bottom:1rem;font-size:.925rem;}
+    .article-body ul,.article-body ol{margin-bottom:1rem;padding-left:1.4rem;}
+    .article-body ul li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;list-style:none;padding-left:1.3rem;position:relative;}
+    .article-body ul li::before{content:'✓';position:absolute;left:0;color:#059669;font-weight:700;}
+    .article-body ol li{color:#374151;font-size:.925rem;line-height:1.75;margin-bottom:.4rem;}
+    .article-body strong{color:#0A1F6B;font-weight:700;}
+    .article-body em{color:#475569;font-style:italic;}
+    .article-body a{color:#0F2D96;font-weight:600;text-decoration:underline;text-decoration-color:rgba(15,45,150,.3);text-underline-offset:2px;transition:color .15s;}
+    .article-body a:hover{color:#1A3AAF;text-decoration-color:#1A3AAF;}
+    .article-body img{max-width:100%;border-radius:14px;margin:1.2rem 0;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+    .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
+    .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
+
+    /* Related card */
+    .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
+
+    /* Author card */
+    .author-card{
+      background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
+      border:1px solid #E1E8FF;border-radius:20px;
+      padding:1.5rem 2rem;margin-top:2rem;
+      display:flex;align-items:center;gap:1.2rem;
+    }
+    .author-avatar{
+      width:72px;height:72px;border-radius:50%;
+      background:linear-gradient(135deg,#0F2D96,#3B5FDD);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;overflow:hidden;
+      border:3px solid #fff;box-shadow:0 4px 14px rgba(15,45,150,.2);
+    }
+    .author-avatar img{width:100%;height:100%;object-fit:cover;}
+    .author-avatar i{color:#fff;font-size:1.6rem;}
+    .author-badge{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;
+      background:#D1FAE5;color:#065F46;
+    }
+
+    /* Skeleton */
+    @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+    .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:800px 100%;animation:shimmer 1.5s infinite;border-radius:12px;}
+
+    @media(max-width:768px){
+      .article-body{padding:1.2rem 1rem;}
+      .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
+    }
+  </style>
+
+  <link rel="canonical" href="https://medirouteturkey.com/blog/veneers-prep-tolerances-zirconium-vs-emax"/>
+  <link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/veneers-prep-tolerances-zirconium-vs-emax"/>
+  <link rel="alternate" hreflang="x-default" href="https://medirouteturkey.com/blog/veneers-prep-tolerances-zirconium-vs-emax"/>
+  <meta property="og:title" content="Biomechanical Performance of E-Max vs Zirconium Veneers | MediRoute"/>
+  <meta property="og:description" content="The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are..."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"/>
+  <meta property="og:url" content="https://medirouteturkey.com/blog/veneers-prep-tolerances-zirconium-vs-emax"/>
+  <meta property="og:type" content="article"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Biomechanical Performance of E-Max vs Zirconium Veneers | MediRoute"/>
+  <meta name="twitter:description" content="The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are..."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"/>
+  <!-- schema.org JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Biomechanical Performance of E-Max vs Zirconium Veneers",
+    "description": "The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are...",
+    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
+    "datePublished": "2026-06-05T10:00:00+00:00",
+    "dateModified": "2026-06-05T10:00:00+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Özlem Yıldız",
+      "jobTitle": "Cosmetic Dentistry Specialist"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MediRoute",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://medirouteturkey.com/favicon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://medirouteturkey.com/blog/veneers-prep-tolerances-zirconium-vs-emax"
+    }
+  }
+  </script>
+        
+</head>
+<body>
+<script>
+  window.STATIC_RENDERED = true;
+  window.ARTICLE_LANG = "en";
+  window.STATIC_BLOG_DATA = {"id": 23, "title": "Biomechanical Performance of E-Max vs Zirconium Veneers", "slug": "veneers-prep-tolerances-zirconium-vs-emax", "content": "<p>The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are increasingly looking to travel abroad to receive veneers or crowns at up to 75% savings compared to UK private practices. However, this popularity has introduced a major clinical challenge: many patients choose their restorations based on aesthetic appeal or cost, without considering the physical properties of the materials or the amount of natural tooth structure that must be removed.</p>\n\n    <p>Two main materials dominate the modern cosmetic dentistry market: E-Max (lithium disilicate glass-ceramic) and Zirconium Dioxide (zirconia). Each material behaves differently under force, requires distinct tooth preparation styles, and relies on different bonding methods. Applying the wrong material to a patient's mouth or removing too much enamel can lead to premature restoration failures, chronic tooth sensitivity, and even nerve death. This guide provides a detailed biomechanical comparison of E-Max vs. Zirconium, outlining their flexural strengths, preparation margins, enamel reduction limits, and the role of CAD/CAM milling tolerances.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">1200 MPa</div><div class=\"lbl\">Flexural Strength of Zirconia</div></div>\n      <div class=\"stat-card\"><div class=\"num\">400 MPa</div><div class=\"lbl\">Flexural Strength of E-Max</div></div>\n      <div class=\"stat-card\"><div class=\"num\">0.3 mm</div><div class=\"lbl\">Min. Prep Depth for E-Max Veneers</div></div>\n      <div class=\"stat-card\"><div class=\"num\">25 \u03bcm</div><div class=\"lbl\">Milling Tolerance of Sirona CEREC</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-shield-virus\"></i> Material Comparison: Flexural Strength and Optic Properties</h2>\n    <p>To understand why a dentist recommends a specific material, we must analyze the physical characteristics of the material. The most critical biomechanical measurement is <strong>flexural strength</strong>, which measures a material's ability to resist bending forces before fracturing. This is measured in Megapascals (MPa).</p>\n\n    <h3>1. E-Max (Lithium Disilicate Glass-Ceramic)</h3>\n    <p>E-Max, manufactured by Ivoclar Vivadent, is a high-strength glass-ceramic. It has a flexural strength of approximately <strong>360 to 400 MPa</strong>. While this is lower than zirconia, E-Max has a major advantage: its glass phase allows it to mimic the light transmission of natural human enamel.</p>\n    <p>Because E-Max is highly translucent, light passes through it and reflects off the underlying tooth structure, creating a natural appearance. However, this means that if the underlying tooth is severely discolored (e.g., from tetracycline staining or root canal treatment), that discoloration can show through E-Max. E-Max is the gold standard for anterior (front) teeth where aesthetics are the primary concern.</p>\n\n    <h3>2. Zirconium Dioxide (Zirconia)</h3>\n    <p>Zirconia is a metal-free, crystalline ceramic. It has a flexural strength of <strong>900 to 1,200 MPa</strong>, making it nearly three times stronger than E-Max. It is often referred to as \"ceramic steel\" because it is highly resistant to cracking and wear.</p>\n    <p>Traditionally, zirconia was highly opaque and chalky-white, making it look artificial on front teeth. Modern dental technology has introduced highly translucent, multi-layered zirconia (such as Katana or Prettau), which blends strength with improved aesthetics. However, zirconia remains more opaque than E-Max. It is ideal for posterior (back) teeth, which experience high chewing forces (up to 800 Newtons), and for patients who suffer from bruxism (chronic teeth grinding).</p>\n\n    <blockquote>\n      \"When patients ask for 'Turkey Teeth,' they often think of bright white, opaque crowns. This is usually zirconium. However, for a natural, healthy smile, E-Max is often the superior choice because it bonds chemically to the tooth and requires much less enamel reduction. Zirconia is incredibly strong, but it is a mechanical restoration. If you prep a healthy front tooth for a zirconium crown, you are removing up to 60% of the tooth structure, which is biologically costly.\"\n      <br/><br/>\u2014 <strong>Dr. \u00d6zlem Y\u0131ld\u0131z</strong>, Cosmetic Dentistry Specialist, Istanbul\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-tooth\"></i> Preparation Margins and Enamel Reduction Limits</h2>\n    <p>A key difference between these two materials is the amount of natural tooth structure that must be removed during preparation. Preserving natural enamel is crucial because the bond between ceramic restorations and enamel is much stronger than the bond to dentin (the sensitive layer beneath the enamel).</p>\n\n    <h3>1. The Enamel Bond vs. Dentin Bond</h3>\n    <p>E-Max restorations are bonded to the tooth using a chemical adhesive protocol. The enamel is etched with phosphoric acid to create micro-pores, and the ceramic is etched with hydrofluoric acid and silanated. This creates a strong, chemical bond. For this bond to succeed, the preparation margin should ideally remain entirely within the enamel. Enamel bonding is highly durable, with failure rates under 5% over 10 years.</p>\n    <p>Zirconia cannot be etched with hydrofluoric acid because it is a non-silicate ceramic. Instead, it relies on sandblasting (alumina particle abrasion) and mechanical retention, using resin cements containing MDP monomers (like Kuraray Panavia). Because the bond is more mechanical than chemical, the dentist must prep a larger surface area to ensure the restoration stays in place. If the tooth preparation penetrates deep into the dentin, the bond strength is reduced, and the risk of the restoration falling off increases.</p>\n\n    <h3>2. Chamfer vs. Shoulder Prep Margins</h3>\n    <p>The shape of the edge where the restoration meets the tooth (the margin) is critical for preventing bacterial buildup and ensuring margin stability:</p>\n    <ul>\n      <li><strong>Chamfer Margin (Curved Border):</strong> This is a light, rounded preparation margin. It requires removing only 0.3mm to 0.6mm of tooth structure. It is the ideal prep style for E-Max veneers because it creates a smooth path for the ceramic to sit while preserving the enamel.</li>\n      <li><strong>Shoulder Margin (90-Degree Flat Edge):</strong> This is a flat, right-angle step preparation. It requires removing 1.0mm to 1.5mm of tooth structure. It is typically used for zirconium crowns to ensure the material has adequate thickness at the margins, preventing it from fracturing under chewing forces.</li>\n    </ul>\n\n    <h2><i class=\"fa-solid fa-table\"></i> Material and Preparation Guide: E-Max vs. Zirconium</h2>\n    <p>The table below outlines the differences in physical properties, preparation requirements, and clinical indications for E-Max and Zirconia restorations:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Restoration Parameter</th>\n          <th>E-Max (Lithium Disilicate)</th>\n          <th>Zirconium Dioxide (Zirconia)</th>\n          <th>Clinical Impact / Rationale</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td><strong>Flexural Strength</strong></td>\n          <td>360 - 400 MPa</td>\n          <td>900 - 1,200 MPa</td>\n          <td>Zirconia resists heavy chewing and grinding forces better.</td>\n        </tr>\n      <td><strong>Average Light Translucency</strong></td>\n          <td>High (similar to natural enamel)</td>\n          <td>Moderate to Low (more opaque)</td>\n          <td>E-Max provides a more natural, lifelike aesthetic in the smile zone.</td>\n        </tr>\n        <tr>\n          <td><strong>Ideal Prep Style</strong></td>\n          <td>Chamfer (rounded, light edge)</td>\n          <td>Shoulder (90-degree flat edge)</td>\n          <td>Zirconia requires a thicker edge to prevent chipping.</td>\n        </tr>\n        <tr>\n          <td><strong>Enamel Reduction Depth</strong></td>\n          <td>0.3mm - 0.5mm (Minimal-Prep)</td>\n          <td>1.0mm - 1.5mm (Traditional Crown)</td>\n          <td>E-Max preserves more natural tooth structure.</td>\n        </tr>\n        <tr>\n          <td><strong>Bonding Mechanism</strong></td>\n          <td>Acid-Etch + Silane (Chemical Bond)</td>\n          <td>MDP Resin Cement + Sandblasting (Mechanical Bond)</td>\n          <td>E-Max relies on a stronger chemical bond to enamel.</td>\n        </tr>\n        <tr>\n          <td><strong>Ideal Clinical Use</strong></td>\n          <td>Anterior Veneers, Inlays/Onlays</td>\n          <td>Posterior Crowns, Multi-unit Bridges</td>\n          <td>Matches material strength to functional demand.</td>\n        </tr>\n        <tr>\n          <td><strong>Average Cost per Tooth (Turkey)</strong></td>\n          <td>\u00a3250 - \u00a3350</td>\n          <td>\u00a3180 - \u00a3250</td>\n          <td>E-Max requires more complex laboratory processing and bonding.</td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Warning: The Risk of Over-Preparation:</strong> If a dentist suggests preparing 20 teeth for \"zirconium veneers,\" they are likely performing full-crown preparations. This involves grinding healthy teeth down into small pegs. This process is irreversible and destroys the tooth's natural defense mechanism, often leading to root canal treatments or tooth loss within 10 to 15 years. Always ask: <em>\"Are you preparing my teeth for veneers (partial prep) or full crowns (360-degree prep)?\"</em>\n    </div>\n\n    <h2><i class=\"fa-solid fa-microscope\"></i> CAD/CAM Milling Precision and Tolerances</h2>\n    <p>A key factor in the long-term success of dental restorations is the fit of the margin where the veneer meets the natural tooth. If there is a gap (micro-leakage) between the restoration and the tooth, bacteria will colonize the area, leading to decay under the veneer and gum inflammation.</p>\n\n    <p>To prevent this, leading clinics in Turkey utilize advanced <strong>CAD/CAM (Computer-Aided Design / Computer-Aided Manufacturing)</strong> technology, most notably the <strong>Dentsply Sirona CEREC</strong> system. This system allows for precise digital design and milling:</p>\n    <ul>\n      <li><strong>Digital Scanning (Primescan):</strong> Instead of using uncomfortable silicone impression trays, the patient's mouth is scanned using a high-precision intraoral scanner. This scanner captures three-dimensional color images with accuracy down to 20 microns.</li>\n      <li><strong>Milling Precision:</strong> The CAD software designs the restoration, and the digital file is sent to an on-site milling machine (such as the CEREC MC XL). This unit mills the E-Max or Zirconia block with a milling tolerance of <strong>25 microns</strong>. For comparison, a human hair is about 75 microns wide.</li>\n      <li><strong>Custom Fit:</strong> This level of precision ensures that the restoration fits the prepared margin exactly, minimizing the thickness of the cement layer and preventing micro-leakage.</li>\n    </ul>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Pro-Tip for Checking Technology:</strong> When choosing a clinic in Turkey, ask what CAD/CAM milling system they use on-site. Reputable clinics will gladly show you their Sirona CEREC or Roland milling units, which are indicators of high-quality restoration production.\n    </div>\n\n    <h2><i class=\"fa-solid fa-shield-halved\"></i> Long-Term Maintenance and Longevity</h2>\n    <p>While E-Max has lower flexural strength than Zirconia, both materials have excellent long-term survival rates if selected and bonded correctly. Studies show that E-Max veneers bonded to enamel have a <strong>95% survival rate at 10 years</strong>. Zirconia crowns show similar survival rates, but they are more prone to chipping of the outer porcelain layer if it has been layered over a zirconia core.</p>\n\n    <p>To maximize the lifespan of your restorations, follow these care guidelines:</p>\n    <ul>\n      <li><strong>Wear a Nightguard:</strong> If you grind your teeth at night, you must wear a custom-fitted nightguard (occlusal splint) to protect your restorations from excessive force.</li>\n      <li><strong>Maintain Excellent Hygiene:</strong> Floss daily and brush with a non-abrasive toothpaste. Restorations cannot decay, but the natural tooth structure underneath them can still develop cavities if plaque builds up at the margins.</li>\n      <li><strong>Avoid Biting Hard Objects:</strong> Do not use your teeth to open bottles, tear packaging, or bite into very hard foods like ice or hard candy.</li>\n    </ul>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Restore Your Smile with Vetted Dental Experts</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">Protect your teeth from unnecessary drilling. MediRoute only partners with dental clinics in Turkey that use advanced CAD/CAM technology, prioritize enamel preservation, and recommend the correct material for your bite.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Request a Dental Consultation \u2192</a>\n    </div>", "category": "Dental", "image_url": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80", "author": "Dr. \u00d6zlem Y\u0131ld\u0131z", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Cosmetic Dentistry Specialist", "author_specialty": "Cosmetic Dentistry Specialist", "author_image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80"};
+  
+  // Instant SEO / UX redirect if a mismatched lang parameter is used
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang && urlLang !== "en") {
+      urlParams.delete('lang');
+      const newSearch = urlParams.toString();
+      const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '');
+      window.location.replace(newUrl);
+    }
+  })();
+</script>
+
+<!-- Reading progress bar -->
+<div id="progress-read" class="progress-read" style="width:0%"></div>
+
+<!-- NAVBAR -->
+<nav class="hero-bg shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="/" class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
+        <i class="fa-solid fa-heart-pulse text-navy-800 text-lg"></i>
+      </div>
+      <span class="text-white font-bold text-xl tracking-tight">Medi<span class="text-blue-300">Route</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-blue-200 font-medium">
+      <a href="/" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="cd_back_search">Back to Search</span></a>
+      <a href="/compare" class="hover:text-white transition" data-i18n="nav_compare">Compare Clinics</a>
+      <a href="/blog" class="hover:text-white transition font-bold text-white border-b-2 border-blue-300 pb-0.5" data-i18n="nav_blog">Guides / Blog</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown-wrapper"><button onclick="toggleLangDropdown(event)" class="lang-dropdown-btn"><span id="lang-btn-text">🇬🇧 EN</span><i class="fa-solid fa-chevron-down text-[9px] ml-1"></i></button><div id="lang-dropdown" class="lang-dropdown-menu"></div></div>
+      <div class="settings-dropdown-wrapper"><button onclick="toggleSettings(event)" class="settings-btn"><i class="fa-solid fa-gear"></i></button><div id="settings-dropdown" class="settings-dropdown"><div class="settings-item" onclick="toggleDarkMode()"><span><i class="fa-solid fa-moon dark-mode-icon mr-2"></i><span data-i18n="nav_dark_mode">Dark Mode</span></span><div class="dark-toggle"></div></div></div></div>
+      <a href="/auth" class="hidden sm:block text-blue-200 hover:text-white text-sm font-medium transition" data-i18n="cta_signin">Sign In</a>
+      <a href="/auth" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow transition" data-i18n="cta_free_quote">Get Free Quote</a>
+      <button onclick="openMobileMenu()" class="hamburger-btn md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO (dynamic) -->
+<section class="hero-bg pt-10 pb-14 px-4 relative overflow-hidden" id="hero-section">
+  <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;"></div>
+  <div class="max-w-4xl mx-auto relative fade-up">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-blue-300 text-xs mb-4">
+      <a href="/" class="hover:text-white">Home</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <a href="/blog" class="hover:text-white">Guides</a>
+      <i class="fa-solid fa-chevron-right text-[9px]"></i>
+      <span class="text-blue-200" id="breadcrumb-title">Biomechanical Performance of E-Max vs Zirconium Veneers</span>
+    </div>
+    <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-white/10 border border-white/20 text-blue-200">Dental</span></div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">Biomechanical Performance of E-Max vs Zirconium Veneers</h1>
+    <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
+        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> Dr. Özlem Yıldız</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 8 dk okuma</span>
+      </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+  <!-- Cover image -->
+  <div id="cover-image-wrapper" class="mb-8 rounded-2xl overflow-hidden shadow-lg" style="display:block;">
+    <img id="cover-image" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Biomechanical Performance of E-Max vs Zirconium Veneers" class="w-full" style="max-height:420px;object-fit:cover;">
+  </div>
+
+  <!-- Article body -->
+  <article class="article-body fade-up" id="article-body">
+    <p>The rise of cosmetic medical tourism has made Turkey, particularly cities like Istanbul and Antalya, global hubs for cosmetic dentistry. UK patients are increasingly looking to travel abroad to receive veneers or crowns at up to 75% savings compared to UK private practices. However, this popularity has introduced a major clinical challenge: many patients choose their restorations based on aesthetic appeal or cost, without considering the physical properties of the materials or the amount of natural tooth structure that must be removed.</p>
+
+    <p>Two main materials dominate the modern cosmetic dentistry market: E-Max (lithium disilicate glass-ceramic) and Zirconium Dioxide (zirconia). Each material behaves differently under force, requires distinct tooth preparation styles, and relies on different bonding methods. Applying the wrong material to a patient's mouth or removing too much enamel can lead to premature restoration failures, chronic tooth sensitivity, and even nerve death. This guide provides a detailed biomechanical comparison of E-Max vs. Zirconium, outlining their flexural strengths, preparation margins, enamel reduction limits, and the role of CAD/CAM milling tolerances.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num">1200 MPa</div><div class="lbl">Flexural Strength of Zirconia</div></div>
+      <div class="stat-card"><div class="num">400 MPa</div><div class="lbl">Flexural Strength of E-Max</div></div>
+      <div class="stat-card"><div class="num">0.3 mm</div><div class="lbl">Min. Prep Depth for E-Max Veneers</div></div>
+      <div class="stat-card"><div class="num">25 μm</div><div class="lbl">Milling Tolerance of Sirona CEREC</div></div>
+    </div>
+
+    <h2><i class="fa-solid fa-shield-virus"></i> Material Comparison: Flexural Strength and Optic Properties</h2>
+    <p>To understand why a dentist recommends a specific material, we must analyze the physical characteristics of the material. The most critical biomechanical measurement is <strong>flexural strength</strong>, which measures a material's ability to resist bending forces before fracturing. This is measured in Megapascals (MPa).</p>
+
+    <h3>1. E-Max (Lithium Disilicate Glass-Ceramic)</h3>
+    <p>E-Max, manufactured by Ivoclar Vivadent, is a high-strength glass-ceramic. It has a flexural strength of approximately <strong>360 to 400 MPa</strong>. While this is lower than zirconia, E-Max has a major advantage: its glass phase allows it to mimic the light transmission of natural human enamel.</p>
+    <p>Because E-Max is highly translucent, light passes through it and reflects off the underlying tooth structure, creating a natural appearance. However, this means that if the underlying tooth is severely discolored (e.g., from tetracycline staining or root canal treatment), that discoloration can show through E-Max. E-Max is the gold standard for anterior (front) teeth where aesthetics are the primary concern.</p>
+
+    <h3>2. Zirconium Dioxide (Zirconia)</h3>
+    <p>Zirconia is a metal-free, crystalline ceramic. It has a flexural strength of <strong>900 to 1,200 MPa</strong>, making it nearly three times stronger than E-Max. It is often referred to as "ceramic steel" because it is highly resistant to cracking and wear.</p>
+    <p>Traditionally, zirconia was highly opaque and chalky-white, making it look artificial on front teeth. Modern dental technology has introduced highly translucent, multi-layered zirconia (such as Katana or Prettau), which blends strength with improved aesthetics. However, zirconia remains more opaque than E-Max. It is ideal for posterior (back) teeth, which experience high chewing forces (up to 800 Newtons), and for patients who suffer from bruxism (chronic teeth grinding).</p>
+
+    <blockquote>
+      "When patients ask for 'Turkey Teeth,' they often think of bright white, opaque crowns. This is usually zirconium. However, for a natural, healthy smile, E-Max is often the superior choice because it bonds chemically to the tooth and requires much less enamel reduction. Zirconia is incredibly strong, but it is a mechanical restoration. If you prep a healthy front tooth for a zirconium crown, you are removing up to 60% of the tooth structure, which is biologically costly."
+      <br/><br/>— <strong>Dr. Özlem Yıldız</strong>, Cosmetic Dentistry Specialist, Istanbul
+    </blockquote>
+
+    <h2><i class="fa-solid fa-tooth"></i> Preparation Margins and Enamel Reduction Limits</h2>
+    <p>A key difference between these two materials is the amount of natural tooth structure that must be removed during preparation. Preserving natural enamel is crucial because the bond between ceramic restorations and enamel is much stronger than the bond to dentin (the sensitive layer beneath the enamel).</p>
+
+    <h3>1. The Enamel Bond vs. Dentin Bond</h3>
+    <p>E-Max restorations are bonded to the tooth using a chemical adhesive protocol. The enamel is etched with phosphoric acid to create micro-pores, and the ceramic is etched with hydrofluoric acid and silanated. This creates a strong, chemical bond. For this bond to succeed, the preparation margin should ideally remain entirely within the enamel. Enamel bonding is highly durable, with failure rates under 5% over 10 years.</p>
+    <p>Zirconia cannot be etched with hydrofluoric acid because it is a non-silicate ceramic. Instead, it relies on sandblasting (alumina particle abrasion) and mechanical retention, using resin cements containing MDP monomers (like Kuraray Panavia). Because the bond is more mechanical than chemical, the dentist must prep a larger surface area to ensure the restoration stays in place. If the tooth preparation penetrates deep into the dentin, the bond strength is reduced, and the risk of the restoration falling off increases.</p>
+
+    <h3>2. Chamfer vs. Shoulder Prep Margins</h3>
+    <p>The shape of the edge where the restoration meets the tooth (the margin) is critical for preventing bacterial buildup and ensuring margin stability:</p>
+    <ul>
+      <li><strong>Chamfer Margin (Curved Border):</strong> This is a light, rounded preparation margin. It requires removing only 0.3mm to 0.6mm of tooth structure. It is the ideal prep style for E-Max veneers because it creates a smooth path for the ceramic to sit while preserving the enamel.</li>
+      <li><strong>Shoulder Margin (90-Degree Flat Edge):</strong> This is a flat, right-angle step preparation. It requires removing 1.0mm to 1.5mm of tooth structure. It is typically used for zirconium crowns to ensure the material has adequate thickness at the margins, preventing it from fracturing under chewing forces.</li>
+    </ul>
+
+    <h2><i class="fa-solid fa-table"></i> Material and Preparation Guide: E-Max vs. Zirconium</h2>
+    <p>The table below outlines the differences in physical properties, preparation requirements, and clinical indications for E-Max and Zirconia restorations:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Restoration Parameter</th>
+          <th>E-Max (Lithium Disilicate)</th>
+          <th>Zirconium Dioxide (Zirconia)</th>
+          <th>Clinical Impact / Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Flexural Strength</strong></td>
+          <td>360 - 400 MPa</td>
+          <td>900 - 1,200 MPa</td>
+          <td>Zirconia resists heavy chewing and grinding forces better.</td>
+        </tr>
+      <td><strong>Average Light Translucency</strong></td>
+          <td>High (similar to natural enamel)</td>
+          <td>Moderate to Low (more opaque)</td>
+          <td>E-Max provides a more natural, lifelike aesthetic in the smile zone.</td>
+        </tr>
+        <tr>
+          <td><strong>Ideal Prep Style</strong></td>
+          <td>Chamfer (rounded, light edge)</td>
+          <td>Shoulder (90-degree flat edge)</td>
+          <td>Zirconia requires a thicker edge to prevent chipping.</td>
+        </tr>
+        <tr>
+          <td><strong>Enamel Reduction Depth</strong></td>
+          <td>0.3mm - 0.5mm (Minimal-Prep)</td>
+          <td>1.0mm - 1.5mm (Traditional Crown)</td>
+          <td>E-Max preserves more natural tooth structure.</td>
+        </tr>
+        <tr>
+          <td><strong>Bonding Mechanism</strong></td>
+          <td>Acid-Etch + Silane (Chemical Bond)</td>
+          <td>MDP Resin Cement + Sandblasting (Mechanical Bond)</td>
+          <td>E-Max relies on a stronger chemical bond to enamel.</td>
+        </tr>
+        <tr>
+          <td><strong>Ideal Clinical Use</strong></td>
+          <td>Anterior Veneers, Inlays/Onlays</td>
+          <td>Posterior Crowns, Multi-unit Bridges</td>
+          <td>Matches material strength to functional demand.</td>
+        </tr>
+        <tr>
+          <td><strong>Average Cost per Tooth (Turkey)</strong></td>
+          <td>£250 - £350</td>
+          <td>£180 - £250</td>
+          <td>E-Max requires more complex laboratory processing and bonding.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <strong>⚠️ Warning: The Risk of Over-Preparation:</strong> If a dentist suggests preparing 20 teeth for "zirconium veneers," they are likely performing full-crown preparations. This involves grinding healthy teeth down into small pegs. This process is irreversible and destroys the tooth's natural defense mechanism, often leading to root canal treatments or tooth loss within 10 to 15 years. Always ask: <em>"Are you preparing my teeth for veneers (partial prep) or full crowns (360-degree prep)?"</em>
+    </div>
+
+    <h2><i class="fa-solid fa-microscope"></i> CAD/CAM Milling Precision and Tolerances</h2>
+    <p>A key factor in the long-term success of dental restorations is the fit of the margin where the veneer meets the natural tooth. If there is a gap (micro-leakage) between the restoration and the tooth, bacteria will colonize the area, leading to decay under the veneer and gum inflammation.</p>
+
+    <p>To prevent this, leading clinics in Turkey utilize advanced <strong>CAD/CAM (Computer-Aided Design / Computer-Aided Manufacturing)</strong> technology, most notably the <strong>Dentsply Sirona CEREC</strong> system. This system allows for precise digital design and milling:</p>
+    <ul>
+      <li><strong>Digital Scanning (Primescan):</strong> Instead of using uncomfortable silicone impression trays, the patient's mouth is scanned using a high-precision intraoral scanner. This scanner captures three-dimensional color images with accuracy down to 20 microns.</li>
+      <li><strong>Milling Precision:</strong> The CAD software designs the restoration, and the digital file is sent to an on-site milling machine (such as the CEREC MC XL). This unit mills the E-Max or Zirconia block with a milling tolerance of <strong>25 microns</strong>. For comparison, a human hair is about 75 microns wide.</li>
+      <li><strong>Custom Fit:</strong> This level of precision ensures that the restoration fits the prepared margin exactly, minimizing the thickness of the cement layer and preventing micro-leakage.</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>💡 Pro-Tip for Checking Technology:</strong> When choosing a clinic in Turkey, ask what CAD/CAM milling system they use on-site. Reputable clinics will gladly show you their Sirona CEREC or Roland milling units, which are indicators of high-quality restoration production.
+    </div>
+
+    <h2><i class="fa-solid fa-shield-halved"></i> Long-Term Maintenance and Longevity</h2>
+    <p>While E-Max has lower flexural strength than Zirconia, both materials have excellent long-term survival rates if selected and bonded correctly. Studies show that E-Max veneers bonded to enamel have a <strong>95% survival rate at 10 years</strong>. Zirconia crowns show similar survival rates, but they are more prone to chipping of the outer porcelain layer if it has been layered over a zirconia core.</p>
+
+    <p>To maximize the lifespan of your restorations, follow these care guidelines:</p>
+    <ul>
+      <li><strong>Wear a Nightguard:</strong> If you grind your teeth at night, you must wear a custom-fitted nightguard (occlusal splint) to protect your restorations from excessive force.</li>
+      <li><strong>Maintain Excellent Hygiene:</strong> Floss daily and brush with a non-abrasive toothpaste. Restorations cannot decay, but the natural tooth structure underneath them can still develop cavities if plaque builds up at the margins.</li>
+      <li><strong>Avoid Biting Hard Objects:</strong> Do not use your teeth to open bottles, tear packaging, or bite into very hard foods like ice or hard candy.</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3 class="text-xl font-extrabold mb-2">Restore Your Smile with Vetted Dental Experts</h3>
+      <p class="text-blue-200 text-sm mb-4">Protect your teeth from unnecessary drilling. MediRoute only partners with dental clinics in Turkey that use advanced CAD/CAM technology, prioritize enamel preservation, and recommend the correct material for your bite.</p>
+      <a href="/auth" class="inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition">Request a Dental Consultation →</a>
+    </div>
+  </article>
+
+  <!-- Author Profile Card -->
+  <div id="author-card" class="author-card fade-up" style="display:flex;">
+    <div class="author-avatar" id="author-avatar">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Cosmetic Dentistry Specialist Dr. Özlem Yıldız">
+    </div>
+    <div>
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Cosmetic Dentistry Specialist Dr. Özlem Yıldız</h3>
+        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+      </div>
+      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Cosmetic Dentistry Specialist</p>
+      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+    </div>
+  </div>
+
+  <!-- Share buttons -->
+  <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
+    <span class="text-sm font-bold text-gray-600"><i class="fa-solid fa-share-nodes mr-2 text-navy-700"></i>Bu yazıyı paylaş</span>
+    <div class="flex items-center gap-2">
+      <button onclick="shareTwitter()" class="w-9 h-9 rounded-xl bg-sky-50 hover:bg-sky-100 flex items-center justify-center text-sky-500 transition"><i class="fa-brands fa-x-twitter text-sm"></i></button>
+      <button onclick="shareFacebook()" class="w-9 h-9 rounded-xl bg-blue-50 hover:bg-blue-100 flex items-center justify-center text-blue-600 transition"><i class="fa-brands fa-facebook-f text-sm"></i></button>
+      <button onclick="shareWhatsApp()" class="w-9 h-9 rounded-xl bg-emerald-50 hover:bg-emerald-100 flex items-center justify-center text-emerald-500 transition"><i class="fa-brands fa-whatsapp text-sm"></i></button>
+      <button onclick="copyLink()" class="w-9 h-9 rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-gray-500 transition" title="Linki kopyala"><i class="fa-solid fa-link text-sm"></i></button>
+    </div>
+  </div>
+
+  <!-- Related posts -->
+  <div class="mt-12" id="related-section" style="display:block;">
+    <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
+      
+          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
+            </div>
+          </a>
+        
+          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
+            </div>
+          </a>
+        
+          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
+            </div>
+          </a>
+        
+    </div>
+  </div>
+</div>
+
+<!-- Back to Blog CTA -->
+<div class="text-center mb-12">
+  <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold text-navy-700 hover:text-navy-900 transition">
+    <i class="fa-solid fa-arrow-left"></i> Tüm Yazılara Dön
+  </a>
+</div>
+
+<footer class="hero-bg py-8 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-white"></i><span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span></div>
+    <p class="text-blue-400 text-xs">© 2026 MediRoute Ltd. Registered in England & Wales.</p>
+    <div class="flex gap-4 text-blue-400 text-xs">
+      <a href="/" class="hover:text-white">Search</a>
+      <a href="/compare" class="hover:text-white">Compare</a>
+      <a href="/auth" class="hover:text-white">Sign In</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-client.js"></script>
+<script>
+  // Get slug from URL
+  const params = new URLSearchParams(window.location.search);
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const pathSlug = pathParts.length > 0 && pathParts[0] === 'blog' ? pathParts[1] : null;
+  const slug = pathSlug || params.get('slug');
+
+  function getCatClass(cat) {
+    const c = (cat || '').toLowerCase();
+    if (c === 'guide' || c === 'rehber') return 'bg-blue-900/60 border border-blue-400/30 text-blue-200';
+    if (c === 'tips' || c === 'ipuçları') return 'bg-emerald-900/50 border border-emerald-400/30 text-emerald-200';
+    if (c === 'news' || c === 'haber') return 'bg-amber-900/50 border border-amber-400/30 text-amber-200';
+    return 'bg-white/10 border border-white/20 text-blue-200';
+  }
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
+  async function loadArticle() {
+    if (window.STATIC_RENDERED) return;
+    if (!slug) {
+      window.location.href = 'blog.html';
+      return;
+    }
+
+    try {
+      const blog = await MR.supabase.getBlogBySlug(slug);
+
+      if (!blog) {
+        document.getElementById('article-body').innerHTML = `
+          <div style="text-align:center;padding:3rem;">
+            <i class="fa-solid fa-ghost" style="font-size:3rem;color:#CBD5E1;margin-bottom:1rem;display:block;"></i>
+            <h2 style="color:#0A1F6B;margin-bottom:.5rem;">Yazı bulunamadı</h2>
+            <p style="color:#6B7280;">Bu slug ile eşleşen bir blog yazısı yok.</p>
+            <a href="/blog" style="color:#0F2D96;font-weight:700;display:inline-block;margin-top:1rem;">← Tüm yazılara dön</a>
+          </div>
+        `;
+        return;
+      }
+
+      // Set page title
+      document.title = blog.title + ' | MediRoute';
+      document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
+
+      // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const blogSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "description": stripHtml(blog.content).substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "datePublished": blog.created_at,
+        "dateModified": blog.updated_at || blog.created_at,
+        "author": {
+          "@type": "Person",
+          "name": blog.author || "MediRoute Team",
+          "jobTitle": blog.author_specialty || "Medical Writer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MediRoute",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://medirouteturkey.com/favicon.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": window.location.href
+        }
+      };
+      
+      let existingSchema = document.getElementById('blog-schema-ld');
+      if (existingSchema) existingSchema.remove();
+      
+      const schemaScript = document.createElement('script');
+      schemaScript.id = 'blog-schema-ld';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = JSON.stringify(blogSchema);
+      document.head.appendChild(schemaScript);
+
+      // Update dynamic Open Graph and Twitter Card tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = blog.title;
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.content = stripHtml(blog.content).substring(0, 155);
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg && blog.image_url) ogImg.content = blog.image_url;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = window.location.href;
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.content = blog.title;
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.content = stripHtml(blog.content).substring(0, 155);
+      const twitterImg = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImg && blog.image_url) twitterImg.content = blog.image_url;
+
+      // Hero
+      document.getElementById('breadcrumb-title').textContent = blog.title;
+      document.getElementById('hero-title').innerHTML = blog.title;
+      document.getElementById('hero-tags').innerHTML = `
+        <span class="tag-pill ${getCatClass(blog.category)}">${blog.category}</span>
+      `;
+
+      const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+      const wordCount = stripHtml(blog.content).split(/\s+/).length;
+      const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      document.getElementById('hero-meta').innerHTML = `
+        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
+        <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
+      `;
+
+      // Cover image
+      if (blog.image_url) {
+        document.getElementById('cover-image').src = blog.image_url;
+        document.getElementById('cover-image').alt = blog.title;
+        document.getElementById('cover-image-wrapper').style.display = 'block';
+      }
+
+      // Article content
+      document.getElementById('article-body').innerHTML = blog.content;
+
+      // Author card
+      const authorName = blog.author || blog.author_title;
+      if (authorName) {
+        const card = document.getElementById('author-card');
+        card.style.display = 'flex';
+        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
+        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        document.getElementById('author-title-text').textContent = blog.author_specialty || '';
+        document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
+        if (blog.author_image) {
+          document.getElementById('author-avatar').innerHTML = `<img loading="lazy" src="${blog.author_image}" alt="${fullName}">`;
+        }
+      }
+
+      // Load related posts
+      loadRelated(blog.id);
+
+    } catch (err) {
+      console.error('Blog yükleme hatası:', err);
+      document.getElementById('article-body').innerHTML = '<p style="color:#DC2626;text-align:center;padding:2rem;">Yazı yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p>';
+    }
+  }
+
+  async function loadRelated(currentId) {
+    if (window.STATIC_RENDERED) return;
+    try {
+      const all = await MR.supabase.getBlogs();
+      const related = all.filter(b => b.id !== currentId && b.status === 'published').slice(0, 3);
+      if (related.length === 0) return;
+
+      document.getElementById('related-section').style.display = 'block';
+      document.getElementById('related-grid').innerHTML = related.map(b => {
+        const date = new Date(b.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
+        const excerpt = stripHtml(b.content).substring(0, 80) + '…';
+        return `
+          <a href="/blog/${b.slug}" class="related-card">
+            <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              ${b.image_url ? `<img loading="lazy" src="${b.image_url}" alt="${b.title}" style="width:100%;height:100%;object-fit:cover;">` : '<i class="fa-solid fa-image text-3xl text-blue-200"></i>'}
+            </div>
+            <div style="padding:1rem;">
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">${b.category}</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">${b.title}</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">${excerpt}</p>
+              <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">${date}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+    } catch (e) {
+      console.error('Related posts error:', e);
+    }
+  }
+
+  // Share functions
+  function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(location.href) + '&text=' + encodeURIComponent(document.title), '_blank');
+  }
+  function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank');
+  }
+  function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + location.href), '_blank');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(location.href);
+    const btn = event.currentTarget;
+    btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
+    setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+    document.getElementById('progress-read').style.width = pct + '%';
+  });
+
+  // Init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(loadArticle, 300));
+  } else {
+    setTimeout(loadArticle, 300);
+  }
+</script>
+<script src="/i18n.js"></script>
+<script src="/seo.js"></script>
+<script src="/performance.js"></script>
+<script src="/shared.js"></script>
+</body>
+</html>

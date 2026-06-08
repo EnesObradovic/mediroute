@@ -111,7 +111,12 @@ def run():
         "hidden-costs-medical-tourism-turkey-real-budget",
         "gastric-sleeve-turkey-vs-nhs-waiting-list-guide",
         "lasik-eye-surgery-istanbul-vs-london-complete-guide",
-        "lifetime-guarantee-turkish-clinics-what-it-actually-means"
+        "lifetime-guarantee-turkish-clinics-what-it-actually-means",
+        "liposuction-turkey-vs-uk-clinical-facility-standards",
+        "how-to-verify-turkish-plastic-surgeon-credentials",
+        "gastric-sleeve-leak-test-protocols-turkey",
+        "veneers-prep-tolerances-zirconium-vs-emax",
+        "hbot-prp-graft-survival-hair-transplant-turkey"
     ]
     
     success_count = 0
