@@ -130,7 +130,9 @@ html.dark .article-body ul li {
   z-index: 999;
   transition: right .35s cubic-bezier(.22,.68,0,1.1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 1.5rem;
+  padding-bottom: 60px;
   box-shadow: -8px 0 30px rgba(0,0,0,0.3);
 }
 

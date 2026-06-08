@@ -5,13 +5,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Sign In or Register | MediRoute</title>
-  <!-- hreflang SEO tags -->
-  <link rel="alternate" hreflang="en" href="/auth?lang=en"/>
-  <link rel="alternate" hreflang="tr" href="/auth?lang=tr"/>
-  <link rel="alternate" hreflang="ar" href="/auth?lang=ar"/>
-  <link rel="alternate" hreflang="de" href="/auth?lang=de"/>
-  <link rel="alternate" hreflang="fr" href="/auth?lang=fr"/>
-  <link rel="alternate" hreflang="x-default" href="/auth?lang=en"/>
+  <!-- hreflang managed dynamically by shared.js -->
   <meta name="description" content="Join MediRoute to compare verified clinics, track your quotes and manage your medical travel journey."/>
   <!-- Performance: preconnect to CDN origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -108,12 +102,12 @@
   <div class="w-full max-w-md">
 
     <!-- Mobile logo -->
-    <div class="flex lg:hidden items-center justify-center gap-2 mb-8">
+    <a href="/" class="flex lg:hidden items-center justify-center gap-2 mb-8">
       <div class="w-9 h-9 bg-navy-800 rounded-xl flex items-center justify-center shadow">
         <i class="fa-solid fa-heart-pulse text-white text-base"></i>
       </div>
       <span class="text-navy-900 font-bold text-xl">Medi<span class="text-blue-500">Route</span></span>
-    </div>
+    </a>
 
     <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
 
@@ -212,11 +206,11 @@
               </button>
             </div>
             <div class="strength-bar mt-1.5"><div id="strength-fill" class="strength-fill" style="width:0%"></div></div>
-            <p id="strength-label" class="text-[11px] text-gray-300 mt-1">Enter a password</p>
+            <p id="strength-label" class="text-[11px] text-gray-300 mt-1" data-i18n="auth_enter_pw">Enter a password</p>
           </div>
           <div class="flex items-start gap-2 mt-1">
             <input type="checkbox" id="terms" class="mt-0.5 accent-navy-800" required/>
-            <label for="terms" class="text-xs text-gray-400 leading-relaxed">I agree to MediRoute's <a href="#" class="text-navy-700 font-semibold hover:underline">Terms of Service</a> and <a href="#" class="text-navy-700 font-semibold hover:underline">Privacy Policy</a></label>
+            <label for="terms" class="text-xs text-gray-400 leading-relaxed" data-i18n="auth_terms_label">I agree to MediRoute's <a href="#" class="text-navy-700 font-semibold hover:underline">Terms of Service</a> and <a href="#" class="text-navy-700 font-semibold hover:underline">Privacy Policy</a></label>
           </div>
           <button type="submit" id="su-btn" class="btn-primary flex items-center justify-center gap-2">
             <i class="fa-solid fa-user-plus"></i> <span data-i18n="auth_create_btn">Create Free Account</span>
@@ -242,14 +236,7 @@
 
     </div>
 
-    <!-- Footer -->
-    <div class="flex items-center justify-center gap-4 mt-5 text-xs text-gray-400">
-      <a href="#" class="hover:text-navy-700 transition" data-i18n="footer_privacy">Privacy Policy</a>
-      <span>·</span>
-      <a href="#" class="hover:text-navy-700 transition" data-i18n="auth_terms">Terms of Service</a>
-      <span>·</span>
-      <a href="/" class="hover:text-navy-700 transition" data-i18n="auth_back">Back to Search</a>
-    </div>
+    <div id="footer-container"></div>
   </div>
 </div>
 
@@ -270,12 +257,34 @@
     else{inp.type='password';eye.className='fa-solid fa-eye text-sm';}
   }
 
+  // ── Auth i18n helper ──
+  function authT(key) {
+    const lang = localStorage.getItem('mediroute-lang') || 'en';
+    const t = {
+      logging_in:     { en:'Signing in…',            tr:'Giriş yapılıyor…',      ar:'جارٍ تسجيل الدخول…',   de:'Anmeldung…',            fr:'Connexion…' },
+      signin:         { en:'Sign In',                tr:'Giriş Yap',             ar:'تسجيل الدخول',         de:'Anmelden',              fr:'Se Connecter' },
+      creating:       { en:'Creating account…',      tr:'Hesap oluşturuluyor…',   ar:'جارٍ إنشاء الحساب…',   de:'Konto wird erstellt…',  fr:'Création du compte…' },
+      create_account: { en:'Create Account',         tr:'Hesap Oluştur',          ar:'إنشاء حساب',           de:'Konto erstellen',       fr:'Créer un Compte' },
+      wrong_creds:    { en:'Email or password is incorrect.', tr:'E-posta veya şifre yanlış.', ar:'البريد أو كلمة المرور غير صحيحة.', de:'E-Mail oder Passwort ist falsch.', fr:'E-mail ou mot de passe incorrect.' },
+      login_error:    { en:'Login error: ',           tr:'Giriş hatası: ',         ar:'خطأ في الدخول: ',      de:'Anmeldefehler: ',       fr:'Erreur de connexion : ' },
+      already_reg:    { en:'This email is already registered.', tr:'Bu e-posta zaten kayıtlı.', ar:'هذا البريد مسجل بالفعل.', de:'Diese E-Mail ist bereits registriert.', fr:'Cet e-mail est déjà enregistré.' },
+      reg_error:      { en:'Registration error: ',    tr:'Kayıt hatası: ',          ar:'خطأ في التسجيل: ',     de:'Registrierungsfehler: ', fr:'Erreur d\'inscription : ' },
+      google_error:   { en:'Google login error: ',    tr:'Google giriş hatası: ',   ar:'خطأ في دخول جوجل: ',   de:'Google-Anmeldefehler: ', fr:'Erreur Google : ' },
+      pw_short:       { en:'Too short',              tr:'Çok kısa',               ar:'قصيرة جداً',           de:'Zu kurz',               fr:'Trop court' },
+      pw_weak:        { en:'Weak',                   tr:'Zayıf',                  ar:'ضعيفة',                de:'Schwach',               fr:'Faible' },
+      pw_fair:        { en:'Fair',                   tr:'Orta',                   ar:'متوسطة',               de:'Mäßig',                 fr:'Moyen' },
+      pw_good:        { en:'Good',                   tr:'İyi',                    ar:'جيدة',                 de:'Gut',                   fr:'Bon' },
+      pw_strong:      { en:'Strong 💪',              tr:'Güçlü 💪',               ar:'قوية 💪',              de:'Stark 💪',              fr:'Fort 💪' },
+    };
+    return (t[key] && t[key][lang]) || (t[key] && t[key].en) || key;
+  }
+
   const strengthLevels = [
-    {label:'Too short',color:'#EF4444',w:'15%'},
-    {label:'Weak',color:'#F97316',w:'35%'},
-    {label:'Fair',color:'#EAB308',w:'60%'},
-    {label:'Good',color:'#22C55E',w:'80%'},
-    {label:'Strong 💪',color:'#10B981',w:'100%'},
+    {key:'pw_short',color:'#EF4444',w:'15%'},
+    {key:'pw_weak',color:'#F97316',w:'35%'},
+    {key:'pw_fair',color:'#EAB308',w:'60%'},
+    {key:'pw_good',color:'#22C55E',w:'80%'},
+    {key:'pw_strong',color:'#10B981',w:'100%'},
   ];
   function checkStrength(val) {
     let score=0;
@@ -286,7 +295,7 @@
     const lvl=strengthLevels[Math.min(score,4)];
     document.getElementById('strength-fill').style.width=lvl.w;
     document.getElementById('strength-fill').style.background=lvl.color;
-    document.getElementById('strength-label').textContent=lvl.label;
+    document.getElementById('strength-label').textContent=authT(lvl.key);
     document.getElementById('strength-label').style.color=lvl.color;
   }
 
@@ -307,7 +316,7 @@
     try {
       await MR.supabase.signInWithGoogle();
     } catch (err) {
-      alert('Google giriş hatası: ' + err.message);
+      alert(authT('google_error') + err.message);
     }
   }
 
@@ -332,16 +341,15 @@
         const email = document.getElementById('si-email').value;
         const pw = document.getElementById('si-pw').value;
         const btn = document.getElementById('si-btn');
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Giriş yapılıyor…';
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + authT('logging_in');
         btn.disabled = true;
 
         try {
           await MR.supabase.signIn(email, pw);
           showSuccess(email);
         } catch (err) {
-          btn.innerHTML = 'Giriş Yap';
+          btn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> ' + authT('signin');
           btn.disabled = false;
-          // Show error below the form
           let errDiv = document.getElementById('si-error');
           if (!errDiv) {
             errDiv = document.createElement('div');
@@ -350,8 +358,8 @@
             document.getElementById('signin-form').appendChild(errDiv);
           }
           errDiv.textContent = err.message === 'Invalid login credentials'
-            ? 'E-posta veya şifre yanlış.'
-            : 'Giriş hatası: ' + err.message;
+            ? authT('wrong_creds')
+            : authT('login_error') + err.message;
         }
       }
     );
@@ -372,14 +380,14 @@
         const email = document.getElementById('su-email').value;
         const pw = document.getElementById('su-pw').value;
         const btn = document.getElementById('su-btn');
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Hesap oluşturuluyor…';
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + authT('creating');
         btn.disabled = true;
 
         try {
           await MR.supabase.signUp(email, pw, firstName, lastName);
           showSuccess(email);
         } catch (err) {
-          btn.innerHTML = 'Hesap Oluştur';
+          btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> ' + authT('create_account');
           btn.disabled = false;
           let errDiv = document.getElementById('su-error');
           if (!errDiv) {
@@ -389,8 +397,8 @@
             document.getElementById('signup-form').appendChild(errDiv);
           }
           errDiv.textContent = err.message.includes('already registered')
-            ? 'Bu e-posta zaten kayıtlı.'
-            : 'Kayıt hatası: ' + err.message;
+            ? authT('already_reg')
+            : authT('reg_error') + err.message;
         }
       }
     );

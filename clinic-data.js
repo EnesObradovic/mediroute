@@ -168,7 +168,7 @@ function renderClinicCard(clinic, index) {
   const isFeatured = clinic.featured;
 
   return `
-    <article class="clinic-card bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden" data-clinic-id="${clinic.id}" data-treatments="${clinic.treatments.toLowerCase()}" data-city="${clinic.city.toLowerCase()}" data-rating="${clinic.rating}" data-price-min="${clinic.priceMin}" data-price-max="${clinic.priceMax}" data-jci="${clinic.jci}">
+    <article class="clinic-card bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden" data-clinic-id="${clinic.id}" data-treatments="${clinic.treatments.toLowerCase()}" data-city="${clinic.city.toLowerCase()}" data-rating="${clinic.rating}" data-price-min="${clinic.priceMin}" data-price-max="${clinic.priceMax}" data-jci="${clinic.jci}" onclick="window.location.href='/clinic-detail?id=${clinic.id}'" style="cursor:pointer;">
       <div class="flex flex-col md:flex-row">
         <div class="relative md:w-64 flex-shrink-0">
           <div class="h-52 md:h-full bg-gradient-to-br ${theme.from} ${theme.to} flex items-center justify-center relative">

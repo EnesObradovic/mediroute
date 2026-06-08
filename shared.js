@@ -72,6 +72,68 @@
     document.body.appendChild(menu);
   }
 
+  // ── Inject Footer into DOM ──
+  function injectFooter() {
+    // Skip pages that use sidebar layouts
+    var skip = ['admin.html', 'patient-dashboard.html'];
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    if (skip.indexOf(page) >= 0) return;
+
+    var container = document.getElementById('footer-container');
+    if (!container) return;
+
+    container.innerHTML = `
+<footer class="hero-bg mt-16 py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fa-solid fa-heart-pulse text-white"></i>
+          <span class="text-white font-bold">Medi<span class="text-blue-300">Route</span></span>
+        </div>
+        <p class="text-blue-300 text-sm leading-relaxed" data-i18n="footer_desc">Your trusted partner for safe and affordable medical travel from the UK.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_treatments">Treatments</h4>
+        <ul class="space-y-2 text-blue-300 text-sm">
+          <li><a href="/treatment/hair-transplant" class="hover:text-white transition" data-i18n="treat_hair">Hair Transplant</a></li>
+          <li><a href="/treatment/dental" class="hover:text-white transition" data-i18n="treat_dental">Dental</a></li>
+          <li><a href="/treatment/aesthetics" class="hover:text-white transition" data-i18n="treat_aesthetics">Aesthetics</a></li>
+          <li><a href="/treatment/bariatric" class="hover:text-white transition" data-i18n="treat_bariatric">Bariatric</a></li>
+          <li><a href="/treatment/eye-surgery" class="hover:text-white transition" data-i18n="treat_eye">Eye Laser</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_pages">Pages</h4>
+        <ul class="space-y-2 text-blue-300 text-sm">
+          <li><a href="/about" class="hover:text-white transition" data-i18n="nav_about">About Us</a></li>
+          <li><a href="/blog" class="hover:text-white transition" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="/faq" class="hover:text-white transition" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="/contact" class="hover:text-white transition" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-3" data-i18n="footer_support">Support</h4>
+        <ul class="space-y-2 text-blue-300 text-sm">
+          <li><a href="/blog" class="hover:text-white transition" data-i18n="footer_patient_guide">Patient Guide</a></li>
+          <li><a href="/blog" class="hover:text-white transition" data-i18n="footer_safety">Safety Standards</a></li>
+          <li><a href="/contact" class="hover:text-white transition" data-i18n="contact_phone_title">UK Helpline</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-blue-400 text-xs" data-i18n="footer_copy">© 2026 MediRoute Ltd. All rights reserved.</p>
+      <div class="flex items-center gap-4 text-blue-400 text-xs">
+        <a href="#" class="hover:text-white transition" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#" class="hover:text-white transition" data-i18n="footer_cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+  }
+
   // ── Mobile Menu Open/Close ──
   window.openMobileMenu = function() {
     document.getElementById('mobile-menu').classList.add('open');
@@ -162,11 +224,34 @@
     // If ARTICLE_LANG is globally defined (on pre-rendered static blog posts), lock page to it!
     if (window.ARTICLE_LANG) return window.ARTICLE_LANG;
 
-    // Check URL param first, then localStorage, default to 'en'
+    // 1. Check URL param (one-time import, then clean URL)
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
-    if (urlLang && LANGUAGES.find(l => l.code === urlLang)) return urlLang;
-    return localStorage.getItem('mediroute-lang') || 'en';
+    if (urlLang && LANGUAGES.find(l => l.code === urlLang)) {
+      localStorage.setItem('mediroute-lang', urlLang);
+      // Clean the ?lang= param from URL for SEO (no duplicate content)
+      const cleanUrl = new URL(window.location);
+      cleanUrl.searchParams.delete('lang');
+      window.history.replaceState({}, '', cleanUrl);
+      return urlLang;
+    }
+
+    // 2. Check localStorage
+    const saved = localStorage.getItem('mediroute-lang');
+    if (saved && LANGUAGES.find(l => l.code === saved)) return saved;
+
+    // 3. Browser language detection
+    const browserLangs = navigator.languages || [navigator.language || 'en'];
+    for (const bl of browserLangs) {
+      const code = bl.split('-')[0].toLowerCase();
+      if (LANGUAGES.find(l => l.code === code)) {
+        localStorage.setItem('mediroute-lang', code);
+        return code;
+      }
+    }
+
+    // 4. Default to English
+    return 'en';
   }
 
   function buildLangDropdown() {
@@ -204,16 +289,18 @@
   window.switchLanguage = async function(lang) {
     if (window.ARTICLE_LANG && lang !== window.ARTICLE_LANG) {
       localStorage.setItem('mediroute-lang', lang);
-      window.location.href = '/blog?lang=' + lang;
+      window.location.href = '/blog';
       return;
     }
 
     localStorage.setItem('mediroute-lang', lang);
     
-    // Update URL param without reload for SPA feel
+    // Keep URL clean (no ?lang= param) for SEO
     const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', url);
+    if (url.searchParams.has('lang')) {
+      url.searchParams.delete('lang');
+      window.history.replaceState({}, '', url);
+    }
 
     // Apply translations to data-i18n elements
     applyTranslations(lang);
@@ -323,7 +410,7 @@
       const link = document.createElement('link');
       link.rel = 'alternate';
       link.hreflang = l.code;
-      link.href = baseUrl + '?lang=' + l.code;
+      link.href = baseUrl;
       document.head.appendChild(link);
     });
 
@@ -331,7 +418,7 @@
     const xdef = document.createElement('link');
     xdef.rel = 'alternate';
     xdef.hreflang = 'x-default';
-    xdef.href = baseUrl + '?lang=en';
+    xdef.href = baseUrl;
     document.head.appendChild(xdef);
   }
 
@@ -418,6 +505,7 @@
   function init() {
     initDarkMode();
     injectMobileMenu();
+    injectFooter();
     buildLangDropdown();
     highlightActiveNav();
     autoLoadQuoteModal();

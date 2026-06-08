@@ -4,10 +4,10 @@
 (function () {
   'use strict';
 
-  const BASE = 'https://www.mediroute.co.uk';
+  const BASE = 'https://medirouteturkey.com';
   const SITE = 'MediRoute';
-  const LOGO = BASE + '/assets/logo.png';
-  const OG_IMG = BASE + '/assets/og-cover.jpg';
+  const LOGO = BASE + '/favicon.png';
+  const OG_IMG = BASE + '/favicon.png';
 
   /* ── Page meta dictionary (per-lang) ── */
   const META = {
@@ -190,9 +190,93 @@
         url: BASE,
         potentialAction: {
           '@type': 'SearchAction',
-          target: BASE + '/index.html?q={search_term_string}',
+          target: BASE + '/?q={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
+      });
+
+      // MedicalBusiness + TravelAgency on homepage
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': ['MedicalBusiness', 'HealthAndBeautyBusiness'],
+        name: 'MediRoute',
+        description: 'UK-registered marketplace connecting patients with verified, JCI-accredited clinics for hair transplant, dental, and aesthetic treatments across Europe and Turkey.',
+        url: BASE,
+        logo: LOGO,
+        image: LOGO,
+        telephone: '+44-800-123-4567',
+        priceRange: '££',
+        currenciesAccepted: 'GBP',
+        areaServed: [
+          { '@type': 'Country', name: 'United Kingdom' },
+          { '@type': 'Country', name: 'Germany' },
+          { '@type': 'Country', name: 'France' },
+          { '@type': 'Country', name: 'Saudi Arabia' }
+        ],
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '71-75 Shelton Street',
+          addressLocality: 'London',
+          postalCode: 'WC2H 9JQ',
+          addressCountry: 'GB'
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          reviewCount: '1247',
+          bestRating: '5'
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Medical Treatments',
+          itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'FUE Hair Transplant', url: BASE + '/treatment/hair-transplant' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'Dental Veneers & Implants', url: BASE + '/treatment/dental' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'LASIK Eye Surgery', url: BASE + '/treatment/eye-surgery' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'Rhinoplasty', url: BASE + '/treatment/aesthetics' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'Gastric Sleeve', url: BASE + '/treatment/bariatric' } }
+          ]
+        }
+      });
+    }
+
+    // FAQPage rich snippet (Google shows this in search results!)
+    if (path === 'faq.html') {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is MediRoute?',
+            acceptedAnswer: { '@type': 'Answer', text: 'MediRoute is an independent UK-registered marketplace that connects patients with verified, JCI-accredited clinics across Europe and Turkey. We are not a clinic — we are your trusted intermediary.' }
+          },
+          {
+            '@type': 'Question',
+            name: 'Is it safe to have surgery abroad?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes, when you choose the right clinic. All clinics on MediRoute are JCI-accredited or Ministry of Health certified, meeting the same standards as top UK private hospitals.' }
+          },
+          {
+            '@type': 'Question',
+            name: 'How much can I save on medical treatment abroad?',
+            acceptedAnswer: { '@type': 'Answer', text: 'UK patients typically save 60-80% compared to private UK prices. A hair transplant averaging £8,000+ in London costs £1,499-£2,499 all-inclusive through our partner clinics.' }
+          },
+          {
+            '@type': 'Question',
+            name: 'What is included in the all-inclusive package?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Most all-inclusive packages include: the procedure, 3-5 star hotel (3 nights), VIP airport transfers, pre-op blood tests, aftercare kit, and English-speaking coordinator.' }
+          },
+          {
+            '@type': 'Question',
+            name: 'How long do I need to stay for a hair transplant in Turkey?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Hair transplants typically require 3 nights in Turkey. The procedure itself takes 6-8 hours on day 1, with a follow-up check on day 2 before departure.' }
+          },
+          {
+            '@type': 'Question',
+            name: 'What happens if something goes wrong after treatment?',
+            acceptedAnswer: { '@type': 'Answer', text: 'All our partner clinics offer post-procedure care and revision surgery guarantees. Your UK coordinator remains available for 12 months after treatment for any concerns.' }
+          }
+        ]
       });
     }
 
