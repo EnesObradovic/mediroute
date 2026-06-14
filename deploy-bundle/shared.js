@@ -406,15 +406,16 @@
       return;
     }
 
+    // For non-article pages, add ?lang= parameter to match sitemap.xml
     LANGUAGES.forEach(function(l) {
       const link = document.createElement('link');
       link.rel = 'alternate';
       link.hreflang = l.code;
-      link.href = baseUrl;
+      link.href = baseUrl + '?lang=' + l.code;
       document.head.appendChild(link);
     });
 
-    // x-default
+    // x-default points to base URL without lang parameter
     const xdef = document.createElement('link');
     xdef.rel = 'alternate';
     xdef.hreflang = 'x-default';
@@ -494,10 +495,10 @@
     var page = window.location.pathname.split('/').pop() || 'index.html';
     if (skip.indexOf(page) >= 0) return;
     // Check if already loaded
-    if (document.querySelector('script[src="quote-modal.js"]')) return;
+    if (document.querySelector('script[src="/quote-modal.js"]') || document.querySelector('script[src="quote-modal.js"]')) return;
     if (typeof openQuoteModal !== 'undefined') return;
     var s = document.createElement('script');
-    s.src = 'quote-modal.js';
+    s.src = '/quote-modal.js';
     document.body.appendChild(s);
   }
 

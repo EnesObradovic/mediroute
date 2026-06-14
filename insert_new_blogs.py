@@ -106,7 +106,7 @@ def run():
         "fue-hair-transplant-shock-loss-week-by-week-timeline",
         "istanbul-aesthetic-surgery-districts-insider-guide",
         "flying-home-after-surgery-turkey-medical-protocol",
-        "turkey-bbl-safety-regulations-2025-what-changed",
+        "turkey-bbl-safety-regulations-2026-what-changed",
         "dental-veneers-turkey-5-year-longevity-data",
         "hidden-costs-medical-tourism-turkey-real-budget",
         "gastric-sleeve-turkey-vs-nhs-waiting-list-guide",

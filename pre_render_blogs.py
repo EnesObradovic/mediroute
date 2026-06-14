@@ -6,6 +6,7 @@ and generates highly optimized static HTML pages under blog/ and deploy-bundle/b
 """
 import os
 import urllib.request
+import urllib.parse
 import json
 import re
 from datetime import datetime
@@ -261,9 +262,14 @@ def render_all_blogs():
         html = html.replace(hero_title_placeholder, hero_title_content)
         
         # 7. Fill Hero Meta (Author, Date, Read Time)
+        quoted_author = urllib.parse.quote(author.strip())
+        author_link = f"/blog?author={quoted_author}"
         hero_meta_placeholder = '<div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta"></div>'
         hero_meta_content = f"""<div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> {author}</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="{author_link}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">{author}</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> {formatted_date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> {read_time} dk okuma</span>
       </div>"""
@@ -302,39 +308,45 @@ def render_all_blogs():
         
         # 10. Author Card
         author_placeholder = """  <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:none;">
-    <div class="author-avatar" id="author-avatar">
-      <i class="fa-solid fa-user-doctor"></i>
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name"></h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="#" id="author-card-link" class="author-card-link" style="display:none;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        <i class="fa-solid fa-user-doctor"></i>
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text"></p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty"></p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name"></h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text"></p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty"></p>
+      </div>
     </div>
-  </div>"""
+  </a>"""
         
         # Build author content
-        full_author_name = f"{author_title} {author}".strip()
+        full_author_name = author.strip()
         avatar_content = f'<img loading="lazy" src="{author_image}" alt="{full_author_name}">' if author_image else '<i class="fa-solid fa-user-doctor"></i>'
         specialty_sub = "Medikal İçerik Danışmanı" if author_specialty else ""
+        quoted_author = urllib.parse.quote(author.strip())
+        author_link = f"/blog?author={quoted_author}"
         
         author_content = f"""  <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:flex;">
-    <div class="author-avatar" id="author-avatar">
-      {avatar_content}
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">{full_author_name}</h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="{author_link}" id="author-card-link" class="author-card-link" style="display:block;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        {avatar_content}
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text">{author_specialty}</p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">{specialty_sub}</p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name">{full_author_name}</h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text">{author_specialty}</p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">{specialty_sub}</p>
+      </div>
     </div>
-  </div>"""
+  </a>"""
         html = html.replace(author_placeholder, author_content)
         
         # 11. Related Section

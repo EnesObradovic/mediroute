@@ -42,16 +42,41 @@
     .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
     .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
 
+    /* TOC (Table of Contents) */
+    .toc-widget{background:#fff;border-radius:16px;border:1px solid #E1E8FF;padding:1.2rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(10,31,107,.04);}
+    .toc-widget summary{font-size:.85rem;font-weight:800;color:#0A1F6B;cursor:pointer;display:flex;align-items:center;gap:.5rem;}
+    .toc-widget summary::-webkit-details-marker{display:none;}
+    .toc-widget summary::before{content:'\f0ca';font-family:'Font Awesome 6 Free';font-weight:900;color:#3B5FDD;}
+    .toc-widget summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.6rem;color:#94A3B8;margin-left:auto;transition:transform .2s;}
+    .toc-widget[open] summary::after{transform:rotate(180deg);}
+    .toc-list{list-style:none;padding:0;margin:.8rem 0 0;}
+    .toc-list li{margin-bottom:.4rem;}
+    .toc-list a{font-size:.82rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:8px;transition:all .15s;}
+    .toc-list a::before{content:'';width:6px;height:6px;border-radius:50%;background:#CBD5E1;flex-shrink:0;transition:background .15s;}
+    .toc-list a:hover{background:#EFF6FF;color:#0F2D96;}
+    .toc-list a:hover::before{background:#3B5FDD;}
+    .toc-list a.active{background:#EFF6FF;color:#0F2D96;font-weight:600;}
+    .toc-list a.active::before{background:#3B5FDD;}
+
     /* Related card */
     .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
     .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
 
     /* Author card */
+    .author-card-link{
+      display:block;text-decoration:none;color:inherit;margin-top:2rem;
+    }
     .author-card{
       background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
       border:1px solid #E1E8FF;border-radius:20px;
-      padding:1.5rem 2rem;margin-top:2rem;
+      padding:1.5rem 2rem;
       display:flex;align-items:center;gap:1.2rem;
+      transition:all .22s ease;
+    }
+    .author-card-link:hover .author-card{
+      transform:translateY(-2px);
+      box-shadow:0 8px 30px rgba(10,31,107,.08);
+      border-color:#C3D1FF;
     }
     .author-avatar{
       width:72px;height:72px;border-radius:50%;
@@ -77,6 +102,8 @@
       .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
     }
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <link rel="canonical" href="https://medirouteturkey.com/blog/lasik-eye-surgery-istanbul-vs-london-complete-guide"/>
   <link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/lasik-eye-surgery-istanbul-vs-london-complete-guide"/>
@@ -125,7 +152,7 @@
 <script>
   window.STATIC_RENDERED = true;
   window.ARTICLE_LANG = "en";
-  window.STATIC_BLOG_DATA = {"id": 18, "title": "LASIK Eye Surgery in Istanbul vs London: 2026 Guide", "slug": "lasik-eye-surgery-istanbul-vs-london-complete-guide", "content": "<p>Laser eye surgery can make freedom from glasses or contact lenses inaccessible for many. London clinics often charge \u00a32,200 to \u00a33,500 per eye for advanced treatments. In comparison, specialized eye clinics in Istanbul offer similar procedures for \u00a3600 to \u00a3900 per eye, including the technology and surgeon expertise.</p>\n\n    <p>While the cost difference is a primary driver, patients must evaluate the clinical parameters, technology platforms, candidacy criteria, and post-operative guidelines before scheduling their treatment. This guide compares laser refractive surgery options in London and Istanbul.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">\u00a3700</div><div class=\"lbl\">Avg. Istanbul Cost Per Eye</div></div>\n      <div class=\"stat-card\"><div class=\"num\">\u00a32,600</div><div class=\"lbl\">Avg. London Cost Per Eye</div></div>\n      <div class=\"stat-card\"><div class=\"num\">99.1%</div><div class=\"lbl\">20/20 Visual Acuity Rate</div></div>\n      <div class=\"stat-card\"><div class=\"num\">48 Hours</div><div class=\"lbl\">Minimum Wait Before Flying</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-microscope\"></i> Technology Check: Verify the Laser Equipment</h2>\n    <p>The success of refractive surgery depends heavily on the technology platform used. The best specialized eye centers in Istanbul use the same hardware found in London Harley Street clinics. Before selecting a clinic, confirm the laser systems they use:</p>\n\n    <h3>1. Excimer Laser Platforms (For reshaping the corneal bed)</h3>\n    <ul>\n      <li><strong>Alcon WaveLight EX500:</strong> The fastest excimer laser available, operating at 500 Hz. It features multi-dimensional eye-tracking and wavefront-optimized treatment profiles to minimize the risk of night glares.</li>\n      <li><strong>Johnson & Johnson VISX Star S4 IR:</strong> Features Iris Registration technology to adjust the laser pattern for subtle eye movements during treatment.</li>\n    </ul>\n\n    <h3>2. Femtosecond Laser Platforms (For creating the corneal flap in LASIK)</h3>\n    <ul>\n      <li><strong>Carl Zeiss VisuMax:</strong> Known for its precision, it is the only laser system capable of performing the ReLEx SMILE procedure, which uses a keyhole extraction method.</li>\n      <li><strong>Alcon WaveLight FS200:</strong> Creates precise corneal flaps in approximately 6 seconds, reducing patient discomfort.</li>\n    </ul>\n\n    <blockquote>\n      \"In refractive surgery, the surgeon's experience and the laser's calibration are key. Specialized eye clinics in Istanbul handle high patient volumes. A leading surgeon in Istanbul may perform over 1,500 procedures annually, compared to 200 to 400 for a typical UK private surgeon. This high volume supports consistent, precise results when utilizing advanced laser systems.\"\n      <br/><br/>\u2014 <strong>Dr. Burcu Arslan</strong>, Refractive & Corneal Surgery Specialist\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-arrows-split-up-and-left\"></i> LASIK vs. LASEK vs. SMILE: Understanding the Options</h2>\n    <p>Your corneal thickness, prescription strength, lifestyle, and tear production determine the best treatment method. Below is an overview of the primary refractive techniques:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment Type</th>\n          <th>Surgical Technique</th>\n          <th>Typical Healing Time</th>\n          <th>Ideal Candidates</th>\n          <th>Dry Eye Risk Profile</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>Femto-LASIK</td><td>Femtosecond laser creates a flap; Excimer laser reshapes the bed.</td><td>24 - 48 Hours</td><td>Low to moderate myopia and astigmatism.</td><td>Moderate (temporary)</td></tr>\n        <tr><td>Trans-PRK / LASEK</td><td>Epithelial layer is removed; Excimer laser reshapes the surface.</td><td>4 - 7 Days</td><td>Thin corneas, dry eyes, or active lifestyles/sports.</td><td>Low</td></tr>\n        <tr><td>ReLEx SMILE</td><td>Femtosecond laser creates a small lenticule extracted through a keyhole.</td><td>24 Hours</td><td>High myopia and dry eye sensitivity.</td><td>Very Low</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Candidacy Note:</strong> If your corneas are thinner than 500 microns, you may not be a candidate for Femto-LASIK. In these cases, a reputable clinic will recommend Trans-PRK (LASEK) or implantable contact lenses (ICL) rather than risking corneal instability.\n    </div>\n\n    <h2><i class=\"fa-solid fa-sterling-sign\"></i> Cost Comparison: London vs. Istanbul (2026)</h2>\n    <p>UK clinics often use tiered pricing where higher prescriptions or advanced laser options increase the cost. Istanbul clinics typically offer fixed-price packages that include all diagnostic scans, medications, and transfers. The table below compares average costs for both eyes:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment Component</th>\n          <th>London Harley Street Clinic</th>\n          <th>Istanbul Specialized Eye Center</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>Initial Diagnostic Scans</td><td>\u00a3150 - \u00a3250</td><td>Included in package</td></tr>\n        <tr><td>Femto-LASIK (Both Eyes)</td><td>\u00a34,400 - \u00a35,600</td><td>\u00a31,200 - \u00a31,600</td></tr>\n        <tr><td>ReLEx SMILE (Both Eyes)</td><td>\u00a35,600 - \u00a37,000</td><td>\u00a31,600 - \u00a32,200</td></tr>\n        <tr><td>Post-Op Eye Drops & Shields</td><td>\u00a350 - \u00a390</td><td>Included in package</td></tr>\n        <tr><td>Hotel & Transfers (3 Nights)</td><td>N/A</td><td>Included in package</td></tr>\n        <tr><td><strong>TOTAL EXPECTED COST</strong></td><td><strong>\u00a34,600 - \u00a37,340</strong></td><td><strong>\u00a31,200 - \u00a32,200 (All-in)</strong></td></tr>\n      </tbody>\n    </table>\n\n    <h2><i class=\"fa-solid fa-plane-departure\"></i> Post-Operative Care and Flying Home Safely</h2>\n    <p>While laser eye surgery is a quick outpatient procedure, the return flight requires preparation to protect your healing corneas:</p>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Wait Before Flying:</strong> Do not fly for at least 48 hours (for LASIK/SMILE) or 5 days (for LASEK) after surgery. The dry air and pressure changes in the aircraft cabin can cause severe dry eyes, which can delay healing or cause flap issues if the eyes are rubbed.\n    </div>\n\n    <h3>Travel Protocols for UK Patients:</h3>\n    <ul>\n      <li><strong>Lubrication:</strong> Use preservative-free artificial tears every 15 to 30 minutes during the flight. Cabin humidity is low, which accelerates tear evaporation.</li>\n      <li><strong>Eye Protection:</strong> Wear the provided protective sunglasses inside the terminal and aircraft. This shields your eyes from dust, dry air vents, and bright lights.</li>\n      <li><strong>No Rubbing:</strong> The corneal flap takes several weeks to fully bond. Avoid rubbing your eyes, and use the protective eye shields during sleep for the first week.</li>\n      <li><strong>Avoid Screens:</strong> Rest your eyes during the flight and limit screen time on tablets or phones to reduce dry eye symptoms.</li>\n    </ul>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Request an Eye Surgery Assessment</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">MediRoute matches UK patients with accredited eye clinics in Istanbul using Alcon EX500 and Zeiss VisuMax technology. Explore packages that include diagnostic scans, treatment, and recovery hotel stays.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Request a Free Laser Eye Quote \u2192</a>\n    </div>", "category": "Eye Surgery", "image_url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80", "author": "Dr. Burcu Arslan", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Refractive & Corneal Surgery Specialist", "author_specialty": "Refractive & Corneal Surgery Specialist", "author_image": "https://images.unsplash.com/photo-1594824813573-246434333b97?auto=format&fit=crop&w=150&q=80"};
+  window.STATIC_BLOG_DATA = {"id": 18, "title": "LASIK Eye Surgery in Istanbul vs London: 2026 Guide", "slug": "lasik-eye-surgery-istanbul-vs-london-complete-guide", "content": "<p><a href=\"/treatment/lasik\">Laser eye surgery</a> can make freedom from glasses or contact lenses inaccessible for many. London clinics often charge \u00a32,200 to \u00a33,500 per eye for advanced treatments. In comparison, specialized eye clinics in Istanbul offer similar procedures for \u00a3600 to \u00a3900 per eye, including the technology and surgeon expertise.</p>\n\n    <p>While the cost difference is a primary driver, patients must evaluate the clinical parameters, technology platforms, candidacy criteria, and post-operative guidelines before scheduling their treatment. This guide compares laser refractive surgery options in London and Istanbul.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">\u00a3700</div><div class=\"lbl\">Avg. Istanbul Cost Per Eye</div></div>\n      <div class=\"stat-card\"><div class=\"num\">\u00a32,600</div><div class=\"lbl\">Avg. London Cost Per Eye</div></div>\n      <div class=\"stat-card\"><div class=\"num\">99.1%</div><div class=\"lbl\">20/20 Visual Acuity Rate</div></div>\n      <div class=\"stat-card\"><div class=\"num\">48 Hours</div><div class=\"lbl\">Minimum Wait Before Flying</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-microscope\"></i> Technology Check: Verify the Laser Equipment</h2>\n    <p>The success of refractive surgery depends heavily on the technology platform used. The best specialized eye centers in Istanbul use the same hardware found in London Harley Street clinics. Before selecting a clinic, confirm the laser systems they use:</p>\n\n    <h3>1. Excimer Laser Platforms (For reshaping the corneal bed)</h3>\n    <ul>\n      <li><strong>Alcon WaveLight EX500:</strong> The fastest excimer laser available, operating at 500 Hz. It features multi-dimensional eye-tracking and wavefront-optimized treatment profiles to minimize the risk of night glares.</li>\n      <li><strong>Johnson & Johnson VISX Star S4 IR:</strong> Features Iris Registration technology to adjust the laser pattern for subtle eye movements during treatment.</li>\n    </ul>\n\n    <h3>2. Femtosecond Laser Platforms (For creating the corneal flap in LASIK)</h3>\n    <ul>\n      <li><strong>Carl Zeiss VisuMax:</strong> Known for its precision, it is the only laser system capable of performing the ReLEx SMILE procedure, which uses a keyhole extraction method.</li>\n      <li><strong>Alcon WaveLight FS200:</strong> Creates precise corneal flaps in approximately 6 seconds, reducing patient discomfort.</li>\n    </ul>\n\n    <blockquote>\n      \"In refractive surgery, the surgeon's experience and the laser's calibration are key. Specialized eye clinics in Istanbul handle high patient volumes. A leading surgeon in Istanbul may perform over 1,500 procedures annually, compared to 200 to 400 for a typical UK private surgeon. This high volume supports consistent, precise results when utilizing advanced laser systems.\"\n      <br/><br/>\u2014 <strong>Dr. Burcu Arslan</strong>, Refractive & Corneal Surgery Specialist\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-arrows-split-up-and-left\"></i> LASIK vs. LASEK vs. SMILE: Understanding the Options</h2>\n    <p>Your corneal thickness, prescription strength, lifestyle, and tear production determine the best treatment method. Below is an overview of the primary refractive techniques:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment Type</th>\n          <th>Surgical Technique</th>\n          <th>Typical Healing Time</th>\n          <th>Ideal Candidates</th>\n          <th>Dry Eye Risk Profile</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>Femto-LASIK</td><td>Femtosecond laser creates a flap; Excimer laser reshapes the bed.</td><td>24 - 48 Hours</td><td>Low to moderate myopia and astigmatism.</td><td>Moderate (temporary)</td></tr>\n        <tr><td>Trans-PRK / LASEK</td><td>Epithelial layer is removed; Excimer laser reshapes the surface.</td><td>4 - 7 Days</td><td>Thin corneas, dry eyes, or active lifestyles/sports.</td><td>Low</td></tr>\n        <tr><td>ReLEx SMILE</td><td>Femtosecond laser creates a small lenticule extracted through a keyhole.</td><td>24 Hours</td><td>High myopia and dry eye sensitivity.</td><td>Very Low</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Candidacy Note:</strong> If your corneas are thinner than 500 microns, you may not be a candidate for Femto-LASIK. In these cases, a reputable clinic will recommend Trans-PRK (LASEK) or implantable contact lenses (ICL) rather than risking corneal instability.\n    </div>\n\n    <h2><i class=\"fa-solid fa-sterling-sign\"></i> Cost Comparison: London vs. Istanbul (2026)</h2>\n    <p>UK clinics often use tiered pricing where higher prescriptions or advanced laser options increase the cost. Istanbul clinics typically offer fixed-price packages that include all diagnostic scans, medications, and transfers. The table below compares average costs for both eyes:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment Component</th>\n          <th>London Harley Street Clinic</th>\n          <th>Istanbul Specialized Eye Center</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>Initial Diagnostic Scans</td><td>\u00a3150 - \u00a3250</td><td>Included in package</td></tr>\n        <tr><td>Femto-LASIK (Both Eyes)</td><td>\u00a34,400 - \u00a35,600</td><td>\u00a31,200 - \u00a31,600</td></tr>\n        <tr><td>ReLEx SMILE (Both Eyes)</td><td>\u00a35,600 - \u00a37,000</td><td>\u00a31,600 - \u00a32,200</td></tr>\n        <tr><td>Post-Op Eye Drops & Shields</td><td>\u00a350 - \u00a390</td><td>Included in package</td></tr>\n        <tr><td>Hotel & Transfers (3 Nights)</td><td>N/A</td><td>Included in package</td></tr>\n        <tr><td><strong>TOTAL EXPECTED COST</strong></td><td><strong>\u00a34,600 - \u00a37,340</strong></td><td><strong>\u00a31,200 - \u00a32,200 (All-in)</strong></td></tr>\n      </tbody>\n    </table>\n\n    <h2><i class=\"fa-solid fa-plane-departure\"></i> Post-Operative Care and <a href=\"/blog/flying-home-after-surgery-turkey-medical-protocol\">Flying Home</a> Safely</h2>\n    <p>While laser eye surgery is a quick outpatient procedure, the return flight requires preparation to protect your healing corneas:</p>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Wait Before Flying:</strong> Do not fly for at least 48 hours (for LASIK/SMILE) or 5 days (for LASEK) after surgery. The dry air and pressure changes in the aircraft cabin can cause severe dry eyes, which can delay healing or cause flap issues if the eyes are rubbed.\n    </div>\n\n    <h3>Travel Protocols for UK Patients:</h3>\n    <ul>\n      <li><strong>Lubrication:</strong> Use preservative-free artificial tears every 15 to 30 minutes during the flight. Cabin humidity is low, which accelerates tear evaporation.</li>\n      <li><strong>Eye Protection:</strong> Wear the provided protective sunglasses inside the terminal and aircraft. This shields your eyes from dust, dry air vents, and bright lights.</li>\n      <li><strong>No Rubbing:</strong> The corneal flap takes several weeks to fully bond. Avoid rubbing your eyes, and use the protective eye shields during sleep for the first week.</li>\n      <li><strong>Avoid Screens:</strong> Rest your eyes during the flight and limit screen time on tablets or phones to reduce dry eye symptoms.</li>\n    </ul>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Request an Eye Surgery Assessment</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">MediRoute matches UK patients with accredited eye clinics in Istanbul using Alcon EX500 and Zeiss VisuMax technology. Explore packages that include diagnostic scans, treatment, and recovery hotel stays.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Request a Free Laser Eye Quote \u2192</a>\n    </div>", "category": "Eye Surgery", "image_url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80", "author": "Dr. Burcu Arslan", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Refractive & Corneal Surgery Specialist", "author_specialty": "Refractive & Corneal Surgery Specialist", "author_image": "https://images.unsplash.com/photo-1594824813573-246434333b97?auto=format&fit=crop&w=150&q=80"};
   
   // Instant SEO / UX redirect if a mismatched lang parameter is used
   (function() {
@@ -183,7 +210,10 @@
     <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-white/10 border border-white/20 text-blue-200">Eye Surgery</span></div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">LASIK Eye Surgery in Istanbul vs London: 2026 Guide</h1>
     <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> Dr. Burcu Arslan</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=Dr.%20Burcu%20Arslan" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">Dr. Burcu Arslan</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 4 dk okuma</span>
       </div>
@@ -198,9 +228,15 @@
     <img id="cover-image" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80" alt="LASIK Eye Surgery in Istanbul vs London: 2026 Guide" class="w-full" style="max-height:420px;object-fit:cover;">
   </div>
 
+  <!-- Table of Contents -->
+  <details class="toc-widget fade-up" id="toc-widget" style="display:none;" open>
+    <summary>İçindekiler</summary>
+    <ol class="toc-list" id="toc-list"></ol>
+  </details>
+
   <!-- Article body -->
   <article class="article-body fade-up" id="article-body">
-    <p>Laser eye surgery can make freedom from glasses or contact lenses inaccessible for many. London clinics often charge £2,200 to £3,500 per eye for advanced treatments. In comparison, specialized eye clinics in Istanbul offer similar procedures for £600 to £900 per eye, including the technology and surgeon expertise.</p>
+    <p><a href="/treatment/lasik">Laser eye surgery</a> can make freedom from glasses or contact lenses inaccessible for many. London clinics often charge £2,200 to £3,500 per eye for advanced treatments. In comparison, specialized eye clinics in Istanbul offer similar procedures for £600 to £900 per eye, including the technology and surgeon expertise.</p>
 
     <p>While the cost difference is a primary driver, patients must evaluate the clinical parameters, technology platforms, candidacy criteria, and post-operative guidelines before scheduling their treatment. This guide compares laser refractive surgery options in London and Istanbul.</p>
 
@@ -276,7 +312,7 @@
       </tbody>
     </table>
 
-    <h2><i class="fa-solid fa-plane-departure"></i> Post-Operative Care and Flying Home Safely</h2>
+    <h2><i class="fa-solid fa-plane-departure"></i> Post-Operative Care and <a href="/blog/flying-home-after-surgery-turkey-medical-protocol">Flying Home</a> Safely</h2>
     <p>While laser eye surgery is a quick outpatient procedure, the return flight requires preparation to protect your healing corneas:</p>
 
     <div class="warning-box">
@@ -299,19 +335,21 @@
   </article>
 
   <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:flex;">
-    <div class="author-avatar" id="author-avatar">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1594824813573-246434333b97?auto=format&fit=crop&w=150&q=80" alt="Refractive & Corneal Surgery Specialist Dr. Burcu Arslan">
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Refractive & Corneal Surgery Specialist Dr. Burcu Arslan</h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="/blog?author=Dr.%20Burcu%20Arslan" id="author-card-link" class="author-card-link" style="display:block;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1594824813573-246434333b97?auto=format&fit=crop&w=150&q=80" alt="Dr. Burcu Arslan">
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Refractive & Corneal Surgery Specialist</p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Dr. Burcu Arslan</h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text">Refractive & Corneal Surgery Specialist</p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      </div>
     </div>
-  </div>
+  </a>
 
   <!-- Share buttons -->
   <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
@@ -329,38 +367,38 @@
     <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
       
-          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+          <a href="/blog/laser-eye-surgery-istanbul-lasik" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80" alt="Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Eye</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Are you tired of relying on glasses or contact lenses for everyday tasks? Las...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+          <a href="/blog/gastric-sleeve-turkey-guide-2026" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Bariatric</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Obesity is a complex medical condition that affects millions worldwide. Gastr...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+          <a href="/blog/dental-veneers-istanbul-journey" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Dental Veneers in Istanbul: A Step-by-Step Journey" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Guide</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Dental Veneers in Istanbul: A Step-by-Step Journey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">The Hollywood Smile DestinationDental veneers in the UK or US can easily cost...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
             </div>
           </a>
@@ -438,14 +476,20 @@
       document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
 
       // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const contentText = stripHtml(blog.content);
+      const blogWordCount = contentText.split(/\s+/).length;
+      const blogLang = (blog.lang || window.ARTICLE_LANG || 'en');
       const blogSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": blog.title,
-        "description": stripHtml(blog.content).substring(0, 155),
-        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "description": contentText.substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/og-image.png",
         "datePublished": blog.created_at,
         "dateModified": blog.updated_at || blog.created_at,
+        "wordCount": blogWordCount,
+        "inLanguage": blogLang,
+        "articleSection": blog.category || "Medical Tourism",
         "author": {
           "@type": "Person",
           "name": blog.author || "MediRoute Team",
@@ -501,8 +545,12 @@
       const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
       const wordCount = stripHtml(blog.content).split(/\s+/).length;
       const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      const metaAuthorName = blog.author || 'MediRoute Team';
       document.getElementById('hero-meta').innerHTML = `
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=${encodeURIComponent(metaAuthorName)}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
       `;
@@ -517,13 +565,26 @@
       // Article content
       document.getElementById('article-body').innerHTML = blog.content;
 
+      // Generate TOC from H2 headings
+      generateTOC();
+
+      // Inject FAQPage schema if FAQ section detected
+      injectFAQSchema();
+
       // Author card
       const authorName = blog.author || blog.author_title;
       if (authorName) {
+        const link = document.getElementById('author-card-link');
         const card = document.getElementById('author-card');
-        card.style.display = 'flex';
-        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
-        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        const authorVal = blog.author || 'MediRoute Team';
+        if (link) {
+          link.style.display = 'block';
+          link.href = '/blog?author=' + encodeURIComponent(authorVal);
+        } else if (card) {
+          card.style.display = 'flex';
+        }
+        const fullName = authorVal;
+        document.getElementById('author-name').textContent = fullName;
         document.getElementById('author-title-text').textContent = blog.author_specialty || '';
         document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
         if (blog.author_image) {
@@ -585,6 +646,92 @@
     const btn = event.currentTarget;
     btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
     setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Generate Table of Contents from H2 headings
+  function generateTOC() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2');
+    if (headings.length < 2) return; // Don't show TOC for very short articles
+
+    const tocList = document.getElementById('toc-list');
+    const tocWidget = document.getElementById('toc-widget');
+    tocWidget.style.display = 'block';
+
+    headings.forEach((h, i) => {
+      const id = 'section-' + i;
+      h.id = id;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = h.textContent.replace(/^[\s🏥💊✈️🦷💉⭐🔬📋🩺]+/, '').trim();
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Highlight active TOC item on scroll
+    const tocLinks = tocList.querySelectorAll('a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const activeLink = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Inject FAQPage schema if FAQ-style content is detected
+  function injectFAQSchema() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2, h3');
+    const faqEntries = [];
+
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      // Detect FAQ-style headings (questions ending with ?)
+      if (text.endsWith('?') || text.toLowerCase().includes('soru') || text.toLowerCase().includes('faq')) {
+        // Get the answer: all content between this heading and the next heading
+        let answer = '';
+        let sibling = h.nextElementSibling;
+        while (sibling && !['H2', 'H3'].includes(sibling.tagName)) {
+          answer += sibling.textContent.trim() + ' ';
+          sibling = sibling.nextElementSibling;
+        }
+        answer = answer.trim();
+        if (answer.length > 20) {
+          faqEntries.push({ question: text, answer: answer.substring(0, 500) });
+        }
+      }
+    });
+
+    if (faqEntries.length >= 2) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqEntries.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      };
+      const existing = document.getElementById('faq-schema-ld');
+      if (existing) existing.remove();
+      const script = document.createElement('script');
+      script.id = 'faq-schema-ld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(script);
+    }
   }
 
   // Reading progress bar

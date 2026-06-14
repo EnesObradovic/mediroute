@@ -56,6 +56,8 @@
     @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
     .skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:800px 100%;animation:shimmer 1.5s infinite;border-radius:12px;}
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 </head>
 <body>
 
@@ -89,10 +91,10 @@
     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-1.5 text-xs text-blue-200 font-semibold mb-4">
       <i class="fa-solid fa-book-open"></i> Guides & Resources
     </div>
-    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" data-i18n="blog_hero_title">
       Sağlık Turizmi Rehberleri
     </h1>
-    <p class="text-blue-200 text-base leading-relaxed max-w-2xl mx-auto">
+    <p class="text-blue-200 text-base leading-relaxed max-w-2xl mx-auto" data-i18n="blog_hero_desc">
       Tedavi öncesi bilmeniz gereken her şey — fiyatlar, güvenlik, klinik seçimi ve daha fazlası. Uzman ekibimiz tarafından hazırlanan kapsamlı rehberler.
     </p>
   </div>
@@ -115,6 +117,16 @@
     <button class="filter-pill" data-cat="News" onclick="filterBlogs('News')">
       <i class="fa-solid fa-newspaper mr-1"></i> Haberler
     </button>
+  </div>
+
+  <!-- Active Filters Banner -->
+  <div id="active-filters" class="mb-6 flex flex-wrap items-center gap-3 hidden">
+    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider" data-i18n="blog_active_filters">Active Filters:</span>
+    <span class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 font-semibold text-xs px-3.5 py-1.5 rounded-xl border border-blue-100">
+      <i class="fa-solid fa-user text-[10px]"></i>
+      <span id="active-author-name"></span>
+      <button onclick="clearAuthorFilter()" class="hover:text-blue-900 transition-colors font-bold ml-1 text-sm">×</button>
+    </span>
   </div>
 
   <!-- Blog count -->
@@ -150,6 +162,7 @@
 <script>
   let allBlogs = [];
   let currentCat = 'all';
+  let currentAuthor = '';
 
   function getCatClass(cat) {
     const c = (cat || '').toLowerCase();
@@ -203,7 +216,7 @@
             <h3>${b.title}</h3>
             <p>${excerpt}</p>
             <div class="blog-card-meta">
-              <span><i class="fa-solid fa-user mr-1"></i>${b.author || 'MediRoute Team'}</span>
+              <span data-author="${b.author || 'MediRoute Team'}" onclick="event.preventDefault(); event.stopPropagation(); window.location.href='/blog?author=' + encodeURIComponent(this.getAttribute('data-author'))" class="hover:text-blue-600 hover:underline cursor-pointer"><i class="fa-solid fa-user mr-1"></i>${b.author || 'MediRoute Team'}</span>
               <span><i class="fa-solid fa-calendar mr-1"></i>${date}</span>
             </div>
           </div>
@@ -212,25 +225,90 @@
     }).join('');
   }
 
+  function getFilteredBlogs() {
+    let list = allBlogs;
+    if (currentAuthor) {
+      list = list.filter(b => (b.author || '').trim().toLowerCase() === currentAuthor.trim().toLowerCase());
+    }
+    if (currentCat !== 'all') {
+      list = list.filter(b => (b.category || '').toLowerCase() === currentCat.toLowerCase());
+    }
+    return list;
+  }
+
   function filterBlogs(cat) {
     currentCat = cat;
     // Update active pill
     document.querySelectorAll('.filter-pill').forEach(p => {
       p.classList.toggle('active', p.dataset.cat === cat);
     });
-    // Filter
-    const filtered = cat === 'all'
-      ? allBlogs
-      : allBlogs.filter(b => (b.category || '').toLowerCase() === cat.toLowerCase());
+    // Filter & render
+    const filtered = getFilteredBlogs();
     renderBlogCards(filtered);
   }
+
+  function applyHeroTranslations(lang) {
+    const dict = window.MEDIROUTE_I18N && window.MEDIROUTE_I18N[lang];
+    if (!dict) return;
+
+    const titleEl = document.querySelector('[data-i18n="blog_hero_title"]');
+    const descEl = document.querySelector('[data-i18n="blog_hero_desc"]');
+
+    if (currentAuthor) {
+      const titleTpl = dict['blog_author_filter_title'] || 'Articles by {author}';
+      const descTpl = dict['blog_author_filter_desc'] || 'Read all articles written by {author} on MediRoute.';
+      
+      if (titleEl) titleEl.textContent = titleTpl.replace('{author}', currentAuthor);
+      if (descEl) descEl.textContent = descTpl.replace('{author}', currentAuthor);
+    } else {
+      if (titleEl) titleEl.innerHTML = dict['blog_hero_title'] || dict['blog_title'] || 'Sağlık Turizmi Rehberleri';
+      if (descEl) descEl.innerHTML = dict['blog_hero_desc'] || dict['blog_sub'] || 'Tedavi öncesi bilmeniz gereken her şey...';
+    }
+  }
+
+  window.onLanguageChanged = function(lang) {
+    applyHeroTranslations(lang);
+  };
+
+  window.clearAuthorFilter = function() {
+    currentAuthor = '';
+    const url = new URL(window.location);
+    url.searchParams.delete('author');
+    window.history.pushState({}, '', url);
+
+    const activeFiltersEl = document.getElementById('active-filters');
+    if (activeFiltersEl) {
+      activeFiltersEl.classList.add('hidden');
+    }
+
+    const lang = document.documentElement.lang || localStorage.getItem('mediroute-lang') || 'en';
+    applyHeroTranslations(lang);
+
+    const filtered = getFilteredBlogs();
+    renderBlogCards(filtered);
+  };
 
   async function loadBlogs() {
     try {
       allBlogs = await MR.supabase.getBlogs();
       // Only show published
       allBlogs = allBlogs.filter(b => b.status === 'published');
-      renderBlogCards(allBlogs);
+
+      const urlParams = new URLSearchParams(window.location.search);
+      currentAuthor = urlParams.get('author') || '';
+
+      if (currentAuthor) {
+        const activeFiltersEl = document.getElementById('active-filters');
+        if (activeFiltersEl) {
+          document.getElementById('active-author-name').textContent = currentAuthor;
+          activeFiltersEl.classList.remove('hidden');
+        }
+        const lang = document.documentElement.lang || localStorage.getItem('mediroute-lang') || 'en';
+        applyHeroTranslations(lang);
+      }
+
+      const filtered = getFilteredBlogs();
+      renderBlogCards(filtered);
     } catch (err) {
       console.error('Blog yükleme hatası:', err);
       document.getElementById('blog-grid').innerHTML = `

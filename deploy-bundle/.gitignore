@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build tools
+tailwindcss
+
+# Backup & test files
+blog-static-backup.html
+test_tab.html
+test_supabase.js
+seed_clinics.js
+replace_cdn.py
+
+# Tailwind source (only output.css needed)
+input.css
+
+# OS files
+.DS_Store
+Thumbs.db

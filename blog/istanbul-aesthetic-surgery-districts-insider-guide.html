@@ -42,16 +42,41 @@
     .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
     .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
 
+    /* TOC (Table of Contents) */
+    .toc-widget{background:#fff;border-radius:16px;border:1px solid #E1E8FF;padding:1.2rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(10,31,107,.04);}
+    .toc-widget summary{font-size:.85rem;font-weight:800;color:#0A1F6B;cursor:pointer;display:flex;align-items:center;gap:.5rem;}
+    .toc-widget summary::-webkit-details-marker{display:none;}
+    .toc-widget summary::before{content:'\f0ca';font-family:'Font Awesome 6 Free';font-weight:900;color:#3B5FDD;}
+    .toc-widget summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.6rem;color:#94A3B8;margin-left:auto;transition:transform .2s;}
+    .toc-widget[open] summary::after{transform:rotate(180deg);}
+    .toc-list{list-style:none;padding:0;margin:.8rem 0 0;}
+    .toc-list li{margin-bottom:.4rem;}
+    .toc-list a{font-size:.82rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:8px;transition:all .15s;}
+    .toc-list a::before{content:'';width:6px;height:6px;border-radius:50%;background:#CBD5E1;flex-shrink:0;transition:background .15s;}
+    .toc-list a:hover{background:#EFF6FF;color:#0F2D96;}
+    .toc-list a:hover::before{background:#3B5FDD;}
+    .toc-list a.active{background:#EFF6FF;color:#0F2D96;font-weight:600;}
+    .toc-list a.active::before{background:#3B5FDD;}
+
     /* Related card */
     .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
     .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
 
     /* Author card */
+    .author-card-link{
+      display:block;text-decoration:none;color:inherit;margin-top:2rem;
+    }
     .author-card{
       background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
       border:1px solid #E1E8FF;border-radius:20px;
-      padding:1.5rem 2rem;margin-top:2rem;
+      padding:1.5rem 2rem;
       display:flex;align-items:center;gap:1.2rem;
+      transition:all .22s ease;
+    }
+    .author-card-link:hover .author-card{
+      transform:translateY(-2px);
+      box-shadow:0 8px 30px rgba(10,31,107,.08);
+      border-color:#C3D1FF;
     }
     .author-avatar{
       width:72px;height:72px;border-radius:50%;
@@ -77,6 +102,8 @@
       .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
     }
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <link rel="canonical" href="https://medirouteturkey.com/blog/istanbul-aesthetic-surgery-districts-insider-guide"/>
   <link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/istanbul-aesthetic-surgery-districts-insider-guide"/>
@@ -125,7 +152,7 @@
 <script>
   window.STATIC_RENDERED = true;
   window.ARTICLE_LANG = "en";
-  window.STATIC_BLOG_DATA = {"id": 12, "title": "Istanbul's Medical Aesthetics Districts: An Insider Map of Where the Best Clinics Actually Are", "slug": "istanbul-aesthetic-surgery-districts-insider-guide", "content": "<p>Istanbul has more than <strong>1,200 registered aesthetic clinics and hospitals</strong> across its 39 districts. For a UK patient arriving at Atat\u00fcrk or the new Istanbul Airport (IST) for the first time, choosing a clinic from a Google search feels like navigating a city map in the dark. What most guides don't tell you is that Istanbul's legitimate, internationally accredited aesthetic surgery sector is not distributed evenly across this vast metropolis \u2014 it is almost entirely concentrated within a remarkably small geographical cluster on the European side.</p>\n\n    <p>Understanding this geography is not just academic. It determines your accommodation costs, your transport logistics, how easily you can get from hotel to clinic post-surgery, and \u2014 critically \u2014 whether the clinic you're considering is embedded in the city's professional medical community or operating as a tourist-facing operation far from any medical oversight cluster.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">73%</div><div class=\"lbl\">Certified clinics within 4km of \u015ei\u015fli</div></div>\n      <div class=\"stat-card\"><div class=\"num\">1,200+</div><div class=\"lbl\">Registered aesthetic facilities in Istanbul</div></div>\n      <div class=\"stat-card\"><div class=\"num\">45 min</div><div class=\"lbl\">IST Airport \u2192 \u015ei\u015fli by metro</div></div>\n      <div class=\"stat-card\"><div class=\"num\">\u00a360\u2013\u00a390</div><div class=\"lbl\">Typical hotel rate/night near clinics</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-map-pin\"></i> Why 73% of Accredited Clinics Cluster Around \u015ei\u015fli</h2>\n\n    <p>The concentration of Istanbul's aesthetic surgery sector around \u015ei\u015fli is no accident \u2014 it's the product of 40 years of medical infrastructure development. In the 1980s and 1990s, several of Turkey's earliest private hospitals were established along <strong>Halaskargazi Caddesi</strong> (also called Halaskargazi Avenue), a major arterial road running through \u015ei\u015fli. These anchor hospitals \u2014 including Istanbul's first private JCI-accredited surgical centres \u2014 attracted specialist surgeons who set up private consulting rooms nearby.</p>\n\n    <p>Over time, the cluster effect compounded: more surgeons means more trained nurses, more specialist anaesthesiologists, more medical equipment suppliers, and better access to emergency referral networks. The geographic density of medical expertise creates a quality floor below which even mediocre clinics cannot fall, because they share supplier networks, recruit from the same trained workforce, and face professional peer scrutiny from neighbouring surgeons.</p>\n\n    <p>Compare this to a clinic located in, say, <strong>Beylikd\u00fcz\u00fc</strong> (45 minutes west by metro) or <strong>\u00dcmraniye</strong> on the Asian side \u2014 areas with no aesthetic surgery cluster, where a single clinic may operate without any of the professional ecosystem support that \u015ei\u015fli provides.</p>\n\n    <h2><i class=\"fa-solid fa-star\"></i> Ni\u015fanta\u015f\u0131: Istanbul's Harley Street</h2>\n\n    <p>Ni\u015fanta\u015f\u0131 is technically within the administrative \u015ei\u015fli district but deserves its own category as Istanbul's premium aesthetic surgery address. The neighbourhood sits just south of the main \u015ei\u015fli commercial hub, bordered by <strong>Te\u015fvikiye Caddesi</strong> to the south and <strong>Akkavak Sokak</strong> to the north.</p>\n\n    <p>The streets around <strong>Valikona\u011f\u0131 Caddesi</strong> and <strong>Bronz Sokak</strong> host the highest concentration of top-tier aesthetic practices. Clinics here are typically purpose-built \u2014 not converted apartments \u2014 with dedicated recovery suites, 3D imaging equipment, and resident anaesthesiologists. Many of Turkey's most internationally published plastic surgeons consult and operate from Ni\u015fanta\u015f\u0131, making it the address that equivalent UK Harley Street patients seek.</p>\n\n    <h3>What to Expect in Ni\u015fanta\u015f\u0131</h3>\n    <ul>\n      <li>Rhinoplasty packages: \u00a33,200\u2013\u00a34,800 all-in</li>\n      <li>Hair transplant (3,000 grafts): \u00a32,200\u2013\u00a33,500</li>\n      <li>Breast augmentation: \u00a33,500\u2013\u00a35,500</li>\n      <li>Consultation: Often free or refunded against procedure cost</li>\n      <li>Waiting times: 3\u20138 weeks for top surgeons</li>\n    </ul>\n\n    <h3>Accommodation: Ni\u015fanta\u015f\u0131 & \u015ei\u015fli</h3>\n    <p>The neighbourhood itself has several excellent boutique hotels on and around <strong>Abdi \u0130pek\u00e7i Caddesi</strong> \u2014 the high-end shopping street that runs parallel to the clinic zone. <strong>The Marmara \u015ei\u015fli</strong> (approximately \u00a390/night) and several serviced apartments on Te\u015fvikiye Caddesi (\u00a355\u2013\u00a375/night) position you within 5 minutes' walk of most Ni\u015fanta\u015f\u0131 clinics \u2014 ideal for post-surgery mobility limitations.</p>\n\n    <blockquote>\n      \"When I'm advising UK patients on where to stay during recovery, I always recommend they book accommodation within walking distance of their clinic. The first 48 hours after rhinoplasty or a hair transplant, you don't want to be negotiating Istanbul traffic in a taxi. Ni\u015fanta\u015f\u0131 is perfect for this \u2014 everything is walkable, the streets are clean, and there's a pharmacy on every corner.\"\n      <br/><br/>\u2014 <strong>James Whitfield</strong>, Medical Travel Correspondent, MediRoute\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-building\"></i> \u015ei\u015fli Proper: The High-Volume Hub</h2>\n\n    <p>The commercial heart of \u015ei\u015fli \u2014 centred on <strong>Halaskargazi Caddesi</strong> and the streets radiating from <strong>Mecidiyek\u00f6y</strong> \u2014 operates at higher volume and slightly lower price points than Ni\u015fanta\u015f\u0131. This area is where you'll find Turkey's major private hospital groups with dedicated aesthetic wings: <strong>Medicana International</strong>, <strong>Istanbul Cerrahi Hastanesi</strong>, and several others operating JCI-accredited surgical suites.</p>\n\n    <p>The distinction within \u015ei\u015fli is important: there are clinics on the main boulevard (higher visibility, higher marketing budgets, often good) and clinics tucked into the residential side streets (which can range from excellent smaller practices to unlicensed operations). A useful rule of thumb: clinics on upper floors of office buildings accessible only by lift, without visible reception or lobby areas, deserve extra scrutiny.</p>\n\n    <table>\n      <thead>\n        <tr><th>District</th><th>Price Range</th><th>Quality Range</th><th>Best For</th><th>Airport Distance</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>Ni\u015fanta\u015f\u0131</td><td>\u00a3\u00a3\u00a3 (Premium)</td><td>High floor</td><td>Rhinoplasty, complex cases</td><td>45 min (IST), 25 min (SAW)</td></tr>\n        <tr><td>\u015ei\u015fli</td><td>\u00a3\u00a3 (Mid-range)</td><td>Wide range</td><td>Hair transplants, all procedures</td><td>45 min (IST), 30 min (SAW)</td></tr>\n        <tr><td>Be\u015fikta\u015f</td><td>\u00a3\u00a3\u2013\u00a3\u00a3\u00a3</td><td>Boutique high quality</td><td>Aesthetic injections, smaller procedures</td><td>55 min (IST)</td></tr>\n        <tr><td>Kad\u0131k\u00f6y (Asian)</td><td>\u00a3\u2013\u00a3\u00a3</td><td>Variable, some excellent</td><td>Dental work, alternative for budget</td><td>70 min (IST), 30 min (SAW)</td></tr>\n        <tr><td>Beyo\u011flu/Taksim</td><td>\u00a3\u2013\u00a3\u00a3</td><td>Variable</td><td>Tourist-area, verify carefully</td><td>50 min (IST)</td></tr>\n      </tbody>\n    </table>\n\n    <h2><i class=\"fa-solid fa-water\"></i> Be\u015fikta\u015f: The Bosphorus Boutique Zone</h2>\n\n    <p>Be\u015fikta\u015f sits directly on the Bosphorus waterfront, south of Ni\u015fanta\u015f\u0131 along the European shore. The neighbourhood has historically been known for its football club and fish market rather than medical tourism, but the past three years have seen a wave of boutique aesthetic clinics open along <strong>Sinanpa\u015fa Mahallesi</strong> and the streets between <strong>\u00c7\u0131ra\u011fan Caddesi</strong> and the central bazaar area.</p>\n\n    <p>These Be\u015fikta\u015f clinics typically offer a more personalised experience: smaller patient volumes, less of the \"conveyor belt\" atmosphere that critics attach to the largest \u015ei\u015fli operations, and often a 10\u201315% price advantage over Ni\u015fanta\u015f\u0131 equivalents. The trade-off is that emergency surgical support infrastructure is slightly less dense than in the \u015ei\u015fli cluster. For lower-risk procedures (dental veneers, minor aesthetic procedures, hair transplants), Be\u015fikta\u015f is an excellent option. For major reconstructive rhinoplasty or BBL, we'd favour \u015ei\u015fli/Ni\u015fanta\u015f\u0131 proximity to major surgical hospitals.</p>\n\n    <h2><i class=\"fa-solid fa-ferry\"></i> Kad\u0131k\u00f6y: The Asian Side Alternative</h2>\n\n    <p>Kad\u0131k\u00f6y on the Asian shore of Istanbul is the city's most authentically non-tourist neighbourhood \u2014 a place where locals eat, shop, and live without the self-consciousness of Beyo\u011flu or the polish of Ni\u015fanta\u015f\u0131. It also hosts a small number of genuinely excellent aesthetic surgeons who practice away from the European side's competitive pressure.</p>\n\n    <p>The logistics are the complication. UK patients arriving at Istanbul Airport (IST) on the European side face a 70-minute journey to Kad\u0131k\u00f6y via the Marmaray tunnel or a 45-minute taxi ride. Sabiha G\u00f6k\u00e7en Airport (SAW) on the Asian side, however, is only 30 minutes from Kad\u0131k\u00f6y \u2014 making it the better choice for Kad\u0131k\u00f6y-based clinics if you're flying with airlines that serve SAW (Pegasus, Wizz Air, SunExpress, some easyJet routes).</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Airport Strategy:</strong> Istanbul has two airports. IST (Istanbul Airport, European side) is best for \u015ei\u015fli/Ni\u015fanta\u015f\u0131/Be\u015fikta\u015f clinics. SAW (Sabiha G\u00f6k\u00e7en, Asian side) is best for Kad\u0131k\u00f6y clinics. Always check which airport your airline flies into before booking accommodation \u2014 the wrong choice adds 1\u20132 hours of transfer time post-surgery.\n    </div>\n\n    <h2><i class=\"fa-solid fa-magnifying-glass\"></i> How to Spot a \"Tourist Trap\" Clinic vs a Genuine One</h2>\n\n    <p>Not all clinics in the \u015ei\u015fli cluster are equal. The same geographic concentration that creates quality floors also attracts operators who use the prestigious address as a marketing prop without the substance behind it. Here's how to differentiate:</p>\n\n    <h3>Green Flags: Signs of a Genuine Clinic</h3>\n    <ul>\n      <li>Physical address matches a known medical building or hospital (cross-reference on Google Street View)</li>\n      <li>Surgeon named upfront with verifiable Turkish Medical Association (TTB) registration number</li>\n      <li>JCI, ISO 9001, or Turkish Ministry of Health (Sa\u011fl\u0131k Bakanl\u0131\u011f\u0131) accreditation certificate available on request</li>\n      <li>Operating room visible (not just consultation rooms) \u2014 ask for a virtual tour</li>\n      <li>Anaesthesiologist on permanent staff (not \"contracted on day of surgery\")</li>\n      <li>Itemised written quote with every service listed separately</li>\n      <li>Free revision policy defined specifically in writing</li>\n    </ul>\n\n    <h3>Red Flags: Tourist Trap Warning Signs</h3>\n    <ul>\n      <li>Coordinator is only contact \u2014 surgeon is \"unavailable\" for pre-op questions</li>\n      <li>Address is a shared office building with no medical signage visible from street</li>\n      <li>No physical website beyond Instagram \u2014 or Instagram captions in English/Arabic only with no Turkish content</li>\n      <li>Quote given verbally only, nothing in writing</li>\n      <li>Package price less than \u00a3999 for any surgical procedure (hair transplant, rhinoplasty, etc.)</li>\n      <li>No in-country emergency support number \u2014 only a WhatsApp coordinator</li>\n      <li>\"Doctor\" title used but no verifiable surgical qualifications</li>\n    </ul>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Important:</strong> \"Medical tourism facilitators\" \u2014 middlemen who connect patients with clinics \u2014 are not the same as verified clinic partners. Some facilitators take commissions from any clinic that pays them, regardless of quality. MediRoute verifies every clinic directly against Ministry of Health records before listing them.\n    </div>\n\n    <h2><i class=\"fa-solid fa-train\"></i> Getting Around: Transport Guide for Medical Patients</h2>\n\n    <p>Istanbul's public transport is genuinely excellent, but navigating it post-surgery with swelling, bandages, or limited mobility requires planning. Here's the practical breakdown:</p>\n\n    <table>\n      <thead>\n        <tr><th>Route</th><th>Method</th><th>Cost</th><th>Time</th><th>Post-Surgery Suitability</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Metro (M11 + M7)</td><td>\u00a31.50</td><td>45\u201355 min</td><td>Poor (luggage + crowds)</td></tr>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Taxi/Uber</td><td>\u00a325\u2013\u00a340</td><td>35\u201360 min (traffic)</td><td>Good \u2014 book in advance</td></tr>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Clinic transfer</td><td>Often free (ask)</td><td>45 min</td><td>Excellent</td></tr>\n        <tr><td>SAW Airport \u2192 Kad\u0131k\u00f6y</td><td>Taxi</td><td>\u00a318\u2013\u00a328</td><td>30\u201340 min</td><td>Good</td></tr>\n        <tr><td>Hotel \u2192 Clinic (\u015ei\u015fli)</td><td>Walk (if nearby)</td><td>Free</td><td>5\u201315 min</td><td>Best option for post-op</td></tr>\n        <tr><td>\u015ei\u015fli \u2192 Be\u015fikta\u015f</td><td>Taxi</td><td>\u00a35\u2013\u00a310</td><td>15\u201320 min</td><td>Acceptable</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Let MediRoute Navigate Istanbul's Clinics For You</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">We know every accredited clinic in \u015ei\u015fli, Ni\u015fanta\u015f\u0131, and Be\u015fikta\u015f \u2014 their surgeons, their facilities, and their real patient outcomes. Tell us your procedure and budget; we'll match you with the right clinic in the right district.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Get My Free Clinic Match \u2192</a>\n    </div>", "category": "Guide", "image_url": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80", "author": "James Whitfield", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Medical Travel Correspondent", "author_specialty": "Medical Travel Correspondent", "author_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"};
+  window.STATIC_BLOG_DATA = {"id": 12, "title": "Istanbul's Medical Aesthetics Districts: An Insider Map of Where the Best Clinics Actually Are", "slug": "istanbul-aesthetic-surgery-districts-insider-guide", "content": "<p>Istanbul has more than <strong>1,200 registered aesthetic clinics and hospitals</strong> across its 39 districts. For a UK patient arriving at Atat\u00fcrk or the new Istanbul Airport (IST) for the first time, choosing a clinic from a Google search feels like navigating a city map in the dark. What most guides don't tell you is that Istanbul's legitimate, internationally accredited aesthetic surgery sector is not distributed evenly across this vast metropolis \u2014 it is almost entirely concentrated within a remarkably small geographical cluster on the European side.</p>\n\n    <p>Understanding this geography is not just academic. It determines your accommodation costs, your transport logistics, how easily you can get from hotel to clinic post-surgery, and \u2014 critically \u2014 whether the clinic you're considering is embedded in the city's professional medical community or operating as a tourist-facing operation far from any medical oversight cluster.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">73%</div><div class=\"lbl\">Certified clinics within 4km of \u015ei\u015fli</div></div>\n      <div class=\"stat-card\"><div class=\"num\">1,200+</div><div class=\"lbl\">Registered aesthetic facilities in Istanbul</div></div>\n      <div class=\"stat-card\"><div class=\"num\">45 min</div><div class=\"lbl\">IST Airport \u2192 \u015ei\u015fli by metro</div></div>\n      <div class=\"stat-card\"><div class=\"num\">\u00a360\u2013\u00a390</div><div class=\"lbl\">Typical hotel rate/night near clinics</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-map-pin\"></i> Why 73% of Accredited Clinics Cluster Around \u015ei\u015fli</h2>\n\n    <p>The concentration of Istanbul's aesthetic surgery sector around \u015ei\u015fli is no accident \u2014 it's the product of 40 years of medical infrastructure development. In the 1980s and 1990s, several of Turkey's earliest private hospitals were established along <strong>Halaskargazi Caddesi</strong> (also called Halaskargazi Avenue), a major arterial road running through \u015ei\u015fli. These anchor hospitals \u2014 including Istanbul's first private JCI-accredited surgical centres \u2014 attracted specialist surgeons who set up private consulting rooms nearby.</p>\n\n    <p>Over time, the cluster effect compounded: more surgeons means more trained nurses, more specialist anaesthesiologists, more medical equipment suppliers, and better access to emergency referral networks. The geographic density of medical expertise creates a quality floor below which even mediocre clinics cannot fall, because they share supplier networks, recruit from the same trained workforce, and face professional peer scrutiny from neighbouring surgeons.</p>\n\n    <p>Compare this to a clinic located in, say, <strong>Beylikd\u00fcz\u00fc</strong> (45 minutes west by metro) or <strong>\u00dcmraniye</strong> on the Asian side \u2014 areas with no aesthetic surgery cluster, where a single clinic may operate without any of the professional ecosystem support that \u015ei\u015fli provides.</p>\n\n    <h2><i class=\"fa-solid fa-star\"></i> Ni\u015fanta\u015f\u0131: Istanbul's Harley Street</h2>\n\n    <p>Ni\u015fanta\u015f\u0131 is technically within the administrative \u015ei\u015fli district but deserves its own category as Istanbul's premium aesthetic surgery address. The neighbourhood sits just south of the main \u015ei\u015fli commercial hub, bordered by <strong>Te\u015fvikiye Caddesi</strong> to the south and <strong>Akkavak Sokak</strong> to the north.</p>\n\n    <p>The streets around <strong>Valikona\u011f\u0131 Caddesi</strong> and <strong>Bronz Sokak</strong> host the highest concentration of top-tier aesthetic practices. Clinics here are typically purpose-built \u2014 not converted apartments \u2014 with dedicated recovery suites, 3D imaging equipment, and resident anaesthesiologists. Many of Turkey's most internationally published plastic surgeons consult and operate from Ni\u015fanta\u015f\u0131, making it the address that equivalent UK Harley Street patients seek.</p>\n\n    <h3>What to Expect in Ni\u015fanta\u015f\u0131</h3>\n    <ul>\n      <li><a href=\"/treatment/rhinoplasty\">Rhinoplasty</a> packages: \u00a33,200\u2013\u00a34,800 all-in</li>\n      <li><a href=\"/treatment/hair-transplant\">Hair transplant</a> (3,000 grafts): \u00a32,200\u2013\u00a33,500</li>\n      <li>Breast augmentation: \u00a33,500\u2013\u00a35,500</li>\n      <li>Consultation: Often free or refunded against procedure cost</li>\n      <li>Waiting times: 3\u20138 weeks for top surgeons</li>\n    </ul>\n\n    <h3>Accommodation: Ni\u015fanta\u015f\u0131 & \u015ei\u015fli</h3>\n    <p>The neighbourhood itself has several excellent boutique hotels on and around <strong>Abdi \u0130pek\u00e7i Caddesi</strong> \u2014 the high-end shopping street that runs parallel to the clinic zone. <strong>The Marmara \u015ei\u015fli</strong> (approximately \u00a390/night) and several serviced apartments on Te\u015fvikiye Caddesi (\u00a355\u2013\u00a375/night) position you within 5 minutes' walk of most Ni\u015fanta\u015f\u0131 clinics \u2014 ideal for post-surgery mobility limitations.</p>\n\n    <blockquote>\n      \"When I'm advising UK patients on where to stay during recovery, I always recommend they book accommodation within walking distance of their clinic. The first 48 hours after rhinoplasty or a hair transplant, you don't want to be negotiating Istanbul traffic in a taxi. Ni\u015fanta\u015f\u0131 is perfect for this \u2014 everything is walkable, the streets are clean, and there's a pharmacy on every corner.\"\n      <br/><br/>\u2014 <strong>James Whitfield</strong>, Medical Travel Correspondent, MediRoute\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-building\"></i> \u015ei\u015fli Proper: The High-Volume Hub</h2>\n\n    <p>The commercial heart of \u015ei\u015fli \u2014 centred on <strong>Halaskargazi Caddesi</strong> and the streets radiating from <strong>Mecidiyek\u00f6y</strong> \u2014 operates at higher volume and slightly lower price points than Ni\u015fanta\u015f\u0131. This area is where you'll find Turkey's major private hospital groups with dedicated aesthetic wings: <strong>Medicana International</strong>, <strong>Istanbul Cerrahi Hastanesi</strong>, and several others operating JCI-accredited surgical suites.</p>\n\n    <p>The distinction within \u015ei\u015fli is important: there are clinics on the main boulevard (higher visibility, higher marketing budgets, often good) and clinics tucked into the residential side streets (which can range from excellent smaller practices to unlicensed operations). A useful rule of thumb: clinics on upper floors of office buildings accessible only by lift, without visible reception or lobby areas, deserve extra scrutiny.</p>\n\n    <table>\n      <thead>\n        <tr><th>District</th><th>Price Range</th><th>Quality Range</th><th>Best For</th><th>Airport Distance</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>Ni\u015fanta\u015f\u0131</td><td>\u00a3\u00a3\u00a3 (Premium)</td><td>High floor</td><td>Rhinoplasty, complex cases</td><td>45 min (IST), 25 min (SAW)</td></tr>\n        <tr><td>\u015ei\u015fli</td><td>\u00a3\u00a3 (Mid-range)</td><td>Wide range</td><td>Hair transplants, all procedures</td><td>45 min (IST), 30 min (SAW)</td></tr>\n        <tr><td>Be\u015fikta\u015f</td><td>\u00a3\u00a3\u2013\u00a3\u00a3\u00a3</td><td>Boutique high quality</td><td>Aesthetic injections, smaller procedures</td><td>55 min (IST)</td></tr>\n        <tr><td>Kad\u0131k\u00f6y (Asian)</td><td>\u00a3\u2013\u00a3\u00a3</td><td>Variable, some excellent</td><td>Dental work, alternative for budget</td><td>70 min (IST), 30 min (SAW)</td></tr>\n        <tr><td>Beyo\u011flu/Taksim</td><td>\u00a3\u2013\u00a3\u00a3</td><td>Variable</td><td>Tourist-area, verify carefully</td><td>50 min (IST)</td></tr>\n      </tbody>\n    </table>\n\n    <h2><i class=\"fa-solid fa-water\"></i> Be\u015fikta\u015f: The Bosphorus Boutique Zone</h2>\n\n    <p>Be\u015fikta\u015f sits directly on the Bosphorus waterfront, south of Ni\u015fanta\u015f\u0131 along the European shore. The neighbourhood has historically been known for its football club and fish market rather than medical tourism, but the past three years have seen a wave of boutique aesthetic clinics open along <strong>Sinanpa\u015fa Mahallesi</strong> and the streets between <strong>\u00c7\u0131ra\u011fan Caddesi</strong> and the central bazaar area.</p>\n\n    <p>These Be\u015fikta\u015f clinics typically offer a more personalised experience: smaller patient volumes, less of the \"conveyor belt\" atmosphere that critics attach to the largest \u015ei\u015fli operations, and often a 10\u201315% price advantage over Ni\u015fanta\u015f\u0131 equivalents. The trade-off is that emergency surgical support infrastructure is slightly less dense than in the \u015ei\u015fli cluster. For lower-risk procedures (<a href=\"/treatment/dental-veneers\">dental veneers</a>, minor aesthetic procedures, hair transplants), Be\u015fikta\u015f is an excellent option. For major reconstructive rhinoplasty or <a href=\"/treatment/bbl\">BBL</a>, we'd favour \u015ei\u015fli/Ni\u015fanta\u015f\u0131 proximity to major surgical hospitals.</p>\n\n    <h2><i class=\"fa-solid fa-ferry\"></i> Kad\u0131k\u00f6y: The Asian Side Alternative</h2>\n\n    <p>Kad\u0131k\u00f6y on the Asian shore of Istanbul is the city's most authentically non-tourist neighbourhood \u2014 a place where locals eat, shop, and live without the self-consciousness of Beyo\u011flu or the polish of Ni\u015fanta\u015f\u0131. It also hosts a small number of genuinely excellent aesthetic surgeons who practice away from the European side's competitive pressure.</p>\n\n    <p>The logistics are the complication. UK patients arriving at Istanbul Airport (IST) on the European side face a 70-minute journey to Kad\u0131k\u00f6y via the Marmaray tunnel or a 45-minute taxi ride. Sabiha G\u00f6k\u00e7en Airport (SAW) on the Asian side, however, is only 30 minutes from Kad\u0131k\u00f6y \u2014 making it the better choice for Kad\u0131k\u00f6y-based clinics if you're flying with airlines that serve SAW (Pegasus, Wizz Air, SunExpress, some easyJet routes).</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Airport Strategy:</strong> Istanbul has two airports. IST (Istanbul Airport, European side) is best for \u015ei\u015fli/Ni\u015fanta\u015f\u0131/Be\u015fikta\u015f clinics. SAW (Sabiha G\u00f6k\u00e7en, Asian side) is best for Kad\u0131k\u00f6y clinics. Always check which airport your airline flies into before booking accommodation \u2014 the wrong choice adds 1\u20132 hours of transfer time post-surgery.\n    </div>\n\n    <h2><i class=\"fa-solid fa-magnifying-glass\"></i> How to Spot a \"Tourist Trap\" Clinic vs a Genuine One</h2>\n\n    <p>Not all clinics in the \u015ei\u015fli cluster are equal. The same geographic concentration that creates quality floors also attracts operators who use the prestigious address as a marketing prop without the substance behind it. Here's how to differentiate:</p>\n\n    <h3>Green Flags: Signs of a Genuine Clinic</h3>\n    <ul>\n      <li>Physical address matches a known medical building or hospital (cross-reference on Google Street View)</li>\n      <li>Surgeon named upfront with verifiable Turkish Medical Association (TTB) registration number</li>\n      <li>JCI, ISO 9001, or Turkish Ministry of Health (Sa\u011fl\u0131k Bakanl\u0131\u011f\u0131) accreditation certificate available on request</li>\n      <li>Operating room visible (not just consultation rooms) \u2014 ask for a virtual tour</li>\n      <li>Anaesthesiologist on permanent staff (not \"contracted on day of surgery\")</li>\n      <li>Itemised written quote with every service listed separately</li>\n      <li>Free revision policy defined specifically in writing</li>\n    </ul>\n\n    <h3>Red Flags: Tourist Trap Warning Signs</h3>\n    <ul>\n      <li>Coordinator is only contact \u2014 surgeon is \"unavailable\" for pre-op questions</li>\n      <li>Address is a shared office building with no medical signage visible from street</li>\n      <li>No physical website beyond Instagram \u2014 or Instagram captions in English/Arabic only with no Turkish content</li>\n      <li>Quote given verbally only, nothing in writing</li>\n      <li>Package price less than \u00a3999 for any surgical procedure (hair transplant, rhinoplasty, etc.)</li>\n      <li>No in-country emergency support number \u2014 only a WhatsApp coordinator</li>\n      <li>\"Doctor\" title used but no verifiable surgical qualifications</li>\n    </ul>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Important:</strong> \"Medical tourism facilitators\" \u2014 middlemen who connect patients with clinics \u2014 are not the same as verified clinic partners. Some facilitators take commissions from any clinic that pays them, regardless of quality. MediRoute verifies every clinic directly against Ministry of Health records before listing them.\n    </div>\n\n    <h2><i class=\"fa-solid fa-train\"></i> Getting Around: Transport Guide for Medical Patients</h2>\n\n    <p>Istanbul's public transport is genuinely excellent, but navigating it post-surgery with swelling, bandages, or limited mobility requires planning. Here's the practical breakdown:</p>\n\n    <table>\n      <thead>\n        <tr><th>Route</th><th>Method</th><th>Cost</th><th>Time</th><th>Post-Surgery Suitability</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Metro (M11 + M7)</td><td>\u00a31.50</td><td>45\u201355 min</td><td>Poor (luggage + crowds)</td></tr>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Taxi/Uber</td><td>\u00a325\u2013\u00a340</td><td>35\u201360 min (traffic)</td><td>Good \u2014 book in advance</td></tr>\n        <tr><td>IST Airport \u2192 \u015ei\u015fli</td><td>Clinic transfer</td><td>Often free (ask)</td><td>45 min</td><td>Excellent</td></tr>\n        <tr><td>SAW Airport \u2192 Kad\u0131k\u00f6y</td><td>Taxi</td><td>\u00a318\u2013\u00a328</td><td>30\u201340 min</td><td>Good</td></tr>\n        <tr><td>Hotel \u2192 Clinic (\u015ei\u015fli)</td><td>Walk (if nearby)</td><td>Free</td><td>5\u201315 min</td><td>Best option for post-op</td></tr>\n        <tr><td>\u015ei\u015fli \u2192 Be\u015fikta\u015f</td><td>Taxi</td><td>\u00a35\u2013\u00a310</td><td>15\u201320 min</td><td>Acceptable</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Let MediRoute Navigate Istanbul's Clinics For You</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">We know every accredited clinic in \u015ei\u015fli, Ni\u015fanta\u015f\u0131, and Be\u015fikta\u015f \u2014 their surgeons, their facilities, and their real patient outcomes. Tell us your procedure and budget; we'll match you with the right clinic in the right district.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Get My Free Clinic Match \u2192</a>\n    </div>", "category": "Guide", "image_url": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80", "author": "James Whitfield", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Medical Travel Correspondent", "author_specialty": "Medical Travel Correspondent", "author_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"};
   
   // Instant SEO / UX redirect if a mismatched lang parameter is used
   (function() {
@@ -183,7 +210,10 @@
     <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-blue-900/60 border border-blue-400/30 text-blue-200">Guide</span></div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">Istanbul's Medical Aesthetics Districts: An Insider Map of Where the Best Clinics Actually Are</h1>
     <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> James Whitfield</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=James%20Whitfield" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">James Whitfield</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 8 dk okuma</span>
       </div>
@@ -197,6 +227,12 @@
   <div id="cover-image-wrapper" class="mb-8 rounded-2xl overflow-hidden shadow-lg" style="display:block;">
     <img id="cover-image" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80" alt="Istanbul's Medical Aesthetics Districts: An Insider Map of Where the Best Clinics Actually Are" class="w-full" style="max-height:420px;object-fit:cover;">
   </div>
+
+  <!-- Table of Contents -->
+  <details class="toc-widget fade-up" id="toc-widget" style="display:none;" open>
+    <summary>İçindekiler</summary>
+    <ol class="toc-list" id="toc-list"></ol>
+  </details>
 
   <!-- Article body -->
   <article class="article-body fade-up" id="article-body">
@@ -227,8 +263,8 @@
 
     <h3>What to Expect in Nişantaşı</h3>
     <ul>
-      <li>Rhinoplasty packages: £3,200–£4,800 all-in</li>
-      <li>Hair transplant (3,000 grafts): £2,200–£3,500</li>
+      <li><a href="/treatment/rhinoplasty">Rhinoplasty</a> packages: £3,200–£4,800 all-in</li>
+      <li><a href="/treatment/hair-transplant">Hair transplant</a> (3,000 grafts): £2,200–£3,500</li>
       <li>Breast augmentation: £3,500–£5,500</li>
       <li>Consultation: Often free or refunded against procedure cost</li>
       <li>Waiting times: 3–8 weeks for top surgeons</li>
@@ -265,7 +301,7 @@
 
     <p>Beşiktaş sits directly on the Bosphorus waterfront, south of Nişantaşı along the European shore. The neighbourhood has historically been known for its football club and fish market rather than medical tourism, but the past three years have seen a wave of boutique aesthetic clinics open along <strong>Sinanpaşa Mahallesi</strong> and the streets between <strong>Çırağan Caddesi</strong> and the central bazaar area.</p>
 
-    <p>These Beşiktaş clinics typically offer a more personalised experience: smaller patient volumes, less of the "conveyor belt" atmosphere that critics attach to the largest Şişli operations, and often a 10–15% price advantage over Nişantaşı equivalents. The trade-off is that emergency surgical support infrastructure is slightly less dense than in the Şişli cluster. For lower-risk procedures (dental veneers, minor aesthetic procedures, hair transplants), Beşiktaş is an excellent option. For major reconstructive rhinoplasty or BBL, we'd favour Şişli/Nişantaşı proximity to major surgical hospitals.</p>
+    <p>These Beşiktaş clinics typically offer a more personalised experience: smaller patient volumes, less of the "conveyor belt" atmosphere that critics attach to the largest Şişli operations, and often a 10–15% price advantage over Nişantaşı equivalents. The trade-off is that emergency surgical support infrastructure is slightly less dense than in the Şişli cluster. For lower-risk procedures (<a href="/treatment/dental-veneers">dental veneers</a>, minor aesthetic procedures, hair transplants), Beşiktaş is an excellent option. For major reconstructive rhinoplasty or <a href="/treatment/bbl">BBL</a>, we'd favour Şişli/Nişantaşı proximity to major surgical hospitals.</p>
 
     <h2><i class="fa-solid fa-ferry"></i> Kadıköy: The Asian Side Alternative</h2>
 
@@ -333,19 +369,21 @@
   </article>
 
   <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:flex;">
-    <div class="author-avatar" id="author-avatar">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Medical Travel Correspondent James Whitfield">
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Medical Travel Correspondent James Whitfield</h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="/blog?author=James%20Whitfield" id="author-card-link" class="author-card-link" style="display:block;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="James Whitfield">
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Medical Travel Correspondent</p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name">James Whitfield</h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text">Medical Travel Correspondent</p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      </div>
     </div>
-  </div>
+  </a>
 
   <!-- Share buttons -->
   <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
@@ -363,38 +401,38 @@
     <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
       
-          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+          <a href="/blog/laser-eye-surgery-istanbul-lasik" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80" alt="Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Eye</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Are you tired of relying on glasses or contact lenses for everyday tasks? Las...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+          <a href="/blog/gastric-sleeve-turkey-guide-2026" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Bariatric</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Obesity is a complex medical condition that affects millions worldwide. Gastr...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+          <a href="/blog/dental-veneers-istanbul-journey" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Dental Veneers in Istanbul: A Step-by-Step Journey" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Guide</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Dental Veneers in Istanbul: A Step-by-Step Journey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">The Hollywood Smile DestinationDental veneers in the UK or US can easily cost...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
             </div>
           </a>
@@ -472,14 +510,20 @@
       document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
 
       // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const contentText = stripHtml(blog.content);
+      const blogWordCount = contentText.split(/\s+/).length;
+      const blogLang = (blog.lang || window.ARTICLE_LANG || 'en');
       const blogSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": blog.title,
-        "description": stripHtml(blog.content).substring(0, 155),
-        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "description": contentText.substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/og-image.png",
         "datePublished": blog.created_at,
         "dateModified": blog.updated_at || blog.created_at,
+        "wordCount": blogWordCount,
+        "inLanguage": blogLang,
+        "articleSection": blog.category || "Medical Tourism",
         "author": {
           "@type": "Person",
           "name": blog.author || "MediRoute Team",
@@ -535,8 +579,12 @@
       const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
       const wordCount = stripHtml(blog.content).split(/\s+/).length;
       const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      const metaAuthorName = blog.author || 'MediRoute Team';
       document.getElementById('hero-meta').innerHTML = `
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=${encodeURIComponent(metaAuthorName)}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
       `;
@@ -551,13 +599,26 @@
       // Article content
       document.getElementById('article-body').innerHTML = blog.content;
 
+      // Generate TOC from H2 headings
+      generateTOC();
+
+      // Inject FAQPage schema if FAQ section detected
+      injectFAQSchema();
+
       // Author card
       const authorName = blog.author || blog.author_title;
       if (authorName) {
+        const link = document.getElementById('author-card-link');
         const card = document.getElementById('author-card');
-        card.style.display = 'flex';
-        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
-        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        const authorVal = blog.author || 'MediRoute Team';
+        if (link) {
+          link.style.display = 'block';
+          link.href = '/blog?author=' + encodeURIComponent(authorVal);
+        } else if (card) {
+          card.style.display = 'flex';
+        }
+        const fullName = authorVal;
+        document.getElementById('author-name').textContent = fullName;
         document.getElementById('author-title-text').textContent = blog.author_specialty || '';
         document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
         if (blog.author_image) {
@@ -619,6 +680,92 @@
     const btn = event.currentTarget;
     btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
     setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Generate Table of Contents from H2 headings
+  function generateTOC() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2');
+    if (headings.length < 2) return; // Don't show TOC for very short articles
+
+    const tocList = document.getElementById('toc-list');
+    const tocWidget = document.getElementById('toc-widget');
+    tocWidget.style.display = 'block';
+
+    headings.forEach((h, i) => {
+      const id = 'section-' + i;
+      h.id = id;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = h.textContent.replace(/^[\s🏥💊✈️🦷💉⭐🔬📋🩺]+/, '').trim();
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Highlight active TOC item on scroll
+    const tocLinks = tocList.querySelectorAll('a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const activeLink = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Inject FAQPage schema if FAQ-style content is detected
+  function injectFAQSchema() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2, h3');
+    const faqEntries = [];
+
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      // Detect FAQ-style headings (questions ending with ?)
+      if (text.endsWith('?') || text.toLowerCase().includes('soru') || text.toLowerCase().includes('faq')) {
+        // Get the answer: all content between this heading and the next heading
+        let answer = '';
+        let sibling = h.nextElementSibling;
+        while (sibling && !['H2', 'H3'].includes(sibling.tagName)) {
+          answer += sibling.textContent.trim() + ' ';
+          sibling = sibling.nextElementSibling;
+        }
+        answer = answer.trim();
+        if (answer.length > 20) {
+          faqEntries.push({ question: text, answer: answer.substring(0, 500) });
+        }
+      }
+    });
+
+    if (faqEntries.length >= 2) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqEntries.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      };
+      const existing = document.getElementById('faq-schema-ld');
+      if (existing) existing.remove();
+      const script = document.createElement('script');
+      script.id = 'faq-schema-ld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(script);
+    }
   }
 
   // Reading progress bar

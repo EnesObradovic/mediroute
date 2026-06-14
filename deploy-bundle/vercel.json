@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/treatment/:path*", "destination": "/treatment.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/compare", "destination": "/compare.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/:slug*", "destination": "/blog-detail.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/auth", "destination": "/auth.html" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/treatments", "destination": "/treatments.html" },
+    { "source": "/provider", "destination": "/provider.html" },
+    { "source": "/patient-dashboard", "destination": "/patient-dashboard.html" },
+    { "source": "/clinic-dashboard", "destination": "/admin.html" },
+    { "source": "/clinic/:slug*", "destination": "/clinic-detail.html" }
+  ]
+}

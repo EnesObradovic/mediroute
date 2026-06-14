@@ -42,16 +42,41 @@
     .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
     .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
 
+    /* TOC (Table of Contents) */
+    .toc-widget{background:#fff;border-radius:16px;border:1px solid #E1E8FF;padding:1.2rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(10,31,107,.04);}
+    .toc-widget summary{font-size:.85rem;font-weight:800;color:#0A1F6B;cursor:pointer;display:flex;align-items:center;gap:.5rem;}
+    .toc-widget summary::-webkit-details-marker{display:none;}
+    .toc-widget summary::before{content:'\f0ca';font-family:'Font Awesome 6 Free';font-weight:900;color:#3B5FDD;}
+    .toc-widget summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.6rem;color:#94A3B8;margin-left:auto;transition:transform .2s;}
+    .toc-widget[open] summary::after{transform:rotate(180deg);}
+    .toc-list{list-style:none;padding:0;margin:.8rem 0 0;}
+    .toc-list li{margin-bottom:.4rem;}
+    .toc-list a{font-size:.82rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:8px;transition:all .15s;}
+    .toc-list a::before{content:'';width:6px;height:6px;border-radius:50%;background:#CBD5E1;flex-shrink:0;transition:background .15s;}
+    .toc-list a:hover{background:#EFF6FF;color:#0F2D96;}
+    .toc-list a:hover::before{background:#3B5FDD;}
+    .toc-list a.active{background:#EFF6FF;color:#0F2D96;font-weight:600;}
+    .toc-list a.active::before{background:#3B5FDD;}
+
     /* Related card */
     .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
     .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
 
     /* Author card */
+    .author-card-link{
+      display:block;text-decoration:none;color:inherit;margin-top:2rem;
+    }
     .author-card{
       background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
       border:1px solid #E1E8FF;border-radius:20px;
-      padding:1.5rem 2rem;margin-top:2rem;
+      padding:1.5rem 2rem;
       display:flex;align-items:center;gap:1.2rem;
+      transition:all .22s ease;
+    }
+    .author-card-link:hover .author-card{
+      transform:translateY(-2px);
+      box-shadow:0 8px 30px rgba(10,31,107,.08);
+      border-color:#C3D1FF;
     }
     .author-avatar{
       width:72px;height:72px;border-radius:50%;
@@ -77,6 +102,8 @@
       .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
     }
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <link rel="canonical" href="https://medirouteturkey.com/blog/hbot-prp-graft-survival-hair-transplant-turkey"/>
   <link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/hbot-prp-graft-survival-hair-transplant-turkey"/>
@@ -125,7 +152,7 @@
 <script>
   window.STATIC_RENDERED = true;
   window.ARTICLE_LANG = "en";
-  window.STATIC_BLOG_DATA = {"id": 24, "title": "Hyperbaric Oxygen Therapy (HBOT) and Follicular Graft Survival", "slug": "hbot-prp-graft-survival-hair-transplant-turkey", "content": "<p>Turkey, and specifically Istanbul, is recognized globally as the hair transplant capital of the world. Every year, hundreds of thousands of patients, particularly from the UK, visit Turkish clinics for Follicular Unit Extraction (FUE) or Direct Hair Implantation (DHI) procedures. While the low cost (averaging \u00a31,500 to \u00a32,500 in Turkey compared to \u00a36,000 to \u00a315,000 in the UK) is a major driver, patients are increasingly focused on the quality of their results, which depends directly on one clinical metric: the follicular graft survival rate.</p>\n\n    <p>During a hair transplant, hair follicles are extracted from the donor area (typically the back and sides of the scalp) and implanted into the balding recipient areas. Between extraction and implantation, these delicate structures enter an ex-vivo (outside the body) state, cut off from their blood supply. This period of oxygen deprivation triggers cellular stress. To address this, leading clinics in Turkey are incorporating post-operative Hyperbaric Oxygen Therapy (HBOT) and Platelet-Rich Plasma (PRP) storage media into their protocols to maximize follicle survival. This guide explains the cellular physiology of graft survival and how these therapies improve outcomes.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">12-15%</div><div class=\"lbl\">Increase in Follicular Graft Survival via HBOT</div></div>\n      <div class=\"stat-card\"><div class=\"num\">1.5-2.0</div><div class=\"lbl\">ATA Pressure Level for Post-Op Therapy</div></div>\n      <div class=\"stat-card\"><div class=\"num\">97-98%</div><div class=\"lbl\">Graft Survival Rate with Combined Protocols</div></div>\n      <div class=\"stat-card\"><div class=\"num\">4\u00b0C</div><div class=\"lbl\">Optimal Cold Storage for Follicles</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-microscope\"></i> The Cellular Physiology of Graft Hypoxia & Reperfusion Injury</h2>\n    <p>To understand why post-operative oxygenation is critical, we must look at what happens to a hair follicle at the cellular level during transplantation. The process involves three distinct metabolic phases:</p>\n\n    <h3>1. The Ex-Vivo Phase (Ischemia)</h3>\n    <p>Once a follicular unit is extracted from the scalp, its connection to the capillary network is severed, immediately cutting off its supply of oxygen and glucose (ischemia). The cell must switch from aerobic respiration to anaerobic glycolysis to generate adenosine triphosphate (ATP), the cell's energy currency. Anaerobic glycolysis is far less efficient and leads to the accumulation of lactic acid, which lowers intracellular pH and damages cellular structures, particularly the mitochondria. If the ex-vivo phase lasts longer than 4 to 6 hours, irreversible follicular cell death begins to occur.</p>\n\n    <h3>2. The Implantation Phase (Hypoxia)</h3>\n    <p>Once implanted, the follicle is in a hypoxic (low oxygen) state. It does not immediately connect to the scalp's blood vessels. Instead, it relies on simple diffusion of oxygen and nutrients from the surrounding tissue fluid (interstitial fluid). It takes approximately <b>3 to 5 days</b> for new micro-capillaries to grow and connect to the implanted bulb (a process called neovascularization). During this critical window, the follicle is highly vulnerable to oxygen starvation.</p>\n\n    <h3>3. The Reperfusion Phase (Oxidative Stress)</h3>\n    <p>When the new capillaries finally connect to the follicle and reintroduce oxygenated blood, the sudden rush of oxygen can trigger **Ischemia-Reperfusion Injury**. The mitochondria, having been damaged during the ischemic phase, process the sudden influx of oxygen inefficiently. This leads to the release of **Reactive Oxygen Species (ROS)**, or free radicals. These free radicals damage cell membranes, proteins, and DNA, leading to localized inflammation and the loss of up to 10% to 15% of the implanted grafts.</p>\n\n    <blockquote>\n      \"The hair transplant industry has traditionally focused on how fast we can punch and place grafts. But the real battle is metabolic. If we can keep the grafts oxygenated during their out-of-body phase and accelerate their cellular recovery once implanted, we can virtually eliminate graft failure. By using PRP-infused cold storage media during extraction and placing patients in a hyperbaric oxygen chamber immediately after surgery, we keep the follicles active and prevent the cellular damage associated with oxygen starvation.\"\n      <br/><br/>\u2014 <strong>Dr. Ahmet Demir</strong>, Hair Restoration & Trichology Specialist, Istanbul\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-wind\"></i> How Hyperbaric Oxygen Therapy (HBOT) Combats Graft Loss</h2>\n    <p>Hyperbaric Oxygen Therapy involves placing the patient inside a sealed chamber where they breathe 100% pure oxygen at atmospheric pressures higher than sea level (typically <b>1.5 to 2.0 Atmospheres Absolute, or ATA</b>).</p>\n\n    <p>Under normal conditions, oxygen is transported through the body almost entirely by binding to the hemoglobin in red blood cells, which are already 97-98% saturated. Breathing pure oxygen at sea level adds very little extra oxygen to the blood. However, under hyperbaric pressure (Henry's Law), oxygen is physically dissolved directly into the blood plasma. This dissolved oxygen is transportable independently of red blood cells:</p>\n    <ul>\n      <li><strong>Interstitial Diffusion:</strong> The oxygen-rich plasma diffuses easily out of the capillaries and travels through the tissue fluid directly to the newly implanted hair follicles. This bypasses the need for immediate capillary connection, keeping the follicle oxygenated during the first 3 to 5 critical days post-op.</li>\n      <li><strong>Mitigating Reperfusion Injury:</strong> HBOT helps restore mitochondrial function gradually, reducing the burst of free radicals (ROS) when natural blood flow returns. It also increases the production of natural antioxidant enzymes (like superoxide dismutase), which neutralize free radicals.</li>\n      <li><strong>Reducing Swelling (Edema):</strong> The hyperbaric environment causes mild vasoconstriction (narrowing of blood vessels) while maintaining high tissue oxygenation. This helps reduce post-operative swelling of the scalp, which is common when fluids slide down toward the face, and speeds up the healing of both the donor and recipient areas.</li>\n    </ul>\n\n    <p>Clinical data from Turkish hair restoration centers shows that incorporating HBOT into the post-operative routine increases graft survival rates by <strong>12% to 15%</strong>. For a standard 4,000-graft procedure, this translates to saving 480 to 600 additional hair follicles, which has a major impact on the final density of the transplant.</p>\n\n    <h2><i class=\"fa-solid fa-vial\"></i> PRP Micro-Graft Storage Media: The Holding Solution</h2>\n    <p>The solution in which grafts are kept while waiting to be implanted is just as important as post-op oxygenation. Storing grafts in standard saline (0.9% Sodium Chloride) at room temperature is suboptimal, as saline lacks nutrients and buffer capacity, and room temperature allows cell metabolism to continue at a rate that rapidly depletes the cell's energy reserves.</p>\n\n    <p>To improve graft preservation, advanced Turkish clinics use a cold-storage protocol (4\u00b0C) using nutrient solutions enriched with the patient's own **Platelet-Rich Plasma (PRP)**:</p>\n    <ul>\n      <li><strong>Hypothermia:</strong> Cooling the storage solution to 4\u00b0C slows down the follicle's metabolic rate, reducing its demand for oxygen and glucose by approximately 90% and preserving its ATP reserves.</li>\n      <li><strong>PRP Enrichment:</strong> PRP is prepared by spinning the patient's blood in a centrifuge to concentrate the platelets. When added to the storage solution, PRP releases essential growth factors, including Vascular Endothelial Growth Factor (VEGF), Platelet-Derived Growth Factor (PDGF), and Epidermal Growth Factor (EGF). These factors support the hair follicle cells and help stimulate early capillary growth once the follicle is implanted.</li>\n    </ul>\n\n    <h2><i class=\"fa-solid fa-table\"></i> HBOT Post-Operative Clinical Schedule</h2>\n    <p>The table below outlines a typical post-operative HBOT schedule used by leading clinics to support graft survival:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Post-Operative Day</th>\n          <th>HBOT Chamber Pressure (ATA)</th>\n          <th>Session Duration</th>\n          <th>Daily Frequency</th>\n          <th>Primary Clinical Objective</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td><strong>Day 1 (Day of Surgery)</strong></td>\n          <td>1.5 ATA (Low pressure start)</td>\n          <td>60 Minutes</td>\n          <td>1 Session (Post-op)</td>\n          <td>Oxygenates tissue immediately to prevent early cell damage.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 2 (First Wash)</strong></td>\n          <td>1.8 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Reduces scalp swelling and stimulates local healing.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 3</strong></td>\n          <td>2.0 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Supports follicles during the peak of tissue hypoxia.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 4</strong></td>\n          <td>2.0 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Stimulates early capillary growth (neovascularization).</td>\n        </tr>\n        <tr>\n          <td><strong>Day 5</strong></td>\n          <td>1.8 ATA (Cool down phase)</td>\n          <td>60 Minutes</td>\n          <td>1 Session (Optional)</td>\n          <td>Accelerates crust shedding and donor area healing.</td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Warning: Contraindications for HBOT:</strong> While HBOT is highly effective for graft survival, it is not suitable for everyone. Patients with a history of untreated pneumothorax, severe chronic obstructive pulmonary disease (COPD), active middle ear infections, or claustrophobia must be evaluated carefully by a physician before entering the chamber.\n    </div>\n\n    <h2><i class=\"fa-solid fa-code-merge\"></i> DHI vs. FUE: How Graft Handling and Time Out-of-Body Affects Outcomes</h2>\n    <p>The method used to implant the grafts also plays a role in survival rates. The two primary techniques are Sapphire FUE and DHI:</p>\n    <ul>\n      <li><strong>Sapphire FUE:</strong> The surgeon uses micro-blades made of sapphire gemstone to open channels in the recipient area. The grafts are then manually placed into these channels using forceps. This technique requires the grafts to remain in the storage solution longer, as all channels are opened before implantation begins.</li>\n      <li><strong>DHI (Direct Hair Implantation):</strong> Grafts are loaded into a specialized pen-like device called a **Choi Implanter**. The needle punctures the skin and implants the graft simultaneously. This technique reduces the out-of-body time for the follicles, as they are often implanted shortly after extraction, reducing the ischemic window. DHI typically has a higher baseline graft survival rate (around 90-92%) compared to Sapphire FUE (86-88%), but it is more time-consuming and expensive.</li>\n    </ul>\n    <p>Regardless of the technique, incorporating HBOT and cold PRP storage helps maximize survival rates, supporting optimal density and natural-looking results.</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Pro-Tip for Clinic Vetting:</strong> When consulting with hair transplant clinics in Turkey, ask: <em>\"Do you use cold storage solutions for the grafts? Do you enrich the holding solution with PRP? Is post-operative HBOT included in your package, and if so, how many sessions are provided?\"</em> A quality clinic will explain their graft preservation and post-op support protocols clearly.\n    </div>\n\n    <h2><i class=\"fa-solid fa-circle-nodes\"></i> Choosing a Quality Clinic Over a \"Graft Mill\"</h2>\n    <p>The hair transplant market in Turkey is large, and some low-cost providers, often referred to as \"graft mills,\" prioritize high patient volume over clinical detail. These clinics often extract grafts too quickly, damage the follicles, leave them at room temperature in saline for too long, and do not offer supportive therapies like HBOT. To ensure a safe procedure and a natural result, choose a clinic that prioritizes graft preservation and proper patient care.</p>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Book a Hair Transplant with Advanced Graft Preservation</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">Maximize your graft survival rate and hair density. MediRoute only partners with accredited hair transplant specialists in Turkey who utilize cold PRP storage media, advanced Choi DHI implanters, and post-operative HBOT.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Request a Vetted Hair Quote \u2192</a>\n    </div>", "category": "Hair", "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80", "author": "Dr. Ahmet Demir", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Hair Restoration & Trichology Specialist", "author_specialty": "Hair Restoration & Trichology Specialist", "author_image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&q=80"};
+  window.STATIC_BLOG_DATA = {"id": 24, "title": "Hyperbaric Oxygen Therapy (HBOT) and Follicular Graft Survival", "slug": "hbot-prp-graft-survival-hair-transplant-turkey", "content": "<p>Turkey, and specifically Istanbul, is recognized globally as the <a href=\"/treatment/hair-transplant\">hair transplant</a> capital of the world. Every year, hundreds of thousands of patients, particularly from the UK, visit Turkish clinics for Follicular Unit Extraction (FUE) or Direct Hair Implantation (DHI) procedures. While the low cost (averaging \u00a31,500 to \u00a32,500 in Turkey compared to \u00a36,000 to \u00a315,000 in the UK) is a major driver, patients are increasingly focused on the quality of their results, which depends directly on one clinical metric: the follicular graft survival rate.</p>\n\n    <p>During a hair transplant, hair follicles are extracted from the donor area (typically the back and sides of the scalp) and implanted into the balding recipient areas. Between extraction and implantation, these delicate structures enter an ex-vivo (outside the body) state, cut off from their blood supply. This period of oxygen deprivation triggers cellular stress. To address this, leading clinics in Turkey are incorporating post-operative Hyperbaric Oxygen Therapy (HBOT) and Platelet-Rich Plasma (PRP) storage media into their protocols to maximize follicle survival. This guide explains the cellular physiology of graft survival and how these therapies improve outcomes.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">12-15%</div><div class=\"lbl\">Increase in Follicular Graft Survival via HBOT</div></div>\n      <div class=\"stat-card\"><div class=\"num\">1.5-2.0</div><div class=\"lbl\">ATA Pressure Level for Post-Op Therapy</div></div>\n      <div class=\"stat-card\"><div class=\"num\">97-98%</div><div class=\"lbl\">Graft Survival Rate with Combined Protocols</div></div>\n      <div class=\"stat-card\"><div class=\"num\">4\u00b0C</div><div class=\"lbl\">Optimal Cold Storage for Follicles</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-microscope\"></i> The Cellular Physiology of Graft Hypoxia & Reperfusion Injury</h2>\n    <p>To understand why post-operative oxygenation is critical, we must look at what happens to a hair follicle at the cellular level during transplantation. The process involves three distinct metabolic phases:</p>\n\n    <h3>1. The Ex-Vivo Phase (Ischemia)</h3>\n    <p>Once a follicular unit is extracted from the scalp, its connection to the capillary network is severed, immediately cutting off its supply of oxygen and glucose (ischemia). The cell must switch from aerobic respiration to anaerobic glycolysis to generate adenosine triphosphate (ATP), the cell's energy currency. Anaerobic glycolysis is far less efficient and leads to the accumulation of lactic acid, which lowers intracellular pH and damages cellular structures, particularly the mitochondria. If the ex-vivo phase lasts longer than 4 to 6 hours, irreversible follicular cell death begins to occur.</p>\n\n    <h3>2. The Implantation Phase (Hypoxia)</h3>\n    <p>Once implanted, the follicle is in a hypoxic (low oxygen) state. It does not immediately connect to the scalp's blood vessels. Instead, it relies on simple diffusion of oxygen and nutrients from the surrounding tissue fluid (interstitial fluid). It takes approximately <b>3 to 5 days</b> for new micro-capillaries to grow and connect to the implanted bulb (a process called neovascularization). During this critical window, the follicle is highly vulnerable to oxygen starvation.</p>\n\n    <h3>3. The Reperfusion Phase (Oxidative Stress)</h3>\n    <p>When the new capillaries finally connect to the follicle and reintroduce oxygenated blood, the sudden rush of oxygen can trigger **Ischemia-Reperfusion Injury**. The mitochondria, having been damaged during the ischemic phase, process the sudden influx of oxygen inefficiently. This leads to the release of **Reactive Oxygen Species (ROS)**, or free radicals. These free radicals damage cell membranes, proteins, and DNA, leading to localized inflammation and the loss of up to 10% to 15% of the implanted grafts.</p>\n\n    <blockquote>\n      \"The hair transplant industry has traditionally focused on how fast we can punch and place grafts. But the real battle is metabolic. If we can keep the grafts oxygenated during their out-of-body phase and accelerate their cellular recovery once implanted, we can virtually eliminate graft failure. By using PRP-infused cold storage media during extraction and placing patients in a hyperbaric oxygen chamber immediately after surgery, we keep the follicles active and prevent the cellular damage associated with oxygen starvation.\"\n      <br/><br/>\u2014 <strong>Dr. Ahmet Demir</strong>, Hair Restoration & Trichology Specialist, Istanbul\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-wind\"></i> How Hyperbaric Oxygen Therapy (HBOT) Combats Graft Loss</h2>\n    <p>Hyperbaric Oxygen Therapy involves placing the patient inside a sealed chamber where they breathe 100% pure oxygen at atmospheric pressures higher than sea level (typically <b>1.5 to 2.0 Atmospheres Absolute, or ATA</b>).</p>\n\n    <p>Under normal conditions, oxygen is transported through the body almost entirely by binding to the hemoglobin in red blood cells, which are already 97-98% saturated. Breathing pure oxygen at sea level adds very little extra oxygen to the blood. However, under hyperbaric pressure (Henry's Law), oxygen is physically dissolved directly into the blood plasma. This dissolved oxygen is transportable independently of red blood cells:</p>\n    <ul>\n      <li><strong>Interstitial Diffusion:</strong> The oxygen-rich plasma diffuses easily out of the capillaries and travels through the tissue fluid directly to the newly implanted hair follicles. This bypasses the need for immediate capillary connection, keeping the follicle oxygenated during the first 3 to 5 critical days post-op.</li>\n      <li><strong>Mitigating Reperfusion Injury:</strong> HBOT helps restore mitochondrial function gradually, reducing the burst of free radicals (ROS) when natural blood flow returns. It also increases the production of natural antioxidant enzymes (like superoxide dismutase), which neutralize free radicals.</li>\n      <li><strong>Reducing Swelling (Edema):</strong> The hyperbaric environment causes mild vasoconstriction (narrowing of blood vessels) while maintaining high tissue oxygenation. This helps reduce post-operative swelling of the scalp, which is common when fluids slide down toward the face, and speeds up the healing of both the donor and recipient areas.</li>\n    </ul>\n\n    <p>Clinical data from Turkish hair restoration centers shows that incorporating HBOT into the post-operative routine increases graft survival rates by <strong>12% to 15%</strong>. For a standard 4,000-graft procedure, this translates to saving 480 to 600 additional hair follicles, which has a major impact on the final density of the transplant.</p>\n\n    <h2><i class=\"fa-solid fa-vial\"></i> PRP Micro-Graft Storage Media: The Holding Solution</h2>\n    <p>The solution in which grafts are kept while waiting to be implanted is just as important as post-op oxygenation. Storing grafts in standard saline (0.9% Sodium Chloride) at room temperature is suboptimal, as saline lacks nutrients and buffer capacity, and room temperature allows cell metabolism to continue at a rate that rapidly depletes the cell's energy reserves.</p>\n\n    <p>To improve graft preservation, advanced Turkish clinics use a cold-storage protocol (4\u00b0C) using nutrient solutions enriched with the patient's own **Platelet-Rich Plasma (PRP)**:</p>\n    <ul>\n      <li><strong>Hypothermia:</strong> Cooling the storage solution to 4\u00b0C slows down the follicle's metabolic rate, reducing its demand for oxygen and glucose by approximately 90% and preserving its ATP reserves.</li>\n      <li><strong>PRP Enrichment:</strong> PRP is prepared by spinning the patient's blood in a centrifuge to concentrate the platelets. When added to the storage solution, PRP releases essential growth factors, including Vascular Endothelial Growth Factor (VEGF), Platelet-Derived Growth Factor (PDGF), and Epidermal Growth Factor (EGF). These factors support the hair follicle cells and help stimulate early capillary growth once the follicle is implanted.</li>\n    </ul>\n\n    <h2><i class=\"fa-solid fa-table\"></i> HBOT Post-Operative Clinical Schedule</h2>\n    <p>The table below outlines a typical post-operative HBOT schedule used by leading clinics to support graft survival:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Post-Operative Day</th>\n          <th>HBOT Chamber Pressure (ATA)</th>\n          <th>Session Duration</th>\n          <th>Daily Frequency</th>\n          <th>Primary Clinical Objective</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td><strong>Day 1 (Day of Surgery)</strong></td>\n          <td>1.5 ATA (Low pressure start)</td>\n          <td>60 Minutes</td>\n          <td>1 Session (Post-op)</td>\n          <td>Oxygenates tissue immediately to prevent early cell damage.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 2 (First Wash)</strong></td>\n          <td>1.8 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Reduces scalp swelling and stimulates local healing.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 3</strong></td>\n          <td>2.0 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Supports follicles during the peak of tissue hypoxia.</td>\n        </tr>\n        <tr>\n          <td><strong>Day 4</strong></td>\n          <td>2.0 ATA</td>\n          <td>90 Minutes</td>\n          <td>1 Session</td>\n          <td>Stimulates early capillary growth (neovascularization).</td>\n        </tr>\n        <tr>\n          <td><strong>Day 5</strong></td>\n          <td>1.8 ATA (Cool down phase)</td>\n          <td>60 Minutes</td>\n          <td>1 Session (Optional)</td>\n          <td>Accelerates crust shedding and donor area healing.</td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Warning: Contraindications for HBOT:</strong> While HBOT is highly effective for graft survival, it is not suitable for everyone. Patients with a history of untreated pneumothorax, severe chronic obstructive pulmonary disease (COPD), active middle ear infections, or claustrophobia must be evaluated carefully by a physician before entering the chamber.\n    </div>\n\n    <h2><i class=\"fa-solid fa-code-merge\"></i> DHI vs. FUE: How Graft Handling and Time Out-of-Body Affects Outcomes</h2>\n    <p>The method used to implant the grafts also plays a role in survival rates. The two primary techniques are Sapphire FUE and DHI:</p>\n    <ul>\n      <li><strong>Sapphire FUE:</strong> The surgeon uses micro-blades made of sapphire gemstone to open channels in the recipient area. The grafts are then manually placed into these channels using forceps. This technique requires the grafts to remain in the storage solution longer, as all channels are opened before implantation begins.</li>\n      <li><strong>DHI (Direct Hair Implantation):</strong> Grafts are loaded into a specialized pen-like device called a **Choi Implanter**. The needle punctures the skin and implants the graft simultaneously. This technique reduces the out-of-body time for the follicles, as they are often implanted shortly after extraction, reducing the ischemic window. DHI typically has a higher baseline graft survival rate (around 90-92%) compared to Sapphire FUE (86-88%), but it is more time-consuming and expensive.</li>\n    </ul>\n    <p>Regardless of the technique, incorporating HBOT and cold PRP storage helps maximize survival rates, supporting optimal density and natural-looking results.</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Pro-Tip for Clinic Vetting:</strong> When consulting with hair transplant clinics in Turkey, ask: <em>\"Do you use cold storage solutions for the grafts? Do you enrich the holding solution with PRP? Is post-operative HBOT included in your package, and if so, how many sessions are provided?\"</em> A quality clinic will explain their graft preservation and post-op support protocols clearly.\n    </div>\n\n    <h2><i class=\"fa-solid fa-circle-nodes\"></i> Choosing a Quality Clinic Over a \"Graft Mill\"</h2>\n    <p>The hair transplant market in Turkey is large, and some low-cost providers, often referred to as \"graft mills,\" prioritize high patient volume over clinical detail. These clinics often extract grafts too quickly, damage the follicles, leave them at room temperature in saline for too long, and do not offer supportive therapies like HBOT. To ensure a safe procedure and a natural result, choose a clinic that prioritizes graft preservation and proper patient care.</p>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Book a Hair Transplant with Advanced Graft Preservation</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">Maximize your graft survival rate and hair density. MediRoute only partners with accredited hair transplant specialists in Turkey who utilize cold PRP storage media, advanced Choi DHI implanters, and post-operative HBOT.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Request a Vetted Hair Quote \u2192</a>\n    </div>", "category": "Hair", "image_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80", "author": "Dr. Ahmet Demir", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Hair Restoration & Trichology Specialist", "author_specialty": "Hair Restoration & Trichology Specialist", "author_image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&q=80"};
   
   // Instant SEO / UX redirect if a mismatched lang parameter is used
   (function() {
@@ -183,7 +210,10 @@
     <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-white/10 border border-white/20 text-blue-200">Hair</span></div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">Hyperbaric Oxygen Therapy (HBOT) and Follicular Graft Survival</h1>
     <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> Dr. Ahmet Demir</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=Dr.%20Ahmet%20Demir" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">Dr. Ahmet Demir</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 8 dk okuma</span>
       </div>
@@ -198,9 +228,15 @@
     <img id="cover-image" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Hyperbaric Oxygen Therapy (HBOT) and Follicular Graft Survival" class="w-full" style="max-height:420px;object-fit:cover;">
   </div>
 
+  <!-- Table of Contents -->
+  <details class="toc-widget fade-up" id="toc-widget" style="display:none;" open>
+    <summary>İçindekiler</summary>
+    <ol class="toc-list" id="toc-list"></ol>
+  </details>
+
   <!-- Article body -->
   <article class="article-body fade-up" id="article-body">
-    <p>Turkey, and specifically Istanbul, is recognized globally as the hair transplant capital of the world. Every year, hundreds of thousands of patients, particularly from the UK, visit Turkish clinics for Follicular Unit Extraction (FUE) or Direct Hair Implantation (DHI) procedures. While the low cost (averaging £1,500 to £2,500 in Turkey compared to £6,000 to £15,000 in the UK) is a major driver, patients are increasingly focused on the quality of their results, which depends directly on one clinical metric: the follicular graft survival rate.</p>
+    <p>Turkey, and specifically Istanbul, is recognized globally as the <a href="/treatment/hair-transplant">hair transplant</a> capital of the world. Every year, hundreds of thousands of patients, particularly from the UK, visit Turkish clinics for Follicular Unit Extraction (FUE) or Direct Hair Implantation (DHI) procedures. While the low cost (averaging £1,500 to £2,500 in Turkey compared to £6,000 to £15,000 in the UK) is a major driver, patients are increasingly focused on the quality of their results, which depends directly on one clinical metric: the follicular graft survival rate.</p>
 
     <p>During a hair transplant, hair follicles are extracted from the donor area (typically the back and sides of the scalp) and implanted into the balding recipient areas. Between extraction and implantation, these delicate structures enter an ex-vivo (outside the body) state, cut off from their blood supply. This period of oxygen deprivation triggers cellular stress. To address this, leading clinics in Turkey are incorporating post-operative Hyperbaric Oxygen Therapy (HBOT) and Platelet-Rich Plasma (PRP) storage media into their protocols to maximize follicle survival. This guide explains the cellular physiology of graft survival and how these therapies improve outcomes.</p>
 
@@ -328,19 +364,21 @@
   </article>
 
   <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:flex;">
-    <div class="author-avatar" id="author-avatar">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&q=80" alt="Hair Restoration & Trichology Specialist Dr. Ahmet Demir">
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Hair Restoration & Trichology Specialist Dr. Ahmet Demir</h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="/blog?author=Dr.%20Ahmet%20Demir" id="author-card-link" class="author-card-link" style="display:block;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&q=80" alt="Dr. Ahmet Demir">
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Hair Restoration & Trichology Specialist</p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Dr. Ahmet Demir</h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text">Hair Restoration & Trichology Specialist</p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      </div>
     </div>
-  </div>
+  </a>
 
   <!-- Share buttons -->
   <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
@@ -358,38 +396,38 @@
     <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
       
-          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+          <a href="/blog/laser-eye-surgery-istanbul-lasik" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80" alt="Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Eye</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Are you tired of relying on glasses or contact lenses for everyday tasks? Las...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+          <a href="/blog/gastric-sleeve-turkey-guide-2026" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Bariatric</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Obesity is a complex medical condition that affects millions worldwide. Gastr...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+          <a href="/blog/dental-veneers-istanbul-journey" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Dental Veneers in Istanbul: A Step-by-Step Journey" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Guide</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Dental Veneers in Istanbul: A Step-by-Step Journey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">The Hollywood Smile DestinationDental veneers in the UK or US can easily cost...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
             </div>
           </a>
@@ -467,14 +505,20 @@
       document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
 
       // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const contentText = stripHtml(blog.content);
+      const blogWordCount = contentText.split(/\s+/).length;
+      const blogLang = (blog.lang || window.ARTICLE_LANG || 'en');
       const blogSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": blog.title,
-        "description": stripHtml(blog.content).substring(0, 155),
-        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "description": contentText.substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/og-image.png",
         "datePublished": blog.created_at,
         "dateModified": blog.updated_at || blog.created_at,
+        "wordCount": blogWordCount,
+        "inLanguage": blogLang,
+        "articleSection": blog.category || "Medical Tourism",
         "author": {
           "@type": "Person",
           "name": blog.author || "MediRoute Team",
@@ -530,8 +574,12 @@
       const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
       const wordCount = stripHtml(blog.content).split(/\s+/).length;
       const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      const metaAuthorName = blog.author || 'MediRoute Team';
       document.getElementById('hero-meta').innerHTML = `
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=${encodeURIComponent(metaAuthorName)}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
       `;
@@ -546,13 +594,26 @@
       // Article content
       document.getElementById('article-body').innerHTML = blog.content;
 
+      // Generate TOC from H2 headings
+      generateTOC();
+
+      // Inject FAQPage schema if FAQ section detected
+      injectFAQSchema();
+
       // Author card
       const authorName = blog.author || blog.author_title;
       if (authorName) {
+        const link = document.getElementById('author-card-link');
         const card = document.getElementById('author-card');
-        card.style.display = 'flex';
-        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
-        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        const authorVal = blog.author || 'MediRoute Team';
+        if (link) {
+          link.style.display = 'block';
+          link.href = '/blog?author=' + encodeURIComponent(authorVal);
+        } else if (card) {
+          card.style.display = 'flex';
+        }
+        const fullName = authorVal;
+        document.getElementById('author-name').textContent = fullName;
         document.getElementById('author-title-text').textContent = blog.author_specialty || '';
         document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
         if (blog.author_image) {
@@ -614,6 +675,92 @@
     const btn = event.currentTarget;
     btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
     setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Generate Table of Contents from H2 headings
+  function generateTOC() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2');
+    if (headings.length < 2) return; // Don't show TOC for very short articles
+
+    const tocList = document.getElementById('toc-list');
+    const tocWidget = document.getElementById('toc-widget');
+    tocWidget.style.display = 'block';
+
+    headings.forEach((h, i) => {
+      const id = 'section-' + i;
+      h.id = id;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = h.textContent.replace(/^[\s🏥💊✈️🦷💉⭐🔬📋🩺]+/, '').trim();
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Highlight active TOC item on scroll
+    const tocLinks = tocList.querySelectorAll('a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const activeLink = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Inject FAQPage schema if FAQ-style content is detected
+  function injectFAQSchema() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2, h3');
+    const faqEntries = [];
+
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      // Detect FAQ-style headings (questions ending with ?)
+      if (text.endsWith('?') || text.toLowerCase().includes('soru') || text.toLowerCase().includes('faq')) {
+        // Get the answer: all content between this heading and the next heading
+        let answer = '';
+        let sibling = h.nextElementSibling;
+        while (sibling && !['H2', 'H3'].includes(sibling.tagName)) {
+          answer += sibling.textContent.trim() + ' ';
+          sibling = sibling.nextElementSibling;
+        }
+        answer = answer.trim();
+        if (answer.length > 20) {
+          faqEntries.push({ question: text, answer: answer.substring(0, 500) });
+        }
+      }
+    });
+
+    if (faqEntries.length >= 2) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqEntries.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      };
+      const existing = document.getElementById('faq-schema-ld');
+      if (existing) existing.remove();
+      const script = document.createElement('script');
+      script.id = 'faq-schema-ld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(script);
+    }
   }
 
   // Reading progress bar

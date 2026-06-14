@@ -42,16 +42,41 @@
     .article-body blockquote{border-left:4px solid #3B5FDD;background:#EFF6FF;padding:1rem 1.4rem;border-radius:0 12px 12px 0;margin:1.2rem 0;font-style:italic;color:#1E3A8A;}
     .article-body iframe,.article-body video{max-width:100%;border-radius:14px;margin:1.2rem 0;}
 
+    /* TOC (Table of Contents) */
+    .toc-widget{background:#fff;border-radius:16px;border:1px solid #E1E8FF;padding:1.2rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(10,31,107,.04);}
+    .toc-widget summary{font-size:.85rem;font-weight:800;color:#0A1F6B;cursor:pointer;display:flex;align-items:center;gap:.5rem;}
+    .toc-widget summary::-webkit-details-marker{display:none;}
+    .toc-widget summary::before{content:'\f0ca';font-family:'Font Awesome 6 Free';font-weight:900;color:#3B5FDD;}
+    .toc-widget summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.6rem;color:#94A3B8;margin-left:auto;transition:transform .2s;}
+    .toc-widget[open] summary::after{transform:rotate(180deg);}
+    .toc-list{list-style:none;padding:0;margin:.8rem 0 0;}
+    .toc-list li{margin-bottom:.4rem;}
+    .toc-list a{font-size:.82rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:8px;transition:all .15s;}
+    .toc-list a::before{content:'';width:6px;height:6px;border-radius:50%;background:#CBD5E1;flex-shrink:0;transition:background .15s;}
+    .toc-list a:hover{background:#EFF6FF;color:#0F2D96;}
+    .toc-list a:hover::before{background:#3B5FDD;}
+    .toc-list a.active{background:#EFF6FF;color:#0F2D96;font-weight:600;}
+    .toc-list a.active::before{background:#3B5FDD;}
+
     /* Related card */
     .related-card{background:#fff;border-radius:16px;border:1px solid #E8EEF9;overflow:hidden;transition:all .2s;cursor:pointer;}
     .related-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,31,107,.1);}
 
     /* Author card */
+    .author-card-link{
+      display:block;text-decoration:none;color:inherit;margin-top:2rem;
+    }
     .author-card{
       background:linear-gradient(135deg,#FAFBFF,#F0F4FF);
       border:1px solid #E1E8FF;border-radius:20px;
-      padding:1.5rem 2rem;margin-top:2rem;
+      padding:1.5rem 2rem;
       display:flex;align-items:center;gap:1.2rem;
+      transition:all .22s ease;
+    }
+    .author-card-link:hover .author-card{
+      transform:translateY(-2px);
+      box-shadow:0 8px 30px rgba(10,31,107,.08);
+      border-color:#C3D1FF;
     }
     .author-avatar{
       width:72px;height:72px;border-radius:50%;
@@ -77,6 +102,8 @@
       .author-card{flex-direction:column;text-align:center;padding:1.2rem;}
     }
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <link rel="canonical" href="https://medirouteturkey.com/blog/flying-home-after-surgery-turkey-medical-protocol"/>
   <link rel="alternate" hreflang="en" href="https://medirouteturkey.com/blog/flying-home-after-surgery-turkey-medical-protocol"/>
@@ -125,7 +152,7 @@
 <script>
   window.STATIC_RENDERED = true;
   window.ARTICLE_LANG = "en";
-  window.STATIC_BLOG_DATA = {"id": 13, "title": "Flying Home After Surgery in Turkey: The Medically Correct Protocol UK Patients Must Follow", "slug": "flying-home-after-surgery-turkey-medical-protocol", "content": "<p>Every week, thousands of UK patients pack their bags and head to medical hubs like Istanbul, Izmir, and Antalya for elective procedures. The appeal is clear: world-class clinical care, five-star recovery hotels, and overall savings of up to 70% compared to private UK fees. However, the most critical phase of medical tourism is not the surgery itself\u2014it is the return journey. Flying home after major surgery introduces unique, acute physiological stressors that standard commercial travelers never encounter.</p>\n\n    <p>Cabin pressure alterations, severe dehydration, long immobility cycles, and post-surgical hypercoagulability present genuine risks of Deep Vein Thrombosis (DVT), pulmonary embolism, wound dehiscence, and hematomas. To travel safely, you must abandon assumptions and strictly follow a validated post-operative flight protocol. This guide outlines the exact, medically correct protocol required for UK patients returning home after surgery in Turkey.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">21 Days</div><div class=\"lbl\">Wait Time for BBL Patients</div></div>\n      <div class=\"stat-card\"><div class=\"num\">2.5x</div><div class=\"lbl\">Increased Blood Viscosity in Cabin</div></div>\n      <div class=\"stat-card\"><div class=\"num\">14 Days</div><div class=\"lbl\">Wait Time for Rhinoplasty</div></div>\n      <div class=\"stat-card\"><div class=\"num\">112</div><div class=\"lbl\">Turkey Medical Emergency Line</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-plane-arrival\"></i> The Physics of Flight: Why Your Healing Body is Vulnerable</h2>\n    <p>Commercial aircraft fly at cruising altitudes between 30,000 and 42,000 feet. While the aircraft cabin is pressurized, it is not pressurized to sea level. Instead, the pressure inside the cabin corresponds to an atmospheric height of 6,000 to 8,000 feet. Under these barometric conditions, several physiological changes occur simultaneously:</p>\n    <ul>\n      <li><strong>Gas Expansion (Boyle's Law):</strong> As atmospheric pressure drops, trapped gases inside the body expand by approximately 25-30%. If you have recently undergone abdominal surgeries (like a tummy tuck or gastric sleeve) or facial procedures (such as rhinoplasty or sinus lifts), this gas expansion puts significant physical pressure on fresh suture lines, staple rows, and delicate blood vessels.</li>\n      <li><strong>Hypoxia (Lower Oxygen Saturation):</strong> The partial pressure of oxygen in an airplane cabin is equivalent to breathing air at 8,000 feet. This reduces the oxygen saturation of your blood (SpO2) by 3-5%. Healing tissues require high oxygen concentrations to build collagen and fight bacterial infections. Prolonged exposure to mild hypoxia can delay wound healing and increase the risk of necrosis.</li>\n      <li><strong>Accelerated Dehydration:</strong> Relative humidity in airplane cabins drops below 15-20% (drier than a desert). This speeds up moisture loss from your skin and respiratory tract. When you dehydrate, your blood volume drops, and its viscosity (thickness) increases. In a patient whose blood is already hypercoagulable due to recent surgery, this is a prime trigger for blood clot formation.</li>\n    </ul>\n\n    <blockquote>\n      \"Flying after a general anesthetic is not equivalent to standard travel. The combination of low cabin humidity, reduced oxygen tension, and static sitting in economy seats creates a perfect storm for venous stasis and blood clot formation. Following surgery, the body's clotting mechanisms are highly active as a natural defense. If you sit in an aircraft seat too early, you run a very real risk of developing a deep vein thrombosis that can quickly turn into a fatal pulmonary embolism.\"\n      <br/><br/>\u2014 <strong>Dr. Claire Robertson</strong>, Travel Medicine Physician\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-clock\"></i> The Definitive Post-Op Flying Guide: Minimum Safe Timelines</h2>\n    <p>Not all surgeries carry the same risk. Localized surgeries under local anesthesia require far less downtime than surgeries involving general anesthesia, significant tissue dissection, or modifications to deep vascular networks. Below is the minimum safe timeline every UK patient must follow before boarding a flight back from Turkey:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Procedure Type</th>\n          <th>Anesthesia Type</th>\n          <th>Min. Stay in Turkey (Post-Op)</th>\n          <th>Min. Days Before Flight</th>\n          <th>Primary Medical Risk Factor in Flight</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>FUE / DHI Hair Transplant</td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Graft displacement, scalp edema, swelling descent</td></tr>\n        <tr><td>Dental Veneers / Crowns</td><td>Local</td><td>1 Day</td><td>1 Day</td><td>Localized sensitivity, minor bleeding</td></tr>\n        <tr><td>Dental Implants / Bone Grafts</td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Sinus pressure changes, bleeding, swelling</td></tr>\n        <tr><td>Breast Augmentation / Lift</td><td>General</td><td>5 - 7 Days</td><td>10 Days</td><td>Suture strain, implant displacement, chest tightness</td></tr>\n        <tr><td>Rhinoplasty / Septoplasty</td><td>General</td><td>7 - 10 Days</td><td>14 Days</td><td>Severe nosebleed (epistaxis), sinus pressure block</td></tr>\n        <tr><td>Gastric Sleeve / Bypass</td><td>General</td><td>5 - 7 Days</td><td>10 Days</td><td>Intestinal gas expansion, staple line leaks, dehydration</td></tr>\n        <tr><td>Tummy Tuck (Abdominoplasty)</td><td>General</td><td>10 - 14 Days</td><td>14 Days</td><td>Inability to walk upright, deep suture dehiscence, DVT</td></tr>\n        <tr><td>Brazilian Butt Lift (BBL)</td><td>General</td><td>14 - 21 Days</td><td>21 Days</td><td>Fat graft necrosis from sitting, severe femoral stasis</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Crucial Warning for BBL Patients:</strong> The Brazilian Butt Lift carries the highest flight risk. The survival of grafted fat depends on a constant, uninhibited blood supply. Sitting directly on your buttocks for a 4-hour flight from Istanbul to London will destroy the grafted cells and severely restrict blood flow in your femoral veins, drastically increasing your DVT risk. You must wait at least 21 days and use a custom BBL cushion that shifts all weight to your thighs.\n    </div>\n\n    <h2><i class=\"fa-solid fa-shield-virus\"></i> The Medical Protocol for Prevention of Deep Vein Thrombosis (DVT)</h2>\n    <p>Deep Vein Thrombosis is the most dangerous complication of flying post-surgery. It occurs when a blood clot forms in a deep vein, typically in the calf or thigh. If a portion of this clot breaks loose, it can travel through the venous system to the heart and block the pulmonary artery, causing a life-threatening Pulmonary Embolism (PE).</p>\n\n    <h3>1. Graded Compression Stockings (TED Hose)</h3>\n    <p>Compression garments are essential for any flight exceeding two hours. You must wear medical-grade Class 1 (18-21 mmHg) or Class 2 (23-32 mmHg) compression stockings. They work by applying graduated pressure to the lower limbs, squeezing the veins and accelerating blood flow back to the heart.</p>\n    <ul>\n      <li><strong>Correct Fitment:</strong> The stockings must be measured to your calf circumference. Ill-fitting stockings can bunch up and act as a tourniquet, worsening venous stasis.</li>\n      <li><strong>Application:</strong> Put the stockings on first thing in the morning, before you get out of bed, when swelling in your legs is at its lowest. Keep them on for the entire duration of the flight and the subsequent journey home.</li>\n    </ul>\n\n    <h3>2. Low-Molecular-Weight Heparin (LMWH) & Anti-Coagulants</h3>\n    <p>For patients who undergo procedures lasting longer than two hours under general anesthesia, or for those with elevated baseline risk factors (such as a BMI over 30, tobacco use, or oral contraceptive use), mechanical compression is not enough. You will require pharmacological anti-coagulation.</p>\n    <p>Your Turkish surgeon should prescribe daily subcutaneous injections of an LMWH, such as Clexane (Enoxaparin), typically 40mg (4,000 IU) once daily. You must administer your scheduled dose 2 to 4 hours before your flight departure. Make sure the clinic provides a signed doctor's letter in English to allow you to take these pre-filled syringes through airport security in your hand luggage.</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Pro-Tip for Airport Security:</strong> Keep all medical syringes, needles, and prescription medications in their original packaging, stored within a clear plastic bag. Always present the official clinic prescription and English-translated medical report to the security staff at Istanbul (IST) or Sabiha G\u00f6k\u00e7en (SAW) airports before they scan your bags.\n    </div>\n\n    <h3>3. The In-Flight Mobilization Routine</h3>\n    <p>Never sleep for the entire duration of a flight post-surgery. You should actively move your limbs to prevent venous pooling:</p>\n    <ol>\n      <li>Set a timer on your phone for every 45 minutes.</li>\n      <li>Stand up and walk down the aircraft aisle for at least 3 to 5 minutes.</li>\n      <li>While seated, perform calf pumps: pull your toes up toward your shins, hold for 2 seconds, then press down as if pushing a car pedal. Repeat this 20 times every 15 minutes.</li>\n      <li>Rotate your ankles clockwise and counterclockwise for 1 minute every half hour.</li>\n      <li>Drink 250ml of water for every hour of flight. Avoid all alcohol, coffee, and tea, as they are diuretics that increase dehydration.</li>\n    </ol>\n\n    <h2><i class=\"fa-solid fa-file-signature\"></i> Obtaining Your \"Fit-to-Fly\" Certificate: The Legal & Medical Document</h2>\n    <p>Airlines have the right to deny boarding to any passenger who appears visibly unwell, is heavily bandaged, or is using medical equipment (like casts or drainage tubes) unless they present official medical documentation. To avoid being stranded at the airport, you must obtain a signed and stamped <strong>Fit-to-Fly Certificate</strong> from your operating surgeon in Turkey.</p>\n\n    <p>This certificate must contain the following specific details to be accepted by international carriers such as British Airways, Turkish Airlines, Pegasus, or EasyJet:</p>\n    <ul>\n      <li>The clinic's official letterhead and stamp, along with the surgeon's registry/license number.</li>\n      <li>Your full legal name and passport number (matching your boarding pass).</li>\n      <li>The exact date and name of the surgical procedure performed.</li>\n      <li>A clear statement in English declaring: <em>\"The patient has been evaluated post-operatively and is medically stable and cleared to travel on commercial flights without the need for supplementary oxygen or specialized in-flight medical attention.\"</em></li>\n      <li>The date of issue (which must be within 48 to 72 hours of your flight departure).</li>\n    </ul>\n\n    <h2><i class=\"fa-solid fa-triangle-exclamation\"></i> Emergency Protocols: Red Flags in Transit and Upon Arrival</h2>\n    <p>Even with rigorous preparation, complications can arise during your journey home or in the first few days back in the UK. You must be able to recognize critical warning signs and know exactly who to contact.</p>\n\n    <h3>Immediate Red Flags (Go to the Nearest A&E Immediately):</h3>\n    <ul>\n      <li><strong>Unilateral Leg Pain or Swelling:</strong> Throbbing, cramping, or warmth in one calf or thigh that worsens when flexing your foot. This is a classic sign of DVT.</li>\n      <li><strong>Sudden Shortness of Breath (Dyspnea):</strong> A sudden feeling of breathlessness or rapid breathing without exertion. This indicates a potential Pulmonary Embolism.</li>\n      <li><strong>Sharp Chest Pain:</strong> Stabbing chest pain that worsens when taking a deep breath or coughing.</li>\n      <li><strong>Active or Uncontrolled Bleeding:</strong> Saturated dressings, pooling of blood under surgical areas, or heavy, continuous nosebleeds that do not stop after 10 minutes of direct pressure (common in post-op rhinoplasty flights).</li>\n      <li><strong>Confusion or Loss of Consciousness:</strong> Extreme dizziness, lightheadedness, or sudden disorientation.</li>\n    </ul>\n\n    <h3>What to Do if Symptoms Occur Mid-Flight:</h3>\n    <p>If you experience chest pain, severe shortness of breath, or sudden bleeding while in the air, notify the cabin crew immediately. They are trained in aviation first aid, have access to emergency oxygen, and can contact medical support services on the ground (such as MedLink) to determine if an emergency diversion is required.</p>\n\n    <h2><i class=\"fa-solid fa-phone\"></i> Emergency Contacts: Turkey and the UK</h2>\n    <p>If you experience non-life-threatening complications, contact the appropriate medical services. Do not wait for a routine follow-up if you suspect an infection or suture damage.</p>\n    <ul>\n      <li><strong>In Turkey (Before Departure):</strong> Call <strong>112</strong> for immediate ambulance services. For general English-language medical support, contact the Turkish Ministry of Health International Patient Helpline at <strong>+90 850 288 38 38</strong>.</li>\n      <li><strong>In the UK (After Arrival):</strong> For non-emergency medical advice, call the NHS on <strong>111</strong>. For life-threatening emergencies, call <strong>999</strong> or go to the nearest Accident & Emergency (A&E) department immediately. Make sure to present your Turkish surgical discharge papers to the UK medical team.</li>\n    </ul>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Book a Fully Vetted and Managed Medical Journey</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">Don't navigate post-op travel logistics alone. MediRoute only partners with accredited Turkish clinics that provide comprehensive post-op care, signed English Fit-to-Fly certificates, and coordinated medical transfers to keep you safe.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Explore Safe Clinic Packages \u2192</a>\n    </div>", "category": "Safety", "image_url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80", "author": "Dr. Claire Robertson", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Travel Medicine Physician", "author_specialty": "Travel Medicine Physician", "author_image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80"};
+  window.STATIC_BLOG_DATA = {"id": 13, "title": "Flying Home After Surgery in Turkey: The Medically Correct Protocol UK Patients Must Follow", "slug": "flying-home-after-surgery-turkey-medical-protocol", "content": "<p>Every week, thousands of UK patients pack their bags and head to medical hubs like Istanbul, Izmir, and Antalya for elective procedures. The appeal is clear: world-class clinical care, five-star recovery hotels, and overall savings of up to 70% compared to private UK fees. However, the most critical phase of medical tourism is not the surgery itself\u2014it is the return journey. Flying home after major surgery introduces unique, acute physiological stressors that standard commercial travelers never encounter.</p>\n\n    <p>Cabin pressure alterations, severe dehydration, long immobility cycles, and post-surgical hypercoagulability present genuine risks of Deep Vein Thrombosis (DVT), pulmonary embolism, wound dehiscence, and hematomas. To travel safely, you must abandon assumptions and strictly follow a validated post-operative flight protocol. This guide outlines the exact, medically correct protocol required for UK patients returning home after surgery in Turkey.</p>\n\n    <div class=\"stat-grid\">\n      <div class=\"stat-card\"><div class=\"num\">21 Days</div><div class=\"lbl\">Wait Time for <a href=\"/treatment/bbl\">BBL</a> Patients</div></div>\n      <div class=\"stat-card\"><div class=\"num\">2.5x</div><div class=\"lbl\">Increased Blood Viscosity in Cabin</div></div>\n      <div class=\"stat-card\"><div class=\"num\">14 Days</div><div class=\"lbl\">Wait Time for <a href=\"/treatment/rhinoplasty\">Rhinoplasty</a></div></div>\n      <div class=\"stat-card\"><div class=\"num\">112</div><div class=\"lbl\">Turkey Medical Emergency Line</div></div>\n    </div>\n\n    <h2><i class=\"fa-solid fa-plane-arrival\"></i> The Physics of Flight: Why Your Healing Body is Vulnerable</h2>\n    <p>Commercial aircraft fly at cruising altitudes between 30,000 and 42,000 feet. While the aircraft cabin is pressurized, it is not pressurized to sea level. Instead, the pressure inside the cabin corresponds to an atmospheric height of 6,000 to 8,000 feet. Under these barometric conditions, several physiological changes occur simultaneously:</p>\n    <ul>\n      <li><strong>Gas Expansion (Boyle's Law):</strong> As atmospheric pressure drops, trapped gases inside the body expand by approximately 25-30%. If you have recently undergone abdominal surgeries (like a tummy tuck or <a href=\"/treatment/gastric-sleeve\">gastric sleeve</a>) or facial procedures (such as rhinoplasty or sinus lifts), this gas expansion puts significant physical pressure on fresh suture lines, staple rows, and delicate blood vessels.</li>\n      <li><strong>Hypoxia (Lower Oxygen Saturation):</strong> The partial pressure of oxygen in an airplane cabin is equivalent to breathing air at 8,000 feet. This reduces the oxygen saturation of your blood (SpO2) by 3-5%. Healing tissues require high oxygen concentrations to build collagen and fight bacterial infections. Prolonged exposure to mild hypoxia can delay wound healing and increase the risk of necrosis.</li>\n      <li><strong>Accelerated Dehydration:</strong> Relative humidity in airplane cabins drops below 15-20% (drier than a desert). This speeds up moisture loss from your skin and respiratory tract. When you dehydrate, your blood volume drops, and its viscosity (thickness) increases. In a patient whose blood is already hypercoagulable due to recent surgery, this is a prime trigger for blood clot formation.</li>\n    </ul>\n\n    <blockquote>\n      \"Flying after a general anesthetic is not equivalent to standard travel. The combination of low cabin humidity, reduced oxygen tension, and static sitting in economy seats creates a perfect storm for venous stasis and blood clot formation. Following surgery, the body's clotting mechanisms are highly active as a natural defense. If you sit in an aircraft seat too early, you run a very real risk of developing a deep vein thrombosis that can quickly turn into a fatal pulmonary embolism.\"\n      <br/><br/>\u2014 <strong>Dr. Claire Robertson</strong>, Travel Medicine Physician\n    </blockquote>\n\n    <h2><i class=\"fa-solid fa-clock\"></i> The Definitive Post-Op Flying Guide: Minimum Safe Timelines</h2>\n    <p>Not all surgeries carry the same risk. Localized surgeries under local anesthesia require far less downtime than surgeries involving general anesthesia, significant tissue dissection, or modifications to deep vascular networks. Below is the minimum safe timeline every UK patient must follow before boarding a flight back from Turkey:</p>\n\n    <table>\n      <thead>\n        <tr>\n          <th>Procedure Type</th>\n          <th>Anesthesia Type</th>\n          <th>Min. Stay in Turkey (Post-Op)</th>\n          <th>Min. Days Before Flight</th>\n          <th>Primary Medical Risk Factor in Flight</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td>FUE / DHI <a href=\"/treatment/hair-transplant\">Hair Transplant</a></td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Graft displacement, scalp edema, swelling descent</td></tr>\n        <tr><td><a href=\"/treatment/dental-veneers\">Dental Veneers</a> / Crowns</td><td>Local</td><td>1 Day</td><td>1 Day</td><td>Localized sensitivity, minor bleeding</td></tr>\n        <tr><td>Dental Implants / Bone Grafts</td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Sinus pressure changes, bleeding, swelling</td></tr>\n        <tr><td>Breast Augmentation / Lift</td><td>General</td><td>5 - 7 Days</td><td>10 Days</td><td>Suture strain, implant displacement, chest tightness</td></tr>\n        <tr><td>Rhinoplasty / Septoplasty</td><td>General</td><td>7 - 10 Days</td><td>14 Days</td><td>Severe nosebleed (epistaxis), sinus pressure block</td></tr>\n        <tr><td>Gastric Sleeve / Bypass</td><td>General</td><td>5 - 7 Days</td><td>10 Days</td><td>Intestinal gas expansion, staple line leaks, dehydration</td></tr>\n        <tr><td>Tummy Tuck (Abdominoplasty)</td><td>General</td><td>10 - 14 Days</td><td>14 Days</td><td>Inability to walk upright, deep suture dehiscence, DVT</td></tr>\n        <tr><td>Brazilian Butt Lift (BBL)</td><td>General</td><td>14 - 21 Days</td><td>21 Days</td><td>Fat graft necrosis from sitting, severe femoral stasis</td></tr>\n      </tbody>\n    </table>\n\n    <div class=\"warning-box\">\n      <strong>\u26a0\ufe0f Crucial Warning for BBL Patients:</strong> The Brazilian Butt Lift carries the highest flight risk. The survival of grafted fat depends on a constant, uninhibited blood supply. Sitting directly on your buttocks for a 4-hour flight from Istanbul to London will destroy the grafted cells and severely restrict blood flow in your femoral veins, drastically increasing your DVT risk. You must wait at least 21 days and use a custom BBL cushion that shifts all weight to your thighs.\n    </div>\n\n    <h2><i class=\"fa-solid fa-shield-virus\"></i> The Medical Protocol for Prevention of Deep Vein Thrombosis (DVT)</h2>\n    <p>Deep Vein Thrombosis is the most dangerous complication of flying post-surgery. It occurs when a blood clot forms in a deep vein, typically in the calf or thigh. If a portion of this clot breaks loose, it can travel through the venous system to the heart and block the pulmonary artery, causing a life-threatening Pulmonary Embolism (PE).</p>\n\n    <h3>1. Graded Compression Stockings (TED Hose)</h3>\n    <p>Compression garments are essential for any flight exceeding two hours. You must wear medical-grade Class 1 (18-21 mmHg) or Class 2 (23-32 mmHg) compression stockings. They work by applying graduated pressure to the lower limbs, squeezing the veins and accelerating blood flow back to the heart.</p>\n    <ul>\n      <li><strong>Correct Fitment:</strong> The stockings must be measured to your calf circumference. Ill-fitting stockings can bunch up and act as a tourniquet, worsening venous stasis.</li>\n      <li><strong>Application:</strong> Put the stockings on first thing in the morning, before you get out of bed, when swelling in your legs is at its lowest. Keep them on for the entire duration of the flight and the subsequent journey home.</li>\n    </ul>\n\n    <h3>2. Low-Molecular-Weight Heparin (LMWH) & Anti-Coagulants</h3>\n    <p>For patients who undergo procedures lasting longer than two hours under general anesthesia, or for those with elevated baseline risk factors (such as a BMI over 30, tobacco use, or oral contraceptive use), mechanical compression is not enough. You will require pharmacological anti-coagulation.</p>\n    <p>Your Turkish surgeon should prescribe daily subcutaneous injections of an LMWH, such as Clexane (Enoxaparin), typically 40mg (4,000 IU) once daily. You must administer your scheduled dose 2 to 4 hours before your flight departure. Make sure the clinic provides a signed doctor's letter in English to allow you to take these pre-filled syringes through airport security in your hand luggage.</p>\n\n    <div class=\"tip-box\">\n      <strong>\ud83d\udca1 Pro-Tip for Airport Security:</strong> Keep all medical syringes, needles, and prescription medications in their original packaging, stored within a clear plastic bag. Always present the official clinic prescription and English-translated medical report to the security staff at Istanbul (IST) or Sabiha G\u00f6k\u00e7en (SAW) airports before they scan your bags.\n    </div>\n\n    <h3>3. The In-Flight Mobilization Routine</h3>\n    <p>Never sleep for the entire duration of a flight post-surgery. You should actively move your limbs to prevent venous pooling:</p>\n    <ol>\n      <li>Set a timer on your phone for every 45 minutes.</li>\n      <li>Stand up and walk down the aircraft aisle for at least 3 to 5 minutes.</li>\n      <li>While seated, perform calf pumps: pull your toes up toward your shins, hold for 2 seconds, then press down as if pushing a car pedal. Repeat this 20 times every 15 minutes.</li>\n      <li>Rotate your ankles clockwise and counterclockwise for 1 minute every half hour.</li>\n      <li>Drink 250ml of water for every hour of flight. Avoid all alcohol, coffee, and tea, as they are diuretics that increase dehydration.</li>\n    </ol>\n\n    <h2><i class=\"fa-solid fa-file-signature\"></i> Obtaining Your \"Fit-to-Fly\" Certificate: The Legal & Medical Document</h2>\n    <p>Airlines have the right to deny boarding to any passenger who appears visibly unwell, is heavily bandaged, or is using medical equipment (like casts or drainage tubes) unless they present official medical documentation. To avoid being stranded at the airport, you must obtain a signed and stamped <strong>Fit-to-Fly Certificate</strong> from your operating surgeon in Turkey.</p>\n\n    <p>This certificate must contain the following specific details to be accepted by international carriers such as British Airways, Turkish Airlines, Pegasus, or EasyJet:</p>\n    <ul>\n      <li>The clinic's official letterhead and stamp, along with the surgeon's registry/license number.</li>\n      <li>Your full legal name and passport number (matching your boarding pass).</li>\n      <li>The exact date and name of the surgical procedure performed.</li>\n      <li>A clear statement in English declaring: <em>\"The patient has been evaluated post-operatively and is medically stable and cleared to travel on commercial flights without the need for supplementary oxygen or specialized in-flight medical attention.\"</em></li>\n      <li>The date of issue (which must be within 48 to 72 hours of your flight departure).</li>\n    </ul>\n\n    <h2><i class=\"fa-solid fa-triangle-exclamation\"></i> Emergency Protocols: Red Flags in Transit and Upon Arrival</h2>\n    <p>Even with rigorous preparation, complications can arise during your journey home or in the first few days back in the UK. You must be able to recognize critical warning signs and know exactly who to contact.</p>\n\n    <h3>Immediate Red Flags (Go to the Nearest A&E Immediately):</h3>\n    <ul>\n      <li><strong>Unilateral Leg Pain or Swelling:</strong> Throbbing, cramping, or warmth in one calf or thigh that worsens when flexing your foot. This is a classic sign of DVT.</li>\n      <li><strong>Sudden Shortness of Breath (Dyspnea):</strong> A sudden feeling of breathlessness or rapid breathing without exertion. This indicates a potential Pulmonary Embolism.</li>\n      <li><strong>Sharp Chest Pain:</strong> Stabbing chest pain that worsens when taking a deep breath or coughing.</li>\n      <li><strong>Active or Uncontrolled Bleeding:</strong> Saturated dressings, pooling of blood under surgical areas, or heavy, continuous nosebleeds that do not stop after 10 minutes of direct pressure (common in post-op rhinoplasty flights).</li>\n      <li><strong>Confusion or Loss of Consciousness:</strong> Extreme dizziness, lightheadedness, or sudden disorientation.</li>\n    </ul>\n\n    <h3>What to Do if Symptoms Occur Mid-Flight:</h3>\n    <p>If you experience chest pain, severe shortness of breath, or sudden bleeding while in the air, notify the cabin crew immediately. They are trained in aviation first aid, have access to emergency oxygen, and can contact medical support services on the ground (such as MedLink) to determine if an emergency diversion is required.</p>\n\n    <h2><i class=\"fa-solid fa-phone\"></i> Emergency Contacts: Turkey and the UK</h2>\n    <p>If you experience non-life-threatening complications, contact the appropriate medical services. Do not wait for a routine follow-up if you suspect an infection or suture damage.</p>\n    <ul>\n      <li><strong>In Turkey (Before Departure):</strong> Call <strong>112</strong> for immediate ambulance services. For general English-language medical support, contact the Turkish Ministry of Health International Patient Helpline at <strong>+90 850 288 38 38</strong>.</li>\n      <li><strong>In the UK (After Arrival):</strong> For non-emergency medical advice, call the NHS on <strong>111</strong>. For life-threatening emergencies, call <strong>999</strong> or go to the nearest Accident & Emergency (A&E) department immediately. Make sure to present your Turkish surgical discharge papers to the UK medical team.</li>\n    </ul>\n\n    <div class=\"cta-box\">\n      <h3 class=\"text-xl font-extrabold mb-2\">Book a Fully Vetted and Managed Medical Journey</h3>\n      <p class=\"text-blue-200 text-sm mb-4\">Don't navigate post-op travel logistics alone. MediRoute only partners with accredited Turkish clinics that provide comprehensive post-op care, signed English Fit-to-Fly certificates, and coordinated medical transfers to keep you safe.</p>\n      <a href=\"/auth\" class=\"inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition\">Explore Safe Clinic Packages \u2192</a>\n    </div>", "category": "Safety", "image_url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80", "author": "Dr. Claire Robertson", "created_at": "2026-06-05T10:00:00+00:00", "status": "published", "author_title": "Travel Medicine Physician", "author_specialty": "Travel Medicine Physician", "author_image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80"};
   
   // Instant SEO / UX redirect if a mismatched lang parameter is used
   (function() {
@@ -183,7 +210,10 @@
     <div id="hero-tags" class="flex flex-wrap gap-2 mb-4"><span class="tag-pill bg-white/10 border border-white/20 text-blue-200">Safety</span></div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" id="hero-title">Flying Home After Surgery in Turkey: The Medically Correct Protocol UK Patients Must Follow</h1>
     <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> Dr. Claire Robertson</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=Dr.%20Claire%20Robertson" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">Dr. Claire Robertson</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 9 dk okuma</span>
       </div>
@@ -198,6 +228,12 @@
     <img id="cover-image" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Flying Home After Surgery in Turkey: The Medically Correct Protocol UK Patients Must Follow" class="w-full" style="max-height:420px;object-fit:cover;">
   </div>
 
+  <!-- Table of Contents -->
+  <details class="toc-widget fade-up" id="toc-widget" style="display:none;" open>
+    <summary>İçindekiler</summary>
+    <ol class="toc-list" id="toc-list"></ol>
+  </details>
+
   <!-- Article body -->
   <article class="article-body fade-up" id="article-body">
     <p>Every week, thousands of UK patients pack their bags and head to medical hubs like Istanbul, Izmir, and Antalya for elective procedures. The appeal is clear: world-class clinical care, five-star recovery hotels, and overall savings of up to 70% compared to private UK fees. However, the most critical phase of medical tourism is not the surgery itself—it is the return journey. Flying home after major surgery introduces unique, acute physiological stressors that standard commercial travelers never encounter.</p>
@@ -205,16 +241,16 @@
     <p>Cabin pressure alterations, severe dehydration, long immobility cycles, and post-surgical hypercoagulability present genuine risks of Deep Vein Thrombosis (DVT), pulmonary embolism, wound dehiscence, and hematomas. To travel safely, you must abandon assumptions and strictly follow a validated post-operative flight protocol. This guide outlines the exact, medically correct protocol required for UK patients returning home after surgery in Turkey.</p>
 
     <div class="stat-grid">
-      <div class="stat-card"><div class="num">21 Days</div><div class="lbl">Wait Time for BBL Patients</div></div>
+      <div class="stat-card"><div class="num">21 Days</div><div class="lbl">Wait Time for <a href="/treatment/bbl">BBL</a> Patients</div></div>
       <div class="stat-card"><div class="num">2.5x</div><div class="lbl">Increased Blood Viscosity in Cabin</div></div>
-      <div class="stat-card"><div class="num">14 Days</div><div class="lbl">Wait Time for Rhinoplasty</div></div>
+      <div class="stat-card"><div class="num">14 Days</div><div class="lbl">Wait Time for <a href="/treatment/rhinoplasty">Rhinoplasty</a></div></div>
       <div class="stat-card"><div class="num">112</div><div class="lbl">Turkey Medical Emergency Line</div></div>
     </div>
 
     <h2><i class="fa-solid fa-plane-arrival"></i> The Physics of Flight: Why Your Healing Body is Vulnerable</h2>
     <p>Commercial aircraft fly at cruising altitudes between 30,000 and 42,000 feet. While the aircraft cabin is pressurized, it is not pressurized to sea level. Instead, the pressure inside the cabin corresponds to an atmospheric height of 6,000 to 8,000 feet. Under these barometric conditions, several physiological changes occur simultaneously:</p>
     <ul>
-      <li><strong>Gas Expansion (Boyle's Law):</strong> As atmospheric pressure drops, trapped gases inside the body expand by approximately 25-30%. If you have recently undergone abdominal surgeries (like a tummy tuck or gastric sleeve) or facial procedures (such as rhinoplasty or sinus lifts), this gas expansion puts significant physical pressure on fresh suture lines, staple rows, and delicate blood vessels.</li>
+      <li><strong>Gas Expansion (Boyle's Law):</strong> As atmospheric pressure drops, trapped gases inside the body expand by approximately 25-30%. If you have recently undergone abdominal surgeries (like a tummy tuck or <a href="/treatment/gastric-sleeve">gastric sleeve</a>) or facial procedures (such as rhinoplasty or sinus lifts), this gas expansion puts significant physical pressure on fresh suture lines, staple rows, and delicate blood vessels.</li>
       <li><strong>Hypoxia (Lower Oxygen Saturation):</strong> The partial pressure of oxygen in an airplane cabin is equivalent to breathing air at 8,000 feet. This reduces the oxygen saturation of your blood (SpO2) by 3-5%. Healing tissues require high oxygen concentrations to build collagen and fight bacterial infections. Prolonged exposure to mild hypoxia can delay wound healing and increase the risk of necrosis.</li>
       <li><strong>Accelerated Dehydration:</strong> Relative humidity in airplane cabins drops below 15-20% (drier than a desert). This speeds up moisture loss from your skin and respiratory tract. When you dehydrate, your blood volume drops, and its viscosity (thickness) increases. In a patient whose blood is already hypercoagulable due to recent surgery, this is a prime trigger for blood clot formation.</li>
     </ul>
@@ -238,8 +274,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>FUE / DHI Hair Transplant</td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Graft displacement, scalp edema, swelling descent</td></tr>
-        <tr><td>Dental Veneers / Crowns</td><td>Local</td><td>1 Day</td><td>1 Day</td><td>Localized sensitivity, minor bleeding</td></tr>
+        <tr><td>FUE / DHI <a href="/treatment/hair-transplant">Hair Transplant</a></td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Graft displacement, scalp edema, swelling descent</td></tr>
+        <tr><td><a href="/treatment/dental-veneers">Dental Veneers</a> / Crowns</td><td>Local</td><td>1 Day</td><td>1 Day</td><td>Localized sensitivity, minor bleeding</td></tr>
         <tr><td>Dental Implants / Bone Grafts</td><td>Local (with sedation)</td><td>2 - 3 Days</td><td>3 Days</td><td>Sinus pressure changes, bleeding, swelling</td></tr>
         <tr><td>Breast Augmentation / Lift</td><td>General</td><td>5 - 7 Days</td><td>10 Days</td><td>Suture strain, implant displacement, chest tightness</td></tr>
         <tr><td>Rhinoplasty / Septoplasty</td><td>General</td><td>7 - 10 Days</td><td>14 Days</td><td>Severe nosebleed (epistaxis), sinus pressure block</td></tr>
@@ -323,19 +359,21 @@
   </article>
 
   <!-- Author Profile Card -->
-  <div id="author-card" class="author-card fade-up" style="display:flex;">
-    <div class="author-avatar" id="author-avatar">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Travel Medicine Physician Dr. Claire Robertson">
-    </div>
-    <div>
-      <div class="flex items-center gap-2 flex-wrap mb-1">
-        <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Travel Medicine Physician Dr. Claire Robertson</h3>
-        <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+  <a href="/blog?author=Dr.%20Claire%20Robertson" id="author-card-link" class="author-card-link" style="display:block;">
+    <div id="author-card" class="author-card fade-up" style="display:flex;">
+      <div class="author-avatar" id="author-avatar">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Dr. Claire Robertson">
       </div>
-      <p class="text-sm font-semibold text-navy-700" id="author-title-text">Travel Medicine Physician</p>
-      <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="font-extrabold text-navy-900 text-base" id="author-name">Dr. Claire Robertson</h3>
+          <span class="author-badge"><i class="fa-solid fa-circle-check text-[9px]"></i> Doğrulanmış Uzman</span>
+        </div>
+        <p class="text-sm font-semibold text-navy-700" id="author-title-text">Travel Medicine Physician</p>
+        <p class="text-xs text-gray-500 mt-0.5" id="author-specialty">Medikal İçerik Danışmanı</p>
+      </div>
     </div>
-  </div>
+  </a>
 
   <!-- Share buttons -->
   <div class="flex items-center justify-between mt-8 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm" id="share-bar">
@@ -353,38 +391,38 @@
     <h2 class="text-xl font-extrabold text-navy-900 mb-5"><i class="fa-solid fa-book-open text-navy-700 mr-2"></i>Diğer Yazılar</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="related-grid">
       
-          <a href="/blog/sac-ekimi-sonrasi-sok-dokulme" class="related-card">
+          <a href="/blog/laser-eye-surgery-istanbul-lasik" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80" alt="Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80" alt="Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Hair</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Saç Ekimi Sonrası Şok Dökülme Nedir ve Nasıl Yönetilir?</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Saç ekimi yaptıran neredeyse her hastanın yaşadığı en endişe verici süreçlerd...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Eye</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Laser Eye Surgery (LASIK/PRK) in Istanbul: What to Expect</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Are you tired of relying on glasses or contact lenses for everyday tasks? Las...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/zirconium-vs-porcelain-crowns-turkey" class="related-card">
+          <a href="/blog/gastric-sleeve-turkey-guide-2026" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Choosing Between Zirconium and Porcelain Crowns in Turkey" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Dental</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Choosing Between Zirconium and Porcelain Crowns in Turkey</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">When restoring your smile with dental crowns, selecting the right material is...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Bariatric</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Gastric Sleeve Surgery in Turkey: Recovery, Cost & Success Rates</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Obesity is a complex medical condition that affects millions worldwide. Gastr...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">19 Mayıs 2026</p>
             </div>
           </a>
         
-          <a href="/blog/recovering-abroad-medical-holiday-tips" class="related-card">
+          <a href="/blog/dental-veneers-istanbul-journey" class="related-card">
             <div style="height:140px;background:linear-gradient(135deg,#E1E8FF,#C3D1FF);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Recovering Abroad: Tips for a Stress-Free Medical Holiday" style="width:100%;height:100%;object-fit:cover;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Dental Veneers in Istanbul: A Step-by-Step Journey" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div style="padding:1rem;">
-              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Tips</p>
-              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Recovering Abroad: Tips for a Stress-Free Medical Holiday</h3>
-              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">Maximizing Comfort After SurgeryTraveling for medical treatments means your r...</p>
+              <p style="font-size:.68rem;font-weight:700;color:#3B5FDD;margin-bottom:.4rem;">Guide</p>
+              <h3 style="font-size:.9rem;font-weight:700;color:#0A1F6B;line-height:1.3;margin-bottom:.3rem;">Dental Veneers in Istanbul: A Step-by-Step Journey</h3>
+              <p style="font-size:.78rem;color:#6B7280;line-height:1.5;">The Hollywood Smile DestinationDental veneers in the UK or US can easily cost...</p>
               <p style="font-size:.68rem;color:#94A3B8;margin-top:.5rem;">14 Mayıs 2026</p>
             </div>
           </a>
@@ -462,14 +500,20 @@
       document.querySelector('meta[name="description"]').content = stripHtml(blog.content).substring(0, 155);
 
       // Dynamic JSON-LD Schema (BlogPosting) injection for Google & AI crawlers (AIO/SGE)
+      const contentText = stripHtml(blog.content);
+      const blogWordCount = contentText.split(/\s+/).length;
+      const blogLang = (blog.lang || window.ARTICLE_LANG || 'en');
       const blogSchema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": blog.title,
-        "description": stripHtml(blog.content).substring(0, 155),
-        "image": blog.image_url || "https://medirouteturkey.com/favicon.png",
+        "description": contentText.substring(0, 155),
+        "image": blog.image_url || "https://medirouteturkey.com/og-image.png",
         "datePublished": blog.created_at,
         "dateModified": blog.updated_at || blog.created_at,
+        "wordCount": blogWordCount,
+        "inLanguage": blogLang,
+        "articleSection": blog.category || "Medical Tourism",
         "author": {
           "@type": "Person",
           "name": blog.author || "MediRoute Team",
@@ -525,8 +569,12 @@
       const date = new Date(blog.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
       const wordCount = stripHtml(blog.content).split(/\s+/).length;
       const readTime = Math.max(1, Math.ceil(wordCount / 200));
+      const metaAuthorName = blog.author || 'MediRoute Team';
       document.getElementById('hero-meta').innerHTML = `
-        <span class="flex items-center gap-1"><i class="fa-solid fa-user-pen"></i> ${blog.author || 'MediRoute Team'}</span>
+        <span class="flex items-center gap-1">
+          <i class="fa-solid fa-user-pen"></i>
+          <a href="/blog?author=${encodeURIComponent(metaAuthorName)}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
+        </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
       `;
@@ -541,13 +589,26 @@
       // Article content
       document.getElementById('article-body').innerHTML = blog.content;
 
+      // Generate TOC from H2 headings
+      generateTOC();
+
+      // Inject FAQPage schema if FAQ section detected
+      injectFAQSchema();
+
       // Author card
       const authorName = blog.author || blog.author_title;
       if (authorName) {
+        const link = document.getElementById('author-card-link');
         const card = document.getElementById('author-card');
-        card.style.display = 'flex';
-        const fullName = [blog.author_title, blog.author].filter(Boolean).join(' ');
-        document.getElementById('author-name').textContent = fullName || 'MediRoute Team';
+        const authorVal = blog.author || 'MediRoute Team';
+        if (link) {
+          link.style.display = 'block';
+          link.href = '/blog?author=' + encodeURIComponent(authorVal);
+        } else if (card) {
+          card.style.display = 'flex';
+        }
+        const fullName = authorVal;
+        document.getElementById('author-name').textContent = fullName;
         document.getElementById('author-title-text').textContent = blog.author_specialty || '';
         document.getElementById('author-specialty').textContent = blog.author_specialty ? 'Medikal İçerik Danışmanı' : '';
         if (blog.author_image) {
@@ -609,6 +670,92 @@
     const btn = event.currentTarget;
     btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500 text-sm"></i>';
     setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>'; }, 1500);
+  }
+
+  // Generate Table of Contents from H2 headings
+  function generateTOC() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2');
+    if (headings.length < 2) return; // Don't show TOC for very short articles
+
+    const tocList = document.getElementById('toc-list');
+    const tocWidget = document.getElementById('toc-widget');
+    tocWidget.style.display = 'block';
+
+    headings.forEach((h, i) => {
+      const id = 'section-' + i;
+      h.id = id;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = h.textContent.replace(/^[\s🏥💊✈️🦷💉⭐🔬📋🩺]+/, '').trim();
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Highlight active TOC item on scroll
+    const tocLinks = tocList.querySelectorAll('a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const activeLink = tocList.querySelector('a[href="#' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Inject FAQPage schema if FAQ-style content is detected
+  function injectFAQSchema() {
+    const article = document.getElementById('article-body');
+    const headings = article.querySelectorAll('h2, h3');
+    const faqEntries = [];
+
+    headings.forEach(h => {
+      const text = h.textContent.trim();
+      // Detect FAQ-style headings (questions ending with ?)
+      if (text.endsWith('?') || text.toLowerCase().includes('soru') || text.toLowerCase().includes('faq')) {
+        // Get the answer: all content between this heading and the next heading
+        let answer = '';
+        let sibling = h.nextElementSibling;
+        while (sibling && !['H2', 'H3'].includes(sibling.tagName)) {
+          answer += sibling.textContent.trim() + ' ';
+          sibling = sibling.nextElementSibling;
+        }
+        answer = answer.trim();
+        if (answer.length > 20) {
+          faqEntries.push({ question: text, answer: answer.substring(0, 500) });
+        }
+      }
+    });
+
+    if (faqEntries.length >= 2) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqEntries.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
+      };
+      const existing = document.getElementById('faq-schema-ld');
+      if (existing) existing.remove();
+      const script = document.createElement('script');
+      script.id = 'faq-schema-ld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(script);
+    }
   }
 
   // Reading progress bar

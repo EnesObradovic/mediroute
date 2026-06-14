@@ -7,7 +7,7 @@
   const BASE = 'https://medirouteturkey.com';
   const SITE = 'MediRoute';
   const LOGO = BASE + '/favicon.png';
-  const OG_IMG = BASE + '/favicon.png';
+  const OG_IMG = BASE + '/og-image.png';
 
   /* ── Page meta dictionary (per-lang) ── */
   const META = {
@@ -66,6 +66,34 @@
       ar: { title: 'تفاصيل العيادة | MediRoute', desc: 'ملف تعريف مفصل للعيادة مع الأطباء والمراجعات.' },
       de: { title: 'Klinikdetails | MediRoute', desc: 'Detailliertes Klinikprofil mit Ärzten und Bewertungen.' },
       fr: { title: 'Détails de la clinique | MediRoute', desc: 'Profil détaillé avec médecins, avis et devis gratuit.' }
+    },
+    'treatments.html': {
+      en: { title: 'All Treatments | MediRoute', desc: 'Browse all medical and aesthetic treatments available through MediRoute. Hair transplant, dental, cosmetic surgery and more.' },
+      tr: { title: 'Tüm Tedaviler | MediRoute', desc: 'MediRoute üzerinden sunulan tüm medikal ve estetik tedavilere göz atın. Saç ekimi, diş, estetik cerrahi ve daha fazlası.' },
+      ar: { title: 'جميع العلاجات | MediRoute', desc: 'تصفح جميع العلاجات الطبية والتجميلية المتاحة عبر MediRoute.' },
+      de: { title: 'Alle Behandlungen | MediRoute', desc: 'Entdecken Sie alle medizinischen und ästhetischen Behandlungen bei MediRoute.' },
+      fr: { title: 'Tous les traitements | MediRoute', desc: 'Parcourez tous les traitements médicaux et esthétiques disponibles chez MediRoute.' }
+    },
+    'treatment.html': {
+      en: { title: 'Treatment Details | MediRoute', desc: 'Detailed treatment guide with procedure info, recovery timeline, costs and clinic comparison.' },
+      tr: { title: 'Tedavi Detayı | MediRoute', desc: 'Prosedür bilgileri, iyileşme süreci, maliyetler ve klinik karşılaştırması ile detaylı tedavi rehberi.' },
+      ar: { title: 'تفاصيل العلاج | MediRoute', desc: 'دليل علاج مفصل مع معلومات الإجراء والتكاليف ومقارنة العيادات.' },
+      de: { title: 'Behandlungsdetails | MediRoute', desc: 'Detaillierter Behandlungsleitfaden mit Verfahrensinfos, Genesungszeitplan und Kostenvergleich.' },
+      fr: { title: 'Détails du traitement | MediRoute', desc: 'Guide de traitement détaillé avec infos procédure, délais de récupération et comparaison de coûts.' }
+    },
+    'blog-detail.html': {
+      en: { title: 'Blog Article | MediRoute', desc: 'Expert medical tourism insights — health travel tips, treatment guides and patient stories.' },
+      tr: { title: 'Blog Yazısı | MediRoute', desc: 'Uzman medikal turizm bilgileri — sağlık seyahati ipuçları, tedavi rehberleri ve hasta hikayeleri.' },
+      ar: { title: 'مقال المدونة | MediRoute', desc: 'رؤى خبراء السياحة الطبية — نصائح السفر الصحي وأدلة العلاج.' },
+      de: { title: 'Blog-Artikel | MediRoute', desc: 'Experten-Einblicke in den Medizintourismus — Reisetipps und Behandlungsleitfäden.' },
+      fr: { title: 'Article de blog | MediRoute', desc: 'Conseils d\'experts en tourisme médical — guides de traitement et récits de patients.' }
+    },
+    'patient-dashboard.html': {
+      en: { title: 'My Dashboard | MediRoute', desc: 'Manage your medical travel journey — track quotes, appointments and treatment progress.' },
+      tr: { title: 'Panelim | MediRoute', desc: 'Medikal seyahat sürecinizi yönetin — teklifleri, randevuları ve tedavi ilerlemesini takip edin.' },
+      ar: { title: 'لوحة التحكم | MediRoute', desc: 'إدارة رحلتك الطبية — تتبع العروض والمواعيد.' },
+      de: { title: 'Mein Dashboard | MediRoute', desc: 'Verwalten Sie Ihre medizinische Reise — Angebote und Termine verfolgen.' },
+      fr: { title: 'Mon tableau de bord | MediRoute', desc: 'Gérez votre parcours médical — suivez devis, rendez-vous et progrès.' }
     }
   };
 
@@ -118,11 +146,24 @@
       }
       el.setAttribute('content', t.c);
     });
+  }
 
-    // Canonical URL
+  /* ── 2b. Inject Canonical URL (runs on EVERY page) ── */
+  function injectCanonical() {
+    // Build canonical from BASE + current pathname (normalised)
+    let p = location.pathname.replace(/\/index\.html$/i, '/').replace(/\/$/, '') || '';
+    // Remove trailing .html for clean URLs if defined by Vercel rewrites
+    const canonicalUrl = BASE + p;
+
+    const head = document.head;
     let canon = head.querySelector('link[rel="canonical"]');
     if (!canon) { canon = document.createElement('link'); canon.setAttribute('rel', 'canonical'); head.appendChild(canon); }
-    canon.setAttribute('href', pageUrl);
+    canon.setAttribute('href', canonicalUrl);
+
+    // Also update og:url to match canonical
+    let ogUrl = head.querySelector('meta[property="og:url"]');
+    if (!ogUrl) { ogUrl = document.createElement('meta'); ogUrl.setAttribute('property', 'og:url'); head.appendChild(ogUrl); }
+    ogUrl.setAttribute('content', canonicalUrl);
   }
 
   /* ── 3. JSON-LD Structured Data ── */
@@ -349,6 +390,7 @@
 
   /* ── Init ── */
   updateMeta(lang);
+  injectCanonical();
   injectOG();
   injectJSONLD();
   injectTracking();

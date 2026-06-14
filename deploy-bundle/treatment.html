@@ -36,6 +36,8 @@
     .prose li { margin-bottom: 0.5rem; }
     .prose strong { color: #1e3a8a; font-weight: 600; }
   </style>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 </head>
 <body>
 
@@ -876,6 +878,51 @@ function renderContent(l) {
       <p class="font-bold text-navy-900 text-xs">${L(o.title, l)}</p>
     </a>
   `).join('');
+
+  // Dynamic Treatment JSON-LD Schemas injection
+  (function injectTreatmentSchemas() {
+    document.querySelectorAll('.dynamic-treatment-schema').forEach(el => el.remove());
+    const schemas = [];
+
+    // 1. MedicalProcedure Schema
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": L(t.title, l),
+      "description": L(t.metaDesc, l),
+      "procedureType": "SurgicalProcedure",
+      "outcome": L(t.heroSub, l),
+      "relevantSpecialty": {
+        "@type": "MedicalSpecialty",
+        "name": type === 'hair-transplant' ? 'PlasticSurgery' : type === 'dental' ? 'Dentistry' : 'PlasticSurgery'
+      }
+    });
+
+    // 2. FAQPage Schema
+    if (t.faq && t.faq.length > 0) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": t.faq.map(f => ({
+          "@type": "Question",
+          "name": L(f.q, l),
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": L(f.a, l)
+          }
+        }))
+      });
+    }
+
+    // Inject scripts
+    schemas.forEach(s => {
+      const script = document.createElement('script');
+      script.className = 'dynamic-treatment-schema';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(s);
+      document.head.appendChild(script);
+    });
+  })();
 }
 
 // Initial render

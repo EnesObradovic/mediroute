@@ -88,7 +88,7 @@ new_slugs = [
     "fue-hair-transplant-shock-loss-week-by-week-timeline",
     "istanbul-aesthetic-surgery-districts-insider-guide",
     "flying-home-after-surgery-turkey-medical-protocol",
-    "turkey-bbl-safety-regulations-2025-what-changed",
+    "turkey-bbl-safety-regulations-2026-what-changed",
     "dental-veneers-turkey-5-year-longevity-data",
     "hidden-costs-medical-tourism-turkey-real-budget",
     "gastric-sleeve-turkey-vs-nhs-waiting-list-guide",
@@ -119,6 +119,40 @@ if os.path.exists(sitemap_path):
         sitemap_content = f.read()
     for slug in new_slugs:
         check(slug in sitemap_content, f"Blog slug '{slug}' registered in sitemap.xml", f"Blog slug '{slug}' missing in sitemap.xml")
+
+# 9. Author Profile Clickability Check
+print("\n--- 9. Testing Author Profile Clickability ---")
+# Check translation keys
+i18n_path = os.path.join(BASE_DIR, 'i18n.js')
+if os.path.exists(i18n_path):
+    with open(i18n_path, 'r', encoding='utf-8') as f:
+        i18n_content = f.read()
+    author_keys = ['blog_hero_title', 'blog_hero_desc', 'blog_author_filter_title', 'blog_author_filter_desc', 'blog_active_filters']
+    for key in author_keys:
+        check(key in i18n_content, f"i18n author key '{key}' found in i18n.js", f"i18n author key '{key}' missing from i18n.js")
+
+# Check blog.html
+blog_path = os.path.join(BASE_DIR, 'blog.html')
+if os.path.exists(blog_path):
+    with open(blog_path, 'r', encoding='utf-8') as f:
+        blog_content = f.read()
+    check('id="active-filters"' in blog_content, "Active filters banner markup found in blog.html", "Active filters banner markup missing in blog.html")
+    check('clearAuthorFilter' in blog_content, "clearAuthorFilter JS function found in blog.html", "clearAuthorFilter JS function missing in blog.html")
+    check('data-i18n="blog_hero_title"' in blog_content, "Hero title data-i18n tag found in blog.html", "Hero title data-i18n tag missing in blog.html")
+    check('encodeURIComponent(this.getAttribute(\'data-author\'))' in blog_content, "Author card metadata link handler found in blog.html", "Author card metadata link handler missing in blog.html")
+
+# Check a couple pre-rendered blog pages
+sample_blogs = [
+    "liposuction-turkey-vs-uk-clinical-facility-standards",
+    "how-to-verify-turkish-plastic-surgeon-credentials"
+]
+for slug in sample_blogs:
+    path = os.path.join(DEPLOY_DIR, 'blog', f"{slug}.html")
+    if os.path.exists(path):
+        with open(path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        check('class="author-card-link"' in content, f"Author card link wrapper found in pre-rendered {slug}.html", f"Author card link wrapper missing in pre-rendered {slug}.html")
+        check('href="/blog?author=' in content, f"Author search query link found in pre-rendered {slug}.html", f"Author search query link missing in pre-rendered {slug}.html")
 
 print("\n--- Verification Summary ---")
 print(f"Total Successes: {len(successes)}")
