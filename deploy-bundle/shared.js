@@ -406,22 +406,25 @@
       return;
     }
 
-    // For non-article pages, add ?lang= parameter to match sitemap.xml
+    // For multilingual pages: all language alternates point to the SAME canonical URL (no ?lang= params).
+    // Language switching is handled client-side via localStorage — NOT via URL parameters.
+    // Using ?lang= URLs in hreflang causes Google to index duplicate content.
     LANGUAGES.forEach(function(l) {
       const link = document.createElement('link');
       link.rel = 'alternate';
       link.hreflang = l.code;
-      link.href = baseUrl + '?lang=' + l.code;
+      link.href = baseUrl;  // canonical clean URL — no ?lang= param
       document.head.appendChild(link);
     });
 
-    // x-default points to base URL without lang parameter
+    // x-default points to the same base URL
     const xdef = document.createElement('link');
     xdef.rel = 'alternate';
     xdef.hreflang = 'x-default';
     xdef.href = baseUrl;
     document.head.appendChild(xdef);
   }
+
 
   // ── Highlight active nav link ──
   function highlightActiveNav() {

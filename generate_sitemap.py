@@ -162,13 +162,10 @@ def generate_xml():
         xml += f'    <changefreq>{url["changefreq"]}</changefreq>\n'
         xml += f'    <priority>{url["priority"]}</priority>\n'
         
-        if url["multilingual"]:
-            xml += f'    <xhtml:link rel="alternate" hreflang="en" href="{url["loc"]}?lang=en"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="tr" href="{url["loc"]}?lang=tr"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="ar" href="{url["loc"]}?lang=ar"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="de" href="{url["loc"]}?lang=de"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="fr" href="{url["loc"]}?lang=fr"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url["loc"]}"/>\n'
+        # Only output x-default pointing to the canonical clean URL
+        # DO NOT use ?lang= variants - they create duplicate content issues in Google
+        xml += f'    <xhtml:link rel="alternate" hreflang="en" href="{url["loc"]}"/>\n'
+        xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url["loc"]}"/>\n'
             
         xml += '  </url>\n'
 
