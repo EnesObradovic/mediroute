@@ -1,62 +1,44 @@
 # Cloudflare Pages — Redirects & Rewrites
-# Format: source  destination  status_code
+# IMPORTANT: Cloudflare Pages does NOT support query string matching in _redirects
+# ?lang= and other query params are handled by seo.js (noindex) + robots.txt (disallow)
 
 # ─────────────────────────────────────────
 # 301 REDIRECTS: Remove .html extensions
-# These .html URLs were indexed by Google and must 301 to canonical clean URLs
 # ─────────────────────────────────────────
-/index.html                 /                    301
-/index.html?lang=:lang      /                    301
-/index?lang=:lang           /                    301
-/about.html                 /about               301
-/contact.html               /contact             301
-/faq.html                   /faq                 301
-/blog.html                  /blog                301
-/compare.html               /compare             301
-/treatments.html            /treatments          301
-/treatment/index.html       /treatments          301
-/treatment/contact.html     /contact             301
-/clinic-detail.html         /                    301
-/clinic-detail.html?id=:id  /                    301
-/auth.html                  /auth                301
-/blog/index.html            /blog                301
-/blog/index.html?lang=:lang /blog                301
-/blog/auth.html             /auth                301
-/blog/auth.html?lang=:lang  /auth                301
+/index.html          /          301
+/about.html          /about     301
+/contact.html        /contact   301
+/faq.html            /faq       301
+/blog.html           /blog      301
+/compare.html        /compare   301
+/treatments.html     /treatments  301
+/treatment/index.html  /treatments  301
+/treatment/contact.html  /contact   301
+/clinic-detail.html  /           301
+/auth.html           /auth       301
+/blog/index.html     /blog       301
+/blog/auth.html      /auth       301
 
 # ─────────────────────────────────────────
-# 301 REDIRECTS: Remove ?lang= params from main pages
-# Canonical version is always the clean URL without params
-# ─────────────────────────────────────────
-/?lang=:lang                /                    301
-/about?lang=:lang           /about               301
-/contact?lang=:lang         /contact             301
-/faq?lang=:lang             /faq                 301
-/blog?lang=:lang            /blog                301
-/compare?lang=:lang         /compare             301
-/treatments?lang=:lang      /treatments          301
-/treatment/:slug?lang=:lang /treatment/:slug     301
-
-# ─────────────────────────────────────────
-# 200 REWRITES: Clean URL routing (SPA-style)
+# 200 REWRITES: Clean URL routing
 # ─────────────────────────────────────────
 
-# Blog posts → serve pre-rendered static HTML files directly
+# Blog posts → pre-rendered static HTML files
 /blog/:slug    /blog/:slug.html    200
 
-# Treatment pages → single treatment.html template
+# Treatment pages → single template
 /treatment/:slug    /treatment.html    200
 
 # Core pages
-/about       /about.html       200
-/contact     /contact.html     200
-/compare     /compare.html     200
-/blog        /blog.html        200
-/faq         /faq.html         200
-/auth        /auth.html        200
-/admin       /admin.html       200
-/treatments  /treatments.html  200
-/provider    /provider.html    200
+/about              /about.html              200
+/contact            /contact.html            200
+/compare            /compare.html            200
+/blog               /blog.html               200
+/faq                /faq.html                200
+/auth               /auth.html               200
+/admin              /admin.html              200
+/treatments         /treatments.html         200
+/provider           /provider.html           200
 /patient-dashboard  /patient-dashboard.html  200
 /clinic-dashboard   /admin.html              200
 /clinic/:slug       /clinic-detail.html      200
