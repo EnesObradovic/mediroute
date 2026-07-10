@@ -150,7 +150,7 @@
 
   /* ── 2b. Inject Canonical URL (runs on EVERY page) ── */
   function injectCanonical() {
-    // Build canonical from BASE + current pathname (normalised)
+    // Build canonical from BASE + current pathname only (strip ALL query params)
     let p = location.pathname.replace(/\/index\.html$/i, '/').replace(/\/$/, '') || '';
     // Remove trailing .html for clean URLs if defined by Vercel rewrites
     const canonicalUrl = BASE + p;
@@ -164,7 +164,21 @@
     let ogUrl = head.querySelector('meta[property="og:url"]');
     if (!ogUrl) { ogUrl = document.createElement('meta'); ogUrl.setAttribute('property', 'og:url'); head.appendChild(ogUrl); }
     ogUrl.setAttribute('content', canonicalUrl);
+
+    // If current URL has query params (e.g. ?lang=tr, ?author=...), inject noindex
+    // to prevent duplicate content indexing by search engines
+    const hasQueryParams = location.search.length > 0;
+    if (hasQueryParams) {
+      let robotsMeta = head.querySelector('meta[name="robots"]');
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.setAttribute('name', 'robots');
+        head.appendChild(robotsMeta);
+      }
+      robotsMeta.setAttribute('content', 'noindex, follow');
+    }
   }
+
 
   /* ── 3. JSON-LD Structured Data ── */
   function injectJSONLD() {
@@ -188,7 +202,7 @@
       },
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: '+44-800-123-4567',
+        telephone: '+90-536-620-6511',
         contactType: 'customer service',
         availableLanguage: ['English', 'Turkish', 'Arabic', 'German', 'French']
       },
@@ -245,7 +259,7 @@
         url: BASE,
         logo: LOGO,
         image: LOGO,
-        telephone: '+44-800-123-4567',
+        telephone: '+90-536-620-6511',
         priceRange: '££',
         currenciesAccepted: 'GBP',
         areaServed: [

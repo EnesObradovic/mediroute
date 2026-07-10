@@ -212,7 +212,7 @@
     <div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
         <span class="flex items-center gap-1">
           <i class="fa-solid fa-user-pen"></i>
-          <a href="/blog?author=Dr.%20Mehmet%20Y%C4%B1lmaz" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">Dr. Mehmet Yılmaz</a>
+          <a href="/blog" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">Dr. Mehmet Yılmaz</a>
         </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> 5 Haziran 2026</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 11 dk okuma</span>
@@ -375,7 +375,7 @@
   </article>
 
   <!-- Author Profile Card -->
-  <a href="/blog?author=Dr.%20Mehmet%20Y%C4%B1lmaz" id="author-card-link" class="author-card-link" style="display:block;">
+  <a href="/blog" id="author-card-link" class="author-card-link" style="display:block;">
     <div id="author-card" class="author-card fade-up" style="display:flex;">
       <div class="author-avatar" id="author-avatar">
         <img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Dr. Mehmet Yılmaz">
@@ -589,7 +589,7 @@
       document.getElementById('hero-meta').innerHTML = `
         <span class="flex items-center gap-1">
           <i class="fa-solid fa-user-pen"></i>
-          <a href="/blog?author=${encodeURIComponent(metaAuthorName)}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
+          <a href="/blog" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">${metaAuthorName}</a>
         </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> ${date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ${readTime} dk okuma</span>
@@ -619,7 +619,7 @@
         const authorVal = blog.author || 'MediRoute Team';
         if (link) {
           link.style.display = 'block';
-          link.href = '/blog?author=' + encodeURIComponent(authorVal);
+          link.href = '/blog';
         } else if (card) {
           card.style.display = 'flex';
         }

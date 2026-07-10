@@ -262,13 +262,12 @@ def render_all_blogs():
         html = html.replace(hero_title_placeholder, hero_title_content)
         
         # 7. Fill Hero Meta (Author, Date, Read Time)
-        quoted_author = urllib.parse.quote(author.strip())
-        author_link = f"/blog?author={quoted_author}"
+        # Author link points to /blog (NOT ?author=) to prevent duplicate/parametrized page indexing
         hero_meta_placeholder = '<div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta"></div>'
         hero_meta_content = f"""<div class="flex flex-wrap items-center gap-4 text-xs text-blue-300" id="hero-meta">
         <span class="flex items-center gap-1">
           <i class="fa-solid fa-user-pen"></i>
-          <a href="{author_link}" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">{author}</a>
+          <a href="/blog" class="hover:text-white underline decoration-blue-400/50 underline-offset-2 transition">{author}</a>
         </span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> {formatted_date}</span>
         <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> {read_time} dk okuma</span>
@@ -324,12 +323,13 @@ def render_all_blogs():
     </div>
   </a>"""
         
-        # Build author content
+        # Author card link — use /blog (no ?author= param) to avoid duplicate content indexing
+        author_link = "/blog"
+        
         full_author_name = author.strip()
         avatar_content = f'<img loading="lazy" src="{author_image}" alt="{full_author_name}">' if author_image else '<i class="fa-solid fa-user-doctor"></i>'
         specialty_sub = "Medikal İçerik Danışmanı" if author_specialty else ""
-        quoted_author = urllib.parse.quote(author.strip())
-        author_link = f"/blog?author={quoted_author}"
+        # author_link = /blog (already set above, no ?author= param to avoid duplicate content)
         
         author_content = f"""  <!-- Author Profile Card -->
   <a href="{author_link}" id="author-card-link" class="author-card-link" style="display:block;">

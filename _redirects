@@ -1,2 +1,22 @@
-/treatment/*         /treatment-template  200
-/blog/*              /blog-template  200
+# Cloudflare Pages — Redirects & Rewrites
+# Format: source  destination  status_code
+
+# Blog posts → serve pre-rendered static HTML files directly
+/blog/:slug    /blog/:slug.html    200
+
+# Treatment pages → single treatment.html template
+/treatment/:slug    /treatment.html    200
+
+# Clean URL rewrites (SPA-style)
+/about       /about.html       200
+/contact     /contact.html     200
+/compare     /compare.html     200
+/blog        /blog.html        200
+/faq         /faq.html         200
+/auth        /auth.html        200
+/admin       /admin.html       200
+/treatments  /treatments.html  200
+/provider    /provider.html    200
+/patient-dashboard  /patient-dashboard.html  200
+/clinic-dashboard   /admin.html              200
+/clinic/:slug       /clinic-detail.html      200

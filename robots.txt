@@ -12,6 +12,14 @@ Disallow: /test_tab.html
 Disallow: /seed_clinics.js
 Disallow: /supabase-client.js
 
+# Block query-parametrized duplicate content URLs
+# These create duplicate pages and hurt SEO
+Disallow: /*?lang=
+Disallow: /*?author=
+Disallow: /*?author$
+Disallow: /clinic-detail?id=
+Disallow: /clinic-detail?lang=
+
 # Allow bots to crawl important JS/CSS for rendering
 Allow: /shared.js
 Allow: /seo.js

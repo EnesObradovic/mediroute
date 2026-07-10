@@ -13,6 +13,36 @@
       ]
     },
     {
+      "source": "/(.*)?lang=:lang",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/blog?author=:author",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/blog?author",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/clinic-detail?id=:id",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/clinic-detail?lang=:lang",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
       "source": "/(.+\\.(?:png|jpg|jpeg|gif|webp|avif|svg|ico))",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -43,7 +73,7 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/compare", "destination": "/compare.html" },
     { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/:slug*", "destination": "/blog-detail.html" },
+    { "source": "/blog/:slug*", "destination": "/blog/:slug*.html" },
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/auth", "destination": "/auth.html" },
     { "source": "/admin", "destination": "/admin.html" },
