@@ -1,44 +1,30 @@
-# Cloudflare Pages — Redirects & Rewrites
-# IMPORTANT: Cloudflare Pages does NOT support query string matching in _redirects
-# ?lang= and other query params are handled by seo.js (noindex) + robots.txt (disallow)
+# Cloudflare Pages — Redirects
+# Pretty URLs is enabled by default — static .html files are auto-served at clean URLs
+# e.g. /admin.html is served at /admin automatically, no rewrite needed
 
 # ─────────────────────────────────────────
-# 301 REDIRECTS: Remove .html extensions
+# 301 REDIRECTS: .html → clean URL
+# (converts Cloudflare's default 308 to a proper 301 for SEO)
 # ─────────────────────────────────────────
-/index.html          /          301
-/about.html          /about     301
-/contact.html        /contact   301
-/faq.html            /faq       301
-/blog.html           /blog      301
-/compare.html        /compare   301
-/treatments.html     /treatments  301
-/treatment/index.html  /treatments  301
-/treatment/contact.html  /contact   301
-/clinic-detail.html  /           301
-/auth.html           /auth       301
-/blog/index.html     /blog       301
-/blog/auth.html      /auth       301
+/index.html             /             301
+/about.html             /about        301
+/contact.html           /contact      301
+/faq.html               /faq          301
+/blog.html              /blog         301
+/compare.html           /compare      301
+/treatments.html        /treatments   301
+/auth.html              /auth         301
+/admin.html             /admin        301
+/treatment/index.html   /treatments   301
+/treatment/contact.html /contact      301
+/clinic-detail.html     /             301
+/blog/index.html        /blog         301
+/blog/auth.html         /auth         301
 
 # ─────────────────────────────────────────
-# 200 REWRITES: Clean URL routing
+# 200 REWRITES: Dynamic slug routing only
+# (Pretty URLs can't resolve these — explicit rewrite needed)
 # ─────────────────────────────────────────
-
-# Blog posts → pre-rendered static HTML files
-/blog/:slug    /blog/:slug.html    200
-
-# Treatment pages → single template
-/treatment/:slug    /treatment.html    200
-
-# Core pages
-/about              /about.html              200
-/contact            /contact.html            200
-/compare            /compare.html            200
-/blog               /blog.html               200
-/faq                /faq.html                200
-/auth               /auth.html               200
-/admin              /admin.html              200
-/treatments         /treatments.html         200
-/provider           /provider.html           200
-/patient-dashboard  /patient-dashboard.html  200
-/clinic-dashboard   /admin.html              200
-/clinic/:slug       /clinic-detail.html      200
+/blog/:slug      /blog/:slug.html     200
+/treatment/:slug /treatment.html      200
+/clinic/:slug    /clinic-detail.html  200
