@@ -21,8 +21,11 @@
 /blog/auth.html         /auth         301
 
 # ─────────────────────────────────────────
-# 200 REWRITES: Template-based routing only
-# These routes have NO individual .html files — must rewrite to a shared template
+# 200 REWRITES: Template-based routing
+# /blog/* → blog-template.html (JS fetches from Supabase)
+# /treatment/* → treatment-template.html
+# /clinic/* → clinic-detail.html
 # ─────────────────────────────────────────
-/treatment/:slug /treatment.html      200
-/clinic/:slug    /clinic-detail.html  200
+/blog/:slug      /blog-template.html      200
+/treatment/:slug /treatment-template.html 200
+/clinic/:slug    /clinic-detail.html      200
