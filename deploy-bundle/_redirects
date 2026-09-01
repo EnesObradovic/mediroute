@@ -1,10 +1,9 @@
 # Cloudflare Pages — Redirects
-# Pretty URLs is enabled by default — static .html files are auto-served at clean URLs
-# e.g. /admin.html is served at /admin automatically, no rewrite needed
+# Pretty URLs auto-serves .html files at clean URLs — no 200 rewrites needed for static files
+# Only keep 200 rewrites for TEMPLATE-based routes (no individual .html files exist)
 
 # ─────────────────────────────────────────
 # 301 REDIRECTS: .html → clean URL
-# (converts Cloudflare's default 308 to a proper 301 for SEO)
 # ─────────────────────────────────────────
 /index.html             /             301
 /about.html             /about        301
@@ -22,9 +21,8 @@
 /blog/auth.html         /auth         301
 
 # ─────────────────────────────────────────
-# 200 REWRITES: Dynamic slug routing only
-# (Pretty URLs can't resolve these — explicit rewrite needed)
+# 200 REWRITES: Template-based routing only
+# These routes have NO individual .html files — must rewrite to a shared template
 # ─────────────────────────────────────────
-/blog/:slug      /blog/:slug.html     200
 /treatment/:slug /treatment.html      200
 /clinic/:slug    /clinic-detail.html  200
