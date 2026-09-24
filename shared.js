@@ -62,12 +62,7 @@
         <div class="dark-toggle"></div>
       </div>
 
-      <!-- Mobile Language Selector -->
-      <div class="menu-divider"></div>
-      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest px-4 mb-2 mt-2" data-i18n="nav_language">Language</p>
-      <div id="mobile-lang-list" class="flex flex-col gap-1">
-        <!-- Filled by JS -->
-      </div>
+      <!-- Language selector removed: site is English-only -->
     `;
     document.body.appendChild(menu);
   }
@@ -211,147 +206,36 @@
     });
   }
 
-  // ── Language Switcher ──
+  // ── Language: English-only (multilingual removed) ──
   const LANGUAGES = [
-    { code: 'en', flag: '🇬🇧', name: 'English',   nativeName: 'English' },
-    { code: 'tr', flag: '🇹🇷', name: 'Türkçe',    nativeName: 'Türkçe' },
-    { code: 'ar', flag: '🇸🇦', name: 'العربية',    nativeName: 'العربية' },
-    { code: 'de', flag: '🇩🇪', name: 'Deutsch',   nativeName: 'Deutsch' },
-    { code: 'fr', flag: '🇫🇷', name: 'Français',  nativeName: 'Français' },
+    { code: 'en', flag: '🇬🇧', name: 'English', nativeName: 'English' },
   ];
 
   function getCurrentLang() {
-    // If ARTICLE_LANG is globally defined (on pre-rendered static blog posts), lock page to it!
-    if (window.ARTICLE_LANG) return window.ARTICLE_LANG;
-
-    // 1. Check URL param (one-time import, then clean URL)
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    if (urlLang && LANGUAGES.find(l => l.code === urlLang)) {
-      localStorage.setItem('mediroute-lang', urlLang);
-      // Clean the ?lang= param from URL for SEO (no duplicate content)
-      const cleanUrl = new URL(window.location);
-      cleanUrl.searchParams.delete('lang');
-      window.history.replaceState({}, '', cleanUrl);
-      return urlLang;
-    }
-
-    // 2. Check localStorage
-    const saved = localStorage.getItem('mediroute-lang');
-    if (saved && LANGUAGES.find(l => l.code === saved)) return saved;
-
-    // 3. Browser language detection
-    const browserLangs = navigator.languages || [navigator.language || 'en'];
-    for (const bl of browserLangs) {
-      const code = bl.split('-')[0].toLowerCase();
-      if (LANGUAGES.find(l => l.code === code)) {
-        localStorage.setItem('mediroute-lang', code);
-        return code;
-      }
-    }
-
-    // 4. Default to English
-    return 'en';
-  }
-
-  function buildLangDropdown() {
-    const currentLang = getCurrentLang();
-    const currentLangObj = LANGUAGES.find(l => l.code === currentLang) || LANGUAGES[0];
-
-    // Desktop dropdown menu items
-    const dd = document.getElementById('lang-dropdown');
-    if (dd) {
-      dd.innerHTML = LANGUAGES.map(l => `
-        <a href="javascript:void(0)" onclick="switchLanguage('${l.code}')" class="${l.code === currentLang ? 'active' : ''}">
-          <span class="flag-emoji">${l.flag}</span>
-          <span class="lang-name">${l.nativeName}</span>
-          <i class="fa-solid fa-check lang-check"></i>
-        </a>
-      `).join('');
-    }
-
-    // Update button text
-    const btn = document.getElementById('lang-btn-text');
-    if (btn) btn.textContent = currentLangObj.flag + ' ' + currentLangObj.code.toUpperCase();
-
-    // Mobile language list
-    const mobileLangList = document.getElementById('mobile-lang-list');
-    if (mobileLangList) {
-      mobileLangList.innerHTML = LANGUAGES.map(l => `
-        <a href="javascript:void(0)" onclick="switchLanguage('${l.code}')" class="${l.code === currentLang ? '!bg-white/15 !text-white' : ''}">
-          <span style="font-size:1.1rem">${l.flag}</span> ${l.nativeName}
-          ${l.code === currentLang ? '<i class="fa-solid fa-check text-emerald-400 text-xs ml-auto"></i>' : ''}
-        </a>
-      `).join('');
-    }
-  }
-
-  window.switchLanguage = async function(lang) {
-    if (window.ARTICLE_LANG && lang !== window.ARTICLE_LANG) {
-      localStorage.setItem('mediroute-lang', lang);
-      window.location.href = '/blog';
-      return;
-    }
-
-    localStorage.setItem('mediroute-lang', lang);
-    
-    // Keep URL clean (no ?lang= param) for SEO
+    // Site is English-only — always return 'en'
+    // Clean any leftover ?lang= param from URL
     const url = new URL(window.location);
     if (url.searchParams.has('lang')) {
       url.searchParams.delete('lang');
       window.history.replaceState({}, '', url);
     }
+    return 'en';
+  }
 
-    // Apply translations to data-i18n elements
-    applyTranslations(lang);
+  function buildLangDropdown() {
+    // No-op: language switcher removed, site is English-only
+    // Hide any language buttons that might exist in HTML
+    document.querySelectorAll('.lang-dropdown-wrapper, #lang-dropdown, #mobile-lang-list').forEach(function(el) {
+      el.style.display = 'none';
+    });
+  }
 
-    // Update HTML lang attribute & direction
-    document.documentElement.lang = lang;
-    if (lang === 'ar') {
-      document.documentElement.dir = 'rtl';
-    } else {
-      document.documentElement.dir = 'ltr';
-    }
 
-    // Update hreflang meta tags
-    updateHreflangTags(lang);
-
-    // Fire page-specific language hook IMMEDIATELY (before any async ops)
-    if (typeof window.onLanguageChanged === "function") {
-      try { window.onLanguageChanged(lang); } catch(e) { console.warn('onLanguageChanged error:', e); }
-    }
-
-    // Rebuild dropdown to show new active state
-    buildLangDropdown();
-
-    // Close dropdowns
-    const dd = document.getElementById('lang-dropdown');
-    if (dd) dd.classList.remove('open');
-    closeMobileMenu();
-
-    // Async operations that should not block UI
-    try {
-      await updateNavbarSession();
-    } catch(e) { console.warn('Session update error:', e); }
-
-    // Re-render clinic cards if on index page
-    try {
-      if (typeof renderAllClinics === 'function' && document.getElementById('clinic-list')) {
-        var treatSel = document.getElementById('treatment-select');
-        var citySel = document.getElementById('city-select');
-        var ratingEl = document.querySelector('input[name="rating"]:checked');
-        var priceEl = document.getElementById('price-range');
-        var jciEl = document.getElementById('f-jci');
-        await renderAllClinics('clinic-list', {
-          treatment: treatSel ? treatSel.value : '',
-          city: citySel ? citySel.value : '',
-          minRating: ratingEl ? parseFloat(ratingEl.value) : 0,
-          maxPrice: priceEl ? parseInt(priceEl.value) : 15000,
-          jci: jciEl && jciEl.checked
-        });
-      }
-    } catch(e) { console.warn('Clinic render error:', e); }
+  window.switchLanguage = function(lang) {
+    // No-op: site is English-only, language switching disabled
+    console.log('Language switching is disabled - site is English-only');
   };
+
 
   function applyTranslations(lang) {
     if (typeof window.MEDIROUTE_I18N === 'undefined') return;
@@ -384,45 +268,11 @@
     }
   }
 
-  function updateHreflangTags(currentLang) {
-    // Remove existing hreflang tags
+  function updateHreflangTags() {
+    // Site is English-only — remove all hreflang tags, just set lang=en
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-
-    const baseUrl = window.location.origin + window.location.pathname;
-
-    // If ARTICLE_LANG is globally defined, restrict hreflang to only that language and x-default!
-    if (window.ARTICLE_LANG) {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = window.ARTICLE_LANG;
-      link.href = baseUrl;
-      document.head.appendChild(link);
-
-      const xdef = document.createElement('link');
-      xdef.rel = 'alternate';
-      xdef.hreflang = 'x-default';
-      xdef.href = baseUrl;
-      document.head.appendChild(xdef);
-      return;
-    }
-
-    // For multilingual pages: all language alternates point to the SAME canonical URL (no ?lang= params).
-    // Language switching is handled client-side via localStorage — NOT via URL parameters.
-    // Using ?lang= URLs in hreflang causes Google to index duplicate content.
-    LANGUAGES.forEach(function(l) {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = l.code;
-      link.href = baseUrl;  // canonical clean URL — no ?lang= param
-      document.head.appendChild(link);
-    });
-
-    // x-default points to the same base URL
-    const xdef = document.createElement('link');
-    xdef.rel = 'alternate';
-    xdef.hreflang = 'x-default';
-    xdef.href = baseUrl;
-    document.head.appendChild(xdef);
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
   }
 
 
@@ -510,17 +360,16 @@
     initDarkMode();
     injectMobileMenu();
     injectFooter();
-    buildLangDropdown();
+    buildLangDropdown(); // hides lang UI
     highlightActiveNav();
     autoLoadQuoteModal();
-    
-    // Apply saved language
-    var lang = getCurrentLang();
-    document.documentElement.lang = lang;
-    if (lang === 'ar') document.documentElement.dir = 'rtl';
-    applyTranslations(lang);
-    updateHreflangTags(lang);
-    if (typeof window.onLanguageChanged === "function") window.onLanguageChanged(lang);
+
+    // English-only: always apply English translations
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    applyTranslations('en');
+    updateHreflangTags();
+    if (typeof window.onLanguageChanged === "function") window.onLanguageChanged('en');
 
     // Session awareness AFTER i18n (so translations don't overwrite avatar)
     updateNavbarSession();
